@@ -57,31 +57,29 @@
         }
     </style>
     
-<script src="jquery-3.3.1.min.js"></script>
-<script type="text/javascript">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#dst').show();
+            $('#wsd').hide();
 
-
-    
-    
- $('#dsts').bind('change', function(event) {
-
-           var i= $('#dsts').val();
-
-            if(i=="Westbengal")
-             {
-                 $('#wsd').show();
-                 $('#dst').hide();
-             }
-           else
-             {
-               $('#wsd').hide();
-               $('#dst').show();
-              }
-});
-});
-
-</script>
+            $('#dsts').change(function () {
+                var selected = $('#dsts option:selected').text();
+                if(selected == 'West Bengal (WB)') {
+                    $('#dst').hide();
+                    $('#wsd').show();
+                }
+                else {
+                    $('#dst').show();
+                    $('#wsd').hide();
+                }
+            });
+        });
+    </script>
     
     </head>
 
@@ -186,12 +184,20 @@
         </tr>    
         <tr>
             <td>12. Institute District :</td>
-            <td id="dst"  ><input  class="box" type="text" required name="ins_dst" > </td>
-             <td id="wsd" style="display:none"><select name="ins_dst">
-                <?php 
-                $a=['WS-1','WS-2','WS-3','WS-4','WS-5','WS-6','WS-7','WS-8'];
-                for( $i = 0; $i<count($a);$i++ ){
-                    echo "<option value='$a[$i]'>$a[$i]</option>";};?>
+            <td id="dst"  >
+                <input  class="box" type="text" required name="ins_dst"> 
+            </td>
+            <td id="wsd">
+                <select name="ins_dst">
+                    <?php 
+                        $a=['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur',
+                            'Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 'Kalimpong', 
+                            'Kolkata', 'Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Bardhaman', 
+                            'Paschim Medinipur', 'Purba Bardhaman', 'Purba Medinipur', 'Purulia', 'South 24 Parganas', 
+                            'Uttar Dinajpur'];
+                        for( $i = 0; $i<count($a);$i++ ){
+                        echo "<option value='$a[$i]'>$a[$i]</option>";};
+                    ?>
 	           </select>
             </td>
         </tr>
