@@ -87,7 +87,7 @@
 <body>
     <h1>WELCOME TO WESTBENGAL ONLINE TPO REGISTRATION PORTAL </h1>
     <div id="whl">
-    <form action="" method="post">
+    <form action="submit.php" method="post">
         <table>
         
          <tr>
@@ -126,7 +126,7 @@
             <td><select name="ins_typ">
 		        <option value="government">Government</option>
                 <option value="government_aided">Government Aided</option>
-                <option value="self_finnaced">Self Finnanced</option>
+                <option value="self_financed">Self Finnanced</option>
 	           </select>
             </td>
         </tr>
