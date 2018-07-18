@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 	$num_cctv=$_POST['num_cctv'];
 	$has_fiber=$_POST['has_fiber'];
 	
-	$sql = "Insert into creds(inst_name,inst_code,uid,pwd,estd,inst_accrd,inst_type,inst_affl,inst_aprv,state,district,pin,address,phone,email,website,head_name,
+	$sql = "Insert into cred(inst_name,inst_code,uid,pwd,estd,inst_accrd,inst_type,inst_affl,inst_aprv,state,district,pin,address,phone,email,website,head_name,
 	inst_headdesg,head_contact,head_mob,head_email,tpo_name,tpo_ph,tpo_ph2,tpo_email,no_of_comp,num_cmplab,min_num_cmp,int_speed,hall_cap,fibop_lan,cctv_no)values(
 	'".$name."','".$inst_code."','".$uid."','".$password."','".$estd."','".$accrd."','".$inst_type."','".$affli."','".$inst_appr."','".$inst_state."','".$ins_dst."',
 	'".$pin."','".$address."','".$number."','".$email."','".$website."','".$head_name."','".$head_desg."','".$head_ph."','".$head_mob."','".$head_email."','".$tpo_name."',
@@ -199,8 +199,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <input type="email" id="email" name="email" pattern="
-                [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate">
+                <input type="email" id="email" name="email" class="validate">
                 <label class="active" for="email">Institute E-mail</label>
             </div>
 
@@ -230,8 +229,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <input type="email" id="head_email" name="head_email" pattern="
-                [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate">
+                <input type="email" id="head_email" name="head_email" class="validate">
                 <label class="active" for="head_email">Institute Head Contact Email Id</label>
             </div>
 
@@ -251,8 +249,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <input type="email" id="tpo_email" name="tpo_email" pattern="
-                [a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="validate">
+                <input type="email" id="tpo_email" name="tpo_email" class="validate">
                 <label class="active" for="tpo_email">Institute TPO Email Id</label>
             </div>
 
