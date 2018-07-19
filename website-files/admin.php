@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    define("DBHOST","localhost");
+    define("DBUSERNAME","root");
+    define("DBPASSWORD","");
+    define("DB","cpc_tpo");
+    $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -51,12 +60,17 @@
                 <div class="input-field" id="old_degree">
                     <select name="degree" id="old_degree_input">
                         <option value="" disabled selected>Choose your option</option>
-                        <option value="B.Tech">B.Tech</option>
-                        <option value="M.Tech">M.Tech</option>
-                        <option value="B.Sc">B.Sc</option>
-                        <option value="M.Sc">M.Sc</option>
-                        <option value="B.Com">B.Com</option>
+                        <?php 
+                            $sql_admin = "SELECT DISTINCT degree FROM `course_list`";
+                            $result_admin = mysqli_query($con,$sql_admin);
+                            while ($array_admin=mysqli_fetch_array($result_admin)) {
+                        ?>
+                        <option value="<?php echo $array_admin['degree']; ?>"><?php echo $array_admin['degree']; ?></option>
+                        <?php
+                            }
+                        ?>
                         <option value="Other">Other</option>
+
                     </select>
                     <label>Choose the degree</label>
                 </div>
