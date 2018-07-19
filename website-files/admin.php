@@ -5,6 +5,14 @@
     define("DBPASSWORD","");
     define("DB","cpc_tpo");
     $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
+    
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+        $degree= $_POST['degree'];
+        $course= $_POST['course'];
+
+        $sql_admin_add = "INSERT INTO course_list(degree,course_name) VALUE('" .$degree ."','". $course. "')";
+        mysqli_query($con,$sql_admin_add);  
+    }
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +64,7 @@
                 <hr>
                 <br>
             </div>
-            <form action="add.php" method="post">
+            <form action="admin.php" method="post">
                 <div class="input-field" id="old_degree">
                     <select name="degree" id="old_degree_input">
                         <option value="" disabled selected>Choose your option</option>
