@@ -1,3 +1,25 @@
+<?php
+session_start();
+define("DBHOST","localhost");
+define("DBUSERNAME","root");
+define("DBPASSWORD","");
+define("DB","cpc_tpo");
+$con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
+if($_SERVER['REQUEST_METHOD']=="POST")
+{
+    $courses=$_POST['courses'];
+    $count=count($courses);
+    for($i=1;$i<=$count;$i++)
+    {
+        $sql_degreeopt= "Insert into college_crs(college_id,deg_optd)value('". $_SESSION['coll_id']. "','".$courses[$i]."'";
+        mysqli_query($con,$sql_degreeopt);  
+    }
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -31,21 +53,33 @@
 
     <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
-        <form action="course_select.php" method="post">
+        <form action="course_select.php" method="POST">
         <div class="input-field">
-            <select multiple>
+            <select multiple name="courses">
                 <option value="" disabled selected>Choose your option</option>
-                <optgroup label="B.Tech">
-                    <option name="courses" value="btech|cse">B.Tech CSE</option>
-                    <option name="courses" value="btech|ee">B.Tech EE</option>
-                </optgroup>
-                <optgroup label="M.Tech">
-                    <option name="courses" value="mtech|cse">M.Tech CSE</option>
-                    <option name="courses" value="mtech|ee">M.Tech EE</option>
-                </optgroup>
+                <?php
+                    $sql_degree= "SELECT degree FROM course_list";
+                    $result_degree = mysqli_query($con,$sql_degree);
+                    while($array_degree = mysqli_fetch_assoc($result_degree)){
+                ?>
+                    <optgroup label="<?php echo $array_degree['degree'];?>">
+                        <?php
+                            $sql_opt= "SELECT course_name FROM course_list WHERE degree =\"". $array_degree['degree'] . "\"";
+                            $result_course = mysqli_query($con,$sql_opt);
+                            while($array_course = mysqli_fetch_array($result_course)){
+                        ?>
+                        <option value=" <?php echo $array_degree['degree']." - ". $array_course['course_name'];?> "><?php echo $array_degree['degree']." - ". $array_course['course_name'];?></option> -->
+
+                <?php
+                            }
+                    }
+                ?>
+
             </select>
             <label>Select Institute Courses</label>
         </div>
+
+            <input type="submit" value="Submit" class="btn btn-large green right">
         </form>
 
         <!-- PHP OUTPUT-->
