@@ -5,17 +5,17 @@ define("DBUSERNAME","root");
 define("DBPASSWORD","");
 define("DB","cpc_tpo");
 $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
-if($_SERVER['REQUEST_METHOD']=="POST")
-{
-    $courses=$_POST['courses'];
-    $count=count($courses);
-    for($i=1;$i<=$count;$i++)
-    {
-        $sql_degreeopt= "Insert into college_crs(college_id,deg_optd)value('". $_SESSION['coll_id']. "','".$courses[$i]."'";
-        mysqli_query($con,$sql_degreeopt);  
-    }
+// if($_SERVER['REQUEST_METHOD']=="POST")
+// {
+//     $courses=$_POST['courses'];
+//     $count=count($courses);
+//     for($i=1;$i<=$count;$i++)
+//     {
+//         $sql_degreeopt= "INSERT INTO college_crs(college_id,deg_optd) VALUE('". $_SESSION['coll_id']. "','".$courses[$i]."'";
+//         mysqli_query($con,$sql_degreeopt);  
+//     }
 
-}
+// }
 
 ?>
 
@@ -40,15 +40,6 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             margin-top: -1em;
             margin-bottom: 2em;
         }
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-
-        main {
-            flex: 1 0 auto;
-        }
     </style>
 </head>
 
@@ -60,17 +51,16 @@ if($_SERVER['REQUEST_METHOD']=="POST")
         </div>
     </nav>
 
-<main>
     <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
-        <form action="course_select.php" method="POST">
+        <form action="course_select.php" method="GET">
         <div class="input-field">
             <select multiple name="courses">
                 <option value="" disabled selected>Choose your option</option>
                 <?php
-                    $sql_degree= "SELECT degree FROM course_list";
+                    $sql_degree= "SELECT DISTINCT degree FROM course_list";
                     $result_degree = mysqli_query($con,$sql_degree);
-                    while($array_degree = mysqli_fetch_assoc($result_degree)){
+                    while($array_degree = mysqli_fetch_array($result_degree)){
                 ?>
                     <optgroup label="<?php echo $array_degree['degree'];?>">
                         <?php
@@ -78,7 +68,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                             $result_course = mysqli_query($con,$sql_opt);
                             while($array_course = mysqli_fetch_array($result_course)){
                         ?>
-                        <option value=" <?php echo $array_degree['degree']." - ". $array_course['course_name'];?> "><?php echo $array_degree['degree']." - ". $array_course['course_name'];?></option> -->
+                        <option value="<?php echo $array_degree['degree']." - ". $array_course['course_name'];?>"><?php echo $array_degree['degree']." - ". $array_course['course_name'];?></option> -->
 
                 <?php
                             }
@@ -88,12 +78,10 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </select>
             <label>Select Institute Courses</label>
         </div>
-            <button class="btn btn-large green right" type="submit">Submit</button>
-            <div class="clearfix"></div>
-        </form>
 
+            <input type="submit" value="Submit" class="btn btn-large green right">
+        </form>
     </div>
-                </main>
 
     <footer class="page-footer blue darken-3">
         <div class="footer-copyright blue darken-4">
