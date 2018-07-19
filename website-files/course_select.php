@@ -40,6 +40,15 @@ $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
             margin-top: -1em;
             margin-bottom: 2em;
         }
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
     </style>
 </head>
 
@@ -51,7 +60,8 @@ $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
         </div>
     </nav>
 
-    <!-- MAIN FORM BODY-->
+    <main>
+        <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
         <form action="course_select.php" method="GET">
         <div class="input-field">
@@ -79,9 +89,11 @@ $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
             <label>Select Institute Courses</label>
         </div>
 
-            <input type="submit" value="Submit" class="btn btn-large green right">
+            <button type="submit" class="btn btn-large green right">Submit</button>
+            <div class="clearfix"></div>
         </form>
     </div>
+    </main>
 
     <footer class="page-footer blue darken-3">
         <div class="footer-copyright blue darken-4">
