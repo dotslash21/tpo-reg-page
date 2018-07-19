@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 define("DBHOST","localhost");
@@ -13,6 +14,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 ?>
 
 
+=======
+>>>>>>> 5a16a7683e533cabd913f7add7a267c5c522668f
 <!DOCTYPE html>
 <html>
 
@@ -50,6 +53,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
         <div class="input-field">
             <select multiple>
                 <option value="" disabled selected>Choose your option</option>
+<<<<<<< HEAD
 				<optgroup label="M.Tech">
 				<?php
 				$sql="select * from admin_t where degree=\"M.Tech\"";
@@ -67,6 +71,11 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 					<?php
 					}
 					?>
+=======
+                <optgroup label="B.Tech">
+                    <option name="courses" value="btech|cse">B.Tech CSE</option>
+                    <option name="courses" value="btech|ee">B.Tech EE</option>
+>>>>>>> 5a16a7683e533cabd913f7add7a267c5c522668f
                 </optgroup>
                 <optgroup label="M.Tech">
                     <option name="courses" value="mtech|cse">M.Tech CSE</option>
@@ -116,4 +125,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     </script>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 5a16a7683e533cabd913f7add7a267c5c522668f
