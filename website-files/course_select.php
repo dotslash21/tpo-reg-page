@@ -40,6 +40,15 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             margin-top: -1em;
             margin-bottom: 2em;
         }
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
     </style>
 </head>
 
@@ -51,6 +60,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
         </div>
     </nav>
 
+<main>
     <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
         <form action="course_select.php" method="POST">
@@ -78,23 +88,12 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </select>
             <label>Select Institute Courses</label>
         </div>
-
-            <input type="submit" value="Submit" class="btn btn-large green right">
+            <button class="btn btn-large green right" type="submit">Submit</button>
+            <div class="clearfix"></div>
         </form>
 
-        <!-- PHP OUTPUT-->
-        <div>
-            <?php
-                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    if ( isset( $_GET['submit'] ) ) {
-                        $courses = $_REQUEST['courses'];
-                        print_r($courses);
-                    }
-                }
-            ?>
-        </div>
-
     </div>
+                </main>
 
     <footer class="page-footer blue darken-3">
         <div class="footer-copyright blue darken-4">
