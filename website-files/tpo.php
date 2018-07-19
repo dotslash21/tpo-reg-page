@@ -165,7 +165,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <select name="inst_state">
+                <select name="inst_state" id="inst_state">
                 <?php 
                 $a=['Andaman and Nicobar Islands(AN)', 'Andhra Pradesh (AP)', 'Arunachal Pradesh (AR)', 
                     'Assam (AS)', 'Bihar (BR)', 'Chandigarh (CH)', 'Chhattisgarh (CG)', 
@@ -183,11 +183,12 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field" id="district_txt">
-                
+                <input type="text" id="ins_dst_txt" name="ins_dst">
+                <label class="active" for="ins_dst_txt">Institute District</label>
             </div>
 
             <div class="input-field" id="district_sel">
-            <select name="ins_dst" id="ins_dst">
+            <select id="ins_dst_sel" name="">
 				<?php 
 					$a=['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur','Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 
 					'Kalimpong','Kolkata','Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Bardhaman','Paschim Medinipur', 'Purba Bardhaman',
@@ -196,7 +197,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 				echo "<option value='$a[$i]'>$a[$i]</option>";};
 				?>
 	           </select>
-                <label for="ins_dst">Institute District</label>
+                <label for="ins_dst_sel">Institute District</label>
             </div>
 
             <div class="input-field">
@@ -332,18 +333,22 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     </script>
     <script>
         $(document).ready(function(){
-            $('#dst').show();
-            $('#wsd').hide();
+            $('#district_txt').show();
+            $('#district_sel').hide();
 
-            $('#dsts').change(function () {
-                var selected = $('#dsts option:selected').text();
+            $('#inst_state').change(function () {
+                var selected = $('#inst_state option:selected').text();
                 if(selected == 'West Bengal (WB)') {
-                    $('#dst').hide();
-                    $('#wsd').show();
+                    $('#district_txt').hide();
+                    $('#district_txt').attr("name", "");
+                    $('#district_sel').show();
+                    $('#district_sel').attr("name", "ins_dst");
                 }
                 else {
-                    $('#dst').show();
-                    $('#wsd').hide();
+                    $('#district_txt').show();
+                    $('#district_txt').attr("name", "ins_dst");
+                    $('#district_sel').hide();
+                    $('#district_sel').attr("name", "");
                 }
             });
         });

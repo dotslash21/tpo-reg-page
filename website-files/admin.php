@@ -5,7 +5,7 @@
     define("DBPASSWORD","");
     define("DB","cpc_tpo");
     $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
-    
+
     if($_SERVER['REQUEST_METHOD']=="POST"){
         $degree= $_POST['degree'];
         $course= $_POST['course'];
