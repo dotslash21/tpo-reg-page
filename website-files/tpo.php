@@ -182,7 +182,11 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <label>Institute State</label>
             </div>
 
-            <div class="input-field">
+            <div class="input-field" id="district_txt">
+                
+            </div>
+
+            <div class="input-field" id="district_sel">
             <select name="ins_dst" id="ins_dst">
 				<?php 
 					$a=['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur','Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 
@@ -325,6 +329,24 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             $('select').material_select();
         });
         $('select').material_select('destroy');
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('#dst').show();
+            $('#wsd').hide();
+
+            $('#dsts').change(function () {
+                var selected = $('#dsts option:selected').text();
+                if(selected == 'West Bengal (WB)') {
+                    $('#dst').hide();
+                    $('#wsd').show();
+                }
+                else {
+                    $('#dst').show();
+                    $('#wsd').hide();
+                }
+            });
+        });
     </script>
 </body>
 

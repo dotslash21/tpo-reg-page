@@ -84,6 +84,9 @@
                     <input type="text" id="course" name="course">
                     <label class="active" for="course">Enter the corresponding course</label>
                 </div>
+
+                <button type="submit" class="btn btn-large green right">Submit</button>
+                <div class="clearfix"></div>
             </form>
         </div>
     </main>
