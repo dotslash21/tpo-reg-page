@@ -42,8 +42,19 @@
     <main>
         <div class="container z-depth-3" id="form-container">
             <h3>Course Intake</h3>
-            <hr><br>
-            
+            <hr>
+            <p>Please enter the intake amount for the specific courses as selected in the previous page.</p>
+            <br>
+
+            <form action="intake.php" method="POST">
+                <div class="input-field">
+                    <input type="text" id="btech|cse" name="btech|cse">
+                    <label class="active" for="btech|cse">B.Tech - CSE</label>
+                </div>
+            </form>
+
+            <button type="submit" class="btn btn-large green right">Submit & Continue</button>
+            <div class="clearfix"></div>
         </div>
     </main>
 
