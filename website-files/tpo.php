@@ -90,6 +90,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
         <form method="POST">
+            <h4>Institute Details</h4>
+            <hr><br>
+
             <div class="input-field">
                 <input type="text" id="name" name="name">
                 <label class="active" for="name">Institute Name</label>
@@ -214,6 +217,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <input type="url" id="website" name="website" class="validate">
                 <label class="active" for="website">Institute Website</label>
             </div>
+            
+            <h4>Institute Head Details</h4>
+            <hr><br>
 
             <div class="input-field">
                 <input type="text" id="head_name" name="head_name">
@@ -239,6 +245,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <input type="email" id="head_email" name="head_email" class="validate">
                 <label class="active" for="head_email">Institute Head Contact Email Id</label>
             </div>
+            
+            <h4>Institute TPO Details</h4>
+            <hr><br>
 
             <div class="input-field">
                 <input type="text" id="tpo_name" name="tpo_name">
@@ -259,6 +268,9 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <input type="email" id="tpo_email" name="tpo_email" class="validate">
                 <label class="active" for="tpo_email">Institute TPO Email Id</label>
             </div>
+            
+            <h4>Institute Features</h4>
+            <hr><br>
 
             <div class="input-field">
                 <input type="number" id="num_cmp" name="num_cmp">
@@ -302,7 +314,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <button class="btn btn-large red left" type="reset">Reset</button>
-            <button class="btn btn-large green right" type="submit">Submit</button>
+            <button class="btn btn-large green right" type="submit">Submit & Continue</button>
 
             <div class="clearfix"></div>
         </form>

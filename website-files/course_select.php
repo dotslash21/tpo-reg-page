@@ -63,6 +63,8 @@ $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
     <main>
         <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
+        <h3>Course Addition</h3>
+        <hr><br>
         <form action="course_select.php" method="GET">
         <div class="input-field">
             <select multiple name="courses">
@@ -89,7 +91,7 @@ $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
             <label>Select Institute Courses</label>
         </div>
 
-            <button type="submit" class="btn btn-large green right">Submit</button>
+            <button type="submit" class="btn btn-large green right">Submit & Continue</button>
             <div class="clearfix"></div>
         </form>
     </div>
