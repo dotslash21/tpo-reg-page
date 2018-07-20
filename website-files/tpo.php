@@ -94,28 +94,28 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             <hr><br>
 
             <div class="input-field">
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name">
                 <label class="active" for="name">Institute Name</label>
             </div>
 			<div class="input-field">
-                <input type="number" id="inst_code" name="inst_code" required min="0">
+                <input type="number" id="inst_code" name="inst_code">
                 <label class="active" for="inst_code">Institute code</label>
             </div>
             <div class="input-field">
-                <input type="text" id="uid" name="uid" required>
+                <input type="text" id="uid" name="uid">
                 <label class="active" for="uid">Institute User ID</label>
             </div>
             <div class="input-field">
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password">
                 <label class="active" for="password">Password</label>
             </div>
             <div class="input-field">
-                <input type="number" id="estd" name="estd" min="1800" class="validate" required>
+                <input type="number" id="estd" name="estd" min="1800" class="validate">
                 <label class="active" for="estd">Institute Establishment Year</label>
             </div>
 
             <div class="input-field">
-                <select name="accrd" required>
+                <select name="accrd">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="NAAC-A+">NAAC-A+</option>
                     <option value="NAAC-A">NAAC-A</option>
@@ -127,7 +127,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <select name="inst_type" required>
+                <select name="inst_type">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="Government">Government</option>
                     <option value="Government-Aided">Government-Aided</option>
@@ -137,7 +137,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <select name="affli" required>
+                <select name="affli">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="MAKAUT">Maulana Kalam Azad University of Technology</option>
                     <option value="CU">Calcutta University</option>
@@ -148,7 +148,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <select name="inst_appr" required>
+                <select name="inst_appr">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">SELECT-1</option>
                     <option value="2">SELECT-2</option>
@@ -158,17 +158,17 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <textarea id="address" class="materialize-textarea" name="address" required></textarea>
+                <textarea id="address" class="materialize-textarea" name="address"></textarea>
                 <label class="active" for="address">Institute Address</label>
             </div>
 
             <div class="input-field">
-                <input type="number" id="pin" name="pin" pattern="\d{6}" min="0" required>
+                <input type="number" id="pin" name="pin" pattern="\d{6}">
                 <label for="pin" class="active">Institute PIN</label>
             </div>
 
             <div class="input-field">
-                <select name="inst_state" id="inst_state" required>
+                <select name="inst_state" id="inst_state">
                 <?php 
                 $a=['Andaman and Nicobar Islands(AN)', 'Andhra Pradesh (AP)', 'Arunachal Pradesh (AR)', 
                     'Assam (AS)', 'Bihar (BR)', 'Chandigarh (CH)', 'Chhattisgarh (CG)', 
@@ -186,7 +186,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field" id="district_txt">
-                <input type="text" id="ins_dst_txt" name="ins_dst" required>
+                <input type="text" id="ins_dst_txt" name="ins_dst">
                 <label class="active" for="ins_dst_txt">Institute District</label>
             </div>
 
@@ -204,17 +204,17 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <input type="number" id="number" name="number" class="validate" min="0" required>
+                <input type="number" id="number" name="number" class="validate">
                 <label for="number" class="active">Institute Contact Number</label>
             </div>
 
             <div class="input-field">
-                <input type="email" id="email" name="email" class="validate" required>
+                <input type="email" id="email" name="email" class="validate">
                 <label class="active" for="email">Institute E-mail</label>
             </div>
 
             <div class="input-field">
-                <input type="url" id="website" name="website" class="validate" required>
+                <input type="url" id="website" name="website" class="validate">
                 <label class="active" for="website">Institute Website</label>
             </div>
             
@@ -222,27 +222,27 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             <hr><br>
 
             <div class="input-field">
-                <input type="text" id="head_name" name="head_name" required>
+                <input type="text" id="head_name" name="head_name">
                 <label class="active" for="head_name">Institute Head Name</label>
             </div>
 
             <div class="input-field">
-                <input type="text" id="head_desg" name="head_desg" required>
+                <input type="text" id="head_desg" name="head_desg">
                 <label class="active" for="head_desg">Institute Head Designation</label>
             </div>
 
             <div class="input-field">
-                <input type="number" id="head_mob" name="head_mob" pattern="[6-9]{1}[0-9]{9}" required>
+                <input type="number" id="head_mob" name="head_mob">
                 <label class="active" for="head_mob">Institute Head Contact(Mobile)</label>
             </div>
 
             <div class="input-field">
-                <input type="number" id="head_ph" name="head_ph" required>
+                <input type="number" id="head_ph" name="head_ph">
                 <label class="active" for="head_ph">Institute Head Contact(Land Line)</label>
             </div>
 
             <div class="input-field">
-                <input type="email" id="head_email" name="head_email" class="validate" required>
+                <input type="email" id="head_email" name="head_email" class="validate">
                 <label class="active" for="head_email">Institute Head Contact Email Id</label>
             </div>
             
@@ -250,12 +250,12 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             <hr><br>
 
             <div class="input-field">
-                <input type="text" id="tpo_name" name="tpo_name" required>
+                <input type="text" id="tpo_name" name="tpo_name">
                 <label class="active" for="tpo_name">Institute TPO Name</label>
             </div>
 
             <div class="input-field">
-                <input type="number" id="tpo_contact1" name="tpo_contact1" pattern="[6-9]{1}[0-9]{9}" required>
+                <input type="number" id="tpo_contact1" name="tpo_contact1" required>
                 <label class="active" for="tpo_contact1">Institute TPO Contact Number-1</label>
             </div>
 
@@ -265,7 +265,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <input type="email" id="tpo_email" name="tpo_email" class="validate" required>
+                <input type="email" id="tpo_email" name="tpo_email" class="validate">
                 <label class="active" for="tpo_email">Institute TPO Email Id</label>
             </div>
             
@@ -273,32 +273,32 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             <hr><br>
 
             <div class="input-field">
-                <input type="number" id="num_cmp" name="num_cmp" min="0" required> 
+                <input type="number" id="num_cmp" name="num_cmp">
                 <label class="active" for="num_cmp">Institute Total Number of Computers</label>
             </div>
 
             <div class="input-field">
-                <input type="number" id="num_cmplab" name="num_cmplab" min="0"  required>
+                <input type="number" id="num_cmplab" name="num_cmplab">
                 <label class="active" for="num_cmplab">Institute Total Number of Computer Lab</label>
             </div>
 
             <div class="input-field">
-                <input type="number" id="min_num_cmp" name="min_num_cmp" min="0"  required>
+                <input type="number" id="min_num_cmp" name="min_num_cmp">
                 <label class="active" for="min_num_cmp">Minimum Number of Computers in a Lab</label>
             </div>
 
             <div class="input-field">
-                <input type="number" id="ispeed" name="ispeed" required min="0">
+                <input type="number" id="ispeed" name="ispeed">
                 <label class="active" for="ispeed">Institute Internet Speed (calculated only in Kbps)</label>
             </div>
 
             <div class="input-field">
-                <input type="number" id="hall_cap" name="hall_cap" required min="0" >
+                <input type="number" id="hall_cap" name="hall_cap">
                 <label class="active" for="hall_cap">Institute Total Hall Capacity</label>
             </div>
 
             <div class="input-field">
-                <input type="number" id="num_cctv" name="num_cctv" required min="0" >
+                <input type="number" id="num_cctv" name="num_cctv">
                 <label class="active" for="num_cctv">Institute Total CCTV Camera in LAB</label>
             </div>
 
@@ -306,7 +306,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 <div class="col s3" style="color: #9E9E9E;">Institute Has Optical Fiber LAN: </div>
 
                 <div class="col s9">
-                    <input class="with-gap" name="has_fiber" type="radio" id="has_fiber1" value="yes" required>
+                    <input class="with-gap" name="has_fiber" type="radio" id="has_fiber1" value="yes">
                     <label for="has_fiber1">Yes</label>
                     <input class="with-gap" name="has_fiber" type="radio" id="has_fiber2" value="no">
                     <label for="has_fiber2">No</label>

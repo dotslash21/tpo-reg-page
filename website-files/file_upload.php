@@ -28,6 +28,10 @@
         main {
             flex: 1 0 auto;
         }
+
+        #form-div {
+            border-right: 1px solid rgba(0,0,0,0.35);
+        }
     </style>
 </head>
 
@@ -42,36 +46,51 @@
     <main>
         <div class="container z-depth-3" id="form-container">
             <h3>File Input</h3>
-            <hr><br>
+            <hr>
+            <p>PDF and JPG, Less than 2MB</p><br>
             <!-- File Input Section -->
+            <div class="row">
+            <div class="col s6" id="form-div">
             <form action="file_upload.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="uploadfile" id="">
-                <button type="submit" name='submit'>Submit</button>
+                <div class="file-field input-field">
+                    <div class="btn blue darken-3">
+                        <span>Choose File</span>
+                        <input type="file" name="uploadfile">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="No file chosen!">
+                    </div>
+                </div>
+                <button type="submit" name="submit" class="btn btn-large green right">Submit</button>
+                <div class="clearfix"></div>
             </form>
-            <p>PDF and JPG, Less than 2MB</p>
+            </div>
+            <div class="col s6">
             <?php
                 if($_SERVER['REQUEST_METHOD']=="POST"){
                     $err= $_FILES['uploadfile']['error'];
                     if($err > 0){
-                        echo 'File Uploading Failed. Try again';
+                        echo '<span style="color: #EA4335;"> File Uploading Failed. Try again </span>';
                     }
                     else{
-                        echo "Uploaded file" . $_FILES['uploadfile']['name']."<br/>";
                         if($_FILES['uploadfile']['type'] == 'image/jpeg' || $_FILES['uploadfile']['type'] == 'application/pdf' ){
                             if($_FILES['uploadfile']['size'] < (1024*1024*1024*2) ){
                                 move_uploaded_file($_FILES['uploadfile']['tmp_name'],dirname(__FILE__)."/upload/".$_FILES['uploadfile']['name']);
-                                echo "File uploaded Succesfully";
+                                echo "File uploaded Succesfully" ."<br/>";
+                                echo "Uploaded file" . $_FILES['uploadfile']['name'];
                             }
                             else{
-                                echo "File Too large. Try less than 2 MB";
+                                echo '<span style= "color: #EA4335;" > File Too large. Try less than 2 MB </span>';
                             }
                         }
                         else{
-                            echo "File type Mismatched. Try JPG or PDF";
+                            echo '<span style="color: #EA4335;"> File type Mismatched. Try JPG or PDF </span>';
                         }
                     }   
                 }
             ?>
+            </div>
+            </div>
         </div>
     </main>
 
