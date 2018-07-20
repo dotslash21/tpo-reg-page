@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="container z-depth-3" id="form-container">
         <h3>Course Addition</h3>
         <hr><br>
-        <form action="course_select.php" method="GET">
+        <form>
         <div class="input-field" id="course_sel">
             <select multiple name="courses" id="courses_select">
                 <option value="" disabled selected>Choose your option</option>
@@ -89,12 +89,12 @@ $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degre
             <label>Select Institute Courses</label>
         </div>
 
-            <button  class="btn btn-large yellow darken-4 right" id="lock">Lock Choices</button>
+            <div class="btn btn-large yellow darken-4 right" id="lock">Lock Choices</div>
             <div class="clearfix"></div>
         </form>
         <br><br>
         <form action="course_select.php" method="post" id="course_form">
-
+            <!-- jQuery GENERATED -->
         </form>
     </div>
     </main>
@@ -125,14 +125,13 @@ $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degre
     <script>
     $('#lock').click(function() {
         var course_array = $('#courses_select').val();
-        $('#course_form').append('<input type="checkbox" /> ' + text + '<br />');
-        
-        /*
-        <div class="input-field">
-            <input type="number" min="0" id="btech|cse" name="btech|cse">
-            <label class="active" for="btech|cse">B.Tech - CSE</label>
-        </div>
-        */
+        $("#course_form").empty();
+        if (course_array.length > 0) {
+            $("#course_form").append('<p>Please enter the corresponding intake capacity for the following selected courses in the fields below.</p>');
+        }
+        for (var item in course_array) {
+            $("#course_form").append('<div class="input-field"><input type="number" id="'+item+'" name="'+course_array[item]+'" min="0" required><label for="'+item+'">'+course_array[item]+'</label>');
+        }
     });
 </script>
 </body>
