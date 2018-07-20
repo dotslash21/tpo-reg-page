@@ -48,7 +48,7 @@
 
             <form action="intake.php" method="POST">
                 <div class="input-field">
-                    <input type="text" id="btech|cse" name="btech|cse">
+                    <input type="number" min="0" id="btech|cse" name="btech|cse">
                     <label class="active" for="btech|cse">B.Tech - CSE</label>
                 </div>
             </form>
