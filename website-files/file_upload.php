@@ -28,6 +28,10 @@
         main {
             flex: 1 0 auto;
         }
+
+        #form-div {
+            border-right: 1px solid rgba(0,0,0,0.35);
+        }
     </style>
 </head>
 
@@ -42,13 +46,26 @@
     <main>
         <div class="container z-depth-3" id="form-container">
             <h3>File Input</h3>
-            <hr><br>
+            <hr>
+            <p>PDF and JPG, Less than 2MB</p><br>
             <!-- File Input Section -->
+            <div class="row">
+            <div class="col s6" id="form-div">
             <form action="file_upload.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="uploadfile" id="">
-                <button type="submit" name='submit'>Submit</button>
+                <div class="file-field input-field">
+                    <div class="btn blue darken-3">
+                        <span>Choose File</span>
+                        <input type="file" name="uploadfile">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="No file chosen!">
+                    </div>
+                </div>
+                <button type="submit" name="submit" class="btn btn-large green right">Submit</button>
+                <div class="clearfix"></div>
             </form>
-            <p>PDF and JPG, Less than 2MB</p>
+            </div>
+            <div class="col s6">
             <?php
                 if($_SERVER['REQUEST_METHOD']=="POST"){
                     $err= $_FILES['uploadfile']['error'];
@@ -72,6 +89,8 @@
                     }   
                 }
             ?>
+            </div>
+            </div>
         </div>
     </main>
 
