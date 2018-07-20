@@ -75,7 +75,9 @@
                     else{
                         if($_FILES['uploadfile']['type'] == 'image/jpeg' || $_FILES['uploadfile']['type'] == 'application/pdf' ){
                             if($_FILES['uploadfile']['size'] < (1024*1024*1024*2) ){
-                                move_uploaded_file($_FILES['uploadfile']['tmp_name'],dirname(__FILE__)."/upload/".$_FILES['uploadfile']['name']);
+                                $temp = explode(".", $_FILES["uploadfile"]["name"]);
+                                $newfilename ="111".".". end($temp);
+                                move_uploaded_file($_FILES['uploadfile']['tmp_name'],dirname(__FILE__)."/upload/".$newfilename);
                                 echo "File uploaded Succesfully" ."<br/>";
                                 echo "Uploaded file" . $_FILES['uploadfile']['name'];
                             }
@@ -120,26 +122,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-GUD MARA
-
-echo $image_name= $_FILES['image']['name']; echo "<br>"; 
-	echo $image_size= $_FILES['image']['size']; echo "<br>";
-	echo $image_tmp_name= $_FILES['image']['tmp_name']; echo "<br>";
-	echo $image_type = $_FILES['image']['type']; echo "<br>";
-	
-	echo $file_ext = strtolower(end(explode(".",$_FILES['image']['name'])));
-	
-	$arr = array("jpeg","jpg","png","gif");
-	echo $newfilename = time().rand(0,9999).$image_name;
-	
-	//if(in_array($file_ext,$arr)){
-		//if($image_size < 200000){
-			move_uploaded_file($_FILES['image']['tmp_name'],"C:/xampp/htdocs/".$newfilename);
-			echo "Upload Successfull";
