@@ -352,7 +352,7 @@
             sessionStorage.address = document.getElementById("address").value; 
             sessionStorage.pin = document.getElementById("pin").value; 
             sessionStorage.inst_state = document.getElementById("inst_state").value; 
-            sessionStorage.ins_dst_sel = document.getElementById("ins_dst_sel").value; 
+            sessionStorage.ins_dst = document.getElementByName("ins_dst")[0].value;
             sessionStorage.number = document.getElementById("number").value; 
             sessionStorage.email = document.getElementById("email").value; 
             sessionStorage.website = document.getElementById("website").value; 
