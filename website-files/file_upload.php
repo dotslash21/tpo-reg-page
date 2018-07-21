@@ -120,26 +120,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-GUD MARA
-
-echo $image_name= $_FILES['image']['name']; echo "<br>"; 
-	echo $image_size= $_FILES['image']['size']; echo "<br>";
-	echo $image_tmp_name= $_FILES['image']['tmp_name']; echo "<br>";
-	echo $image_type = $_FILES['image']['type']; echo "<br>";
-	
-	echo $file_ext = strtolower(end(explode(".",$_FILES['image']['name'])));
-	
-	$arr = array("jpeg","jpg","png","gif");
-	echo $newfilename = time().rand(0,9999).$image_name;
-	
-	//if(in_array($file_ext,$arr)){
-		//if($image_size < 200000){
-			move_uploaded_file($_FILES['image']['tmp_name'],"C:/xampp/htdocs/".$newfilename);
-			echo "Upload Successfull";
