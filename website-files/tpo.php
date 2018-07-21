@@ -1,64 +1,5 @@
-<?php
-session_start();
-define("DBHOST","localhost");
-define("DBUSERNAME","root");
-define("DBPASSWORD","");
-define("DB","cpc_tpo");
-$con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
-if($_SERVER['REQUEST_METHOD']=="POST")
-{
-    $name=$_POST['name'];
-	$inst_code=$_POST['inst_code'];
-    $uid=$_POST['uid'];
-    $password=$_POST['password'];
-    $estd=$_POST['estd'];
-    $accrd=$_POST['accrd'];
-    $inst_type=$_POST['inst_type'];
-    $affli=$_POST['affli'];
-    $inst_appr=$_POST['inst_appr'];
-    $address=$_POST['address'];
-    $pin=$_POST['pin'];
-    $inst_state=$_POST['inst_state'];
-    $ins_dst=$_POST['ins_dst'];
-    $number=$_POST['number'];
-    $email=$_POST['email'];
-    $website=$_POST['website'];
-    $head_name=$_POST['head_name'];
-    $head_desg=$_POST['head_desg'];
-	$head_mob=$_POST['head_mob'];
-	$head_ph=$_POST['head_ph'];
-	$head_email=$_POST['head_email'];
-	$tpo_name=$_POST['tpo_name'];
-	$tpo_contact1=$_POST['tpo_contact1'];
-	$tpo_contact2=$_POST['tpo_contact2'];
-	$tpo_email=$_POST['tpo_email'];
-	$num_cmp=$_POST['num_cmp'];
-	$num_cmplab=$_POST['num_cmplab'];
-	$min_num_cmp=$_POST['min_num_cmp'];
-	$ispeed=$_POST['ispeed'];
-	$hall_cap=$_POST['hall_cap'];
-	$num_cctv=$_POST['num_cctv'];
-    $has_fiber=$_POST['has_fiber'];
-    $_SESSION['coll_id']=$uid;
-	
-	$sql = "Insert into cred(inst_name,inst_code,uid,pwd,estd,inst_accrd,inst_type,inst_affl,inst_aprv,state,district,pin,address,phone,email,website,head_name,
-	inst_headdesg,head_contact,head_mob,head_email,tpo_name,tpo_ph,tpo_ph2,tpo_email,no_of_comp,num_cmplab,min_num_cmp,int_speed,hall_cap,fibop_lan,cctv_no)values(
-	'".$name."','".$inst_code."','".$uid."','".$password."','".$estd."','".$accrd."','".$inst_type."','".$affli."','".$inst_appr."','".$inst_state."','".$ins_dst."',
-	'".$pin."','".$address."','".$number."','".$email."','".$website."','".$head_name."','".$head_desg."','".$head_ph."','".$head_mob."','".$head_email."','".$tpo_name."',
-	'".$tpo_contact1."','".$tpo_contact2."','".$tpo_email."','".$num_cmp."','".$num_cmplab."','".$min_num_cmp."','".$ispeed."','".$hall_cap."','".$num_cctv."',
-	'".$has_fiber."')";
-	mysqli_query($con,$sql);
-    echo "Successfully Inserted data!";
-    header("Location:course_select.php");
-}
-?>
-
-
-
-
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>CPC TPO Registration</title>
     <meta charset="utf-8" />
@@ -89,7 +30,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
     <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
-        <form method="POST">
+        <form method="POST" name="frm">
             <h4>Institute Details</h4>
             <hr><br>
 
@@ -115,7 +56,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <select name="accrd" required>
+                <select name="accrd" id="accrd" required>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="NAAC-A+">NAAC-A+</option>
                     <option value="NAAC-A">NAAC-A</option>
@@ -127,7 +68,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <select name="inst_type" required>
+                <select name="inst_type" id="inst_type" required>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="Government">Government</option>
                     <option value="Government-Aided">Government-Aided</option>
@@ -137,7 +78,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <select name="affli" required>
+                <select name="affli" id="affli" required>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="MAKAUT">Maulana Kalam Azad University of Technology</option>
                     <option value="CU">Calcutta University</option>
@@ -148,7 +89,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field">
-                <select name="inst_appr" required>
+                <select name="inst_appr" id="inst_appr" required>
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">SELECT-1</option>
                     <option value="2">SELECT-2</option>
@@ -186,7 +127,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <div class="input-field" id="district_txt">
-                <input type="text" id="ins_dst_txt" name="ins_dst" required>
+                <input type="text" id="ins_dst_txt" name="ins_dst">
                 <label class="active" for="ins_dst_txt">Institute District</label>
             </div>
 
@@ -314,7 +255,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
             </div>
 
             <button class="btn btn-large red left" type="reset">Reset</button>
-            <button class="btn btn-large green right" type="submit">Submit & Continue</button>
+            <button class="btn btn-large green right" type="submit" onclick="clicked()">Submit & Continue</button>
 
             <div class="clearfix"></div>
         </form>
@@ -323,7 +264,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     <footer class="page-footer blue darken-3">
         <div class="footer-copyright blue darken-4">
             <div class="container">
-                Copyright � 2018. CPC, West Bengal
+                Copyright &copy; 2018. CPC, West Bengal
                 <a class="grey-text text-lighten-4 right" href="http://gcettb.ac.in/home">Designed at GCETTB</a>
             </div>
         </div>
@@ -364,6 +305,78 @@ if($_SERVER['REQUEST_METHOD']=="POST")
                 }
             });
         });
+    </script>
+        
+    <script>
+        
+
+        function clicked() {
+            if(fromCheck()){
+                formSave();
+                location.href='http://www.google.com';
+            }
+        }
+
+        function fromCheck() {
+            for (let i = 0; i < 37;i++){
+                if(i!=17){
+                    if(document.forms['frm'][i].value == ""){
+                        alert("Please check all empty fields" + document.forms['frm'][i].name );
+                        return false;
+                        break;
+                    }
+                }
+            }
+            return true;
+        }
+
+        function formSave(){
+            if(typeof(Storage) !== 'undefined'){
+                var has_fiber;
+                if(document.getElementById('has_fiber1').checked){
+                    has_fiber = document.getElementById('has_fiber1').value;
+                }
+                if(document.getElementById('has_fiber2').checked){
+                    has_fiber = document.getElementById('has_fiber2').value;
+                }
+
+            sessionStorage.name = document.getElementById("name").value;    //name
+            sessionStorage.inst_code = document.getElementById("inst_code").value;
+            sessionStorage.uid = document.getElementById("uid").value;
+            sessionStorage.password = document.getElementById("password").value;
+            sessionStorage.estd = document.getElementById("estd").value; 
+            sessionStorage.accrd = document.getElementById("accrd").value; 
+            sessionStorage.inst_type = document.getElementById("inst_type").value; 
+            sessionStorage.affli = document.getElementById("affli").value; 
+            sessionStorage.inst_appr = document.getElementById("inst_appr").value; 
+            sessionStorage.address = document.getElementById("address").value; 
+            sessionStorage.pin = document.getElementById("pin").value; 
+            sessionStorage.inst_state = document.getElementById("inst_state").value; 
+            sessionStorage.ins_dst_sel = document.getElementById("ins_dst_sel").value; 
+            sessionStorage.number = document.getElementById("number").value; 
+            sessionStorage.email = document.getElementById("email").value; 
+            sessionStorage.website = document.getElementById("website").value; 
+            sessionStorage.head_name = document.getElementById("head_name").value; 
+            sessionStorage.head_desg = document.getElementById("head_desg").value; 
+            sessionStorage.head_mob = document.getElementById("head_mob").value; 
+            sessionStorage.head_ph = document.getElementById("head_ph").value; 
+            sessionStorage.head_email = document.getElementById("head_email").value; 
+            sessionStorage.tpo_name = document.getElementById("tpo_name").value; 
+            sessionStorage.tpo_contact1 = document.getElementById("tpo_contact1").value; 
+            sessionStorage.tpo_contact2 = document.getElementById("tpo_contact2").value; 
+            sessionStorage.tpo_email = document.getElementById("tpo_email").value; 
+            sessionStorage.num_cmp = document.getElementById("num_cmp").value;
+            sessionStorage.num_cmplab = document.getElementById("num_cmplab").value;
+            sessionStorage.min_num_cmp = document.getElementById("min_num_cmp").value;
+            sessionStorage.ispeed = document.getElementById("ispeed").value;
+            sessionStorage.hall_cap = document.getElementById("hall_cap").value;
+            sessionStorage.num_cctv = document.getElementById("num_cctv").value;
+            sessionStorage.has_fiber = has_fiber;
+            }
+            else{
+                alert("Oops! Your browser don't support Web Storage");
+            }
+        }
     </script>
 </body>
 
