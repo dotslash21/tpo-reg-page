@@ -332,46 +332,39 @@
 
         function formSave(){
             if(typeof(Storage) !== 'undefined'){
-                var has_fiber;
-                if(document.getElementById('has_fiber1').checked){
-                    has_fiber = document.getElementById('has_fiber1').value;
-                }
-                if(document.getElementById('has_fiber2').checked){
-                    has_fiber = document.getElementById('has_fiber2').value;
-                }
 
-            sessionStorage.name = document.getElementById("name").value;    //name
-            sessionStorage.inst_code = document.getElementById("inst_code").value;
-            sessionStorage.uid = document.getElementById("uid").value;
-            sessionStorage.password = document.getElementById("password").value;
-            sessionStorage.estd = document.getElementById("estd").value; 
-            sessionStorage.accrd = document.getElementById("accrd").value; 
-            sessionStorage.inst_type = document.getElementById("inst_type").value; 
-            sessionStorage.affli = document.getElementById("affli").value; 
-            sessionStorage.inst_appr = document.getElementById("inst_appr").value; 
-            sessionStorage.address = document.getElementById("address").value; 
-            sessionStorage.pin = document.getElementById("pin").value; 
-            sessionStorage.inst_state = document.getElementById("inst_state").value; 
-            sessionStorage.ins_dst_sel = document.getElementById("ins_dst_sel").value; 
-            sessionStorage.number = document.getElementById("number").value; 
-            sessionStorage.email = document.getElementById("email").value; 
-            sessionStorage.website = document.getElementById("website").value; 
-            sessionStorage.head_name = document.getElementById("head_name").value; 
-            sessionStorage.head_desg = document.getElementById("head_desg").value; 
-            sessionStorage.head_mob = document.getElementById("head_mob").value; 
-            sessionStorage.head_ph = document.getElementById("head_ph").value; 
-            sessionStorage.head_email = document.getElementById("head_email").value; 
-            sessionStorage.tpo_name = document.getElementById("tpo_name").value; 
-            sessionStorage.tpo_contact1 = document.getElementById("tpo_contact1").value; 
-            sessionStorage.tpo_contact2 = document.getElementById("tpo_contact2").value; 
-            sessionStorage.tpo_email = document.getElementById("tpo_email").value; 
-            sessionStorage.num_cmp = document.getElementById("num_cmp").value;
-            sessionStorage.num_cmplab = document.getElementById("num_cmplab").value;
-            sessionStorage.min_num_cmp = document.getElementById("min_num_cmp").value;
-            sessionStorage.ispeed = document.getElementById("ispeed").value;
-            sessionStorage.hall_cap = document.getElementById("hall_cap").value;
-            sessionStorage.num_cctv = document.getElementById("num_cctv").value;
-            sessionStorage.has_fiber = has_fiber;
+            sessionStorage.name = document.getElementByName("name")[0].value;    //name
+            sessionStorage.inst_code = document.getElementByName("inst_code")[0].value;
+            sessionStorage.uid = document.getElementByName("uid")[0].value;
+            sessionStorage.password = document.getElementByName("password")[0].value;
+            sessionStorage.estd = document.getElementByName("estd")[0].value; 
+            sessionStorage.accrd = document.getElementByName("accrd")[0].value; 
+            sessionStorage.inst_type = document.getElementByName("inst_type")[0].value; 
+            sessionStorage.affli = document.getElementByName("affli")[0].value; 
+            sessionStorage.inst_appr = document.getElementByName("inst_appr")[0].value; 
+            sessionStorage.address = document.getElementByName("address")[0].value; 
+            sessionStorage.pin = document.getElementByName("pin")[0].value; 
+            sessionStorage.inst_state = document.getElementByName("inst_state")[0].value; 
+            sessionStorage.ins_dst = document.getElementByName("ins_dst")[0].value; 
+            sessionStorage.number = document.getElementByName("number")[0].value; 
+            sessionStorage.email = document.getElementByName("email")[0].value; 
+            sessionStorage.website = document.getElementByName("website")[0].value; 
+            sessionStorage.head_name = document.getElementByName("head_name")[0].value; 
+            sessionStorage.head_desg = document.getElementByName("head_desg")[0].value; 
+            sessionStorage.head_mob = document.getElementByName("head_mob")[0].value; 
+            sessionStorage.head_ph = document.getElementByName("head_ph")[0].value; 
+            sessionStorage.head_email = document.getElementByName("head_email")[0].value; 
+            sessionStorage.tpo_name = document.getElementByName("tpo_name")[0].value; 
+            sessionStorage.tpo_contact1 = document.getElementByName("tpo_contact1")[0].value; 
+            sessionStorage.tpo_contact2 = document.getElementByName("tpo_contact2")[0].value; 
+            sessionStorage.tpo_email = document.getElementByName("tpo_email")[0].value; 
+            sessionStorage.num_cmp = document.getElementByName("num_cmp")[0].value;
+            sessionStorage.num_cmplab = document.getElementByName("num_cmplab")[0].value;
+            sessionStorage.min_num_cmp = document.getElementByName("min_num_cmp")[0].value;
+            sessionStorage.ispeed = document.getElementByName("ispeed")[0].value;
+            sessionStorage.hall_cap = document.getElementByName("hall_cap")[0].value;
+            sessionStorage.num_cctv = document.getElementByName("num_cctv")[0].value;
+            sessionStorage.has_fiber = document.getElementByName("has_fiber")[0].value;
             }
             else{
                 alert("Oops! Your browser don't support Web Storage");
