@@ -93,7 +93,7 @@ $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degre
             <div class="clearfix"></div>
         </form>
         <br><br>
-        <form action="course_select.php" method="post" id="course_form">
+        <form action="course_select.php" method="get" id="course_form">
             <!-- jQuery GENERATED -->
         </form>
     </div>
@@ -131,6 +131,9 @@ $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degre
         }
         for (var item in course_array) {
             $("#course_form").append('<div class="input-field"><input type="number" id="'+item+'" name="'+course_array[item]+'" min="0" required><label for="'+item+'">'+course_array[item]+'</label>');
+        }
+        if (course_array.length > 0) {
+            $("#course_form").append('<button type="submit" class="btn btn-large green darken-2 right" id="lock">Submit & Continue</button><div class="clearfix"></div>');
         }
     });
 </script>

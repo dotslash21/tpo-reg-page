@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -35,132 +31,73 @@
 
     <main>
         <div class="container z-depth-3" id="form-container">
-            <div class="input-field">
-                <input type="text" id="name" name="name">
-                <label class="active" for="name">Institute Name</label>
-            </div>
-            <div class="input-field">
-                <input type="number" id="inst_code" name="inst_code">
-                <label class="active" for="inst_code">Institute code</label>
-            </div>
-            <div class="input-field">
-                <input type="text" id="uid" name="uid" >
-                <label class="active" for="uid">Institute User ID</label>
-            </div>
-            <div class="input-field">
-                <input type="password" id="password" name="password" >
-                <label class="active" for="password">Password</label>
-            </div>
-            <div class="input-field">
-                <input type="number" id="estd" name="estd" min="1800" class="validate">
-                <label class="active" for="estd">Institute Establishment Year</label>
-            </div>
-            <div class="input-field">
-                <input type="number" id="accrd" name="accrd" min="1800" class="validate" >
-                <label class="active" for="estd">Institute Accriditated By</label>
-            </div>
-            <div class="input-field">
-                <select name="accrd" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="NAAC-A+">NAAC-A+</option>
-                    <option value="NAAC-A">NAAC-A</option>
-                    <option value="NAAC-B">NAAC-B</option>
-                    <option value="NAAC-C">NAAC-C</option>
-                    <option value="NAAC-D">NAAC-D</option>
-                </select>
-                <label>Institute Accriditated By</label>
-            </div>
+            <h4>Institute Details</h4>
+            <hr>
+            <br>
 
             <div class="input-field">
-                <select name="inst_type" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="Government">Government</option>
-                    <option value="Government-Aided">Government-Aided</option>
-                    <option value="Self-Financed">Self-Financed</option>
-                </select>
-                <label>Institute Type</label>
+                <input type="text" id="name" name="name" required disabled value="I am not editable">
+                <label for="name">Institute Name</label>
             </div>
-
             <div class="input-field">
-                <select name="affli" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="MAKAUT">Maulana Kalam Azad University of Technology</option>
-                    <option value="CU">Calcutta University</option>
-                    <option value="JU">Jadavpur University</option>
-                    <option value="KU">University of Kalyani</option>
-                </select>
-                <label>Institute Affiliated By</label>
+                <input type="number" id="inst_code" name="inst_code" required disabled value="1234">
+                <label for="inst_code">Institute code</label>
             </div>
-
             <div class="input-field">
-                <select name="inst_appr" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">SELECT-1</option>
-                    <option value="2">SELECT-2</option>
-                    <option value="3">SELECT-3</option>
-                </select>
-                <label>Institute Approved By</label>
+                <input type="text" id="uid" name="uid" required disabled value="I am not editable">
+                <label for="uid">Institute User ID</label>
             </div>
-
             <div class="input-field">
-                <textarea id="address" class="materialize-textarea" name="address" required></textarea>
-                <label class="active" for="address">Institute Address</label>
+                <input type="password" id="password" name="password" required disabled value="I am not editable">
+                <label for="password">Password</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="pin" name="pin" pattern="\d{6}" min="0" required>
-                <label for="pin" class="active">Institute PIN</label>
+                <input type="number" id="estd" name="estd" required disabled value="1980">
+                <label for="estd">Institute Establishment Year</label>
             </div>
-
             <div class="input-field">
-                <select name="inst_state" id="inst_state" required>
-                    <?php 
-                $a=['Andaman and Nicobar Islands(AN)', 'Andhra Pradesh (AP)', 'Arunachal Pradesh (AR)', 
-                    'Assam (AS)', 'Bihar (BR)', 'Chandigarh (CH)', 'Chhattisgarh (CG)', 
-                    'Dadra and Nagar Haveli (DN)', 'Daman and Diu (DD)', 'Goa (GA)', 'Gujarat (GJ)', 
-                    'Haryana (HR)', 'Himachal Pradesh (HP)', 'Jammu and Kashmir (JK)', 'Jharkhand (JH)', 
-                    'Karnataka (KA)', 'Kerala (KL)', 'Lakshadweep (LD)', 'Madhya Pradesh (MP)', 
-                    'Maharashtra (MH)', 'Manipur (MN)', 'Meghalaya (ML)', 'Mizoram (MZ)', 'Nagaland (NL)', 
-                    'National Capital Territory of Delhi (DL)', 'Odisha(OR)', 'Pondicherry (PY)', 
-                    'Punjab (PB)', 'Rajasthan (RJ)', 'Sikkim (SK)', 'Tamil Nadu (TN)', 'Telangana (TS)', 
-                    'Tripura (TR)', 'Uttar Pradesh (UP)', 'Uttarakhand (UK)', 'West Bengal (WB)'];
-                for( $i = 0; $i<count($a);$i++ ){
-                    echo "<option value='$a[$i]'>$a[$i]</option>";};?>
-                </select>
-                <label>Institute State</label>
+                <input type="text" id="accrd" name="accrd" required disabled value="I am not editable">
+                <label for="accrd">Institute Accriditated By</label>
             </div>
-
-            <div class="input-field" id="district_txt">
-                <input type="text" id="ins_dst_txt" name="ins_dst" required>
-                <label class="active" for="ins_dst_txt">Institute District</label>
-            </div>
-
-            <div class="input-field" id="district_sel">
-                <select id="ins_dst_sel" name="">
-                    <?php 
-					$a=['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur','Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 
-					'Kalimpong','Kolkata','Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Bardhaman','Paschim Medinipur', 'Purba Bardhaman',
-					 'Purba Medinipur', 'Purulia', 'South 24 Parganas','Uttar Dinajpur'];
-				for( $i = 0; $i<count($a);$i++ ){
-				echo "<option value='$a[$i]'>$a[$i]</option>";};
-				?>
-                </select>
-                <label for="ins_dst_sel">Institute District</label>
-            </div>
-
             <div class="input-field">
-                <input type="number" id="number" name="number" class="validate" min="0" required>
-                <label for="number" class="active">Institute Contact Number</label>
+                <input type="text" id="inst_type" name="inst_type" required disabled value="I am not editable">
+                <label for="inst_type">Institute Type</label>
             </div>
-
             <div class="input-field">
-                <input type="email" id="email" name="email" class="validate" required>
-                <label class="active" for="email">Institute E-mail</label>
+                <input type="text" id="affli" name="affli" required disabled value="I am not editable">
+                <label for="affli">Institute Affiliated By</label>
             </div>
-
             <div class="input-field">
-                <input type="url" id="website" name="website" class="validate" required>
-                <label class="active" for="website">Institute Website</label>
+                <input type="text" id="inst_appr" name="inst_appr" required disabled value="I am not editable">
+                <label for="inst_appr">Institute Approved By</label>
+            </div>
+            <div class="input-field">
+                <textarea id="address" class="materialize-textarea" name="address" required disabled>I am not editable</textarea>
+                <label for="address">Institute Address</label>
+            </div>
+            <div class="input-field">
+                <input type="number" id="pin" name="pin" required disabled value="123456">
+                <label for="pin">Institute PIN</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="inst_state" name="inst_state" required disabled value="I am not editable">
+                <label for="inst_state">Institute State</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="ins_dst" name="ins_dst" required disabled value="I am not editable">
+                <label for="ins_dst">Institute District</label>
+            </div>
+            <div class="input-field">
+                <input type="number" id="number" name="number" required disabled value="1234567890">
+                <label for="number">Institute Contact Number</label>
+            </div>
+            <div class="input-field">
+                <input type="email" id="email" name="email" required disabled value="I am not editable">
+                <label for="email">Institute E-mail</label>
+            </div>
+            <div class="input-field">
+                <input type="url" id="website" name="website" required disabled value="I am not editable">
+                <label for="website">Institute Website</label>
             </div>
 
             <h4>Institute Head Details</h4>
@@ -168,28 +105,24 @@
             <br>
 
             <div class="input-field">
-                <input type="text" id="head_name" name="head_name" required>
-                <label class="active" for="head_name">Institute Head Name</label>
+                <input type="text" id="head_name" name="head_name" required disabled value="I am not editable">
+                <label for="head_name">Institute Head Name</label>
             </div>
-
             <div class="input-field">
-                <input type="text" id="head_desg" name="head_desg" required>
-                <label class="active" for="head_desg">Institute Head Designation</label>
+                <input type="text" id="head_desg" name="head_desg" required disabled value="I am not editable">
+                <label for="head_desg">Institute Head Designation</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="head_mob" name="head_mob" pattern="[6-9]{1}[0-9]{9}" required>
-                <label class="active" for="head_mob">Institute Head Contact(Mobile)</label>
+                <input type="number" id="head_mob" name="head_mob" required disabled value="1234567890">
+                <label for="head_mob">Institute Head Contact(Mobile)</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="head_ph" name="head_ph" required>
-                <label class="active" for="head_ph">Institute Head Contact(Land Line)</label>
+                <input type="number" id="head_ph" name="head_ph" required disabled value="1234567890">
+                <label for="head_ph">Institute Head Contact(Land Line)</label>
             </div>
-
             <div class="input-field">
-                <input type="email" id="head_email" name="head_email" class="validate" required>
-                <label class="active" for="head_email">Institute Head Contact Email Id</label>
+                <input type="email" id="head_email" name="head_email" required disabled value="I am not editable">
+                <label for="head_email">Institute Head Contact Email Id</label>
             </div>
 
             <h4>Institute TPO Details</h4>
@@ -197,23 +130,20 @@
             <br>
 
             <div class="input-field">
-                <input type="text" id="tpo_name" name="tpo_name" required>
-                <label class="active" for="tpo_name">Institute TPO Name</label>
+                <input type="text" id="tpo_name" name="tpo_name" required disabled value="I am not editable">
+                <label for="tpo_name">Institute TPO Name</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="tpo_contact1" name="tpo_contact1" pattern="[6-9]{1}[0-9]{9}" required>
-                <label class="active" for="tpo_contact1">Institute TPO Contact Number-1</label>
+                <input type="number" id="tpo_contact1" name="tpo_contact1" required disabled value="1234567890">
+                <label for="tpo_contact1">Institute TPO Contact Number-1</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="tpo_contact2" name="tpo_contact2">
-                <label class="active" for="tpo_contact2">Institute TPO Contact Number-2</label>
+                <input type="number" id="tpo_contact2" name="tpo_contact2" disabled value="1234567890">
+                <label for="tpo_contact2">Institute TPO Contact Number-2</label>
             </div>
-
             <div class="input-field">
-                <input type="email" id="tpo_email" name="tpo_email" class="validate" required>
-                <label class="active" for="tpo_email">Institute TPO Email Id</label>
+                <input type="email" id="tpo_email" name="tpo_email" required disabled value="I am not editable">
+                <label for="tpo_email">Institute TPO Email Id</label>
             </div>
 
             <h4>Institute Features</h4>
@@ -221,45 +151,92 @@
             <br>
 
             <div class="input-field">
-                <input type="number" id="num_cmp" name="num_cmp" min="0" required>
-                <label class="active" for="num_cmp">Institute Total Number of Computers</label>
+                <input type="number" id="num_cmp" name="num_cmp" required disabled value="123">
+                <label for="num_cmp">Institute Total Number of Computers</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="num_cmplab" name="num_cmplab" min="0" required>
-                <label class="active" for="num_cmplab">Institute Total Number of Computer Lab</label>
+                <input type="number" id="num_cmplab" name="num_cmplab" required disabled value="123">
+                <label for="num_cmplab">Institute Total Number of Computer Lab</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="min_num_cmp" name="min_num_cmp" min="0" required>
-                <label class="active" for="min_num_cmp">Minimum Number of Computers in a Lab</label>
+                <input type="number" id="min_num_cmp" name="min_num_cmp" required disabled value="123">
+                <label for="min_num_cmp">Minimum Number of Computers in a Lab</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="ispeed" name="ispeed" required min="0">
-                <label class="active" for="ispeed">Institute Internet Speed (calculated only in Kbps)</label>
+                <input type="number" id="ispeed" name="ispeed" required disabled value="123">
+                <label for="ispeed">Institute Internet Speed (calculated only in Kbps)</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="hall_cap" name="hall_cap" required min="0">
-                <label class="active" for="hall_cap">Institute Total Hall Capacity</label>
+                <input type="number" id="hall_cap" name="hall_cap" required disabled value="123">
+                <label for="hall_cap">Institute Total Hall Capacity</label>
             </div>
-
             <div class="input-field">
-                <input type="number" id="num_cctv" name="num_cctv" required min="0">
-                <label class="active" for="num_cctv">Institute Total CCTV Camera in LAB</label>
+                <input type="number" id="num_cctv" name="num_cctv" required disabled value="123">
+                <label for="num_cctv">Institute Total CCTV Camera in LAB</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="has_fiber" name="has_fiber" required disabled value="123">
+                <label for="has_fiber">Institute Has Optical Fiber LAN</label>
             </div>
 
-            <div class="row">
-                <div class="col s3" style="color: #9E9E9E;">Institute Has Optical Fiber LAN: </div>
+            <h4>Courses Offered</h4>
+            <hr>
+            <br>
 
-                <div class="col s9">
-                    <input class="with-gap" name="has_fiber" type="radio" id="has_fiber1" value="yes" required>
-                    <label for="has_fiber1">Yes</label>
-                    <input class="with-gap" name="has_fiber" type="radio" id="has_fiber2" value="no">
-                    <label for="has_fiber2">No</label>
+            <!-- COURSES -->
+            <ul class="collection">
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col s8">B.Tech - Computer Science and Engineering</div>
+                        <div class="col s4">Intake: 110</div>
+                    </div>
+                </li>
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col s8">B.Tech - Mechanical Engineering</div>
+                        <div class="col s4">Intake: 110</div>
+                    </div>
+                </li>
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col s8">B.Tech - Electrical Engineering</div>
+                        <div class="col s4">Intake: 110</div>
+                    </div>
+                </li>
+                <li class="collection-item">
+                    <div class="row">
+                        <div class="col s8">B.Tech - Textile Technology</div>
+                        <div class="col s4">Intake: 110</div>
+                    </div>
+                </li>
+            </ul>
+
+            <h4>Certificate Upload</h4>
+            <hr>
+            <br>
+
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="http://www.wordtemplatesonline.net/wp-content/uploads/Sample-Letter-of-Interest-for-Teaching-Position-650x589.png">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>File Size: 2048 KB</p>
+                        <p>File Type: JPEG image</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="http://www.wordtemplatesonline.net/wp-content/uploads/Sample-Letter-of-Interest-for-Teaching-Position-650x589.png" target="_blank">View/Download</a>
+                    </div>
                 </div>
             </div>
+
+            <hr>
+
+            <button class="btn btn-large blue lighten-3 left" type="reset">Edit</button>
+            <button class="btn btn-large red lighten-2 right" type="submit" onclick="clicked()">Final Submission</button>
+
+            <div class="clearfix"></div>
+
         </div>
     </main>
 
