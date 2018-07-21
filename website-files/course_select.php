@@ -1,21 +1,19 @@
 <?php
 session_start();
-define("DBHOST","localhost");
-define("DBUSERNAME","root");
-define("DBPASSWORD","");
-define("DB","cpc_tpo");
-$con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
-// if($_SERVER['REQUEST_METHOD']=="POST")
-// {
-//     $courses=$_POST['courses'];
-//     $count=count($courses);
-//     for($i=1;$i<=$count;$i++)
-//     {
-//         $sql_degreeopt= "INSERT INTO college_crs(college_id,deg_optd) VALUE('". $_SESSION['coll_id']. "','".$courses[$i]."'";
-//         mysqli_query($con,$sql_degreeopt);  
-//     }
-
-// }
+define("DBHOST", "localhost");
+define("DBUSERNAME", "root");
+define("DBPASSWORD", "");
+define("DB", "cpc_tpo");
+$con = mysqli_connect(DBHOST, DBUSERNAME, DBPASSWORD, DB);
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $courses = $_POST['courses'];
+    $count = count($courses);
+    for ($i = 0; $i < $count; $i++) {
+        $sql_degreeopt = "INSERT INTO college_crs(college_id,deg_optd) VALUE('" . $_SESSION['coll_id'] . "','" . $courses[$i] . "'";
+        mysqli_query($con, $sql_degreeopt);
+    }
+    header("Location:intake.php");
+}
 
 ?>
 
@@ -65,34 +63,38 @@ $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
     <div class="container z-depth-3" id="form-container">
         <h3>Course Addition</h3>
         <hr><br>
-        <form action="course_select.php" method="GET">
-        <div class="input-field">
-            <select multiple name="courses">
+        <form>
+        <div class="input-field" id="course_sel">
+            <select multiple name="courses" id="courses_select">
                 <option value="" disabled selected>Choose your option</option>
                 <?php
-                    $sql_degree= "SELECT DISTINCT degree FROM course_list";
-                    $result_degree = mysqli_query($con,$sql_degree);
-                    while($array_degree = mysqli_fetch_array($result_degree)){
-                ?>
-                    <optgroup label="<?php echo $array_degree['degree'];?>">
+$sql_degree = "SELECT DISTINCT degree FROM course_list";
+$result_degree = mysqli_query($con, $sql_degree);
+while ($array_degree = mysqli_fetch_array($result_degree)) {
+    ?>
+                    <optgroup label="<?php echo $array_degree['degree']; ?>">
                         <?php
-                            $sql_opt= "SELECT course_name FROM course_list WHERE degree =\"". $array_degree['degree'] . "\"";
-                            $result_course = mysqli_query($con,$sql_opt);
-                            while($array_course = mysqli_fetch_array($result_course)){
-                        ?>
-                        <option value="<?php echo $array_degree['degree']." - ". $array_course['course_name'];?>"><?php echo $array_degree['degree']." - ". $array_course['course_name'];?></option> -->
+$sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degree['degree'] . "\"";
+    $result_course = mysqli_query($con, $sql_opt);
+    while ($array_course = mysqli_fetch_array($result_course)) {
+        ?>
+                        <option value="<?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?>"><?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?></option> -->
 
                 <?php
-                            }
-                    }
-                ?>
+}
+}
+?>
 
             </select>
             <label>Select Institute Courses</label>
         </div>
 
-            <button type="submit" class="btn btn-large green right">Submit & Continue</button>
+            <div class="btn btn-large yellow darken-4 right" id="lock">Lock Choices</div>
             <div class="clearfix"></div>
+        </form>
+        <br><br>
+        <form action="course_select.php" method="post" id="course_form">
+            <!-- jQuery GENERATED -->
         </form>
     </div>
     </main>
@@ -120,6 +122,18 @@ $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
         });
         $('select').material_select('destroy');
     </script>
+    <script>
+    $('#lock').click(function() {
+        var course_array = $('#courses_select').val();
+        $("#course_form").empty();
+        if (course_array.length > 0) {
+            $("#course_form").append('<p>Please enter the corresponding intake capacity for the following selected courses in the fields below.</p>');
+        }
+        for (var item in course_array) {
+            $("#course_form").append('<div class="input-field"><input type="number" id="'+item+'" name="'+course_array[item]+'" min="0" required><label for="'+item+'">'+course_array[item]+'</label>');
+        }
+    });
+</script>
 </body>
 
 </html>

@@ -75,7 +75,9 @@
                     else{
                         if($_FILES['uploadfile']['type'] == 'image/jpeg' || $_FILES['uploadfile']['type'] == 'application/pdf' ){
                             if($_FILES['uploadfile']['size'] < (1024*1024*1024*2) ){
-                                move_uploaded_file($_FILES['uploadfile']['tmp_name'],dirname(__FILE__)."/upload/".$_FILES['uploadfile']['name']);
+                                $temp = explode(".", $_FILES["uploadfile"]["name"]);
+                                $newfilename ="111".".". end($temp);
+                                move_uploaded_file($_FILES['uploadfile']['tmp_name'],dirname(__FILE__)."/upload/".$newfilename);
                                 echo "File uploaded Succesfully" ."<br/>";
                                 echo "Uploaded file" . $_FILES['uploadfile']['name'];
                             }
