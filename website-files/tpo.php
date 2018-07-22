@@ -30,7 +30,7 @@
 
     <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
-        <form method="POST" name="frm">
+        <form class="frm">
             <h4>Institute Details</h4>
             <hr><br>
 
@@ -127,12 +127,12 @@
             </div>
 
             <div class="input-field" id="district_txt">
-                <input type="text" id="ins_dst_txt" name="ins_dst">
+                <input type="text" id="ins_dst_txt" name="ins_dst" class="">
                 <label class="active" for="ins_dst_txt">Institute District</label>
             </div>
 
             <div class="input-field" id="district_sel">
-            <select id="ins_dst_sel" name="">
+            <select id="ins_dst_sel" name="" class="">
 				<?php 
 					$a=['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur','Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 
 					'Kalimpong','Kolkata','Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Bardhaman','Paschim Medinipur', 'Purba Bardhaman',
@@ -255,14 +255,14 @@
             </div>
 
             <button class="btn btn-large red left" type="reset">Reset</button>
-            <button class="btn btn-large green right" type="submit" onclick="clicked()">Submit & Continue</button>
+            <button class="btn btn-large green right" type="submit" name="submit" id="submit">Submit &amp; Continue</button>
 
             <div class="clearfix"></div>
         </form>
     </div>
 
     <footer class="page-footer blue darken-3">
-        <div class="footer-copyright blue darken-4">
+        <div class="footer-copyright blue darken-4"> 
             <div class="container">
                 Copyright &copy; 2018. CPC, West Bengal
                 <a class="grey-text text-lighten-4 right" href="http://gcettb.ac.in/home">Designed at GCETTB</a>
@@ -275,6 +275,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="form.js"></script>
     <script>
         $(".button-collapse").sideNav();
     </script>
@@ -296,80 +297,20 @@
                     $('#district_txt').attr("name", "");
                     $('#district_sel').show();
                     $('#district_sel').attr("name", "ins_dst");
+                    //Changing class
+                    $("#district_txt").removeClass("inst_dst");
+                    $("#district_sel").addClass("inst_dst");
                 }
                 else {
                     $('#district_txt').show();
                     $('#district_txt').attr("name", "ins_dst");
                     $('#district_sel').hide();
                     $('#district_sel').attr("name", "");
+                    $("#district_sel").removeClass("inst_dst");
+                    $("#district_txt").addClass("inst_dst");
                 }
             });
         });
-    </script>
-        
-    <script>
-        
-
-        function clicked() {
-            if(fromCheck()){
-                formSave();
-                location.href='http://www.google.com';
-            }
-        }
-
-        function fromCheck() {
-            for (let i = 0; i < 37;i++){
-                if(i!=17){
-                    if(document.forms['frm'][i].value == ""){
-                        alert("Please check all empty fields" + document.forms['frm'][i].name );
-                        return false;
-                        break;
-                    }
-                }
-            }
-            return true;
-        }
-
-        function formSave(){
-            if(typeof(Storage) !== 'undefined'){
-
-            sessionStorage.name = document.getElementByName("name")[0].value;    //name
-            sessionStorage.inst_code = document.getElementByName("inst_code")[0].value;
-            sessionStorage.uid = document.getElementByName("uid")[0].value;
-            sessionStorage.password = document.getElementByName("password")[0].value;
-            sessionStorage.estd = document.getElementByName("estd")[0].value; 
-            sessionStorage.accrd = document.getElementByName("accrd")[0].value; 
-            sessionStorage.inst_type = document.getElementByName("inst_type")[0].value; 
-            sessionStorage.affli = document.getElementByName("affli")[0].value; 
-            sessionStorage.inst_appr = document.getElementByName("inst_appr")[0].value; 
-            sessionStorage.address = document.getElementByName("address")[0].value; 
-            sessionStorage.pin = document.getElementByName("pin")[0].value; 
-            sessionStorage.inst_state = document.getElementByName("inst_state")[0].value; 
-            sessionStorage.ins_dst = document.getElementByName("ins_dst")[0].value; 
-            sessionStorage.number = document.getElementByName("number")[0].value; 
-            sessionStorage.email = document.getElementByName("email")[0].value; 
-            sessionStorage.website = document.getElementByName("website")[0].value; 
-            sessionStorage.head_name = document.getElementByName("head_name")[0].value; 
-            sessionStorage.head_desg = document.getElementByName("head_desg")[0].value; 
-            sessionStorage.head_mob = document.getElementByName("head_mob")[0].value; 
-            sessionStorage.head_ph = document.getElementByName("head_ph")[0].value; 
-            sessionStorage.head_email = document.getElementByName("head_email")[0].value; 
-            sessionStorage.tpo_name = document.getElementByName("tpo_name")[0].value; 
-            sessionStorage.tpo_contact1 = document.getElementByName("tpo_contact1")[0].value; 
-            sessionStorage.tpo_contact2 = document.getElementByName("tpo_contact2")[0].value; 
-            sessionStorage.tpo_email = document.getElementByName("tpo_email")[0].value; 
-            sessionStorage.num_cmp = document.getElementByName("num_cmp")[0].value;
-            sessionStorage.num_cmplab = document.getElementByName("num_cmplab")[0].value;
-            sessionStorage.min_num_cmp = document.getElementByName("min_num_cmp")[0].value;
-            sessionStorage.ispeed = document.getElementByName("ispeed")[0].value;
-            sessionStorage.hall_cap = document.getElementByName("hall_cap")[0].value;
-            sessionStorage.num_cctv = document.getElementByName("num_cctv")[0].value;
-            sessionStorage.has_fiber = document.getElementByName("has_fiber")[0].value;
-            }
-            else{
-                alert("Oops! Your browser don't support Web Storage");
-            }
-        }
     </script>
 </body>
 
