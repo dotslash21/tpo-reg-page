@@ -68,32 +68,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <select multiple name="courses" id="courses_select">
                 <option value="" disabled selected>Choose your option</option>
                 <?php
-$sql_degree = "SELECT DISTINCT degree FROM course_list";
-$result_degree = mysqli_query($con, $sql_degree);
-while ($array_degree = mysqli_fetch_array($result_degree)) {
-    ?>
-                    <optgroup label="<?php echo $array_degree['degree']; ?>">
-                        <?php
-$sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degree['degree'] . "\"";
-    $result_course = mysqli_query($con, $sql_opt);
-    while ($array_course = mysqli_fetch_array($result_course)) {
-        ?>
+                    $sql_degree = "SELECT DISTINCT degree FROM course_list";
+                    $result_degree = mysqli_query($con, $sql_degree);
+                    while ($array_degree = mysqli_fetch_array($result_degree)) {
+                ?>
+                <optgroup label="<?php echo $array_degree['degree']; ?>">
+                    <?php
+                        $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degree['degree'] . "\"";
+                        $result_course = mysqli_query($con, $sql_opt);
+                        while ($array_course = mysqli_fetch_array($result_course)) {
+                    ?>
                         <option value="<?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?>"><?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?></option> -->
 
                 <?php
-}
-}
-?>
+                        }
+                    }
+                ?>
 
             </select>
             <label>Select Institute Courses</label>
         </div>
-
+            
             <div class="btn btn-large yellow darken-4 right" id="lock">Lock Choices</div>
             <div class="clearfix"></div>
         </form>
         <br><br>
-        <form action="course_select.php" method="get" id="course_form">
+        <form id="course_form">
             <!-- jQuery GENERATED -->
         </form>
     </div>
@@ -133,10 +133,11 @@ $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degre
             $("#course_form").append('<div class="input-field"><input type="number" id="'+item+'" name="'+course_array[item]+'" min="0" required><label for="'+item+'">'+course_array[item]+'</label>');
         }
         if (course_array.length > 0) {
-            $("#course_form").append('<button type="submit" class="btn btn-large green darken-2 right" id="lock">Submit & Continue</button><div class="clearfix"></div>');
+            $("#course_form").append('<button type="submit" class="btn btn-large green darken-2 right" id="submit" name="submit">Submit & Continue</button><div class="clearfix"></div>');
         }
     });
 </script>
+<script src="./course-form.js"></script>
 </body>
 
 </html>
