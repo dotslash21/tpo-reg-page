@@ -91,6 +91,6 @@ $(document).on("submit","form.frm",function(event) {
     console.log(sessionStorage);
     if(sessionStorage.length == 28){
         //Redirect Location
-        // window.location = './2.html';
+        window.location = './course_select.php';
     }
 })
