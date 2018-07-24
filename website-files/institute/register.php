@@ -132,15 +132,9 @@
             </div>
 
             <div class="input-field" id="district_sel">
-            <select id="ins_dst_sel" name="" class="">
-				<?php 
-					$a=['Alipurduar', 'Bankura', 'Birbhum', 'Cooch Behar', 'Dakshin Dinajpur','Darjeeling', 'Hooghly', 'Howrah', 'Jalpaiguri', 'Jhargram', 
-					'Kalimpong','Kolkata','Malda', 'Murshidabad', 'Nadia', 'North 24 Parganas', 'Paschim Bardhaman','Paschim Medinipur', 'Purba Bardhaman',
-					 'Purba Medinipur', 'Purulia', 'South 24 Parganas','Uttar Dinajpur'];
-				for( $i = 0; $i<count($a);$i++ ){
-				echo "<option value='$a[$i]'>$a[$i]</option>";};
-				?>
-	           </select>
+                <select id="ins_dst_sel" name="" class="">
+                    <?php include('./inst_dst.php');?>
+                </select>
                 <label for="ins_dst_sel">Institute District</label>
             </div>
 
@@ -294,20 +288,16 @@
                 var selected = $('#inst_state option:selected').text();
                 if(selected == 'West Bengal (WB)') {
                     $('#district_txt').hide();
-                    $('#district_txt').attr("name", "");
+                    $('input#ins_dst_txt').attr("name", "");
                     $('#district_sel').show();
-                    $('#district_sel').attr("name", "ins_dst");
-                    //Changing class
-                    $("#district_txt").removeClass("inst_dst");
-                    $("#district_sel").addClass("inst_dst");
+                    $('#ins_dst_sel').attr("name", "ins_dst");
+
                 }
                 else {
                     $('#district_txt').show();
-                    $('#district_txt').attr("name", "ins_dst");
+                    $('input#ins_dst_txt').attr("name", "ins_dst");
                     $('#district_sel').hide();
-                    $('#district_sel').attr("name", "");
-                    $("#district_sel").removeClass("inst_dst");
-                    $("#district_txt").addClass("inst_dst");
+                    $('#ins_dst_sel').attr("name", "");
                 }
             });
         });

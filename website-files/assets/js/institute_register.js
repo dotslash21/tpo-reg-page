@@ -18,7 +18,7 @@ $(document).on("submit","form.frm",function(event) {
         address:        $("textarea[name='address']", _form).val(),
         pin:            $("input[name='pin']", _form).val(),
         inst_state:     $("select[name='inst_state']", _form).val(),
-        ins_dst:        document.getElementsByName('ins_dst').value,
+        ins_dst:        $("[name='ins_dst']", _form).val(),
         number:         $("input[name='number']", _form).val(),
         email:          $("input[name='email']", _form).val(),
         website:        $("input[name='website']", _form).val(),
@@ -108,7 +108,7 @@ $(document).on("submit","form.frm",function(event) {
         return false;
     }
     console.log(sessionStorage);
-    if(sessionStorage.length == 28){
+    if(sessionStorage.length == 32){
         //Redirect Location
         window.location = './course_select.php';
     }

@@ -4,7 +4,7 @@ $(document).on("submit","form#course_form",function(event) {
     var _form = $(this);
     var _error = $(".js-error", _form);
     
-    var ipLength = $("input", _form).length;
+    var courseLength = $("input", _form).length;
 
     console.log($("input", _form));
     for (let i = 0; i < $("input", _form).length; i++) {
@@ -14,9 +14,9 @@ $(document).on("submit","form#course_form",function(event) {
         sessionStorage['course-name-'+i] = $("input#"+i, _form).attr("name");
         sessionStorage['course-value-'+i] = $("input#"+i, _form).val();
     }
-    sessionStorage.courseLength = ipLength;
+    sessionStorage.courseLength = courseLength;
 
-    if(sessionStorage.length == (28 + (ipLength*2) + 1)){
+    if(sessionStorage.length == (32 + (courseLength*2) + 1)){
         //Redirect Location
         window.location = './summary.html';
     }

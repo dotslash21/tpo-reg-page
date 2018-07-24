@@ -17,7 +17,7 @@ $(document).ready(function(){
         $("input[name='inst_type']").val(sessionStorage.inst_type);
         $("input[name='affli']").val(sessionStorage.affli);
         $("input[name='inst_appr']").val(sessionStorage.inst_appr);
-        $("input[name='address']").val(sessionStorage.address);
+        document.getElementById("address").value = sessionStorage.address;
         $("input[name='pin']").val(sessionStorage.pin);
         $("input[name='inst_state']").val(sessionStorage.inst_state);
         $("input[name='ins_dst']").val(sessionStorage.ins_dst);
