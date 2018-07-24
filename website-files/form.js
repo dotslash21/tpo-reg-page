@@ -5,6 +5,7 @@ $(document).on("submit","form.frm",function(event) {
     var _error = $(".js-error", _form);
 
     dataObj = {
+        ////Basic Institute Details
         name:           $("input[name='name']", _form).val(),
         inst_code:      $("input[name='inst_code']", _form).val(),
         uid:            $("input[name='uid']", _form).val(),
@@ -21,18 +22,24 @@ $(document).on("submit","form.frm",function(event) {
         number:         $("input[name='number']", _form).val(),
         email:          $("input[name='email']", _form).val(),
         website:        $("input[name='website']", _form).val(),
+
+        // Institute head details
         head_name:      $("input[name='head_name']", _form).val(),
         head_desg:      $("input[name='head_desg']", _form).val(),
         head_mob:       $("input[name='head_mob']", _form).val(),
         head_ph:        $("input[name='head_ph']", _form).val(),
         head_email:     $("input[name='head_email']", _form).val(),
+
+        // Institute TPO details
         tpo_name:       $("input[name='tpo_name']", _form).val(),
         tpo_contact1:   $("input[name='tpo_contact1']", _form).val(),
         tpo_contact2:   $("input[name='tpo_contact2']", _form).val(),
         tpo_email:      $("input[name='tpo_email']", _form).val(),
+
+        //Instute INFO
         num_cmp:        $("input[name='num_cmp']", _form).val(),
         num_cmplab:     $("input[name='num_cmplab']", _form).val(),
-        min_num_cmp:     $("input[name='min_num_cmp']", _form).val(),
+        min_num_cmp:    $("input[name='min_num_cmp']", _form).val(),
         ispeed:         $("input[name='ispeed']", _form).val(),
         hall_cap:       $("input[name='hall_cap']", _form).val(),
         num_cctv:       $("input[name='num_cctv']", _form).val(),
@@ -53,6 +60,8 @@ $(document).on("submit","form.frm",function(event) {
     //Storing in sessionStorage
     if(typeof(Storage) !== undefined){
         //When SessionStorage is avaliable
+
+        //Basic Institute Details
         sessionStorage.name = dataObj.name;
         sessionStorage.inst_code = dataObj.inst_code;
         sessionStorage.uid = dataObj.uid;
@@ -69,11 +78,21 @@ $(document).on("submit","form.frm",function(event) {
         sessionStorage.number = dataObj.number;
         sessionStorage.email = dataObj.email;
         sessionStorage.website = dataObj.website;
+
+        // Institute head details
         sessionStorage.head_name = dataObj.head_name;
         sessionStorage.head_desg = dataObj.head_desg;
         sessionStorage.head_mob = dataObj.head_mob;
         sessionStorage.head_ph = dataObj.head_ph;
         sessionStorage.head_email = dataObj.head_email;
+
+        // Institute TPO details
+        sessionStorage.tpo_name = dataObj.tpo_name;
+        sessionStorage.tpo_contact1 = dataObj.tpo_contact1;
+        sessionStorage.tpo_contact2 = dataObj.tpo_contact2;
+        sessionStorage.tpo_email = dataObj.tpo_email;
+
+        //Instute INFO
         sessionStorage.num_cmp = dataObj.num_cmp;
         sessionStorage.num_cmplab = dataObj.num_cmplab;
         sessionStorage.min_num_cmp = dataObj.min_num_cmp;
