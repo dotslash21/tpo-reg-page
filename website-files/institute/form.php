@@ -153,101 +153,6 @@
                 <label class="active" for="website">Institute Website</label>
             </div>
             
-            <h4>Institute Head Details</h4>
-            <hr><br>
-
-            <div class="input-field">
-                <input type="text" id="head_name" name="head_name" required>
-                <label class="active" for="head_name">Institute Head Name</label>
-            </div>
-
-            <div class="input-field">
-                <input type="text" id="head_desg" name="head_desg" required>
-                <label class="active" for="head_desg">Institute Head Designation</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="head_mob" name="head_mob" pattern="[6-9]{1}[0-9]{9}" required>
-                <label class="active" for="head_mob">Institute Head Contact(Mobile)</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="head_ph" name="head_ph" required>
-                <label class="active" for="head_ph">Institute Head Contact(Land Line)</label>
-            </div>
-
-            <div class="input-field">
-                <input type="email" id="head_email" name="head_email" class="validate" required>
-                <label class="active" for="head_email">Institute Head Contact Email Id</label>
-            </div>
-            
-            <h4>Institute TPO Details</h4>
-            <hr><br>
-
-            <div class="input-field">
-                <input type="text" id="tpo_name" name="tpo_name" required>
-                <label class="active" for="tpo_name">Institute TPO Name</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="tpo_contact1" name="tpo_contact1" pattern="[6-9]{1}[0-9]{9}" required>
-                <label class="active" for="tpo_contact1">Institute TPO Contact Number-1</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="tpo_contact2" name="tpo_contact2">
-                <label class="active" for="tpo_contact2">Institute TPO Contact Number-2</label>
-            </div>
-
-            <div class="input-field">
-                <input type="email" id="tpo_email" name="tpo_email" class="validate" required>
-                <label class="active" for="tpo_email">Institute TPO Email Id</label>
-            </div>
-            
-            <h4>Institute Features</h4>
-            <hr><br>
-
-            <div class="input-field">
-                <input type="number" id="num_cmp" name="num_cmp" min="0" required> 
-                <label class="active" for="num_cmp">Institute Total Number of Computers</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="num_cmplab" name="num_cmplab" min="0"  required>
-                <label class="active" for="num_cmplab">Institute Total Number of Computer Lab</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="min_num_cmp" name="min_num_cmp" min="0"  required>
-                <label class="active" for="min_num_cmp">Minimum Number of Computers in a Lab</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="ispeed" name="ispeed" required min="0">
-                <label class="active" for="ispeed">Institute Internet Speed (calculated only in Kbps)</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="hall_cap" name="hall_cap" required min="0" >
-                <label class="active" for="hall_cap">Institute Total Hall Capacity</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="num_cctv" name="num_cctv" required min="0" >
-                <label class="active" for="num_cctv">Institute Total CCTV Camera in LAB</label>
-            </div>
-
-            <div class="row">
-                <div class="col s3" style="color: #9E9E9E;">Institute Has Optical Fiber LAN: </div>
-
-                <div class="col s9">
-                    <input class="with-gap" name="has_fiber" type="radio" id="has_fiber1" value="yes" required>
-                    <label for="has_fiber1">Yes</label>
-                    <input class="with-gap" name="has_fiber" type="radio" id="has_fiber2" value="no">
-                    <label for="has_fiber2">No</label>
-                </div>
-            </div>
-
             <button class="btn btn-large red left" type="reset">Reset</button>
             <button class="btn btn-large green right" type="submit" name="submit" id="submit">Submit &amp; Continue</button>
 
@@ -269,7 +174,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="../assets/js/institute_register.js"></script>
+    <script src="../assets/js/institute_from1.js"></script>
     <script>
         $(".button-collapse").sideNav();
     </script>
