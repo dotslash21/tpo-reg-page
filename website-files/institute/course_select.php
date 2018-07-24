@@ -137,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     });
 </script>
-<script src="./course-form.js"></script>
+<script src="../assets/js/institute-course-select.js"></script>
 </body>
 
 </html>
