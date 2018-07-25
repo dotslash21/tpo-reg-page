@@ -18,7 +18,7 @@ $(document).on("submit","form#course_form",function(event) {
 
     if(sessionStorage.length == (32 + (courseLength*2) + 1)){
         //Redirect Location
-        window.location = './summary.html';
+        window.location = './summary.php';
     }
     else{
         alert('Some Error occured');
