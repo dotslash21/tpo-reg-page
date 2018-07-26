@@ -60,48 +60,45 @@ $(document).submit(function(event) {
     console.log("Submitting");
     var dataObj = {
         name        : $("input[name='name']").val(),
-        inst_code   : sessionStorage.inst_code,
-        uid         : sessionStorage.uid,
-        password    : sessionStorage.password,
-        estd        : sessionStorage.estd,
-        accrd       : sessionStorage.accrd,
-        inst_type   : sessionStorage.inst_type,
-        affli       : sessionStorage.affli,
-        inst_appr   : sessionStorage.inst_appr,
-        address     : sessionStorage.address,
-        pin         : sessionStorage.pin,
-        inst_state  : sessionStorage.inst_state,
-        ins_dst     : sessionStorage.ins_dst,
-        number      : sessionStorage.number,
-        email       : sessionStorage.email,
-        website     : sessionStorage.website,
+        inst_code   : $("input[name='inst_code']").val(),
+        uid         : $("input[name='uid']").val(),
+        password    : $("input[name='password']").val(),
+        estd        : $("input[name='estd']").val(),
+        accrd       : $("input[name='accrd']").val(),
+        inst_type   : $("input[name='inst_type']").val(),
+        affli       : $("input[name='affli']"),
+        inst_appr   : $("input[name='inst_appr']").val(),
+        address     : document.getElementById("address").value,
+        pin         : $("input[name='pin']").val(),
+        inst_state  : $("input[name='inst_state']").val(),
+        ins_dst     : $("input[name='ins_dst']").val(),
+        number      : $("input[name='number']").val(),
+        email       : $("input[name='email']").val(),
+        website     : $("input[name='website']").val(),
 
         // Institute head details
-        head_name   : sessionStorage.head_name,
-        head_desg   : sessionStorage.head_desg,
-        head_mob    : sessionStorage.head_mob,
-        head_ph     : sessionStorage.head_ph,
-        head_email  : sessionStorage.head_email,
+        head_name   : $("input[name='head_name']").val(),
+        head_desg   : $("input[name='head_desg']").val(),
+        head_mob    : $("input[name='head_mob']").val(),
+        head_ph     : $("input[name='head_ph']").val(),
+        head_email  : $("input[name='head_email']"),
 
         // Institute TPO details
-        tpo_name    : sessionStorage.tpo_name,
-        tpo_contact1 : sessionStorage.tpo_contact1,
-        tpo_contact2 : sessionStorage.tpo_contact2,
-        tpo_email   : sessionStorage.tpo_email,
+        tpo_name    : $("input[name='tpo_name']").val(),
+        tpo_contact1 : $("input[name='tpo_contact1']").val(),
+        tpo_contact2 : $("input[name='tpo_contact2']").val(),
+        tpo_email   : $("input[name='tpo_email']").val(),
 
         //Instute INFO
-        num_cmp     : sessionStorage.num_cmp,
-        num_cmplab  : sessionStorage.num_cmplab,
-        min_num_cmp : sessionStorage.min_num_cmp,
-        ispeed      : sessionStorage.ispeed,
-        hall_cap    : sessionStorage.hall_cap,
-        num_cctv    : sessionStorage.num_cctv,
-        has_fiber   : sessionStorage.has_fiber,
+        num_cmp     : $("input[name='num_cmp']").val(),
+        num_cmplab  : $("input[name='num_cmplab']").val(),
+        min_num_cmp : $("input[name='min_num_cmp']").val(),
+        ispeed      : $("input[name='ispeed']").val(),
+        hall_cap    : $("input[name='hall_cap']").val(),
+        num_cctv    : $("input[name='num_cctv']").val(),
+        has_fiber   : $("input[name='has_fiber']").val(),
         courseLength: sessionStorage.courseLength
     };
-
-    var courseName = [];
-    var courseValue = [];
 
     $(".crs-name").each(function(i){
         courseName.push($(this).text());
@@ -124,8 +121,11 @@ $(document).submit(function(event) {
 	})
     .done(function ajaxDone(data) {
 		// Whatever data is 
-        if(data.message !== undefined){
-            console.log(data.message);
+        if(data.result !== undefined){
+            console.log(data.result);
+        }
+        if(data.redirect !== undefined){
+            window.location = data.redirect;
         }
 	
 	})
