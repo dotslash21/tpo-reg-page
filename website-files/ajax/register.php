@@ -1,6 +1,6 @@
 <?php
     //Connection
-    $con = '';
+    require("../inc/db-con.php");
 
     //escaping function
     function clean($con, $var){
