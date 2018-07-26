@@ -72,6 +72,10 @@
         else{
             //If not exists
             
+            $query_reg = "INSERT INTO cred(inst_name, inst_code, uid, pwd, estd, inst_accrd, inst_type, inst_aprv, state, district, pin,
+                                            address, phone, email, website, head_name, inst_headdesg, head_contact, head_mob, head_email, tpo_name
+                                            tpo_ph, tpo_ph2, tpo_email, no_of_comp, num_cmplsb, min_num_cmp, int_speed, hall_cap, fibob_lan, cctv_no)
+                                            VALUE('') ";
             //Looping for Course data
             for($i = 0; $i < $course_length; $i ++){
                 //escaping
@@ -79,7 +83,16 @@
                 $course_value_clean = clean($con, $course_value[$i]);
 
                 //query - multiple at once
-                $query .='';
+                if($course_name_clean != '' && $course_value_clean != ''){
+
+                    $query_crs .= 'INSERT INTO college_crs(college_id, deg_optd, intake) 
+                                        VALUES("'.$inst_code.'", "'.$course_name_clean.'", "'.$course_value_clean.'"); ';
+                    if($query_crs != ''){
+                        if(mysqli_multi_query($con, $query_crs)){
+                            //return successful
+                        }
+                    }
+                }
             }
         }
 
