@@ -34,7 +34,9 @@
             <h4>Institute Details</h4>
             <hr>
             <br>
+
             <form id="js-register">
+
                 <div class="input-field">
                     <input type="text" id="name" name="name" required disabled value="I am not editable">
                     <label for="name">Institute Name</label>
@@ -191,6 +193,7 @@
 
                 <button class="btn btn-large blue lighten-3 left" type="reset">Edit</button>
                 <button class="btn btn-large red lighten-2 right" type="submit" name="submit" id="submit">Final Submission</button>
+                
             </form>
             <div class="clearfix"></div>
         

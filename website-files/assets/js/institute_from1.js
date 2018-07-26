@@ -2,7 +2,6 @@ $(document).on("submit","form.frm",function(event) {
     event.preventDefault();
 
     var _form = $(this);
-    var _error = $(".js-error", _form);
 
     dataObj = {
         ////Basic Institute Details
@@ -25,15 +24,15 @@ $(document).on("submit","form.frm",function(event) {
     };
     console.log(dataObj);
 
-    // //All varification and helper massage done
-    // if(dataObj.email.length < 8){
-    //     _error.text("Plese enter a valid Email address").show();
-    //     return false;
-    // }
-    // else if(dataObj.password.length < 8){
-    //     _error.text("Please enter a password that is atleast 8 charecters").show();
-    //     return false;
-    // }
+    //All varification and helper massage done
+    if(dataObj.email.length < 8){
+        alert("Plese enter a valid Email address");
+        return false;
+    }
+    else if(dataObj.password.length < 8){
+        alert("Please enter a password that is atleast 8 charecters");
+        return false;
+    }
 
     //Storing in sessionStorage
     if(typeof(Storage) !== undefined){

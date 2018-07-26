@@ -5,7 +5,7 @@ $(document).ready(function(){
         $("#course-intake").empty();
         var cursLength = sessionStorage.courseLength;
         for (var i=0; i < cursLength ;i++) {
-            $("#course-intake").append('<li class="collection-item"><div class="row"><div class="col s8">'+sessionStorage['course-name-'+i]+'</div><div class="col s4">Intake: '+sessionStorage['course-value-'+i]+'</div></div></li>');
+            $("#course-intake").append('<li class="collection-item"><div class="row"><div class="col s8 crs-name">'+sessionStorage['course-name-'+i]+'</div><div class="col s4 crs-value">Intake: '+sessionStorage['course-value-'+i]+'</div></div></li>');
         }
         //Basic Institute Details
         $("input[name='name']").val(sessionStorage.name);
@@ -51,3 +51,94 @@ $(document).ready(function(){
         alert("Bug is there");
     }
 });
+
+
+//Registration
+$(document).submit(function(event) {
+    event.preventDefault();
+
+    console.log("Submitting");
+    var dataObj = {
+        name        : $("input[name='name']").val(),
+        inst_code   : sessionStorage.inst_code,
+        uid         : sessionStorage.uid,
+        password    : sessionStorage.password,
+        estd        : sessionStorage.estd,
+        accrd       : sessionStorage.accrd,
+        inst_type   : sessionStorage.inst_type,
+        affli       : sessionStorage.affli,
+        inst_appr   : sessionStorage.inst_appr,
+        address     : sessionStorage.address,
+        pin         : sessionStorage.pin,
+        inst_state  : sessionStorage.inst_state,
+        ins_dst     : sessionStorage.ins_dst,
+        number      : sessionStorage.number,
+        email       : sessionStorage.email,
+        website     : sessionStorage.website,
+
+        // Institute head details
+        head_name   : sessionStorage.head_name,
+        head_desg   : sessionStorage.head_desg,
+        head_mob    : sessionStorage.head_mob,
+        head_ph     : sessionStorage.head_ph,
+        head_email  : sessionStorage.head_email,
+
+        // Institute TPO details
+        tpo_name    : sessionStorage.tpo_name,
+        tpo_contact1 : sessionStorage.tpo_contact1,
+        tpo_contact2 : sessionStorage.tpo_contact2,
+        tpo_email   : sessionStorage.tpo_email,
+
+        //Instute INFO
+        num_cmp     : sessionStorage.num_cmp,
+        num_cmplab  : sessionStorage.num_cmplab,
+        min_num_cmp : sessionStorage.min_num_cmp,
+        ispeed      : sessionStorage.ispeed,
+        hall_cap    : sessionStorage.hall_cap,
+        num_cctv    : sessionStorage.num_cctv,
+        has_fiber   : sessionStorage.has_fiber,
+        courseLength: sessionStorage.courseLength
+    };
+
+    var courseName = [];
+    var courseValue = [];
+
+    $(".crs-name").each(function(i){
+        courseName.push($(this).text());
+    });
+    $(".crs-value").each(function(j){
+        courseValue.push($(this).text());
+    });
+
+    console.log(courseName);
+    console.log(courseValue);
+
+    //Start of AJAX process
+
+	$.ajax({
+		type: 'POST',
+		url: '../ajax/register.php',
+		data: {dataObj: dataObj, courseName: courseName, courseValue: courseValue},
+		dataType: 'json',
+		async: true,
+	})
+    .done(function ajaxDone(data) {
+		// Whatever data is 
+        if(data.message !== undefined){
+            console.log(data.message);
+        }
+	
+	})
+    .fail(function ajaxFailed(e){
+        // This Failed
+
+    })
+    .always(function ajaxAlwaysDoThis(data){
+        // Always do
+
+        console.log("Always");
+    })
+
+
+    return false;
+})
