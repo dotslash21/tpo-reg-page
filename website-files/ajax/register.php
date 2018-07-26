@@ -2,6 +2,11 @@
     //Connection
     $con = '';
 
+    //escaping function
+    function clean($con, $var){
+        return mysqli_real_escape_string($con, $var);
+    }
+
     if($_SERVER['REQUEST_METHOD'] == 'POST' || 1){
 
         //Always return Json format
@@ -50,19 +55,12 @@
 
         //Courses
         $course_length = $_POST['courseLength'];
-
         $course_name = $_POST['courseName'];
         $course_value= $_POST['courseValue'];
         
-        //return Variable
-        $return = [];
 
-        //escaping function
-        function clean($con, $var){
-            return mysqli_real_escape_string($con, $var);
-        }
-
-        //escaping college cred
+        //escaping college crediential
+        //Basic Details
         $name_clean         = clean($con, $name);
         $inst_code_clean    = clean($con, $inst_code);
         $uid_clean          = clean($con, $uid);
@@ -79,15 +77,21 @@
         $number_clean       = clean($con, $number);
         $email_clean        = clean($con, $email);
         $website_clean      = clean($con, $website);
+
+        //Head Details
         $head_name_clean    = clean($con, $head_name);
         $head_desg_clean    = clean($con, $head_desg);
         $head_mob_clean     = clean($con, $head_mob);
         $head_ph_clean      = clean($con, $head_ph);
         $head_email_clean   = clean($con, $head_email);
+
+        //Tpo Details
         $tpo_name_clean     = clean($con, $tpo_name);
         $tpo_contact1_clean = clean($con, $tpo_contact1);
         $tpo_contact2_clean = clean($con, $tpo_contact2);
         $tpo_email_clean    = clean($con, $tpo_email);
+
+        //Additional info
         $num_cmp_clean      = clean($con, $num_cmp);
         $num_cmplab_clean   = clean($con, $num_cmplab);
         $min_num_cmp_clean  = clean($con, $min_num_cmp);
@@ -95,6 +99,9 @@
         $hall_cap_clean     = clean($con, $hall_cap);
         $num_cctv_clean     = clean($con, $num_cctv);
         $has_fiber_clean    = clean($con, $has_fiber);
+
+        //return Variable
+        $return = [];
 
         //Check is already exist
         $query_usr = "SELECT inst_code FROM cred WHERE inst_code ='".$inst_code."' LIMIT 1";
@@ -123,20 +130,20 @@
                     if($course_name_clean != '' && $course_value_clean != ''){
 
                         $query_crs .= 'INSERT INTO college_crs(college_id, deg_optd, intake) 
-                                            VALUES("'.$inst_code.'", "'.$course_name_clean.'", "'.$course_value_clean.'"); ';
+                                            VALUES("'.$inst_code.'", "'.$course_name_clean.'", "'.$course_value_clean.'") ';
                         if($query_crs != ''){
+
                             if(mysqli_multi_query($con, $query_crs)){
-                                //return successful
+
+                                //return successful statements
+                                $return['result'] = 'Successful';
+                                $return['redirect'] = './file_upload.php';
                             }
                         }
                     }
                 }
             }
         }
-
-        
-
-        $return['message'] = 'done';
 
         echo json_encode($return, JSON_PRETTY_PRINT);
         exit;        
