@@ -5,7 +5,7 @@ $(document).ready(function(){
         $("#course-intake").empty();
         var cursLength = sessionStorage.courseLength;
         for (var i=0; i < cursLength ;i++) {
-            $("#course-intake").append('<li class="collection-item"><div class="row"><div class="col s8 crs-name">'+sessionStorage['course-name-'+i]+'</div><div class="col s4 crs-value">Intake: '+sessionStorage['course-value-'+i]+'</div></div></li>');
+            $("#course-intake").append('<li class="collection-item"><div class="row"><div class="col s8 crs-name">'+sessionStorage['course-name-'+i]+'</div><div class="col s4">Intake:<span class="crs-value"> '+sessionStorage['course-value-'+i]+'</span></div></div></li>');
         }
         //Basic Institute Details
         $("input[name='name']").val(sessionStorage.name);
@@ -66,7 +66,7 @@ $(document).submit(function(event) {
         estd        : $("input[name='estd']").val(),
         accrd       : $("input[name='accrd']").val(),
         inst_type   : $("input[name='inst_type']").val(),
-        affli       : $("input[name='affli']"),
+        affli       : $("input[name='affli']").val(),
         inst_appr   : $("input[name='inst_appr']").val(),
         address     : document.getElementById("address").value,
         pin         : $("input[name='pin']").val(),
@@ -81,7 +81,7 @@ $(document).submit(function(event) {
         head_desg   : $("input[name='head_desg']").val(),
         head_mob    : $("input[name='head_mob']").val(),
         head_ph     : $("input[name='head_ph']").val(),
-        head_email  : $("input[name='head_email']"),
+        head_email  : $("input[name='head_email']").val(),
 
         // Institute TPO details
         tpo_name    : $("input[name='tpo_name']").val(),
@@ -100,13 +100,16 @@ $(document).submit(function(event) {
         courseLength: sessionStorage.courseLength
     };
 
+    var courseName = [];
+    var courseValue = [];
+
     $(".crs-name").each(function(i){
         courseName.push($(this).text());
     });
     $(".crs-value").each(function(j){
         courseValue.push($(this).text());
     });
-
+    console.log(dataObj);
     console.log(courseName);
     console.log(courseValue);
 

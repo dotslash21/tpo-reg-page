@@ -118,7 +118,7 @@
             
             if(mysqli_query($con,$query_reg)){
                 //first college data stored
-
+                $return['first_sub'] = "First Submitting Done";
                 //Looping for Course data
                 for($i = 0; $i < $course_length; $i ++){
 
