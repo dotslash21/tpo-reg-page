@@ -1,20 +1,5 @@
 <?php
-session_start();
-define("DBHOST", "localhost");
-define("DBUSERNAME", "root");
-define("DBPASSWORD", "");
-define("DB", "cpc_tpo");
-$con = mysqli_connect(DBHOST, DBUSERNAME, DBPASSWORD, DB);
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $courses = $_POST['courses'];
-    $count = count($courses);
-    for ($i = 0; $i < $count; $i++) {
-        $sql_degreeopt = "INSERT INTO college_crs(college_id,deg_optd) VALUE('" . $_SESSION['coll_id'] . "','" . $courses[$i] . "'";
-        mysqli_query($con, $sql_degreeopt);
-    }
-    header("Location:intake.php");
-}
-
+    require("../inc/db-con.php");
 ?>
 
 

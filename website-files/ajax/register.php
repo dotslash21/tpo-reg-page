@@ -12,7 +12,10 @@
         //Always return Json format
         header('Content-Type: application/json');
 
+        //POST variables
         $dataObj = $_POST['dataObj'];
+        $course_name = $_POST['courseName'];
+        $course_value= $_POST['courseValue'];
         //Credentials
         //Basic Details
         $name       = $dataObj['name'];
@@ -56,8 +59,6 @@
 
         //Courses
         $course_length = $dataObj['courseLength'];
-        $course_name = $_POST['courseName'];
-        $course_value= $_POST['courseValue'];
         
 
         //escaping college crediential
@@ -112,7 +113,7 @@
         }
 
         //Check is already exist
-        $query_usr = "SELECT inst_code FROM cred WHERE inst_code ='".$inst_code."' LIMIT 1";
+        $query_usr = "SELECT inst_code FROM cred WHERE inst_code ='".$inst_code_clean."' LIMIT 1";
         $result_usr =  mysqli_query($con,$query_usr);
         if(mysqli_num_rows($result_usr) > 0){
             //If exists
@@ -138,7 +139,7 @@
 
                         $return['message2'] = "couse details found";
                         $query_crs = '';
-                        $query_crs .= 'INSERT INTO college_crs(college_id, deg_optd, intake) VALUES("'.$inst_code.'", "'.$course_name_clean.'", "'.$course_value_clean.'") ';
+                        $query_crs .= 'INSERT INTO college_crs(college_id, deg_optd, intake) VALUES("'.$inst_code_clean.'", "'.$course_name_clean.'", "'.$course_value_clean.'") ';
                         if($query_crs != ''){
                             $return['message3'] = "couse query ok";
                             if(mysqli_multi_query($con, $query_crs)){

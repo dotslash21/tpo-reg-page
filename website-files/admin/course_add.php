@@ -1,10 +1,5 @@
 <?php
-    session_start();
-    define("DBHOST","localhost");
-    define("DBUSERNAME","root");
-    define("DBPASSWORD","");
-    define("DB","cpc_tpo");
-    $con = mysqli_connect(DBHOST,DBUSERNAME,DBPASSWORD,DB);
+    include("../inc/db-con.php");
 
     if($_SERVER['REQUEST_METHOD']=="POST"){
         $degree= $_POST['degree'];
