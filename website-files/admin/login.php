@@ -67,7 +67,7 @@
     <main>
         <div class="container z-depth-3" id="form-container">
             <br>
-            <form class="admin-login">
+            <form id="admin-login">
                 <div class="input-field">
                     <input type="text" id="admin_id" name="admin_id" required>
                     <label class="active" for="admin_id">User ID</label>

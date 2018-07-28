@@ -64,7 +64,7 @@
                 <hr>
                 <br>
             </div>
-            <form action="admin.php" method="post">
+            <form action="course_add.php" method="post">
                 <div class="input-field" id="old_degree">
                     <select name="degree" id="old_degree_input">
                         <option value="" disabled selected>Choose your option</option>
