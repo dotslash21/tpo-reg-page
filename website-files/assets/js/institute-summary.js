@@ -113,27 +113,43 @@ $(document).submit(function(event) {
     console.log(courseName);
     console.log(courseValue);
 
+    var sendData = {dataObj: dataObj, courseName: courseName, courseValue: courseValue};
+    console.log(sendData);
     //Start of AJAX process
 
 	$.ajax({
 		type: 'POST',
 		url: '../ajax/register.php',
-		data: {dataObj: dataObj, courseName: courseName, courseValue: courseValue},
+		data: sendData,
 		dataType: 'json',
 		async: true,
 	})
     .done(function ajaxDone(data) {
-		// Whatever data is 
+        // Whatever data is 
+        if(data.db_con !== undefined){
+            console.log(data.db_con);
+        }
+        if(data.message !== undefined){
+            console.log(data.message);
+        }
+        if(data.message2 !== undefined){
+            console.log(data.message2);
+        }
+        if(data.message3 !== undefined){
+            console.log(data.message3);
+        }
         if(data.result !== undefined){
             console.log(data.result);
         }
         if(data.redirect !== undefined){
-            window.location = data.redirect;
+            console.log(data.redirect);
+            // window.location = data.redirect;
         }
 	
 	})
     .fail(function ajaxFailed(e){
         // This Failed
+        console.log(e);
 
     })
     .always(function ajaxAlwaysDoThis(data){
