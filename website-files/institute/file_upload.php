@@ -1,3 +1,11 @@
+<?php /*
+    if(!isset($_SESSION['inst_code'])){
+        print_r($_SESSION);
+        echo "You need to fill the whole form";
+        exit;
+    }*/
+?>
+
 <!DOCTYPE html>
 <html>
 

@@ -14,7 +14,7 @@
             if($_FILES['uploadfile']['type'] == 'image/jpeg' || $_FILES['uploadfile']['type'] == 'application/pdf' ){
                 if($_FILES['uploadfile']['size'] < (1024*1024*1024*2) ){
                     $temp = explode(".", $_FILES["uploadfile"]["name"]);
-                    $newfilename = $_SESSION['inst_code'].".". end($temp);
+                    $newfilename = "file".".". end($temp);
                     move_uploaded_file($_FILES['uploadfile']['tmp_name'],"../upload/".$newfilename);
                     $return['success'] = "File uploaded Succesfully" ."<br/>";
                     $return['fileName'] = "Uploaded file" . $_FILES['uploadfile']['name'];

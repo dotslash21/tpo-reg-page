@@ -146,10 +146,12 @@
 
                                 //return successful statements
                                 $return['result'] = 'Successful';
-                                $return['redirect'] = './file_upload.php';
+                                $return['redirect'] = './done.php';
 
                                 //add a session for file upload
-                                $_SESSION['id'] = $inst_code;
+                                // $_SESSION['inst_code'] =(int)$inst_code;
+                                // $return['1'] = $inst_code;
+                                // $return['2'] = $_SESSION['inst_code'];
                             }
                             else{
                                 $return['result'] = 'Error';
