@@ -49,7 +49,7 @@
                     <label class="active" for="admin_id">User ID</label>
                 </div>
                 <div class="input-field">
-                    <input type="password" id="admin_passwd" name="admin_passwd" required>
+                    <input type="password" id="admin_passwd" name="admin_password" required>
                     <label class="active" for="admin_passwd">Password</label>
                 </div>
                 <br>

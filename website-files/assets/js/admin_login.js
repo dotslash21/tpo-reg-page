@@ -5,24 +5,15 @@ $(document).on("submit","form.admin-login",function(event) {
     var _form = $(this);
 
     var dataObj = {
-        email: $("input[name='admin_id']", _form).val(),
-        password: $("input[name='admin_passwd']", _form).val()
+        id: $("input[name='admin_id']", _form).val(),
+        password: $("input[name='admin_password']", _form).val()
     };
-
-    if(dataObj.email.length < 8){
-        _error.text("Plese enter a valid Email address").show();
-        return false;
-    }
-    else if(dataObj.password.length < 8){
-        _error.text("Please enter a password that is atleast 8 charecters").show();
-        return false;
-    }
 
     //Start of AJAX process
 
 	$.ajax({
 		type: 'POST',
-		url: './ajax/login.php',
+		url: '../ajax/admin_login.php',
 		data: dataObj,
 		dataType: 'json',
 		async: true,
