@@ -146,6 +146,9 @@
                                 //return successful statements
                                 $return['result'] = 'Successful';
                                 $return['redirect'] = './file_upload.php';
+
+                                //add a session for file upload
+                                $_SESSION['inst_code'] = $inst_code;
                             }
                             else{
                                 $return['result'] = 'Error';

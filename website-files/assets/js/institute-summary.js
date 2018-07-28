@@ -109,12 +109,8 @@ $(document).submit(function(event) {
     $(".crs-value").each(function(j){
         courseValue.push($(this).text());
     });
-    console.log(dataObj);
-    console.log(courseName);
-    console.log(courseValue);
 
     var sendData = {dataObj: dataObj, courseName: courseName, courseValue: courseValue};
-    console.log(sendData);
     //Start of AJAX process
 
 	$.ajax({
@@ -126,30 +122,14 @@ $(document).submit(function(event) {
 	})
     .done(function ajaxDone(data) {
         // Whatever data is 
-        if(data.db_con !== undefined){
-            console.log(data.db_con);
-        }
-        if(data.message !== undefined){
-            console.log(data.message);
-        }
-        if(data.message2 !== undefined){
-            console.log(data.message2);
-        }
-        if(data.message3 !== undefined){
-            console.log(data.message3);
-        }
-        if(data.result !== undefined){
-            console.log(data.result);
-        }
         if(data.redirect !== undefined){
             console.log(data.redirect);
-            // window.location = data.redirect;
+            window.location = data.redirect;
         }
 	
 	})
     .fail(function ajaxFailed(e){
         // This Failed
-        console.log(e);
 
     })
     .always(function ajaxAlwaysDoThis(data){
