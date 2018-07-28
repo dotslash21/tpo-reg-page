@@ -18,6 +18,30 @@
             margin-top: -1em;
             margin-bottom: 2em;
         }
+        
+        @media (min-width: 768px) {
+            #form-container {
+                width: 50vw;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            #form-container {
+                width: 50vw;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 767px) {
+            #form-container {
+                width: 60vw;
+            }
+        }
+
+        @media (min-width: 320px) and (max-width: 480px) {
+            #form-container {
+                width: 70vw;
+            }
+        }
 
         body {
             display: flex;
