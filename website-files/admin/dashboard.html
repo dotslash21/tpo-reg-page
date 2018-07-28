@@ -19,6 +19,10 @@
             margin-bottom: 2em;
         }
 
+        .admin-button {
+            margin: 0.2em;
+        }
+
         body {
             display: flex;
             min-height: 100vh;
@@ -35,14 +39,44 @@
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
-            <a href="" class="brand-logo center">ADMIN PANEL</a>
+            <a href="" class="brand-logo center">ADMIN DASHBOARD</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">Profile</a>
+                </li>
+                <li>
+                    <a href="#">Log Out</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
     <!-- MAIN FORM BODY-->
     <main>
         <div class="container z-depth-3" id="form-container">
-            OOOOooooooooooooooooooooooooooooo!!!!!
+            <div class="row">
+                <div class="col s4">
+                    <div class="card-panel red lighten-2 center-align">
+                        <span class="white-text">
+                            ADD COURSES
+                        </span>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card-panel green lighten-2 center-align">
+                        <span class="white-text">
+                            VIEW COLLEGE DETAILS
+                        </span>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card-panel blue lighten-2 center-align">
+                        <span class="white-text">
+                            TO-DO
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
