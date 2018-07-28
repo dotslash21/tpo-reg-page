@@ -32,6 +32,10 @@
         main {
             flex: 1 0 auto;
         }
+
+        a {
+            color: inherit;
+        } 
     </style>
 </head>
 
@@ -56,25 +60,28 @@
         <div class="container z-depth-3" id="form-container">
             <div class="row">
                 <div class="col s4">
-                    <div class="card-panel red lighten-2 center-align">
-                        <span class="white-text">
-                            ADD COURSES
-                        </span>
-                    </div>
+                    <a href="course_add.php">
+                        <div class="card-panel valign-wrapper center-align waves-effect waves-red waves-block red lighten-3">
+                            <i class="material-icons medium">add</i>
+                            <p>ADD COURSES</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="col s4">
-                    <div class="card-panel green lighten-2 center-align">
-                        <span class="white-text">
-                            VIEW COLLEGE DETAILS
-                        </span>
-                    </div>
+                    <a href="#">
+                        <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
+                            <i class="material-icons medium">pageview</i>
+                            <p>VIEW COLLEGE DETAILS</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="col s4">
-                    <div class="card-panel blue lighten-2 center-align">
-                        <span class="white-text">
-                            TO-DO
-                        </span>
-                    </div>
+                    <a href="#">
+                        <div class="card-panel valign-wrapper center-align waves-effect waves-green waves-block green lighten-3">
+                            <i class="material-icons medium">format_list_numbered</i>
+                            <p>TO-DO</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

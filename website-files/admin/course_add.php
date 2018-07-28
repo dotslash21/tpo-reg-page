@@ -53,6 +53,14 @@
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
             <a href="" class="brand-logo center">ADMIN PANEL</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">Profile</a>
+                </li>
+                <li>
+                    <a href="#">Log Out</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
