@@ -77,12 +77,24 @@ $(document).on("submit","form.frm",function(event) {
     };
 
     //All varification and helper massage done
-    if(dataObj.email.length < 8){
-        alert("Plese enter a valid Email address");
+    if(dataObj.name.length < 5){
+        alert("Please enter a Institute name");
+        return false;
+    }
+    else if(dataObj.inst_code.length < 1){
+        alert("Plese enter a valid Institute Code");
+        return false;
+    }
+    else if(dataObj.uid.length < 1){
+        alert("Plese enter a valid Institute ID");
         return false;
     }
     else if(dataObj.password.length < 8){
         alert("Please enter a password that is atleast 8 charecters");
+        return false;
+    }
+    else if(dataObj.estd.length < 4){
+        alert("Plese enter a valid ESTD");
         return false;
     }
 
