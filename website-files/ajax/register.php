@@ -145,7 +145,7 @@
                             if(mysqli_multi_query($con, $query_crs)){
 
                                 //return successful statements
-                                $return['result'] = 'Successful';
+                                $return['result'] = 'successful';
                                 $return['redirect'] = './done.php';
 
                                 //add a session for file upload

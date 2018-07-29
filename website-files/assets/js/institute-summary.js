@@ -121,7 +121,11 @@ $(document).submit(function(event) {
 		async: true,
 	})
     .done(function ajaxDone(data) {
-        // Whatever data is 
+        // Whatever data is
+        if(data.result == 'successful'){
+            //After a successful entry of data in Database
+            sessionStorage.clear();
+        }
         if(data.redirect !== undefined){
             console.log(data.redirect);
             window.location = data.redirect;
