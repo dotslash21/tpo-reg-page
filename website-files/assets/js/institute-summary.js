@@ -53,7 +53,8 @@ $(document).ready(function(){
 });
 
 
-//Registration
+//Registration 
+//Starts on click of the submit button
 $(document).submit(function(event) {
     event.preventDefault();
 
@@ -147,4 +148,12 @@ $(document).submit(function(event) {
 
 
     return false;
+})
+
+//Editing feature
+$('button#resetbtn').click( function(){
+    event.preventDefault();
+    
+    var red = './form.php';
+    window.location = red;
 })
