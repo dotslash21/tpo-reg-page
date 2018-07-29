@@ -68,10 +68,10 @@
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="#">
+                    <a href="college_details.html">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
                             <i class="material-icons medium">pageview</i>
-                            <p>VIEW COLLEGE DETAILS</p>
+                            <p>COLLEGE DETAILS</p>
                         </div>
                     </a>
                 </div>
@@ -79,7 +79,7 @@
                     <a href="#">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-green waves-block green lighten-3">
                             <i class="material-icons medium">format_list_numbered</i>
-                            <p>TO-DO</p>
+                            <p>TO-DO BUTTON</p>
                         </div>
                     </a>
                 </div>
