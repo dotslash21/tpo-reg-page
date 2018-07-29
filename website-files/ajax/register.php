@@ -105,19 +105,12 @@
         //return Variable
         $return = [];
 
-        if($con){
-            $return['db_con'] = "Connection With DB estublished";
-        }
-        else{
-            $return['db_con'] = "Connection With DB error";
-        }
-
         //Check is already exist
         $query_usr = "SELECT inst_code FROM cred WHERE inst_code ='".$inst_code_clean."' LIMIT 1";
         $result_usr =  mysqli_query($con,$query_usr);
         if(mysqli_num_rows($result_usr) > 0){
             //If exists
-            $return['error'] = 'User already exists';
+            $return['error'] = 'Already Registered';
         }
         else{
             //If not exists
@@ -126,7 +119,6 @@
             $return['sql1'] = $query_reg;
             if(mysqli_query($con,$query_reg)){
                 //first college data stored
-                $return['message'] = "First Submitting Done";
                 //Looping for Course data
                 for($i = 0; $i < $course_length; $i ++){
 
@@ -137,7 +129,6 @@
                     //query - multiple at once
                     if($course_name_clean != '' && $course_value_clean != ''){
 
-                        $return['message2'] = "couse details found";
                         $query_crs = '';
                         $query_crs .= 'INSERT INTO college_crs(college_id, deg_optd, intake) VALUES("'.$inst_code_clean.'", "'.$course_name_clean.'", "'.$course_value_clean.'") ';
                         if($query_crs != ''){
@@ -154,20 +145,17 @@
                                 // $return['2'] = $_SESSION['inst_code'];
                             }
                             else{
-                                $return['result'] = 'Error';
+                                $return['error'] = 'Putting course data in the DataBase is Failed. Try again later';
                             }
-                        }
-                        else{
-                            $return['message3'] = "couse query error";
                         }
                     }
                     else{
-                        $return['message2'] = "couse details not found";
+                        $return['error'] = "couse details is missing try once again";
                     }
                 }
             }
             else{
-                $return['message'] = "First Submitting Error";
+                $return['error'] = "Putting data is the Data Base is failed. Try Again later.";
             }
         }
         echo json_encode($return, JSON_PRETTY_PRINT);

@@ -122,6 +122,9 @@ $(document).submit(function(event) {
 	})
     .done(function ajaxDone(data) {
         // Whatever data is
+        if(data.error !== undefined){
+            alert(data.error);
+        }
         if(data.result == 'successful'){
             //After a successful entry of data in Database
             sessionStorage.clear();
