@@ -1,3 +1,56 @@
+//When the docoment is ready used for value adding using JS
+$(document).ready( function(){
+    if(sessionStorage.name !== undefined){
+        $("input[name='name']").val(sessionStorage.name);
+    }
+    if(sessionStorage.inst_code !== undefined){
+        $("input[name='inst_code']").val(sessionStorage.inst_code);
+    }
+    if(sessionStorage.uid !== undefined){
+        $("input[name='uid']").val(sessionStorage.uid);
+    }
+    if(sessionStorage.password !== undefined){
+        $("input[name='password']").val(sessionStorage.password);
+    }
+    if(sessionStorage.estd !== undefined){
+        $("input[name='estd']").val(sessionStorage.estd);
+    }
+    if(sessionStorage.accrd !== undefined){
+        $("select[name='accrd']").val(sessionStorage.accrd);
+    }
+    if(sessionStorage.inst_type !== undefined){
+        $("select[name='inst_type']").val(sessionStorage.inst_type);
+    }
+    if(sessionStorage.affli !== undefined){
+        $("select[name='affli']").val(sessionStorage.affli);
+    }
+    if(sessionStorage.inst_appr !== undefined){
+        $("select[name='inst_appr']").val(sessionStorage.inst_appr);
+    }
+    if(sessionStorage.address !== undefined){
+        $("textarea[name='address']").val(sessionStorage.address);
+    }
+    if(sessionStorage.pin !== undefined){
+        $("input[name='pin']").val(sessionStorage.pin);
+    }
+    if(sessionStorage.inst_state !== undefined){
+        $("select[name='name']").val(sessionStorage.inst_state);
+    }
+    if(sessionStorage.ins_dst !== undefined){
+        $("[name='ins_dst']").val(sessionStorage.ins_dst);
+    }
+    if(sessionStorage.number !== undefined){
+        $("input[name='number']").val(sessionStorage.number);
+    }
+    if(sessionStorage.email !== undefined){
+        $("input[name='email']").val(sessionStorage.email);
+    }
+    if(sessionStorage.website !== undefined){
+        $("input[name='website']").val(sessionStorage.website);
+    }
+})
+
+//On click on submit button
 $(document).on("submit","form.frm",function(event) {
     event.preventDefault();
 
@@ -22,7 +75,6 @@ $(document).on("submit","form.frm",function(event) {
         email:          $("input[name='email']", _form).val(),
         website:        $("input[name='website']", _form).val(),
     };
-    console.log(dataObj);
 
     //All varification and helper massage done
     if(dataObj.email.length < 8){
