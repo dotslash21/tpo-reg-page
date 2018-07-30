@@ -57,10 +57,10 @@ $(document).on("submit","form#course_form",function(event) {
     }
 })
 
-//Back button
-$('button#back').click( function(){
+//Back Button
+$('#back').click( function(){
     event.preventDefault();
     
-    var red = './form2.php';
+    var red = './form3.php';
     window.location = red;
 })
