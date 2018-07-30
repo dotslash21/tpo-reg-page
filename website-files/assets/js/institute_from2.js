@@ -40,7 +40,6 @@ $(document).on("submit","form.frm",function(event) {
     event.preventDefault();
 
     var _form = $(this);
-    var _error = $(".js-error", _form);
 
     dataObj = {
         // Institute head details
@@ -56,17 +55,42 @@ $(document).on("submit","form.frm",function(event) {
         tpo_contact2:   $("input[name='tpo_contact2']", _form).val(),
         tpo_email:      $("input[name='tpo_email']", _form).val(),
     };
-    console.log(dataObj);
 
-    // //All varification and helper massage done
-    // if(dataObj.email.length < 8){
-    //     _error.text("Plese enter a valid Email address").show();
-    //     return false;
-    // }
-    // else if(dataObj.password.length < 8){
-    //     _error.text("Please enter a password that is atleast 8 charecters").show();
-    //     return false;
-    // }
+    // Institute head details
+    if(dataObj.head_name == undefined){
+        alert("Please enter a Institute Head Name");
+        return false;
+    }
+    else if(dataObj.head_desg == undefined){
+        alert("Please enter a Institute Head Designation");
+        return false;
+    }
+    else if(dataObj.head_mob == undefined){
+        alert("Please enter a Institute Head Mobile");
+        return false;
+    }
+    else if(dataObj.head_ph == undefined){
+        alert("Please enter a Institute Head Land Line");
+        return false;
+    }
+    else if(dataObj.head_email == undefined){
+        alert("Please enter a Institute Head Email ID");
+        return false;
+    }
+
+    // Institute TPO details
+    if(dataObj.tpo_name == undefined){
+        alert("Please enter a Institute TPO Name");
+        return false;
+    }
+    else if(dataObj.tpo_contact1 == undefined){
+        alert("Please enter a Institute TPO Contact Number");
+        return false;
+    }
+    else if(dataObj.tpo_email == undefined){
+        alert("Please enter a Institute TPO Email ID");
+        return false;
+    }
 
     //Storing in sessionStorage
     if(typeof(Storage) !== undefined){
@@ -88,11 +112,10 @@ $(document).on("submit","form.frm",function(event) {
     }
     else{
         //when sessionStorage is not there
-        _error.text("Turn on Cookies").show();
+        alert("Turn on Cookies");
         return false;
     }
-    console.log(sessionStorage);
-    if(sessionStorage.length == 25){
+    if(sessionStorage.head_name !== undefined  && sessionStorage.head_desg !== undefined  && sessionStorage.head_mob !== undefined  && sessionStorage.head_ph !== undefined  && sessionStorage.head_email !== undefined  && sessionStorage.tpo_name !== undefined  && sessionStorage.tpo_contact1 !== undefined  && sessionStorage.tpo_email !== undefined){
         //Redirect Location
         window.location = './form3.php';
     }
