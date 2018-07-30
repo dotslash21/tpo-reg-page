@@ -48,7 +48,7 @@
     <div class="container z-depth-3" id="form-container">
         <h3>Course Addition</h3>
         <hr><br>
-        <form>
+        <form> 
         <div class="input-field" id="course_sel">
             <select multiple name="courses" id="courses_select">
                 <option value="" disabled selected>Choose your option</option>

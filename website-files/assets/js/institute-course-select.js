@@ -26,7 +26,7 @@ $('#lock').click(function() {
         $("#course_form").append('<div class="input-field"><input type="number" id="'+item+'" name="'+course_array[item]+'" min="0" required><label for="'+item+'">'+course_array[item]+'</label>');
     }
     if (course_array.length > 0) {
-        $("#course_form").append('<button class="btn btn-large blue lighten-2 left" id="back">Back</button><button type="submit" class="btn btn-large green darken-2 right" id="submit" name="submit">Submit & Continue</button><div class="clearfix"></div>');
+        $("#course_form").append('<button class="btn btn-large blue lighten-2 left" type="reset" id="back2">Back</button><button type="submit" class="btn btn-large green darken-2 right" id="submit" name="submit">Submit & Continue</button><div class="clearfix"></div>');
     }
 
 });
@@ -59,6 +59,14 @@ $(document).on("submit","form#course_form",function(event) {
 
 //Back Button
 $('#back').click( function(){
+    event.preventDefault();
+    
+    var red = './form3.php';
+    window.location = red;
+})
+
+//Back Button
+$('#back2').click( function(){
     event.preventDefault();
     
     var red = './form3.php';
