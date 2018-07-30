@@ -120,3 +120,10 @@ $(document).on("submit","form.frm",function(event) {
         window.location = './form3.php';
     }
 })
+
+$('button#back').click( function(){
+    event.preventDefault();
+    
+    var red = './form.php';
+    window.location = red;
+})
