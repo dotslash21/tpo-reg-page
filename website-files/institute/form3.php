@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-large yellow left" name="back" id="back">Back</button>
+            <button class="btn btn-large blue lighten-2 left" name="back" id="back">Back</button>
             <button class="btn btn-large green right" type="submit" name="submit" id="submit">Submit &amp; Continue</button>
 
             <div class="clearfix"></div>
