@@ -9,6 +9,8 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST' || 1){
 
+        session_start();
+
         //Always return Json format
         header('Content-Type: application/json');
 
@@ -136,9 +138,10 @@
 
                                 //return successful statements
                                 $return['result'] = 'successful';
-                                $return['redirect'] = './file_upload.php';
+                                $return['redirect'] = './file_upload.php?inst_code='.$inst_code;
 
                                 //add a session for file upload
+                                
                                 $_SESSION['inst_code'] =(int)$inst_code;
                             }
                             else{
