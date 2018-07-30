@@ -1,3 +1,41 @@
+//When the docoment is ready used for value adding using JS
+//If the values are in sessionStorage
+$(document).ready( function(){
+
+    // Institute head details
+    if(sessionStorage.head_name !== undefined){
+        $("input[name='head_name']").val(sessionStorage.head_name);
+    }
+    if(sessionStorage.head_desg !== undefined){
+        $("input[name='head_desg']").val(sessionStorage.head_desg);
+    }
+    if(sessionStorage.head_mob !== undefined){
+        $("input[name='head_mob']").val(sessionStorage.head_mob);
+    }
+    if(sessionStorage.head_ph !== undefined){
+        $("input[name='head_ph']").val(sessionStorage.head_ph);
+    }
+    if(sessionStorage.head_email !== undefined){
+        $("input[name='head_email']").val(sessionStorage.head_email);
+    }
+
+    // Institute TPO details
+    if(sessionStorage.tpo_name !== undefined){
+        $("input[name='tpo_name']").val(sessionStorage.tpo_name);
+    }
+    if(sessionStorage.tpo_contact1 !== undefined){
+        $("select[name='tpo_contact1']").val(sessionStorage.tpo_contact1);
+    }
+    if(sessionStorage.tpo_contact2 !== undefined){
+        $("[name='tpo_contact2']").val(sessionStorage.tpo_contact2);
+    }
+    if(sessionStorage.tpo_email !== undefined){
+        $("input[name='tpo_email']").val(sessionStorage.tpo_email);
+    }
+})
+
+//On click on submit button
+//Starts the form submission process
 $(document).on("submit","form.frm",function(event) {
     event.preventDefault();
 

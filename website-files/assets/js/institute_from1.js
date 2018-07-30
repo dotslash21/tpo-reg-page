@@ -35,7 +35,7 @@ $(document).ready( function(){
         $("input[name='pin']").val(sessionStorage.pin);
     }
     if(sessionStorage.inst_state !== undefined){
-        $("select[name='name']").val(sessionStorage.inst_state);
+        $("select[name='inst_state']").val(sessionStorage.inst_state);
     }
     if(sessionStorage.ins_dst !== undefined){
         $("[name='ins_dst']").val(sessionStorage.ins_dst);
