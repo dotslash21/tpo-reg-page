@@ -1,3 +1,33 @@
+//When the docoment is ready used for value adding using JS
+//If the values are in sessionStorage
+$(document).ready( function(){
+
+    //Instute INFO
+    if(sessionStorage.num_cmp !== undefined){
+        $("input[name='num_cmp']").val(sessionStorage.num_cmp);
+    }
+    if(sessionStorage.num_cmplab !== undefined){
+        $("input[name='num_cmplab']").val(sessionStorage.num_cmplab);
+    }
+    if(sessionStorage.min_num_cmp !== undefined){
+        $("input[name='min_num_cmp']").val(sessionStorage.min_num_cmp);
+    }
+    if(sessionStorage.ispeed !== undefined){
+        $("input[name='ispeed']").val(sessionStorage.ispeed);
+    }
+    if(sessionStorage.hall_cap !== undefined){
+        $("input[name='hall_cap']").val(sessionStorage.hall_cap);
+    }
+    if(sessionStorage.num_cctv !== undefined){
+        $("input[name='num_cctv']").val(sessionStorage.num_cctv);
+    }
+    if(sessionStorage.has_fiber !== undefined){
+        $("select[name='has_fiber']").val(sessionStorage.has_fiber);
+    }
+})
+
+//On click on submit button
+//Starts the form submission process
 $(document).on("submit","form.frm",function(event) {
     event.preventDefault();
 
