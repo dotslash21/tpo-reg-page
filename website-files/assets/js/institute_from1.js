@@ -80,7 +80,7 @@ $(document).on("submit","form.frm",function(event) {
 
     //All varification and helper massage done
     if(dataObj.name.length < 5){
-        alert("Please enter a Institute name");
+        alert("Please enter the full Institute name");
         return false;
     }
     else if(dataObj.inst_code.length < 1){

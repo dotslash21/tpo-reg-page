@@ -136,7 +136,7 @@
 
                                 //return successful statements
                                 $return['result'] = 'successful';
-                                $return['redirect'] = './done.php';
+                                $return['redirect'] = './file_upload.php';
 
                                 //add a session for file upload
                                 $_SESSION['inst_code'] =(int)$inst_code;
@@ -152,7 +152,7 @@
                 }
             }
             else{
-                $return['error'] = "Putting data is the Data Base is failed. Try Again later.";
+                $return['error'] = "Putting data is the Data Base is failed. Try Again later. Maybe you are registered";
             }
         }
         echo json_encode($return, JSON_PRETTY_PRINT);

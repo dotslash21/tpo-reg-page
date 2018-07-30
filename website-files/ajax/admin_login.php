@@ -30,11 +30,12 @@
         if(mysqli_num_rows($result_admin) > 0){
             //Admin exists
             $admin_details = mysqli_fetch_array($result_admin);
+            $admin_id = $admin_details['id'];
             $hash = $admin_details['password'];
             if($password_clean == 'admin'){
                 //User get signed in
                 $return['redirect'] = './dashboard.php';
-                //$_SESSION['user_id'] = $admin_id;
+                $_SESSION['admin_id'] = $admin_id;
             }
             else{
                 //Invalid user email/password
@@ -45,7 +46,7 @@
         else{
                 $return['error'] = "Admin Id is wrong";
         }
-        //Make sure the user can be added and is added2nnnnnnn
+        //Make sure the user can be added and is added
 
         echo json_encode($return, JSON_PRETTY_PRINT);
         exit;

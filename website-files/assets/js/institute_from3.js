@@ -68,6 +68,8 @@ $(document).on("submit","form.frm",function(event) {
     else if(dataObj.num_cctv == undefined){
         alert("Please enter Total mun of CCTV");
         return false;
+    }else if(dataObj.num_cmplab < dataObj.min_num_cmp){
+        alert("Mininum number of lab can't be more than Total number");
     }
 
     //Storing in sessionStorage

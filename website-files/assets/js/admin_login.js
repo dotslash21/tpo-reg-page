@@ -1,5 +1,5 @@
 //Login
-$(document).on("submit","form.admin-login",function(event) {
+$(document).on("submit","form#admin-login",function(event) {
     event.preventDefault();
 
     var _form = $(this);
@@ -8,7 +8,7 @@ $(document).on("submit","form.admin-login",function(event) {
         id: $("input[name='admin_id']", _form).val(),
         password: $("input[name='admin_password']", _form).val()
     };
-
+    console.log(dataObj);
     //Start of AJAX process
 
 	$.ajax({
