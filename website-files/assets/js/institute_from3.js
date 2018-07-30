@@ -94,3 +94,10 @@ $(document).on("submit","form.frm",function(event) {
         window.location = './course_select.php';
     }
 })
+
+$('button#back').click( function(){
+    event.preventDefault();
+    
+    var red = './form2.php';
+    window.location = red;
+})
