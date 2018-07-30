@@ -32,6 +32,7 @@ $(document).on("submit","form.frm",function(event) {
     event.preventDefault();
 
     var _form = $(this);
+    var _error = $(".js-error", _form);
 
     dataObj = {
         //Instute INFO
@@ -43,32 +44,17 @@ $(document).on("submit","form.frm",function(event) {
         num_cctv:       $("input[name='num_cctv']", _form).val(),
         has_fiber:      $("input[name='has_fiber']", _form).val(),
     };
+    console.log(dataObj);
 
-    //Instute INFO
-    if(dataObj.num_cmp < 1){
-        alert("Please enter  Number of Computers");
-        return false;
-    }
-    else if(dataObj.num_cmplab < 0){
-        alert("Please enter Total Number of Computer lab");
-        return false;
-    }
-    else if(dataObj.min_num_cmp < 0){
-        alert("Please enter Minimum Number of Computer lab");
-        return false;
-    }
-    else if(dataObj.ispeed == undefined){
-        alert("Please enter Institute Internet Speed");
-        return false;
-    }
-    else if(dataObj.hall_cap == undefined){
-        alert("Please enter Institute Hall Capacity");
-        return false;
-    }
-    else if(dataObj.num_cctv == undefined){
-        alert("Please enter Total mun of CCTV");
-        return false;
-    }
+    // //All varification and helper massage done
+    // if(dataObj.email.length < 8){
+    //     _error.text("Plese enter a valid Email address").show();
+    //     return false;
+    // }
+    // else if(dataObj.password.length < 8){
+    //     _error.text("Please enter a password that is atleast 8 charecters").show();
+    //     return false;
+    // }
 
     //Storing in sessionStorage
     if(typeof(Storage) !== undefined){
@@ -86,18 +72,12 @@ $(document).on("submit","form.frm",function(event) {
     }
     else{
         //when sessionStorage is not there
-        alert("Turn on Cookies");
+        _error.text("Turn on Cookies").show();
         return false;
     }
-    if(sessionStorage.num_cmp !== undefined  && sessionStorage.num_cmplab !== undefined  && sessionStorage.min_num_cmp !== undefined  && sessionStorage.ispeed !== undefined  && sessionStorage.hall_cap !== undefined  && sessionStorage.num_cctv !== undefined  && sessionStorage.has_fiber !== undefined){
+    console.log(sessionStorage);
+    if(sessionStorage.length == 32){
         //Redirect Location
         window.location = './course_select.php';
     }
-})
-
-$('button#back').click( function(){
-    event.preventDefault();
-    
-    var red = './form2.php';
-    window.location = red;
 })
