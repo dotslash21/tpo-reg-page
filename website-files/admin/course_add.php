@@ -5,14 +5,6 @@
         echo "You need to fill the whole form";
         exit;
     }
-
-    if($_SERVER['REQUEST_METHOD']=="POST"){
-        $degree= $_POST['degree'];
-        $course= $_POST['course'];
-
-        $sql_admin_add = "INSERT INTO course_list(degree,course_name) VALUE('" .$degree ."','". $course. "')";
-        mysqli_query($con,$sql_admin_add);  
-    }
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +67,7 @@
                 <hr>
                 <br>
             </div>
-            <form action="course_add.php" method="post">
+            <form class="add-frm">
                 <div class="input-field" id="old_degree">
                     <select name="degree" id="old_degree_input">
                         <option value="" disabled selected>Choose your option</option>
@@ -124,6 +116,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="../assets/js/admin_course_add.js"></script>
     <script>
         $(".button-collapse").sideNav();
     </script>
@@ -132,25 +125,6 @@
             $('select').material_select();
         });
         $('select').material_select('destroy');
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('#new_degree').hide();
-
-            $('#old_degree_input').change(function () {
-                var selected = $('#old_degree_input option:selected').text();
-                if (selected == 'Other') {
-                    $('#old_degree_input').attr("name", "degree_old");
-                    $('#new_degree').show();
-                    $('#new_degree_input').attr("name", "degree");
-                }
-                else {
-                    $('#old_degree_input').attr("name", "degree");
-                    $('#new_degree').hide();
-                    $('#new_degree_input').attr("name", "degree_new");
-                }
-            });
-        });
     </script>
 </body>
 
