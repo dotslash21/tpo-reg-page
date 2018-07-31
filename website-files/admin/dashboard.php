@@ -87,7 +87,7 @@
                     <a href="#">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-green waves-block green lighten-3">
                             <i class="material-icons medium">format_list_numbered</i>
-                            <p>TO-DO BUTTON</p>
+                            <p>COURSE LIST</p>
                         </div>
                     </a>
                 </div>

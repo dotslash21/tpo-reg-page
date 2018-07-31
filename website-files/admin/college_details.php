@@ -72,6 +72,17 @@
             <h3 class="center-align">COLLEGE DETAILS</h3>
             <hr>
             <br>
+
+            <div class="row">
+                <div class="col s10">
+                </div>
+                <div class="col s2">
+                    <button class="btn btn-large waves-effect waves-light blue darken-1">
+                        PRINT ALL DETAILS
+                    </button>
+                </div>
+            </div>
+
             <ul class="collapsible popout" data-collapsible="expandable">
                 <li>
                     <div class="collapsible-header valign-wrapper">
@@ -79,9 +90,9 @@
                         <div class="panel_options">
                             <input type="checkbox" id="approve">
                             <label for="approve">Approve</label>   
-                            <a href="" class="waves-effect waves-yellow btn yellow darken-3">EDIT</a>
-                            <a class="waves-effect waves-red btn red lighten-2">DELETE</a>
-                            <a class="waves-effect waves-blue btn blue lighten-2">PRINT</a>
+                            <button class="waves-effect waves-yellow btn yellow darken-3">EDIT</button>
+                            <button class="waves-effect waves-red btn red lighten-2">DELETE</button>
+                            <button class="waves-effect waves-blue btn blue lighten-2">PRINT</button>
                         </div>
                     </div>
                     <div class="collapsible-body">
