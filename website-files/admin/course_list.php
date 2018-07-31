@@ -84,9 +84,11 @@
                     <i class="material-icons tiny">chevron_right</i> <?php echo $crse_list['course_name']; ?>
                 </li>
             
-            <?php
+                <?php
                     }
-            ?></ul>
+                ?>
+            </ul>
+            
             <?php
                 }
             ?>

@@ -4,6 +4,8 @@
         echo "You need to fill the whole form";
         exit;
     }
+
+    require("../inc/db-con.php");
 ?>
 
 <!DOCTYPE html>
@@ -84,9 +86,14 @@
             </div>
 
             <ul class="collapsible popout" data-collapsible="expandable">
+                <?php
+                    $sql_clg = "SELECT inst_name FROM cred ORDER BY inst_name ASC";
+                    $res_clg = mysqli_query($con,$sql_clg);
+                    while($res_arr = mysqli_fetch_array($res_clg)){
+                ?>
                 <li>
                     <div class="collapsible-header valign-wrapper js-click">
-                        <i class="material-icons">account_balance</i>Maulana Abul Kalam Azad University of Technology
+                        <i class="material-icons">account_balance</i><?php echo $res_arr['inst_name']; ?>
                         <div class="panel_options">
                             <input type="checkbox" id="approve">
                             <label for="approve">Approve</label>   
@@ -96,77 +103,12 @@
                         </div>
                     </div>
                     <div class="collapsible-body">
-                        <div class="row">
-                            <div class="col s6">Institute ID: XXXX</div>
-                            <div class="col s6">Institute Code: XXXX</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">Establishment Year: 1234</div>
-                            <div class="col s6">Accredition: NAAC-X</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">Insitute Type: XXXXXXXXXX</div>
-                            <div class="col s6">Institute Affiliation: XXXXXX</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">Institute Approval: XXXX</div>
-                            <div class="col s6"></div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col s6">Institute Address: 123, XXXX</div>
-                            <div class="col s6">Pin: 1234567</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">State: XXXXXXXX</div>
-                            <div class="col s6">District: XXXXXX</div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col s6">Contact Number: 1234567890</div>
-                            <div class="col s6">E-Mail: XXXXXXX@XXXX.XXX</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">Website: http://xxx.xxxxx.xxx/</div>
-                            <div class="col s6"></div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col s6">Institute Head Name: XXXXXX XXXX</div>
-                            <div class="col s6">Designation: XXX XXXX XXX</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">Contact (Mobile): 1234567890</div>
-                            <div class="col s6">Contact (Landline): 1234567890</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">E-Mail: xxxxxxxx@xxxx.xxx</div>
-                            <div class="col s6"></div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col s6">TPO Name: XXXXXX XXXXX</div>
-                            <div class="col s6">Contact (1): 1234567890</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">Contact (2): 1234567890</div>
-                            <div class="col s6">E-Mail: xxxxxxxxx@xxxx.xxx</div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col s6">Total number of computers: 123</div>
-                            <div class="col s6">Total number of computer lab: 123</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">Minimum number of computers in lab: 123</div>
-                            <div class="col s6">Internet Speed: 123456 Kbps</div>
-                        </div>
-                        <div class="row">
-                            <div class="col s6">Total Hall capacity: 123</div>
-                            <div class="col s6">Total CCTV cameras in lab: 123</div>
-                        </div>
+                        
                     </div>
                 </li>
+                <?php
+                    }
+                ?>
                 <li>
                     <div class="collapsible-header">
                         <i class="material-icons">account_balance</i>Government College of Engineering & Textile Technology, Berhampore
