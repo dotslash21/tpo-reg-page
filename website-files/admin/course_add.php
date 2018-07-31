@@ -1,5 +1,10 @@
 <?php
     include("../inc/db-con.php");
+    session_start();
+    if(!isset($_SESSION['admin_id'])){
+        echo "You need to fill the whole form";
+        exit;
+    }
 
     if($_SERVER['REQUEST_METHOD']=="POST"){
         $degree= $_POST['degree'];
@@ -53,7 +58,7 @@
                     <a href="#">Profile</a>
                 </li>
                 <li>
-                    <a href="#">Log Out</a>
+                    <a href="./logout.php">Log Out</a>
                 </li>
             </ul>
         </div>
