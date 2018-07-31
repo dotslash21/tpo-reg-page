@@ -24,7 +24,7 @@
                         </div>
                         <h2 class="h1">Sorry! Page not found</h2>
 
-                        <a class="back" href="./index.html">Back to Home</a>
+                        <a class="button" href="./index.html">Back to Home</a>
                     </div>
                 </div>
             </div>
