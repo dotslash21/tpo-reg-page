@@ -87,13 +87,13 @@
 
             <ul class="collapsible popout" data-collapsible="expandable">
                 <?php
-                    $sql_clg = "SELECT inst_name FROM cred ORDER BY inst_name ASC";
+                    $sql_clg = "SELECT inst_name,inst_code FROM cred ORDER BY inst_name ASC";
                     $res_clg = mysqli_query($con,$sql_clg);
                     while($res_arr = mysqli_fetch_array($res_clg)){
                 ?>
                 <li>
                     <div class="collapsible-header valign-wrapper js-click">
-                        <i class="material-icons">account_balance</i><?php echo $res_arr['inst_name']; ?>
+                        <i class="material-icons">account_balance</i><span><?php echo $res_arr['inst_name']; ?></span><span> (<?php echo $res_arr['inst_code']; ?>)</span>
                         <div class="panel_options">
                             <input type="checkbox" id="approve">
                             <label for="approve">Approve</label>   
