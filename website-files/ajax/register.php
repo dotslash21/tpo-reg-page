@@ -68,7 +68,7 @@
         $name_clean         = clean($con, $name);
         $inst_code_clean    = clean($con, $inst_code);
         $uid_clean          = clean($con, $uid);
-        $password_clean     = clean($con, $password);
+        $password_clean     = password_hash($password, PASSWORD_DEFAULT);   //Hashing the Password
         $estd_clean         = clean($con, $estd);
         $accrd_clean        = clean($con, $accrd);
         $inst_type_clean    = clean($con, $inst_type);
