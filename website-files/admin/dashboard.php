@@ -1,6 +1,6 @@
 <?php
+    session_start();
     if(!isset($_SESSION['admin_id'])){
-        print_r($_SESSION);
         echo "You need to fill the whole form";
         exit;
     }
@@ -57,7 +57,7 @@
                     <a href="#">Profile</a>
                 </li>
                 <li>
-                    <a href="#">Log Out</a>
+                    <a href="./logout.php">Log Out</a>
                 </li>
             </ul>
         </div>
