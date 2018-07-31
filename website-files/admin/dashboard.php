@@ -76,7 +76,7 @@
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="college_details.html">
+                    <a href="college_details.php">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
                             <i class="material-icons medium">pageview</i>
                             <p>COLLEGE DETAILS</p>
