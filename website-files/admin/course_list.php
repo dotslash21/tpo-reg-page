@@ -1,3 +1,7 @@
+<?php
+    require("../inc/db-con.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -61,21 +65,31 @@
     <!-- MAIN FORM BODY-->
     <main>
         <div class="container z-depth-3" id="form-container">
+            <?php
+                $sql_show = "SELECT DISTINCT degree from course_list";
+                $degree_list = mysqli_query($con, $sql_show);
+                while($deg_list = mysqli_fetch_array($degree_list)){
 
+            ?>
             <ul class="collection with-header">
                 <li class="collection-header">
-                    <h4>B.Tech</h4>
+                    <h4><?php echo $deg_list['degree']; ?></h4>
                 </li>
+                <?php
+                    $sql_show = "SELECT course_name from course_list WHERE degree = '".$deg_list['degree']."'";
+                    $course_list = mysqli_query($con, $sql_show);
+                    while($crse_list = mysqli_fetch_array($course_list)){
+                ?>
                 <li class="collection-item">
-                    <i class="material-icons tiny">chevron_right</i> Alvin
+                    <i class="material-icons tiny">chevron_right</i> <?php echo $crse_list['course_name']; ?>
                 </li>
-                <li class="collection-item">
-                    <i class="material-icons tiny">chevron_right</i> Alvin
-                </li>
-                <li class="collection-item">
-                    <i class="material-icons tiny">chevron_right</i> Alvin
-                </li>
-            </ul>
+            
+            <?php
+                    }
+            ?></ul>
+            <?php
+                }
+            ?>
 
         </div>
     </main>

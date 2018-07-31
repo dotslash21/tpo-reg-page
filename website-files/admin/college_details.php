@@ -85,7 +85,7 @@
 
             <ul class="collapsible popout" data-collapsible="expandable">
                 <li>
-                    <div class="collapsible-header valign-wrapper">
+                    <div class="collapsible-header valign-wrapper js-click">
                         <i class="material-icons">account_balance</i>Maulana Abul Kalam Azad University of Technology
                         <div class="panel_options">
                             <input type="checkbox" id="approve">

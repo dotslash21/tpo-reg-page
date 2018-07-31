@@ -9,3 +9,7 @@ $(document).ready(function () {
         }
     })
 })
+
+$(".js-click").click(function () {
+    console.log('clicked');
+})

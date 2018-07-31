@@ -84,7 +84,7 @@
                     </a>
                 </div>
                 <div class="col s4">
-                    <a href="#">
+                    <a href="course_list.php">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-green waves-block green lighten-3">
                             <i class="material-icons medium">format_list_numbered</i>
                             <p>COURSE LIST</p>
