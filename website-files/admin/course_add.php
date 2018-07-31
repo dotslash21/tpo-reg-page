@@ -55,6 +55,9 @@
             <a href="dashboard.php" class="brand-logo center">ADMIN PANEL</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
+                    <a href="dashboard.php">Home</a>
+                </li>
+                <li>
                     <a href="#">Profile</a>
                 </li>
                 <li>
