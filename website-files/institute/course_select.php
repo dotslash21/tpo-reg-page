@@ -1,4 +1,5 @@
 <?php
+    define("_CON_",true);
     require("../inc/db-con.php");
 ?>
 
