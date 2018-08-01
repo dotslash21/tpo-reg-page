@@ -167,7 +167,7 @@
             </div>
 
             <div class="input-field">
-                <input type="url" id="website" name="website" class="validate" required>
+                <input type="text" id="website" name="website" class="validate" required>
                 <label class="active" for="website">Institute Website</label>
             </div>
             
