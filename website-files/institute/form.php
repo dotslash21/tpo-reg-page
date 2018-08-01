@@ -67,7 +67,7 @@
                 <span class="err-uid"></span>
             </div>
             <div class="input-field">
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Must be of atleast 8 characters long">
                 <label class="active" for="password">Password</label>
             </div>
             <div class="input-field">
