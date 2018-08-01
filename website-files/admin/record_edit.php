@@ -1,3 +1,24 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['admin_id'])){
+        echo "You need to fill the whole form";
+        exit;
+    }
+
+    require("../inc/db-con.php");
+
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+        $inst_code = $_GET['inst_code_edit'];
+
+        $sql_data = "SELECT * FROM cred WHERE inst_code = '".$inst_code."' LIMIT 1";
+        $result_data = mysqli_query($con, $sql_data);
+        $result_array = mysqli_fetch_array($result_data);
+    }
+    else{
+        header('Location: ./colege_details.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -59,7 +80,7 @@
                 </div>
                 <div class="col l6 s12">
                     <div class="input-field">
-                        <input type="password" id="password" name="password" required>
+                        <input type="password" id="password" name="password" required disabled>
                         <label class="active" for="password">Password</label>
                     </div>
                 </div>
@@ -354,6 +375,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="../assets/js/admin_record_edit.js"></script>
     <script>
         $(".button-collapse").sideNav();
     </script>
@@ -385,6 +407,51 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var addr ="";   //Address Sucks
+            //Basic Info
+            $("input[name='name']").val('<?php echo $result_array['inst_name']?>');
+            $("input[name='inst_code']").val('<?php echo $result_array['inst_code']?>');
+            $("input[name='uid']").val('<?php echo $result_array['uid']?>');
+            $("input[name='password']").val('<?php echo $result_array['pwd']?>');
+            $("input[name='estd']").val('<?php echo $result_array['estd']?>');
+            $("select[name='accrd']").val('<?php echo $result_array['inst_accrd']?>');
+            $("select[name='inst_type']").val('<?php echo $result_array['inst_type']?>');
+            $("select[name='affli']").val('<?php echo $result_array['inst_affl']?>');
+            $("select[name='inst_appr']").val('<?php echo $result_array['inst_aprv']?>');
+            $("textarea[name='address']").val(addr);
+            $("input[name='pin']").val('<?php echo $result_array['pin']?>');
+            $("select[name='inst_state']").val('<?php echo $result_array['state']?>');
+            $("[name='ins_dst']").val('<?php echo $result_array['district']?>');
+            $("input[name='number']").val('<?php echo $result_array['phone']?>');
+            $("input[name='email']").val('<?php echo $result_array['email']?>');
+            $("input[name='website']").val('<?php echo $result_array['website']?>');
+
+            //Head details
+            $("input[name='head_name']").val('<?php echo $result_array['head_name']?>');
+            $("input[name='head_desg']").val('<?php echo $result_array['inst_headdesg']?>');
+            $("input[name='head_mob']").val('<?php echo $result_array['head_mob']?>');  
+            $("input[name='head_ph']").val('<?php echo $result_array['head_contact']?>');
+            $("input[name='head_email']").val('<?php echo $result_array['head_email']?>');
+
+            //Tpo Name
+            $("input[name='tpo_name']").val('<?php echo $result_array['tpo_name']?>');
+            $("select[name='tpo_contact1']").val('<?php echo $result_array['tpo_ph']?>');
+            $("[name='tpo_contact2']").val('<?php echo $result_array['tpo_ph2']?>');
+            $("input[name='tpo_email']").val('<?php echo $result_array['tpo_email']?>');
+
+            //Additional Info
+            $("input[name='num_cmp']").val('<?php echo $result_array['no_of_comp']?>');
+            $("input[name='num_cmplab']").val('<?php echo $result_array['num_cmplab']?>');
+            $("input[name='min_num_cmp']").val('<?php echo $result_array['min_num_cmp']?>');
+            $("input[name='ispeed']").val('<?php echo $result_array['int_speed']?>');
+            $("input[name='hall_cap']").val('<?php echo $result_array['hall_cap']?>');
+            $("input[name='num_cctv']").val('<?php echo $result_array['cctv_no']?>');
+            $("select[name='has_fiber']").val('<?php echo $result_array['fibop_lan']?>');
+        })
     </script>
 </body>
 

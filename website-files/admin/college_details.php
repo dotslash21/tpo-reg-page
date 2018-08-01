@@ -131,6 +131,7 @@
                     //edit FN
                     $("#edit-<?php echo $res_arr['inst_code']; ?>").click(function () {
                         console.log("edit <?php echo $res_arr['inst_code']; ?>");
+                        window.location = './record_edit.php?inst_code_edit=<?php echo $res_arr['inst_code']; ?>';
                     })
 
                     //Delete FN
