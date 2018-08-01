@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['admin_id'])){
-        echo "You need to fill the whole form";
+        header('Location: ./login.php?lf=yes');
         exit;
     }
 

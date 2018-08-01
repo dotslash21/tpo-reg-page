@@ -1,3 +1,20 @@
+<?php
+    session_start();
+    if(isset($_SESSION['admin_id'])){
+        header('Location: ./dashboard.php');
+        exit;
+    }
+
+    if(isset($_GET['lf'])){
+        if($_GET['lf'] == 'yes'){
+            $logfail= "You need to Log In first";
+        }
+    }
+    else{
+        $logfail = '';
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -77,6 +94,9 @@
                     <label class="active" for="admin_passwd">Password</label>
                 </div>
                 <br>
+                <div class="left">
+                    <span><?php echo $logfail; ?></span>
+                </div>
                 <button class="btn btn-large green right" type="submit" name="submit" id="submit">LOGIN</button>
                 <div class="clearfix"></div>
             </form>
