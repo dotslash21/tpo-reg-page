@@ -11,7 +11,7 @@ $(document).ready(function(e){
         //Start of AJAX process
     	$.ajax({
     		type: 'POST',
-    		url: '../ajax/institute_fileUpload.php',
+    		url: '../ajax/institute_fileupload.php',
     		data: new FormData(this),
     		dataType: 'json',
             async: true,
