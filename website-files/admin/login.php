@@ -84,6 +84,10 @@
     <main>
         <div class="container z-depth-3" id="form-container">
             <br>
+            <div id="msg_box" class="center-align">
+                <span class="red-text text-lighten-1"><?php echo $logfail; ?></span>
+            </div>
+            <br>
             <form id="admin-login">
                 <div class="input-field">
                     <input type="text" id="admin_id" name="admin_id" required>
@@ -94,9 +98,6 @@
                     <label class="active" for="admin_passwd">Password</label>
                 </div>
                 <br>
-                <div class="left">
-                    <span><?php echo $logfail; ?></span>
-                </div>
                 <button class="btn btn-large green right" type="submit" name="submit" id="submit">LOGIN</button>
                 <div class="clearfix"></div>
             </form>
