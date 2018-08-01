@@ -127,9 +127,24 @@
                             $("#modalcon-<?php echo $res_arr['inst_code']; ?>").append(data.value);
                         }, "json")
                     })
+
+                    //edit FN
+                    $("#edit-<?php echo $res_arr['inst_code']; ?>").click(function () {
+                        console.log("edit <?php echo $res_arr['inst_code']; ?>");
+                    })
+
+                    //Delete FN
+                    $("#delete-<?php echo $res_arr['inst_code']; ?>").click(function () {
+                        console.log("Delete <?php echo $res_arr['inst_code']; ?>");
+                    })
+
+                    //Print FN
+                    $("#print-<?php echo $res_arr['inst_code']; ?>").click(function () {
+                        console.log("Print <?php echo $res_arr['inst_code']; ?>");
+                    })
                 })
             </script>
-            
+
             <?php
                 }
             ?>
