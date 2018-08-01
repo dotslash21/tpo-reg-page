@@ -1,3 +1,14 @@
+<?php 
+    if(isset($_GET['fallback'])){
+        if($_GET['fallback'] == 'yes'){
+            $fallback= "You need to Fill these Forms first";
+        }
+    }
+    else{
+        $fallback = '';
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,6 +42,7 @@
     <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
         <form class="frm">
+            <p><?php echo $fallback; ?></p>
             <h4>Institute Details</h4>
             <hr><br>
 

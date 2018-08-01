@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['inst_code'])){
-        echo "You need to fill the whole form";
+        header('Location: ./form.php?fallback=yes');
         exit;
     }
 ?>
