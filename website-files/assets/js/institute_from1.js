@@ -49,6 +49,71 @@ $(document).ready( function(){
     if(sessionStorage.website !== undefined){
         $("input[name='website']").val(sessionStorage.website);
     }
+
+    $("input#inst_code").blur(function () {
+        var inst_cd = $("input[name='inst_code']").val();
+        var inst_cd_err =  $(".err-inst_code")
+        if(inst_cd == ''){
+            inst_cd_err.hide();
+            return;
+        }
+        $.ajax({
+            type: 'POST',
+	        url: '../ajax/institute_institute_check.php',
+	        data: {
+                check: 1,
+                inst_code:inst_cd
+            },
+	        dataType: 'json',
+	        async: true,
+        })
+        .done(function ajaxDone(data) {
+            // Whatever data is
+            if(data.inst_chk !== undefined){
+                if(data.inst_chk == 'yes'){
+                    //Inst_code is exist
+                    inst_cd_err.text("Institute Code is already Exist. Try another One").show();
+                }
+                if(data.inst_chk === 'no'){
+                    //Inst_code is not exist
+                    inst_cd_err.text("Institute Code is Available").show();
+                }
+            }
+        
+        })
+    })
+    $("input#uid").blur(function () {
+        var uid = $("input[name='uid']").val();
+        var uid_err = $(".err-uid");
+        if(uid == ''){
+            uid_err.hide();
+            return;
+        }
+        $.ajax({
+            type: 'POST',
+	        url: '../ajax/institute_institute_check.php',
+	        data: {
+                check: 2,
+                uid:uid
+            },
+	        dataType: 'json',
+	        async: true,
+        })
+        .done(function ajaxDone(data) {
+            // Whatever data is
+            if(data.inst_uid_chk !== undefined){
+                if(data.inst_uid_chk == 'yes'){
+                    //Inst_code is exist
+                    uid_err.text("Institute User ID is already Exist. Try another One").show();
+                }
+                if(data.inst_uid_chk === 'no'){
+                    //Inst_code is not exist
+                    uid_err.text("Institute User ID is Available").show();
+                }
+            }
+        
+        })
+    })
 })
 
 //On click on submit button

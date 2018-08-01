@@ -54,9 +54,15 @@
                 <input type="number" id="inst_code" name="inst_code" required min="0">
                 <label class="active" for="inst_code">Institute code</label>
             </div>
+            <div>
+                <span class="err-inst_code"></span>
+            </div>
             <div class="input-field">
                 <input type="text" id="uid" name="uid" required>
                 <label class="active" for="uid">Institute User ID</label>
+            </div>
+            <div>
+                <span class="err-uid"></span>
             </div>
             <div class="input-field">
                 <input type="password" id="password" name="password" required>
