@@ -1,7 +1,7 @@
 <?php 
     if(isset($_GET['fallback'])){
         if($_GET['fallback'] == 'yes'){
-            $fallback= "You need to Fill these Forms first";
+            $fallback= "You need to fill up the whole form first!";
         }
     }
     else{
@@ -42,7 +42,9 @@
     <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
         <form class="frm">
-            <p><?php echo $fallback; ?></p>
+            <div id="msg_box" class="center-align">
+                <span class="red-text text-lighten-1"><?php echo $fallback; ?></span>
+            </div>
             <h4>Institute Details</h4>
             <hr><br>
 
