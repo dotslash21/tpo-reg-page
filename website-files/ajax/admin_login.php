@@ -1,5 +1,5 @@
 <?php
-
+    define("_CON_",true);
     //Connection
     require("../inc/db-con.php");
 

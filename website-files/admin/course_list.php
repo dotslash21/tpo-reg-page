@@ -1,11 +1,12 @@
 <?php
-    require("../inc/db-con.php");
 
     session_start();
     if(!isset($_SESSION['admin_id'])){
         header('Location: ./login.php?lf=yes');
         exit;
     }
+    define("_CON_",true);
+    require("../inc/db-con.php");
 ?>
 
 <!DOCTYPE html>

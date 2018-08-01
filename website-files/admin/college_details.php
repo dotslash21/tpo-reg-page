@@ -4,7 +4,7 @@
         header('Location: ./login.php?lf=yes');
         exit;
     }
-
+    define("_CON_",true);
     require("../inc/db-con.php");
 ?>
 
