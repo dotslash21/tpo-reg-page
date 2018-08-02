@@ -75,10 +75,17 @@
 <body>
     <!-- NAVIGATION -->
     <nav>
-        <div class="nav-wrapper blue darken-3 z-depth-1-half">
-            <a href="" class="brand-logo center">ADMIN LOGIN PANEL</a>
-        </div>
-    </nav>
+    <div class="nav-wrapper blue darken-3 z-depth-1-half">
+      <a href="#!" class="brand-logo center">ADMIN LOGIN PANEL</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+    </div>
+  </nav>
 
     <!-- MAIN FORM BODY-->
     <main>
@@ -119,7 +126,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="../assets/js/admin_login.js"></script>
     <script>
-        $(".button-collapse").sideNav();
+        $( document ).ready(function(){
+            $(".button-collapse").sideNav();
+        })
     </script>
     <script>
         $(document).ready(function () {
