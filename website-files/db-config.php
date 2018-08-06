@@ -4,16 +4,15 @@
         
         // ** MySQL settings - You can get this info from your web host ** //
         /** The name of the database for WordPress */
-        define('DB_NAME', 'b16_21262708_cpcdemo');
-
+        define('DB_NAME', 'cpc_tpo');
         /** MySQL database username */
-        define('DB_USER', 'b16_21262708');
+        define('DB_USER', 'root');
 
         /** MySQL database password */
-        define('DB_PASSWORD', 'Arkad1p!!2w3e4r5t6y7u8i');
+        define('DB_PASSWORD', '');
 
         /** MySQL hostname */
-        define('DB_HOST', 'sql309.byethost.com');
+        define('DB_HOST', 'localhost');
     }
     else{
         header('Location: ./404.php');

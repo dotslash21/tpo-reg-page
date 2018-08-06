@@ -13,6 +13,14 @@
     else{
         $logfail = '';
     }
+    if(isset($_GET['fallback'])){
+        if($_GET['fallback'] == 'yes'){
+            $logfail= "You are Logout Successfully";
+        }
+    }
+    else{
+        $logfail = '';
+    }
 ?>
 
 <!DOCTYPE html>
