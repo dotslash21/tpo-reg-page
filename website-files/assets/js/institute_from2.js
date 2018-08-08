@@ -24,10 +24,10 @@ $(document).ready( function(){
         $("input[name='tpo_name']").val(sessionStorage.tpo_name);
     }
     if(sessionStorage.tpo_contact1 !== undefined){
-        $("select[name='tpo_contact1']").val(sessionStorage.tpo_contact1);
+        $("input[name='tpo_contact1']").val(sessionStorage.tpo_contact1);
     }
     if(sessionStorage.tpo_contact2 !== undefined){
-        $("[name='tpo_contact2']").val(sessionStorage.tpo_contact2);
+        $("input[name='tpo_contact2']").val(sessionStorage.tpo_contact2);
     }
     if(sessionStorage.tpo_email !== undefined){
         $("input[name='tpo_email']").val(sessionStorage.tpo_email);
