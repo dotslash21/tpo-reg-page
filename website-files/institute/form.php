@@ -111,7 +111,7 @@
             <div class="input-field">
                 <select name="inst_appr" id="inst_appr" required>
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="UGc">UGC</option>
+                    <option value="UGC">UGC</option>
                     <option value="AICTE">AICTE</option>
                 </select>
                 <label>Institute Approved By</label>

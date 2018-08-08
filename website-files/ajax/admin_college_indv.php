@@ -4,9 +4,16 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
         $inst_code = $_GET['inst_code'];
+
+        //Credential
         $sql_inst = "SELECT * FROM cred WHERE inst_code ='".$inst_code."'";
         $result = mysqli_query($con, $sql_inst);
         $result_arr = mysqli_fetch_array($result);
+
+        //Course
+        $sql_crs = "SELECT * FROM college_crs WHERE college_id ='".$inst_code."' ORDER BY deg_optd ASC";
+        $return['sql'] = $sql_crs;
+        $result_crs = mysqli_query($con, $sql_crs);
 
         header('Content-Type: application/json');
 
@@ -85,6 +92,22 @@
         $value .=       '<div class="col s6">Total Hall capacity: '.$result_arr['hall_cap'].'</div>';
         $value .=       '<div class="col s6">Total CCTV cameras in lab: '.$result_arr['cctv_no'].'</div>';
         $value .=   '</div>';
+        $value .=   '<hr>';
+        $value .=   '<h5>Course Details</h5>';
+        $value .=   '<hr>';
+        $value .=   '<div class="row">';
+        $value .=       '<div class="col s6 center"><b>Course Name</b></div>';
+        $value .=       '<div class="col s6 center"><b>Intake</b></div>';
+        $value .=   '</div>';
+        // Course Details
+        while ($array_crs = mysqli_fetch_array($result_crs)) { 
+            $value .=   '<hr>';
+            $value .=   '<div class="row">';
+            $value .=       '<div class="col s6 center">'.$array_crs['deg_optd'].'</div>';
+            $value .=       '<div class="col s6 center">'.$array_crs['intake'].'</div>';
+            $value .=   '</div>';
+        }
+        
 
         $return['value'] = $value;
         
