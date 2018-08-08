@@ -145,6 +145,16 @@
                     $("#print-<?php echo $res_arr['inst_code']; ?>").click(function () {
                         console.log("Print <?php echo $res_arr['inst_code']; ?>");
                     })
+
+                    var _apprv = $("#approve-<?php echo $res_arr['inst_code']; ?>");
+                    _apprv.change(function () {
+                        if (_apprv.is(':checked')){
+                            console.log("yes-<?php echo $res_arr['inst_code']; ?>");
+                        }
+                        if (_apprv.not(':checked')){
+                            console.log("no-<?php echo $res_arr['inst_code']; ?>");
+                        }
+                    })
                 })
             </script>
 
