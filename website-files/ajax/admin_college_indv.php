@@ -17,7 +17,7 @@
         $value ='';
         $value .=   '<h4>'.$result_arr['inst_name'].'</h4><hr>';
         $value .=   '<div class="row">';
-        $value .=       '<div class="col s6">Institute ID: '.$result_arr['uid'].'</div>';
+        $value .=       '<div class="col s6" id="uid-'.$inst_code.'">Institute ID: '.$result_arr['uid'].'</div>';
         $value .=        '<div class="col s6">Institute Code: '.$result_arr['inst_code'].'</div>';
         $value .=   '</div>';
         $value .=   '<div class="row">';
