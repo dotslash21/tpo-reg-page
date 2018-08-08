@@ -1,5 +1,10 @@
 <?php
     session_start();
+
+    define("_CON_",true);
+    //Connection
+    require("../inc/db-con.php");
+
     header('Content-Type: application/json');
 
     $return = [];
@@ -16,8 +21,12 @@
                     $temp = explode(".", $_FILES["uploadfile"]["name"]);
                     $newfilename = $_SESSION['inst_code'].".". end($temp);
                     if(move_uploaded_file($_FILES['uploadfile']['tmp_name'],"../upload/".$newfilename)){
-                        $return['success'] = "File uploaded Succesfully" ."<br/>";
-                        $return['fileName'] = "Uploaded file  " . $_FILES['uploadfile']['name'];
+                        $sql = "UPDATE `cred` SET `upload` = '".$newfilename."' WHERE `inst_code` = '".$_SESSION['inst_code']."'";
+                        $return['sql'] = $sql;
+                        if(mysqli_query($con,$sql)){
+                            $return['success'] = "File uploaded Succesfully" ."<br/>";
+                            $return['fileName'] = "Uploaded file  " . $_FILES['uploadfile']['name'];
+                        }
                     }
                 }
                 else{
