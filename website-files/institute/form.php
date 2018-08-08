@@ -100,10 +100,10 @@
             <div class="input-field">
                 <select name="affli" id="affli" required>
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="MAKAUT">Maulana Kalam Azad University of Technology</option>
-                    <option value="CU">Calcutta University</option>
-                    <option value="JU">Jadavpur University</option>
-                    <option value="KU">University of Kalyani</option>
+                    <option value="Maulana Kalam Azad University of Technology">Maulana Kalam Azad University of Technology</option>
+                    <option value="Calcutta University">Calcutta University</option>
+                    <option value="Jadavpur University">Jadavpur University</option>
+                    <option value="University of Kalyani">University of Kalyani</option>
                 </select>
                 <label>Institute Affiliated By</label>
             </div>
@@ -111,9 +111,8 @@
             <div class="input-field">
                 <select name="inst_appr" id="inst_appr" required>
                     <option value="" disabled selected>Choose your option</option>
-                    <option value="1">SELECT-1</option>
-                    <option value="2">SELECT-2</option>
-                    <option value="3">SELECT-3</option>
+                    <option value="UGc">UGC</option>
+                    <option value="AICTE">AICTE</option>
                 </select>
                 <label>Institute Approved By</label>
             </div>

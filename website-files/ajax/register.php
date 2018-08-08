@@ -30,7 +30,7 @@
         $inst_type  = $dataObj['inst_type'];
         $affli      = $dataObj['affli'];
         $inst_appr  = $dataObj['inst_appr'];
-        $address    = $dataObj['address'];
+        $address    = trim($dataObj['address']);
         $pin        = $dataObj['pin'];
         $inst_state = $dataObj['inst_state'];
         $ins_dst    = $dataObj['ins_dst'];

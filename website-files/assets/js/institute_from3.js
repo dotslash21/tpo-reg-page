@@ -22,7 +22,10 @@ $(document).ready( function(){
         $("input[name='num_cctv']").val(sessionStorage.num_cctv);
     }
     if(sessionStorage.has_fiber !== undefined){
-        $("select[name='has_fiber']").val(sessionStorage.has_fiber);
+        var has_fib = $("select[name='has_fiber']");
+        if(has_fib.is(':checked') === false) {
+            has_fib.filter('[value='+sessionStorage.has_fiber+']').prop('checked', true);
+        }
     }
 })
 

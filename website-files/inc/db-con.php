@@ -1,15 +1,15 @@
 <?php
     if(defined("_CON_")){
         // Checks if the config file is exists
-        if(!file_exists('../db-config.php')){
-            die('db-config file not found. Recheck that all files are there');
-        }
+        // if(!file_exists(__DIR__.'../db-config.php')){
+        //     die('db-config file not found. Recheck that all files are there');
+        // }
 
         //Add the config file
         define('_CONFIG_',true);
 
         // Adding the Config file for Database
-        require('../db-config.php');
+        require(__DIR__.'/../db-config.php');
 
         // Checks if all vabiables are presents
         if(!defined('DB_NAME') && !defined('DB_USER') && !defined('DB_PASSWORD') && !defined('DB_HOST')){

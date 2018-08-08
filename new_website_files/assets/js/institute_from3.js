@@ -22,7 +22,10 @@ $(document).ready( function(){
         $("input[name='num_cctv']").val(sessionStorage.num_cctv);
     }
     if(sessionStorage.has_fiber !== undefined){
-        $("select[name='has_fiber']").val(sessionStorage.has_fiber);
+        var has_fib = $("select[name='has_fiber']");
+        if(has_fib.is(':checked') === false) {
+            has_fib.filter('[value='+sessionStorage.has_fiber+']').prop('checked', true);
+        }
     }
 })
 
@@ -41,7 +44,7 @@ $(document).on("submit","form.frm",function(event) {
         ispeed:         $("input[name='ispeed']", _form).val(),
         hall_cap:       $("input[name='hall_cap']", _form).val(),
         num_cctv:       $("input[name='num_cctv']", _form).val(),
-        has_fiber:      $("input[name='has_fiber']", _form).val(),
+        has_fiber:      $("input[name='has_fiber']:checked", _form).val(),
     };
 
     //Instute INFO
@@ -70,6 +73,7 @@ $(document).on("submit","form.frm",function(event) {
         return false;
     }else if(dataObj.num_cmplab < dataObj.min_num_cmp){
         alert("Mininum number of lab can't be more than Total number");
+        return false;
     }
 
     //Storing in sessionStorage
