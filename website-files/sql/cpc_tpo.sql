@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2018 at 03:28 PM
+-- Generation Time: Aug 09, 2018 at 06:56 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -104,7 +104,8 @@ INSERT INTO `college_crs` (`college_id`, `deg_optd`, `intake`) VALUES
 (123456, 'M.Tech - EE', 888),
 (12314, 'M.Tech - EE', 7),
 (152353, 'M.Tech - EE', 9),
-(35535, 'B.Tech - CSE', 2147483647);
+(1111, 'M.Tech -> EE', 7784),
+(11112, 'M.Tech -> EE', 78);
 
 -- --------------------------------------------------------
 
@@ -131,7 +132,10 @@ INSERT INTO `course_list` (`id`, `degree`, `course_name`) VALUES
 (9, 'B.Tech', 'EE'),
 (10, 'B.Tech', 'EE'),
 (11, 'M.Tech', 'CSE'),
-(12, 'BCA', 'bachelor in Computer Application');
+(12, 'BCA', 'bachelor in Computer Application'),
+(13, 'M.Tech', 'XYZ'),
+(14, 'B.Tech', 'XYZ'),
+(15, 'M.Tech', 'ABC');
 
 -- --------------------------------------------------------
 
@@ -190,7 +194,9 @@ INSERT INTO `cred` (`id`, `inst_name`, `inst_code`, `uid`, `pwd`, `estd`, `inst_
 (38, 'Arkadip Bhattacharya', 123456, '123', '$2y$10$JO0dAUvzHb2oNAK9GonDn.5533GFcCPRTm3eVj3lcSK', 1800, 'NAAC-A+', 'Government', 'JU', '2', 'Andhra Pradesh (AP)', 'llhkghjfgdh', 713144, '7/c\nLaxmi Prasad Singh Road,Gorabazar', 2147483647, 'in2arkadipb13@gmail.com', 'http://timeclock.pl', 'Arkadip Bhattacharya', 'nxdn', 1234567890, 2147483647, 'in2arkadipb13@gmail.com', 'Laxmi Prasad Singh Road,Gorabazar', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 6, 5, 997, 444, 555, 'yes', 444, '', '2018-08-08 16:41:40', '', '', '', ''),
 (42, 'Arkadip Bhattacharyaaar', 12314, '114', '$2y$10$V4m8BBHfxiP5FyQGHHeHvO7Gu99JfzdYm7V.spm97Hj', 1800, 'NAAC-A+', 'Government-Aided', 'Maulana Kalam Azad University of Technology', 'UGc', 'Andhra Pradesh (AP)', 'llhkghjfgdh', 713144, '7/c\nLaxmi Prasad Singh Road,Gorabazar', 2147483647, 'in2arkadipb13@gmail.com', 'http://timeclock.jk', 'Arkadip Bhattacharya', 'nxdn', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 'Laxmi Prasad Singh Road,Gorabazar', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 1123, 241, 2332, 235235, 2342, 'yes', 1242, '', '2018-08-08 16:54:07', '', '', '', ''),
 (43, '1ahgshf', 152353, '2525325', '$2y$10$q2ArRxgwoqlYMAu7bGJBEuOWW3oHT1B.LyPgDlrpDwB', 1800, 'NAAC-A+', 'Government', 'Maulana Kalam Azad University of Technology', 'UGc', 'Andhra Pradesh (AP)', 'asasasasa', 742101, '7/c\nLaxmi Prasad Singh Road,Gorabazar', 2147483647, 'in2arkadipb13@gmail.com', 'http://timeclock.pl', 'Arkadip Bhattacharya', 'nxdn', 1233456678, 2147483647, 'in2arkadipb13@gmail.com', 'Laxmi Prasad Singh Road,Gorabazar', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 98, 44, 22, 55, 54, 'yes', 5, '152353.jpg', '2018-08-08 17:01:27', '', '', '', ''),
-(44, 'Arkadip Bhattacharya131', 35535, '12345678', '$2y$10$eKMimiwhnuztWXBee0GCZe5gpaiJrDFuTf.avwqEtDr', 1800, 'NAAC-A+', 'Government', 'Jadavpur University', 'AICTE', 'Andhra Pradesh (AP)', 'llhkghjfgdh', 742101, '7/c\nLaxmi Prasad Singh Road,Gorabazar', 2147483647, 'in2arkadipb13@gmail.com', 'http://timeclock.jk', 'Arkadip Bhattacharya', 'nxdn', 1234569987, 2147483647, 'in2arkadipb13@gmail.com', 'Laxmi Prasad Singh Road,Gorabazar', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 787, 98, 546, 544, 554, 'yes', 797, '', '2018-08-09 09:07:55', '::1', '', '', '');
+(44, 'Arkadip Bhattacharya131', 35535, '12345678', '$2y$10$eKMimiwhnuztWXBee0GCZe5gpaiJrDFuTf.avwqEtDr', 1800, 'NAAC-A+', 'Government', 'Jadavpur University', 'AICTE', 'Andhra Pradesh (AP)', 'llhkghjfgdh', 742101, '7/c\nLaxmi Prasad Singh Road,Gorabazar', 2147483647, 'in2arkadipb13@gmail.com', 'http://timeclock.jk', 'Arkadip Bhattacharya', 'nxdn', 1234569987, 2147483647, 'in2arkadipb13@gmail.com', 'Laxmi Prasad Singh Road,Gorabazar', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 787, 98, 546, 544, 554, 'yes', 797, '', '2018-08-09 09:07:55', '::1', '', '', ''),
+(45, 'qwerty', 1111, '12333', '$2y$10$wupCDymAUO.ndLzavwjLE.imPDFnulWj5sGtWxk5Dfz', 1800, 'NAAC-C', 'Government', 'Maulana Kalam Azad University of Technology', 'UGC', 'Andhra Pradesh (AP)', 'llhkghjfgdh', 111111, '7/c\nLaxmi Prasad Singh Road,Gorabazar', 2147483647, 'in2arkadipb13@gmail.com', 'http://timeclock.jk', 'qwerty', 'nxdn', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 'Laxmi Prasad Singh Road', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 744, 542, 77, 7777777, 884, 'yes', 74, '', '2018-08-09 12:22:02', '::1', '', '', ''),
+(46, 'qwerty11', 11112, '123333', '$2y$10$XtNW0ydriMdAUSRoZrto2.v2zCnnfKQliOXENwWy3Yp', 1800, 'NAAC-C', 'Government', 'Maulana Kalam Azad University of Technology', 'UGC', 'Andhra Pradesh (AP)', 'llhkghjfgdh', 111111, '7/c\nLaxmi Prasad Singh Road,Gorabazar', 2147483647, 'in2arkadipb13@gmail.com', 'http://timeclock.jk', 'qwerty', 'nxdn', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 'Laxmi Prasad Singh Road', 2147483647, 2147483647, 'in2arkadipb13@gmail.com', 744, 542, 77, 7777777, 884, 'yes', 74, '11112.jpg', '2018-08-09 12:30:03', '::1', '::1', '', '');
 
 --
 -- Indexes for dumped tables
@@ -219,13 +225,13 @@ ALTER TABLE `cred`
 -- AUTO_INCREMENT for table `course_list`
 --
 ALTER TABLE `course_list`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `cred`
 --
 ALTER TABLE `cred`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id', AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id', AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
