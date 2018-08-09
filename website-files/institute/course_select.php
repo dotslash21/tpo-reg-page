@@ -64,7 +64,7 @@
                         $result_course = mysqli_query($con, $sql_opt);
                         while ($array_course = mysqli_fetch_array($result_course)) {
                     ?>
-                        <option value="<?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?>"><?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?></option> -->
+                        <option value="<?php echo $array_degree['degree'] . " -> " . $array_course['course_name']; ?>"><?php echo $array_degree['degree'] . " -> " . $array_course['course_name']; ?></option> -->
 
                 <?php
                         }

@@ -2,9 +2,27 @@
   define('_CON_',true);
 
   require("./inc/db-con.php");
+  
   $sql_college = "SELECT inst_name FROM cred";
+  $sql_domain = "SELECT DISTINCT course_name FROM course_list";
+  $sql_degree = "SELECT DISTINCT degree FROM course_list";
+  $sql_student = "SELECT intake FROM college_crs";
+  
   $result_clg  = mysqli_query($con,$sql_college);
+  $result_dmn  = mysqli_query($con,$sql_domain);
+  $result_deg  = mysqli_query($con,$sql_degree);
+  $result_std  = mysqli_query($con,$sql_student);
+
+  //Number of college
   $college_num = mysqli_num_rows($result_clg);
+  $domain_num  = mysqli_num_rows($result_dmn);
+  $degree_num  = mysqli_num_rows($result_deg);
+
+  $intake = 0;
+  
+  while ($intake_num = mysqli_fetch_array($result_std)) {
+    $intake = $intake + (int) $intake_num['intake'];
+  }
 ?>
 
 <!DOCTYPE html>
@@ -185,7 +203,7 @@
             <img src="assets/images/1.png" alt="" />
           </div>
           <!--icon box top -->
-          <h4>196 Affiliated Institutions</h4>
+          <h4><?php echo $college_num; ?> Affiliated Institutions</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue eset nec lacus
             elit dor broma.</p>
           <p>
@@ -203,7 +221,7 @@
             <img src="assets/images/2.png" alt="" />
           </div>
           <!--icon box top -->
-          <h4>29 Domain Specalization</h4>
+          <h4><?php echo $domain_num; ?> Domain Specalization</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue eset nec lacus
             elit dor broma.</p>
           <p>
@@ -221,7 +239,7 @@
             <img src="assets/images/3.png" alt="" />
           </div>
           <!--icon box top -->
-          <h4>Top Notch Faculties</h4>
+          <h4><?php echo $degree_num; ?> Degrees Registered</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue eset nec lacus
             elit dor broma.</p>
           <p>
@@ -239,7 +257,7 @@
             <img src="assets/images/4.png" alt="" />
           </div>
           <!--icon box top -->
-          <h4>1 Lakh+ Student Capacity</h4>
+          <h4><?php echo $intake; ?> Student Capacity</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue eset nec lacus
             elit dor broma.</p>
           <p>
