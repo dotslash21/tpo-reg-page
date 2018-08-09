@@ -76,8 +76,8 @@
                 <div class="col s10">
                 </div>
                 <div class="col s2">
-                    <button class="btn btn-large waves-effect waves-light blue darken-1">
-                        PRINT ALL DETAILS
+                    <button class="btn btn-large waves-effect waves-light blue darken-1" id="printall">
+                        PRINT ALL
                     </button>
                 </div>
             </div>
@@ -202,6 +202,7 @@
             });
         });
     </script>
+    <script src="../assets/js/admin-college_details.js"></script>
 </body>
 
 </html>

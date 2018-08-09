@@ -1,5 +1,10 @@
 <?php
+  define('_CON_',true);
 
+  require("./inc/db-con.php");
+  $sql_college = "SELECT inst_name FROM cred";
+  $result_clg  = mysqli_query($con,$sql_college);
+  $college_num = mysqli_num_rows($result_clg);
 ?>
 
 <!DOCTYPE html>
