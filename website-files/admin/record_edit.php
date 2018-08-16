@@ -356,7 +356,10 @@
             <h4>Course Details</h4>
             <hr>
             <br>
-
+            
+            <div id="courses-area">
+            
+            </div>
 
             <button class="btn btn-large red left" type="reset">Reset</button>
             <button class="btn btn-large green right" type="submit" name="submit" id="submit">Update &amp; Continue</button>
@@ -458,7 +461,13 @@
             var has_fib = $("input[name='has_fiber']");
             if(has_fib.is(':checked') === false) {
                 has_fib.filter('[value="<?php echo $result_array['fibop_lan']; ?>"]').prop('checked', true);
-            }1
+            }
+
+            if($("#uid-<?php echo $result_array['inst_code']; ?>").length == 0){
+                $.get("../ajax/admin_college_indv_crs.php?inst_code=<?php echo $result_array['inst_code']; ?>", function(data){
+                    $("#courses-area").append(data.value);
+                }, "json")
+            }
         })
     </script>
 </body>
