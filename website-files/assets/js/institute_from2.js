@@ -57,23 +57,23 @@ $(document).on("submit","form.frm",function(event) {
     };
 
     // Institute head details
-    if(dataObj.head_name == undefined){
+    if(dataObj.head_name === undefined){
         alert("Please enter a Institute Head Name");
         return false;
     }
-    else if(dataObj.head_desg == undefined){
+    else if(dataObj.head_desg === undefined){
         alert("Please enter a Institute Head Designation");
         return false;
     }
-    else if(dataObj.head_mob == undefined){
+    else if(dataObj.head_mob === undefined){
         alert("Please enter a Institute Head Mobile");
         return false;
     }
-    else if(dataObj.head_ph == undefined){
+    else if(dataObj.head_ph === undefined){
         alert("Please enter a Institute Head Land Line");
         return false;
     }
-    else if(dataObj.head_email == undefined){
+    else if(dataObj.head_email === undefined){
         alert("Please enter a Institute Head Email ID");
         return false;
     }

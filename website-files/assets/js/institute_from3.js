@@ -60,19 +60,20 @@ $(document).on("submit","form.frm",function(event) {
         alert("Please enter Minimum Number of Computer lab");
         return false;
     }
-    else if(dataObj.ispeed == undefined){
+    else if(dataObj.ispeed === undefined){
         alert("Please enter Institute Internet Speed");
         return false;
     }
-    else if(dataObj.hall_cap == undefined){
+    else if(dataObj.hall_cap === undefined){
         alert("Please enter Institute Hall Capacity");
         return false;
     }
-    else if(dataObj.num_cctv == undefined){
+    else if(dataObj.num_cctv === undefined){
         alert("Please enter Total mun of CCTV");
         return false;
     }else if(dataObj.num_cmplab < dataObj.min_num_cmp){
         alert("Mininum number of lab can't be more than Total number");
+        return false;
     }
 
     //Storing in sessionStorage

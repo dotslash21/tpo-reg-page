@@ -101,6 +101,140 @@ $(document).submit(function(event) {
         courseLength: sessionStorage.courseLength
     };
 
+    //All varification and helper massage done
+    if(dataObj.name.length < 5){
+        alert("Please enter the full Institute name");
+        return false;
+    }
+    else if(dataObj.inst_code.length < 1){
+        alert("Plese enter a valid Institute Code");
+        return false;
+    }
+    else if(dataObj.uid.length < 1){
+        alert("Plese enter a valid Institute ID");
+        return false;
+    }
+    else if(dataObj.password.length < 8){
+        alert("Please enter a password that is atleast 8 charecters");
+        return false;
+    }
+    else if(dataObj.estd.length < 4){
+        alert("Plese enter a valid ESTD Ex-2018");
+        return false;
+    }
+    else if(dataObj.accrd === undefined){
+        alert("Please choose Institue Accriditation ");
+        return false;
+    }
+    else if(dataObj.inst_type === undefined){
+        alert("Please choose Institue Type");
+        return false;
+    }
+    else if(dataObj.affli === undefined){
+        alert("Please choose Institue Affliation");
+        return false;
+    }
+    else if(dataObj.inst_appr == undefined){
+        alert("Please choose Institue Approve");
+        return false;
+    }
+    else if(dataObj.address.length < 10){
+        alert("Please enter a valid Address");
+        return false;
+    }
+    else if(dataObj.pin.length < 6){
+        alert("Please enter a valid Pin");
+        return false;
+    }
+    else if(dataObj.inst_state === undefined){
+        alert("Please select a State");
+        return false;
+    }
+    else if(dataObj.ins_dst === undefined){
+        alert("Please enter a valid District");
+        return false;
+    }
+    else if(dataObj.number.length < 9){
+        alert("Please enter a valid Contact Number");
+        return false;
+    }
+    else if(dataObj.email.length < 8){
+        alert("Please enter a valid Email");
+        return false;
+    }
+    else if(dataObj.website === undefined){
+        alert("Please enter a Website");
+        return false;
+    }
+
+    // Institute head details
+    if(dataObj.head_name == undefined){
+        alert("Please enter a Institute Head Name");
+        return false;
+    }
+    else if(dataObj.head_desg === undefined){
+        alert("Please enter a Institute Head Designation");
+        return false;
+    }
+    else if(dataObj.head_mob === undefined){
+        alert("Please enter a Institute Head Mobile");
+        return false;
+    }
+    else if(dataObj.head_ph === undefined){
+        alert("Please enter a Institute Head Land Line");
+        return false;
+    }
+    else if(dataObj.head_email === undefined){
+        alert("Please enter a Institute Head Email ID");
+        return false;
+    }
+
+    // Institute TPO details
+    if(dataObj.tpo_name === undefined){
+        alert("Please enter a Institute TPO Name");
+        return false;
+    }
+    else if(dataObj.tpo_contact1 === undefined){
+        alert("Please enter a Institute TPO Contact Number");
+        return false;
+    }
+    else if(dataObj.tpo_email === undefined){
+        alert("Please enter a Institute TPO Email ID");
+        return false;
+    }
+    //Instute INFO
+    if(dataObj.num_cmp < 1){
+        alert("Please enter  Number of Computers");
+        return false;
+    }
+    else if(dataObj.num_cmplab < 0){
+        alert("Please enter Total Number of Computer lab");
+        return false;
+    }
+    else if(dataObj.min_num_cmp < 0){
+        alert("Please enter Minimum Number of Computer lab");
+        return false;
+    }
+    else if(dataObj.ispeed === undefined){
+        alert("Please enter Institute Internet Speed");
+        return false;
+    }
+    else if(dataObj.hall_cap === undefined){
+        alert("Please enter Institute Hall Capacity");
+        return false;
+    }
+    else if(dataObj.num_cctv === undefined){
+        alert("Please enter Total mun of CCTV");
+        return false;
+    }else if(dataObj.num_cmplab < dataObj.min_num_cmp){
+        alert("Mininum number of lab can't be more than Total number");
+        return false;
+    }
+    else if(dataObj.courseLength ===  undefined){
+        alert("Course Details are not added Correctly");
+        return false;
+    }
+
     var courseName = [];
     var courseValue = [];
 

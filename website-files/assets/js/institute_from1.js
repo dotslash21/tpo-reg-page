@@ -164,19 +164,19 @@ $(document).on("submit","form.frm",function(event) {
         alert("Plese enter a valid ESTD Ex-2018");
         return false;
     }
-    else if(dataObj.accrd == undefined){
+    else if(dataObj.accrd === undefined){
         alert("Please choose Institue Accriditation ");
         return false;
     }
-    else if(dataObj.inst_type == undefined){
+    else if(dataObj.inst_type === undefined){
         alert("Please choose Institue Type");
         return false;
     }
-    else if(dataObj.affli == undefined){
+    else if(dataObj.affli === undefined){
         alert("Please choose Institue Affliation");
         return false;
     }
-    else if(dataObj.inst_appr == undefined){
+    else if(dataObj.inst_appr === undefined){
         alert("Please choose Institue Approve");
         return false;
     }
@@ -188,23 +188,23 @@ $(document).on("submit","form.frm",function(event) {
         alert("Please enter a valid Pin");
         return false;
     }
-    else if(dataObj.inst_state == undefined){
+    else if(dataObj.inst_state === undefined){
         alert("Please select a State");
         return false;
     }
-    else if(dataObj.ins_dst == undefined){
+    else if(dataObj.ins_dst === undefined){
         alert("Please enter a valid District");
         return false;
     }
-    else if(dataObj.number.length == 9){
+    else if(dataObj.number.length < 9){
         alert("Please enter a valid Contact Number");
         return false;
     }
-    else if(dataObj.email.length == 8){
+    else if(dataObj.email.length < 8){
         alert("Please enter a valid Email");
         return false;
     }
-    else if(dataObj.website == undefined){
+    else if(dataObj.website === undefined){
         alert("Please enter a Website");
         return false;
     }
