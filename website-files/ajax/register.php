@@ -39,6 +39,7 @@
 
         //POST variables
         $dataObj = $_POST['dataObj'];
+        $degree_name = $_POST['degreeName'];
         $course_name = $_POST['courseName'];
         $course_value= $_POST['courseValue'];
         //Credentials
@@ -148,6 +149,7 @@
                 for($i = 0; $i < $course_length; $i ++){
 
                     //escaping
+                    $degree_name_clean = clean($con, $degree_name[$i]);
                     $course_name_clean = clean($con, $course_name[$i]);
                     $course_value_clean = clean($con, $course_value[$i]);
 
@@ -155,7 +157,7 @@
                     if($course_name_clean != '' && $course_value_clean != ''){
 
                         $query_crs = '';
-                        $query_crs .= 'INSERT INTO college_crs(college_id, deg_optd, intake) VALUES("'.$inst_code_clean.'", "'.$course_name_clean.'", "'.$course_value_clean.'") ';
+                        $query_crs .= 'INSERT INTO college_crs(college_id, deg_optd, course_optd, intake) VALUES("'.$inst_code_clean.'","'.$degree_name_clean.'", "'.$course_name_clean.'", "'.$course_value_clean.'") ';
                         if($query_crs != ''){
                             if(mysqli_multi_query($con, $query_crs)){
 

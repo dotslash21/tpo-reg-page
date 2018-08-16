@@ -5,7 +5,20 @@ $(document).ready(function(){
         $("#course-intake").empty();
         var cursLength = sessionStorage.courseLength;
         for (var i=0; i < cursLength ;i++) {
-            $("#course-intake").append('<li class="collection-item"><div class="row"><div class="col s8 crs-name">'+sessionStorage['course-name-'+i]+'</div><div class="col s4">Intake:<span class="crs-value"> '+sessionStorage['course-value-'+i]+'</span></div></div></li>');
+            $("#course-intake").append(
+                `<li class="collection-item">
+                    <div class="row">
+                        <div class="col s8">
+                            <span class="deg-name">`+sessionStorage['degree-name-'+i]+`</span>
+                            <span> - </span>
+                            <span class="crs-name">`+sessionStorage['course-name-'+i]+`</span>
+                        </div>
+                        <div class="col s4">
+                            Intake:<span class="crs-value"> `+sessionStorage['course-value-'+i]+`</span>
+                        </div>
+                    </div>
+                </li>`
+            );
         }
         //Basic Institute Details
         $("input[name='name']").val(sessionStorage.name);
@@ -235,17 +248,23 @@ $(document).submit(function(event) {
         return false;
     }
 
+    var degreeName = [];
     var courseName = [];
     var courseValue = [];
 
+    $(".deg-name").each(function(i){
+        degreeName.push($(this).text());
+    });
     $(".crs-name").each(function(i){
         courseName.push($(this).text());
     });
     $(".crs-value").each(function(j){
         courseValue.push($(this).text());
     });
-
-    var sendData = {dataObj: dataObj, courseName: courseName, courseValue: courseValue};
+    console.log(degreeName);
+    console.log(courseName);
+    console.log(courseValue);
+    var sendData = {dataObj: dataObj, degreeName: degreeName, courseName: courseName, courseValue: courseValue};
     //Start of AJAX process
 
 	$.ajax({

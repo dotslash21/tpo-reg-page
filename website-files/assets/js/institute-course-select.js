@@ -9,8 +9,8 @@ $(document).ready(function () {
         for (var i= 0; i< crsLen; i++) {
             $("#course_form").append(`
                 <div class="input-field">
-                    <input type="number" id="`+i+`" name="`+sessionStorage['course-name-'+i]+`" min="0" required value="`+sessionStorage['course-value-'+i]+`">
-                    <label for="`+i+`">`+sessionStorage['course-name-'+i]+`</label>
+                    <input type="number" id="`+i+`" name="`+sessionStorage['degree-name-'+i]+`" - "`+sessionStorage['course-name-'+i]+`" min="0" required value="`+sessionStorage['degree-name-'+i]+`" - "`+sessionStorage['course-value-'+i]+`">
+                    <label for="`+i+`">`+sessionStorage['degree-name-'+i]+`" - "`+sessionStorage['course-name-'+i]+`</label>
                 </div>`
             );
         }
@@ -25,6 +25,7 @@ $('#lock').click(function() {
         var delLen = sessionStorage.courseLength;
 
         for (var i = 0; i < delLen; i++) {
+            sessionStorage.removeItem('degree-name-'+i);
             sessionStorage.removeItem('course-name-'+i);
             sessionStorage.removeItem('course-value-'+i);
         }
@@ -58,16 +59,14 @@ $(document).on("submit","form#course_form",function(event) {
     
     var courseLength = $("input", _form).length;
 
-    console.log($("input", _form));
-    for (var i = 0; i < $("input", _form).length; i++) {
-        console.log($("input#"+i, _form).val());
-        console.log($("input#"+i, _form).attr("name"));
-        sessionStorage['course-name-'+i] = $("input#"+i, _form).attr("name");
+    for (var i = 0; i < courseLength; i++) {
+        sessionStorage['degree-name-'+i] = $("input#"+i, _form).attr("name").split(" - ")[0];
+        sessionStorage['course-name-'+i] = $("input#"+i, _form).attr("name").split(" - ")[1];
         sessionStorage['course-value-'+i] = $("input#"+i, _form).val();
     }
     sessionStorage.courseLength = courseLength;
 
-    if(sessionStorage.length == (32 + (courseLength*2) + 1)){
+    if(sessionStorage.length == (32 + (courseLength*3) + 1)){
         //Redirect Location
         window.location = './summary.php';
     }
