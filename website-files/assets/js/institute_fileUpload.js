@@ -7,7 +7,9 @@ $(document).ready(function(e){
         var err = $(".error");
         var message = $(".message");
         var message2 = $(".message2");
-
+        err.hide();
+        message.hide();
+        message2.hide();
         //Start of AJAX process
     	$.ajax({
     		type: 'POST',
@@ -22,7 +24,7 @@ $(document).ready(function(e){
         .done(function ajaxDone(data) {
     		// Whatever data is  
             if(data.error !== undefined){
-                err.text(data.error).show();
+                err.html(data.error).show();
             }
             if(data.success !== undefined){
                 message.html(data.success).show();
