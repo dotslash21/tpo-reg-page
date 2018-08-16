@@ -353,6 +353,11 @@
                 </div>
             </div>
 
+            <h4>Course Details</h4>
+            <hr>
+            <br>
+
+
             <button class="btn btn-large red left" type="reset">Reset</button>
             <button class="btn btn-large green right" type="submit" name="submit" id="submit">Update &amp; Continue</button>
 
