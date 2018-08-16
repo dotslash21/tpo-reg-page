@@ -1,4 +1,24 @@
 //When Lock button is pressed
+$(document).ready(function () {
+    if(sessionStorage.courseLength !== undefined){
+        var crsLen = sessionStorage.courseLength;
+
+        $("#back").remove();
+        $("#course_form").append('<p>Please enter the corresponding intake capacity for the following selected courses in the fields below.</p>');
+        
+        for (var i= 0; i< crsLen; i++) {
+            $("#course_form").append(`
+                <div class="input-field">
+                    <input type="number" id="`+i+`" name="`+sessionStorage['course-name-'+i]+`" min="0" required value="`+sessionStorage['course-value-'+i]+`">
+                    <label for="`+i+`">`+sessionStorage['course-name-'+i]+`</label>
+                </div>`
+            );
+        }
+        $("#course_form").append('<button class="btn btn-large blue lighten-2 left" type="reset" id="back2">Back</button><button type="submit" class="btn btn-large green darken-2 right" id="submit" name="submit">Submit & Continue</button><div class="clearfix"></div>');
+
+    }
+})
+
 $('#lock').click(function() {
 
     if(sessionStorage.courseLength !== undefined){
