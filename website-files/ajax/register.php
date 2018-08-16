@@ -5,7 +5,7 @@
 
     //escaping function
     function clean($con, $var){
-        return mysqli_real_escape_string($con, $var);
+        return mysqli_real_escape_string($con, htmlspecialchars($var,EMT_QUOTES));
     }
 
     function get_client_ip() {
