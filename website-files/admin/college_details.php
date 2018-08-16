@@ -143,7 +143,14 @@
 
                     //Print FN
                     $("#print-<?php echo $res_arr['inst_code']; ?>").click(function () {
-                        console.log("Print <?php echo $res_arr['inst_code']; ?>");
+                        if($("#uid-<?php echo $res_arr['inst_code']; ?>").length == 0){
+                            $.get("../ajax/admin_college_indv.php?inst_code=<?php echo $res_arr['inst_code']; ?>", function(data){
+                                $("#modalcon-<?php echo $res_arr['inst_code']; ?>").append(data.value);
+                            }, "json")
+                        }
+                        $("#uid-<?php echo $res_arr['inst_code']; ?>").onload = function () {
+                            printDiv("modalcon-<?php echo $res_arr['inst_code']; ?>");   
+                        }
                     })
 
                     var _apprv = $("#approve-<?php echo $res_arr['inst_code']; ?>");
