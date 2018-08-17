@@ -58,7 +58,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <img src="assets/images/logo.png" alt="logo">
         </a>
       </div>
@@ -523,7 +523,7 @@
                 Copyright &copy; 2018. CPC, West Bengal
               </p>
               <!--<p class="simplenav">
-                <a href="index.html">Home</a> | 
+                <a href="index.php">Home</a> | 
                 <a href="./about.html">About</a> |
                 <a href="courses.html">Courses</a> |
                 <a href="price.html">Price</a> |

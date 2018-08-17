@@ -15,7 +15,7 @@
     }
     if(isset($_GET['fallback'])){
         if($_GET['fallback'] == 'yes'){
-            $logfail= "You are Logout Successfully";
+            $logfail= "You have logged off successfully!";
         }
     }
     else{
@@ -87,10 +87,10 @@
       <a href="#!" class="brand-logo center">ADMIN LOGIN PANEL</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.php">Home</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.php">Home</a></li>
       </ul>
     </div>
   </nav>

@@ -68,7 +68,7 @@
     <main>
         <div class="container z-depth-3" id="form-container">
             <div class="row">
-                <div class="col s4">
+                <div class="col l4 s12">
                     <a href="course_add.php">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-red waves-block red lighten-3">
                             <i class="material-icons medium">add</i>
@@ -76,7 +76,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col s4">
+                <div class="col l4 s12">
                     <a href="college_details.php">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
                             <i class="material-icons medium">pageview</i>
@@ -84,7 +84,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col s4">
+                <div class="col l4 s12">
                     <a href="course_list.php">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-green waves-block green lighten-3">
                             <i class="material-icons medium">format_list_numbered</i>

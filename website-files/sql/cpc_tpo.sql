@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2018 at 12:50 AM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: Aug 17, 2018 at 04:11 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.1.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -53,6 +53,13 @@ CREATE TABLE `college_crs` (
   `intake` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `college_crs`
+--
+
+INSERT INTO `college_crs` (`college_id`, `deg_optd`, `course_optd`, `intake`) VALUES
+(1211, 'B.Tech', 'Computer Science and Engineering', 60);
+
 -- --------------------------------------------------------
 
 --
@@ -70,7 +77,16 @@ CREATE TABLE `course_list` (
 --
 
 INSERT INTO `course_list` (`id`, `degree`, `course_name`) VALUES
-(1, 'B.Tech', 'Computer Science and Engineering');
+(1, 'B.Tech', 'Computer Science and Engineering'),
+(2, 'B.Tech', 'Mechanical Engineering'),
+(3, 'B.Tech', 'Electrical Engineering'),
+(4, 'B.Tech', 'Civil Engineering'),
+(5, 'M.Tech', 'Civil Engineering'),
+(6, 'M.Tech', 'Computer Science and Engineering'),
+(7, 'M.Tech', 'Mechanical Engineering'),
+(8, 'M.Tech', 'Electrical Engineering'),
+(9, 'MCA', 'MASTER IN COMPUTER APPLICATION'),
+(10, 'BCA', 'BACHELOR IN COMPUTER APPLICATION');
 
 -- --------------------------------------------------------
 
@@ -121,6 +137,13 @@ CREATE TABLE `cred` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `cred`
+--
+
+INSERT INTO `cred` (`id`, `inst_name`, `inst_code`, `uid`, `pwd`, `estd`, `inst_accrd`, `inst_type`, `inst_affl`, `inst_aprv`, `state`, `district`, `pin`, `address`, `phone`, `email`, `website`, `head_name`, `inst_headdesg`, `head_contact`, `head_mob`, `head_email`, `tpo_name`, `tpo_ph`, `tpo_ph2`, `tpo_email`, `no_of_comp`, `num_cmplab`, `min_num_cmp`, `int_speed`, `hall_cap`, `fibop_lan`, `cctv_no`, `upload`, `reg_time`, `browser`, `inst_ip`, `inst_approve`, `inst_delete`) VALUES
+(1, 'XYZ Institute of Technology', 1211, 'xyz1211', '$2y$10$B1COeW8RUi4iujYj6IuTJOtiwdtdrWxnbyxctrPVEfY', 1957, 'NAAC-A', 'Government', 'Maulana Kalam Azad University of Technology', 'UGC', 'West Bengal (WB)', 'Kolkata', 700001, '123, Example Street', 1234567890, 'k2803552@nwytg.com', 'https://tnp.iitd.ac.in/', 'Mr. Arunangshu Biswas', 'Director', 1234567, 1234567890, 'absws@xyzit.ac.in', 'Arkadip Bhattacharya', 1234567890, 0, 'abhatt@xyzit.ac.in', 759, 10, 10, 1000000000, 250, 'yes', 20, '1211.jpg', '2018-08-17 13:50:52', '192.100.100.101', '192.100.100.101', '', '');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -147,13 +170,13 @@ ALTER TABLE `cred`
 -- AUTO_INCREMENT for table `course_list`
 --
 ALTER TABLE `course_list`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `cred`
 --
 ALTER TABLE `cred`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id';
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id', AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
