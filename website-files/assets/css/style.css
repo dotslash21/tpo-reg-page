@@ -66,34 +66,34 @@ label {
 	border-radius: 0px;
 }
 .navbar-inverse .navbar-brand img {
-	width: 290px;
+	width: 210px;
     margin-top: -30px;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
 	.navbar-inverse .navbar-brand img {
-		width: 210px;
+		width: 160px;
 		margin-top: -20px;
 	}
 }
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 	.navbar-inverse .navbar-brand img {
-		width: 270px;
+		width: 190px;
 		margin-top: -27px;
 	}
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
 	.navbar-inverse .navbar-brand img {
-		width: 200px;
+		width: 119px;
 		margin-top: -15px;
 	}
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
 	.navbar-inverse .navbar-brand img {
-		width: 171px;
+		width: 120px;
 		margin-top: -10px;
 	}
 }
@@ -299,6 +299,19 @@ color: #fff !important;
     right: 0px;
     top: 30%;
 }
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.heading-text{
+		top: 25%;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.heading-text{
+		top: 12%;
+	}
+}
+
 .heading-text h1{
     font-size: 45px;
 }
