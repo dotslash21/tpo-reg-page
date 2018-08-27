@@ -536,8 +536,7 @@
           <div class="col-md-6 panel">
             <div class="panel-body">
               <p class="text-right">
-                Designed at
-                <a href="http://gcettb.ac.in/" rel="develop" target="_blank">GCETTB.</a>
+                Designed at<a href="./dev.html" rel="develop" target="_blank">GCETTB.</a>
               </p>
             </div>
           </div>
