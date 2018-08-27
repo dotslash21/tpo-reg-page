@@ -47,6 +47,17 @@
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
             <a href="" class="brand-logo center">ADMIN RECORD EDIT</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="./dashboard.php">Dashboard</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="./logout.php">Log Out</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="./dashboard.php">Dashboard</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="./logout.php">Log Out</a></li>
+            </ul>
         </div>
     </nav>
 
