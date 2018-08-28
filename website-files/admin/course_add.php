@@ -96,9 +96,11 @@
                     <input type="text" id="course" name="course">
                     <label class="active" for="course">Enter the corresponding course</label>
                 </div>
-
-                <button type="submit" class="btn btn-large green right">Submit</button>
-                <div class="clearfix"></div>
+                
+                <div class="row">
+                    <div class="col s10 center-align">qwerty</div>
+                    <div class="col s2"><button type="submit" class="btn green">Submit</button></div>
+                </div>
             </form>
         </div>
     </main>
