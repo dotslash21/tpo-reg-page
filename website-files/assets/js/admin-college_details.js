@@ -3,6 +3,11 @@ function printDiv(divName) {
         `<html>
             <head>
                 <link rel=\"stylesheet\" href=\"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/materialize\/0.100.2\/css\/materialize.min.css\">
+                <style>
+                    @media print {
+                        #cd {page-break-before: always;}
+                    }
+                <\/style>
             <\/head>
             <body>
                 <div>

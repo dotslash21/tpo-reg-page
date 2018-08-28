@@ -93,7 +93,7 @@
         $value .=       '<div class="col s6">Total CCTV cameras in lab: '.$result_arr['cctv_no'].'</div>';
         $value .=   '</div>';
         $value .=   '<hr>';
-        $value .=   '<h5>Course Details</h5>';
+        $value .=   '<h5 id="cd">Course Details</h5>';
         $value .=   '<hr>';
         $value .=   '<div class="row">';
         $value .=       '<div class="col s6 center"><b>Course Name</b></div>';
