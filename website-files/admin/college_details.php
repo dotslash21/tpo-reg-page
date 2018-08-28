@@ -74,6 +74,35 @@
             <!-- Print Button -->
             <div class="row">
                 <div class="col s10">
+                    <div class="row">
+                        <div class="col s2">
+                            <span>Filter by: </span>
+                        </div>
+                        <div class="col s5">
+                            <div class="input-field">
+                                <select multiple>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="B.Tech">B.Tech</option>
+                                    <option value="M.Tech">M. Tech</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="MCA">MCA</option>
+                                </select>
+                                <label>Degree</label>
+                            </div>
+                        </div>
+                        <div class="col s5">
+                            <div class="input-field">
+                                <select multiple>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="CSE">CSE</option>
+                                    <option value="ME">ME</option>
+                                    <option value="EE">EE</option>
+                                    <option value="TT">TT</option>
+                                </select>
+                                <label>Courses</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col s2">
                     <button class="btn btn-large waves-effect waves-light blue darken-1" id="printall">
