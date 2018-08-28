@@ -71,6 +71,9 @@ $(document).ready(function(){
 $(document).submit(function(event) {
     event.preventDefault();
 
+    var resetbtn = $("button#resetbtn");
+    var submitbtn = $("button#submit");
+
     console.log("Submitting");
     var dataObj = {
         name        : $("input[name='name']").val(),
@@ -239,14 +242,13 @@ $(document).submit(function(event) {
     else if(dataObj.num_cctv === undefined){
         alert("Please enter Total mun of CCTV");
         return false;
-    }else if(dataObj.num_cmplab < dataObj.min_num_cmp){
-        alert("Mininum number of lab can't be more than Total number");
-        return false;
     }
     else if(dataObj.courseLength ===  undefined){
         alert("Course Details are not added Correctly");
         return false;
     }
+    //Hide the reset btn ehen submitting, if it passes the above text
+    resetbtn.hide();
 
     var degreeName = [];
     var courseName = [];
@@ -261,9 +263,6 @@ $(document).submit(function(event) {
     $(".crs-value").each(function(j){
         courseValue.push($(this).text());
     });
-    console.log(degreeName);
-    console.log(courseName);
-    console.log(courseValue);
     var sendData = {dataObj: dataObj, degreeName: degreeName, courseName: courseName, courseValue: courseValue};
     //Start of AJAX process
 
@@ -272,30 +271,53 @@ $(document).submit(function(event) {
 		url: '../ajax/register.php',
 		data: sendData,
 		dataType: 'json',
-		async: true,
+        async: true,
+        beforeSend: function(){
+            submitbtn.attr('disabled', true);
+
+            submitbtn.html(`
+            <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-yellow-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>`)
+        }
 	})
     .done(function ajaxDone(data) {
+
         // Whatever data is
         if(data.error !== undefined){
             alert(data.error);
+
+            //Submit btn comes back
+            submitbtn.removeAttr('disabled');
+            submitbtn.html(`Failed. Retry`);
         }
         if(data.result == 'successful'){
             //After a successful entry of data in Database
             sessionStorage.clear();
         }
         if(data.redirect !== undefined){
-            console.log(data.redirect);
             window.location = data.redirect;
         }
 	
 	})
     .fail(function ajaxFailed(e){
         // This Failed
-
+        submitbtn.removeAttr('disabled');
+        submitbtn.html(`Failed. Retry`);
     })
     .always(function ajaxAlwaysDoThis(data){
         // Always do
-
+        resetbtn.show();
         console.log("Always");
     })
 

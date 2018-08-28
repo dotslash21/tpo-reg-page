@@ -38,6 +38,9 @@
             }
         }   
     }
+    else{
+        $return['error'] = '<span style="color: #EA4335;"> No Choosen File</span>';
+    }
 
     echo json_encode($return, JSON_PRETTY_PRINT);
     exit;

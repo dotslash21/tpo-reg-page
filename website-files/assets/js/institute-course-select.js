@@ -9,8 +9,8 @@ $(document).ready(function () {
         for (var i= 0; i< crsLen; i++) {
             $("#course_form").append(`
                 <div class="input-field">
-                    <input type="number" id="`+i+`" name="`+sessionStorage['degree-name-'+i]+`" - "`+sessionStorage['course-name-'+i]+`" min="0" required value="`+sessionStorage['degree-name-'+i]+`" - "`+sessionStorage['course-value-'+i]+`">
-                    <label for="`+i+`">`+sessionStorage['degree-name-'+i]+`" - "`+sessionStorage['course-name-'+i]+`</label>
+                    <input type="number" id="`+i+`" name="`+sessionStorage['degree-name-'+i]+` - `+sessionStorage['course-name-'+i]+`" min="0" required value="`+sessionStorage['degree-name-'+i]+` - `+sessionStorage['course-value-'+i]+`">
+                    <label for="`+i+`">`+sessionStorage['degree-name-'+i]+` - `+sessionStorage['course-name-'+i]+`</label>
                 </div>`
             );
         }
