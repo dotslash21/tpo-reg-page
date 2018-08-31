@@ -28,17 +28,17 @@
 
         if(mysqli_num_rows($crs_chk) > 0){
             //If alreay exists
-            $return['error'] = 'Course is Already enlisted';
+            $return['error'] = '<span class=\"red-text text-lighten-1\">Course is Already enlisted</span>';
         }
         else{
             //If Course don't exists then add it
             $sql_admin_add = "INSERT INTO course_list(degree,course_name) VALUE('" .$degree_clean ."','". $course_clean. "')";
         
             if(mysqli_query($con,$sql_admin_add)){
-                $return['result'] = "You have added one Course";
+                $return['result'] = "<span class=\"green-text text-lighten-1\">You have added one Course</span>";
             }
             else{
-                $return['error']  = "Some Error Occours";
+                $return['error']  = "<span class=\"red-text text-lighten-1\">Some Error Occours</span>";
             }
         }
 

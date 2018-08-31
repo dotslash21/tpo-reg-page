@@ -10,6 +10,28 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+        function get_client_ip() {
+            $ipaddress = '';
+            if (isset($_SERVER['HTTP_CLIENT_IP']))
+                $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+            else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            else if(isset($_SERVER['HTTP_X_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+            else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+            else if(isset($_SERVER['HTTP_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED'];
+            else if(isset($_SERVER['REMOTE_ADDR']))
+                $ipaddress = $_SERVER['REMOTE_ADDR'];
+            else
+                $ipaddress = 'UNKNOWN';
+            return $ipaddress;
+        }
+
+        $current_time = date("Y/M/d g:i:s A T P");
+        $current_ip = get_client_ip();
+
         session_start();
         //Always return Json format
         header('Content-Type: application/json');
@@ -35,8 +57,11 @@
             $hash = $admin_details['password'];
             if($password_clean == 'admin'){
                 //User get signed in
-                $return['redirect'] = './dashboard.php';
-                $_SESSION['admin_id'] = $admin_id;
+                $query_add_val= "UPDATE admins SET Last_login_time= '".$current_time."', Last_login_ip = '".$current_ip."' WHERE id = '".$admin_id."' ";
+                if(mysqli_query($con, $query_add_val)){
+                    $return['redirect'] = './dashboard.php';
+                    $_SESSION['admin_id'] = $admin_id;
+                }
             }
             else{
                 //Invalid user email/password

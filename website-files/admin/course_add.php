@@ -98,7 +98,9 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col s10 center-align">qwerty</div>
+                    <div class="col s10 center-align" >
+                        <div id="result"></div>
+                    </div>
                     <div class="col s2"><button type="submit" class="btn green">Submit</button></div>
                 </div>
             </form>
