@@ -67,7 +67,11 @@
           <li class="active">
             <a href="#">Home</a>
           </li>
-          <li class="dropdown">
+          <li>
+            <a href="about.html">About Us</a>
+          </li>
+          <!--
+            <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Why Recruit?
               <b class="caret"></b>
             </a>
@@ -94,15 +98,16 @@
                 <a href="#">Alumni</a>
               </li>
             </ul>
-          </li>
+          </li> 
+          -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">For Companies
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li>
+              <!--<li>
                 <a href="#">Company Registration</a>
-              </li>
+              </li>-->
               <li>
                 <a href="#">Procedure and Policy</a>
               </li>
@@ -122,15 +127,15 @@
               <li>
                 <a href="#">Placement Policy</a>
               </li>
-              <li>
+              <!--<li>
                 <a href="#">Internship Policy</a>
-              </li>
-              <li>
+              </li>-->
+              <!--<li>
                 <a href="#">Preparation Portal</a>
-              </li>
-              <li>
+              </li>-->
+              <!--<li>
                 <a href="#">Project Verification Form</a>
-              </li>
+              </li>-->
               <li>
                 <a href="#">List of companiees</a>
               </li>
@@ -156,7 +161,7 @@
             </ul>
           </li>
           <li>
-            <a href="./admin/login.php">Admin Login</a>
+            <a href="institute/form.php">College Registration</a>
           </li>
         </ul>
       </div>
@@ -169,13 +174,15 @@
   <header id="head">
     <div class="container">
       <div class="heading-text">
-        <h1 class="animated flipInY delay1">Welcome to</h1>
+        <h1 class="animated flipInY delay1">Welcome To</h1>
         <p>Centralized Placement Committee, West Bengal (CPC)</p>
-        <a href="institute/form.php">
+        <!--
+          <a href="institute/form.php">
           <button class="btn btn-lg btn-default">
             <strong>College Register</strong>
           </button>
         </a>
+        -->
       </div>
 
       <div class="fluid_container">
@@ -204,8 +211,7 @@
           </div>
           <!--icon box top -->
           <h4><?php echo $college_num; ?> Affiliated Institutions</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue eset nec lacus
-            elit dor broma.</p>
+          <p>The largest pool campusing portal with highest number of participating institutes.</p>
           <p>
             <a href="#">
               <em>Read More</em>
@@ -222,8 +228,7 @@
           </div>
           <!--icon box top -->
           <h4><?php echo $domain_num; ?> Domain Specalization</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue eset nec lacus
-            elit dor broma.</p>
+          <p>Largest number of students participating from multiple domains and trades.</p>
           <p>
             <a href="#">
               <em>Read More</em>
@@ -240,8 +245,7 @@
           </div>
           <!--icon box top -->
           <h4><?php echo $degree_num; ?> Degrees Registered</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue eset nec lacus
-            elit dor broma.</p>
+          <p>Largest pool of participating students pursuing multiple degrees.</p>
           <p>
             <a href="#">
               <em>Read More</em>
@@ -258,8 +262,7 @@
           </div>
           <!--icon box top -->
           <h4><?php echo $intake; ?> Student Capacity</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue eset nec lacus
-            elit dor broma.</p>
+          <p>Largest pool of combined students capacity from various participating institutes.</p>
           <p>
             <a href="#">
               <em>Read More →</em>
@@ -300,8 +303,8 @@
         <div class="title-box clearfix ">
           <h2 class="title-box_primary">Notice</h2>
         </div>
-        <div class="list styled custom-list">
-          <ul>
+        <div class="list styled custom-list notice-block">
+          <ul class="marquee">
             <li>
               <a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">Snatoque penatibus et magnis dis</a>
             </li>
