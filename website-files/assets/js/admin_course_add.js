@@ -20,22 +20,32 @@ $(document).on("submit", "form.add-frm", function(){
     event.preventDefault();
 
     var _form = $(this);
+    var _res = $("#result");
 
     var dataObj ={
         degree:     $("[name='degree']", _form).val(),
         course:     $("input[name='course']", _form).val()
     }
 
-    if(dataObj.degree.length == 0){
-        alert("Fill the Degree Field");
+    if(dataObj.degree === undefined || dataObj.degree === null){
+        if(dataObj.length < 1){
+            console.log("err1");
+            _res.html("<span class=\"red-text text-lighten-1\">Fill the Degree Field</span>").show();
+            return false;
+        }
+        console.log("err1");
+        _res.html("<span class=\"red-text text-lighten-1\">Fill the Degree Field</span>").show();
         return false;
     }
-    else if(dataObj.course.length == 0){
-        alert("Fill the Course Field");
+    else if(dataObj.course === undefined || dataObj.course.length < 1){
+        console.log("err2");
+        _res.html("<span class=\"red-text text-lighten-1\">Fill the Course Field</span>").show();
         return false;
     }
 
     console.log(dataObj);
+    
+    _res.hide();
     
     $.ajax({
 		type: 'POST',
@@ -48,10 +58,10 @@ $(document).on("submit", "form.add-frm", function(){
         // Whatever data is
 
         if(data.result !== undefined){
-            alert(data.result);
+            _res.html(data.result).show();
         }
         if(data.error !== undefined){
-            alert(data.error);
+            _res.html(data.error).show();
         }
 	
 	})
@@ -61,7 +71,7 @@ $(document).on("submit", "form.add-frm", function(){
     })
     .always(function ajaxAlwaysDoThis(data){
         // Always do
-
+        $("form.add-frm")[0].reset();
     })
 
 
