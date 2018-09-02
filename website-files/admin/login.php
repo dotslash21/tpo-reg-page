@@ -1,5 +1,14 @@
 <?php
     session_start();
+    if(isset($_SESSION["RED"])){
+        if($_SERVER['REQUEST_METHOD'] == 'GET'){
+            if($_SESSION["RED"] != $_GET["q"]){
+                header('Location: ../404.php');
+            }
+            session_destroy();
+            setcookie(session_name(),'',0,'/');
+        }
+    }
     if(isset($_SESSION['admin_id'])){
         header('Location: ./dashboard.php');
         exit;
@@ -143,6 +152,8 @@
             $('select').material_select();
         });
         $('select').material_select('destroy');
+        console.log("<?php echo $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>");
+        console.log("<?php echo $_SERVER['HTTP_REFERER']; ?>");
     </script>
 </body>
 
