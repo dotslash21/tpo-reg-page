@@ -71,7 +71,7 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container z-depth-3" id="form-container">
+        <div class="container" id="form-container">
             <?php
                 $sql_show = "SELECT DISTINCT degree from course_list";
                 $degree_list = mysqli_query($con, $sql_show);

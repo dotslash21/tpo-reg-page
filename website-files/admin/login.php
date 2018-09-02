@@ -97,7 +97,7 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container z-depth-3" id="form-container">
+        <div class="container" id="form-container">
             <br>
             <div id="msg_box" class="center-align">
                 <span class="red-text text-lighten-1" id="logfail"><?php echo $logfail; ?></span>
@@ -113,7 +113,7 @@
                     <label class="active" for="admin_passwd">Password</label>
                 </div>
                 <br>
-                <button class="btn btn-large green right" type="submit" name="submit" id="submit">LOGIN</button>
+                <button class="btn green right" type="submit" name="submit" id="submit">LOGIN</button>
                 <div class="clearfix"></div>
             </form>
         </div>

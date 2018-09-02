@@ -66,7 +66,7 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container z-depth-3" id="form-container">
+        <div class="container" id="form-container">
             <div class="row">
                 <div class="col l4 s12">
                     <a href="course_add.php">
