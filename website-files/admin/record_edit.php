@@ -62,7 +62,7 @@
     </nav>
 
     <!-- MAIN FORM BODY-->
-    <div class="container z-depth-3" id="form-container">
+    <div class="container z-depth-1" id="form-container">
         <form class="frm">
             <h4>Institute Details</h4>
             <hr>

@@ -166,19 +166,26 @@
                     })
 
                     //Delete FN
-                    $("#delete-<?php echo $res_arr['inst_code']; ?>").click(function () {
+                    $("#delete-<?php echo $res_arr['inst_code']; ?>").click(function (event) {
                         console.log("Delete <?php echo $res_arr['inst_code']; ?>");
+                        event.preventDefault();
                     })
 
                     //Print FN
                     $("#print-<?php echo $res_arr['inst_code']; ?>").click(function () {
+                        console.log("print-<?php echo $res_arr['inst_code']; ?>");
                         if($("#uid-<?php echo $res_arr['inst_code']; ?>").length == 0){
                             $.get("../ajax/admin_college_indv.php?inst_code=<?php echo $res_arr['inst_code']; ?>", function(data){
                                 $("#modalcon-<?php echo $res_arr['inst_code']; ?>").append(data.value);
                             }, "json")
+                            .done(function () {
+                                printDiv("modalcon-<?php echo $res_arr['inst_code']; ?>");
+                            });
+                            console.log("IF");
                         }
-                        $("#uid-<?php echo $res_arr['inst_code']; ?>").onload = function () {
-                            printDiv("modalcon-<?php echo $res_arr['inst_code']; ?>");   
+                        else {
+                            printDiv("modalcon-<?php echo $res_arr['inst_code']; ?>");
+                            console.log("ELSE");
                         }
                     })
 
