@@ -80,8 +80,8 @@
                         </div>
                         <div class="col s5">
                             <div class="input-field">
-                                <select multiple>
-                                    <option value="" disabled selected>Choose your option</option>
+                                <select multiple id="degree_sel">
+                                    <option value="" disabled selected>ALL</option>
                                     <option value="B.Tech">B.Tech</option>
                                     <option value="M.Tech">M. Tech</option>
                                     <option value="BCA">BCA</option>
@@ -93,7 +93,7 @@
                         <div class="col s5">
                             <div class="input-field">
                                 <select multiple>
-                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="" disabled selected>ALL</option>
                                     <option value="CSE">CSE</option>
                                     <option value="ME">ME</option>
                                     <option value="EE">EE</option>
