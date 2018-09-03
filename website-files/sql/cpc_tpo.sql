@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2018 at 04:11 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.1.20
+-- Generation Time: Sep 03, 2018 at 02:34 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,15 +30,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admins` (
   `id` varchar(10) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `Last_login_time` varchar(40) NOT NULL,
+  `Last_login_ip` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `password`) VALUES
-('admin', '$2y$10$0mR4A7jiP1efMDTDMmN.Ju5Wty0R6jJf0wrozVuhtE4');
+INSERT INTO `admins` (`id`, `password`, `Last_login_time`, `Last_login_ip`) VALUES
+('admin', '$2y$10$0mR4A7jiP1efMDTDMmN.Ju5Wty0R6jJf0wrozVuhtE4', '2018/Sep/03 2:33:58 PM CEST +02:00', '::1');
 
 -- --------------------------------------------------------
 

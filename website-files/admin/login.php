@@ -122,6 +122,9 @@
                     <label class="active" for="admin_passwd">Password</label>
                 </div>
                 <br>
+                <div class="left">
+                    <a href="">Forgot Password</a>
+                </div>
                 <button class="btn green right" type="submit" name="submit" id="submit">LOGIN</button>
                 <div class="clearfix"></div>
             </form>
