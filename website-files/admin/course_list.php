@@ -72,33 +72,9 @@
     <!-- MAIN FORM BODY-->
     <main>
         <div class="container" id="form-container">
-            <?php
-                $sql_show = "SELECT DISTINCT degree from course_list";
-                $degree_list = mysqli_query($con, $sql_show);
-                while($deg_list = mysqli_fetch_array($degree_list)){
-
-            ?>
-            <ul class="collection with-header">
-                <li class="collection-header">
-                    <h4><?php echo $deg_list['degree']; ?></h4>
-                </li>
-                <?php
-                    $sql_show = "SELECT course_name from course_list WHERE degree = '".$deg_list['degree']."'";
-                    $course_list = mysqli_query($con, $sql_show);
-                    while($crse_list = mysqli_fetch_array($course_list)){
-                ?>
-                <li class="collection-item">
-                    <i class="material-icons tiny">chevron_right</i> <?php echo $crse_list['course_name']; ?>
-                </li>
             
-                <?php
-                    }
-                ?>
-            </ul>
-            
-            <?php
-                }
-            ?>
+            <div id="course-set">
+            </div>
 
         </div>
     </main>
@@ -117,6 +93,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="../assets/js/admin_course_list.js"></script>
     <script>
         $(".button-collapse").sideNav();
     </script>
