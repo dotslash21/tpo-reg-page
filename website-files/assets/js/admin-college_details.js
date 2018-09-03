@@ -1,5 +1,10 @@
 $(document).ready(function () {
-        
+    $('#degree_sel').append(  `<option value="" disabled selected>ALL</option>
+                                    <option value="B.Tech">B.Tech</option>
+                                    <option value="M.Tech">M. Tech</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="MCA">MCA</option>`)
+    //$('select#degree_sel').empty();
 })
 
 $('#degree_sel').change(function(){ 

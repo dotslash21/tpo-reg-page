@@ -81,11 +81,7 @@
                         <div class="col s5">
                             <div class="input-field">
                                 <select multiple id="degree_sel">
-                                    <option value="" disabled selected>ALL</option>
-                                    <option value="B.Tech">B.Tech</option>
-                                    <option value="M.Tech">M. Tech</option>
-                                    <option value="BCA">BCA</option>
-                                    <option value="MCA">MCA</option>
+                                    
                                 </select>
                                 <label>Degree</label>
                             </div>
