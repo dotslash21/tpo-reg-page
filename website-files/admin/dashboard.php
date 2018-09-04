@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['admin_id'])){
-        header('Location: ./login.php?lf=yes');
-        exit;
-    }
+session_start();
+if (!isset($_SESSION['admin_id'])) {
+    header('Location: ./login.php?lf=yes');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@
 
         a {
             color: inherit;
-        } 
+        }
     </style>
 </head>
 
@@ -89,6 +89,16 @@
                         <div class="card-panel valign-wrapper center-align waves-effect waves-green waves-block green lighten-3">
                             <i class="material-icons medium">format_list_numbered</i>
                             <p>COURSE LIST</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l4 s12">
+                    <a href="#">
+                        <div class="card-panel valign-wrapper center-align waves-effect waves-blue waves-block blue lighten-3">
+                            <i class="material-icons medium">note_add</i>
+                            <p>NOTICE</p>
                         </div>
                     </a>
                 </div>
