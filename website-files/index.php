@@ -67,9 +67,6 @@
           <li class="active">
             <a href="#">Home</a>
           </li>
-          <li>
-            <a href="about.html">About Us</a>
-          </li>
           <!--
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Why Recruit?
@@ -149,6 +146,9 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
+              <li>
+                <a href="about.html">About Us</a>
+              </li>
               <li>
                 <a href="#">Reach CPC, West Bengal</a>
               </li>
