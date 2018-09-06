@@ -106,7 +106,7 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container" id="form-container">
+        <div class="container z-depth-3" id="form-container">
             <br>
             <div id="msg_box" class="center-align">
                 <span class="red-text text-lighten-1" id="logfail"><?php echo $logfail; ?></span>

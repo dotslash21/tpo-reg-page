@@ -66,7 +66,7 @@ if (!isset($_SESSION['admin_id'])) {
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container" id="form-container">
+        <div class="container z-depth-3" id="form-container">
             <div class="row">
                 <div class="col l4 s12">
                     <a href="course_add.php">
@@ -95,7 +95,7 @@ if (!isset($_SESSION['admin_id'])) {
             </div>
             <div class="row">
                 <div class="col l4 s12">
-                    <a href="#">
+                    <a href="notice_panel.php">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-blue waves-block blue lighten-3">
                             <i class="material-icons medium">note_add</i>
                             <p>NOTICE</p>
