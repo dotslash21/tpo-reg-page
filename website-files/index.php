@@ -1,3 +1,30 @@
+<?php
+  define('_CON_',true);
+
+  require("./inc/db-con.php");
+  
+  $sql_college = "SELECT inst_name FROM cred";
+  $sql_domain = "SELECT DISTINCT course_name FROM course_list";
+  $sql_degree = "SELECT DISTINCT degree FROM course_list";
+  $sql_student = "SELECT intake FROM college_crs";
+  
+  $result_clg  = mysqli_query($con,$sql_college);
+  $result_dmn  = mysqli_query($con,$sql_domain);
+  $result_deg  = mysqli_query($con,$sql_degree);
+  $result_std  = mysqli_query($con,$sql_student);
+
+  //Number of college
+  $college_num = mysqli_num_rows($result_clg);
+  $domain_num  = mysqli_num_rows($result_dmn);
+  $degree_num  = mysqli_num_rows($result_deg);
+
+  $intake = 0;
+  
+  while ($intake_num = mysqli_fetch_array($result_std)) {
+    $intake = $intake + (int) $intake_num['intake'];
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -183,7 +210,7 @@
             <img src="assets/images/1.png" alt="" />
           </div>
           <!--icon box top -->
-          <h4><span id="college_num">--</span> Affiliated Institutions</h4>
+          <h4><?php echo $college_num; ?> Affiliated Institutions</h4>
           <p>The largest pool campusing portal with highest number of participating institutes.</p>
           <p>
             <a href="#">
@@ -200,7 +227,7 @@
             <img src="assets/images/2.png" alt="" />
           </div>
           <!--icon box top -->
-          <h4><span id="domain_num">--</span> Domain Specalization</h4>
+          <h4><?php echo $domain_num; ?> Domain Specalization</h4>
           <p>Largest number of students participating from multiple domains and trades.</p>
           <p>
             <a href="#">
@@ -217,7 +244,7 @@
             <img src="assets/images/3.png" alt="" />
           </div>
           <!--icon box top -->
-          <h4><span id="degree_num">--</span> Degrees Registered</h4>
+          <h4><?php echo $degree_num; ?> Degrees Registered</h4>
           <p>Largest pool of participating students pursuing multiple degrees.</p>
           <p>
             <a href="#">
@@ -234,7 +261,7 @@
             <img src="assets/images/4.png" alt="" />
           </div>
           <!--icon box top -->
-          <h4><span id="intake">--</span> Student Capacity</h4>
+          <h4><?php echo $intake; ?> Student Capacity</h4>
           <p>Largest pool of combined students capacity from various participating institutes.</p>
           <p>
             <a href="#">
@@ -552,53 +579,7 @@
 
     });
   </script>
-  <script>
-    $(document).ready(function () {
 
-      var college_num = $("#college_num");
-      var domain_num  = $("#domain_num");
-      var degree_num  = $("#degree_num");
-      var intake      = $("#intake");
-
-      college_num.empty();
-      domain_num.empty();
-      degree_num.empty();
-      intake.empty();
-
-      var sendData = {
-        id: 1
-      }
-      $.ajax({
-        type: 'POST',
-		    url: './ajax/index-value.php',
-		    data: sendData,
-		    dataType: 'json',
-        async: true,
-      })
-      .done(function (data) {
-        if(data.college_num !== undefined){
-          college_num.text(data.college_num);
-          console.log(data.college_num);
-        }
-        if(data.domain_num !== undefined){
-          domain_num.text(data.domain_num);
-          console.log(data.domain_num);
-        }
-        if(data.degree_num !== undefined){
-          degree_num.text(data.degree_num);
-          console.log(data.degree_num);
-        }
-        if(data.intake !== undefined){
-          intake.text(data.intake);
-          console.log(data.intake);
-        }
-      })
-      .always(function (d) {
-        console.log("Fetched");
-      })
-
-    })
-  </script>
 </body>
 
 </html>
