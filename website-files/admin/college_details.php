@@ -67,7 +67,7 @@
     <!-- MAIN FORM BODY-->
     <main>
         <div class="container z-depth-3" id="form-container">
-            <h3 class="center-align z-depth-3">COLLEGE DETAILS</h3>
+            <h3 class="center-align">COLLEGE DETAILS</h3>
             <hr>
             <br>
 
