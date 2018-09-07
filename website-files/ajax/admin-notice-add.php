@@ -29,7 +29,7 @@
 
             $sql_notice_add = "INSERT INTO notices(title, content, publish_date, expiry_date, added_by) VALUE('".$notice_title_clean."', '".$notice_desc_clean."', '".$current_date."', '".$validity_clean."', '".$admin."')";
             if(mysqli_query($con,$sql_notice_add)){
-                $return['succ'] = "I'm working";
+                $return['succ'] = "Notice Uploaded Successfully<br/>";
 
                 //File Upload
                 if($_FILES['uploadfile']['name']){

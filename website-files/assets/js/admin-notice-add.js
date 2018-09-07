@@ -1,6 +1,15 @@
 $("form#notice-form").submit(function (event) {
+
     event.preventDefault();
     var submitbtn = $("button#submit");
+    var error       = $(".error");
+    var message     = $(".message");
+    var message2    = $(".message2");
+
+    error.hide();
+    message.hide();
+    message2.hide();
+
 	$.ajax({
 		type: 'POST',
 		url: '../ajax/admin-notice-add.php',
@@ -31,16 +40,21 @@ $("form#notice-form").submit(function (event) {
     .done(function ajaxDone(data) {
 		// Whatever data is 
         if(data.succ !== undefined){
+            message.html(data.succ).show();
             console.log(data.succ);
         }
         if(data.success !== undefined){
+            message2.html(data.success).show();
             console.log(data.success);
+            submitbtn.html(`Submit`);
         }
         if(data.fileName !== undefined){
+
             console.log(data.fileName);
             submitbtn.html(`Submit`);
         }
         if(data.error !== undefined){
+            error.html(data.error).show();
             console.log(data.error);
         }
 	})
