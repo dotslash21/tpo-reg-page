@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2018 at 02:34 PM
+-- Generation Time: Sep 07, 2018 at 02:24 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -40,7 +40,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `password`, `Last_login_time`, `Last_login_ip`) VALUES
-('admin', '$2y$10$0mR4A7jiP1efMDTDMmN.Ju5Wty0R6jJf0wrozVuhtE4', '2018/Sep/03 2:33:58 PM CEST +02:00', '::1');
+('admin', '$2y$10$0mR4A7jiP1efMDTDMmN.Ju5Wty0R6jJf0wrozVuhtE4', '2018/Sep/07 4:37:54 PM IST +05:30', '::1');
 
 -- --------------------------------------------------------
 
@@ -145,6 +145,32 @@ CREATE TABLE `cred` (
 INSERT INTO `cred` (`id`, `inst_name`, `inst_code`, `uid`, `pwd`, `estd`, `inst_accrd`, `inst_type`, `inst_affl`, `inst_aprv`, `state`, `district`, `pin`, `address`, `phone`, `email`, `website`, `head_name`, `inst_headdesg`, `head_contact`, `head_mob`, `head_email`, `tpo_name`, `tpo_ph`, `tpo_ph2`, `tpo_email`, `no_of_comp`, `num_cmplab`, `min_num_cmp`, `int_speed`, `hall_cap`, `fibop_lan`, `cctv_no`, `upload`, `reg_time`, `browser`, `inst_ip`, `inst_approve`, `inst_delete`) VALUES
 (1, 'XYZ Institute of Technology', 1211, 'xyz1211', '$2y$10$B1COeW8RUi4iujYj6IuTJOtiwdtdrWxnbyxctrPVEfY', 1957, 'NAAC-A', 'Government', 'Maulana Kalam Azad University of Technology', 'UGC', 'West Bengal (WB)', 'Kolkata', 700001, '123, Example Street', 1234567890, 'k2803552@nwytg.com', 'https://tnp.iitd.ac.in/', 'Mr. Arunangshu Biswas', 'Director', 1234567, 1234567890, 'absws@xyzit.ac.in', 'Arkadip Bhattacharya', 1234567890, 0, 'abhatt@xyzit.ac.in', 759, 10, 10, 1000000000, 250, 'yes', 20, '1211.jpg', '2018-08-17 13:50:52', '192.100.100.101', '192.100.100.101', '', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notices`
+--
+
+CREATE TABLE `notices` (
+  `sl_no` int(5) NOT NULL COMMENT 'serial no of notices',
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Title of notices',
+  `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Content of notices',
+  `publish_date` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Publishing date',
+  `expiry_date` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'expiry date',
+  `file_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'file_name of notice',
+  `added_by` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'added by admin name'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `notices`
+--
+
+INSERT INTO `notices` (`sl_no`, `title`, `content`, `publish_date`, `expiry_date`, `file_name`, `added_by`) VALUES
+(1, '112325', 'qeqwrwtwer', '2018/Sep/07', '30 October, 2018', '.jpg', 'admin'),
+(2, '11232', 'egshshshd', '2018/Sep/07', '25 December, 2018', '', 'admin'),
+(3, '112325', 'gshdshshsrhwsrgt', '2018/Sep/07', '22 November, 2018', '.jpg', 'admin'),
+(4, '112142132', 'waerstdfghjkjlkhjghf', '2018/Sep/07', '29 November, 2018', '1536322467.jpg', 'admin');
+
 --
 -- Indexes for dumped tables
 --
@@ -165,6 +191,12 @@ ALTER TABLE `cred`
   ADD UNIQUE KEY `inst_name` (`inst_name`);
 
 --
+-- Indexes for table `notices`
+--
+ALTER TABLE `notices`
+  ADD PRIMARY KEY (`sl_no`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -179,6 +211,12 @@ ALTER TABLE `course_list`
 --
 ALTER TABLE `cred`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id', AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `notices`
+--
+ALTER TABLE `notices`
+  MODIFY `sl_no` int(5) NOT NULL AUTO_INCREMENT COMMENT 'serial no of notices', AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
