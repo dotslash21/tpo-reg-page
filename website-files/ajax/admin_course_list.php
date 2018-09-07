@@ -16,7 +16,7 @@
             header('Content-Type: application/json');
 
             //return array
-            $return = [];            
+            $return = [];
 
             $sql_show = "SELECT DISTINCT degree from course_list";
             $degree_list = mysqli_query($con, $sql_show);
@@ -26,7 +26,7 @@
 
                 $val .= "<ul class=\"collection with-header\">";
                 $val .=     "<li class=\"collection-header\">";
-                $val .=         "<h4>". $deg_list['degree']. "</h4>";
+                $val .=         "<h5>". $deg_list['degree']. "</h5>";
                 $val .=     "</li>";
 
                 $sql_show = "SELECT course_name from course_list WHERE degree = '".$deg_list['degree']."'";

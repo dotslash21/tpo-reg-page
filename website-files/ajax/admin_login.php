@@ -7,9 +7,7 @@
     function clean($con, $var){
         return mysqli_real_escape_string($con, $var);
     }
-
-    date_default_timezone_set("Asia/Calcutta");
-
+    date_default_timezone_set('Asia/Calcutta');
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         function get_client_ip() {
