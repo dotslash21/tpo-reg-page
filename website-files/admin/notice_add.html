@@ -61,48 +61,44 @@
 
         <!-- MAIN FORM BODY-->
         <main>
-            <div class="container z-depth-3" id="form-container">
-                <form>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="notice_title"
-                                type="text" class="validate" required>
-                            <label for="notice_title">Notice Title</label>
-                        </div>
+            <div class="container" id="form-container">
+                <div class="card">
+                    <div class="card-content">
+                        <form id="notice-form">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="notice_title" type="text" class="validate" name="notice_title" required>
+                                    <label for="notice_title">Notice Title</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <textarea id="notice_desc" class="materialize-textarea" name="notice_desc" required></textarea>
+                                    <label class="active" for="notice_desc">Notice Description</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" class="datepicker" id="validity" name="validity">
+                                    <label for="validity">Notice Validity</label>
+                                </div>
+                            </div>
+        
+                            <div class="file-field input-field">
+                                <div class="btn blue darken-3">
+                                    <span>Attach File</span>
+                                    <input type="file" name="uploadfile" id="uploadfile">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="No file chosen!">
+                                </div>
+                            </div>
+        
+                            <button type="submit" name="submit" class="btn green right" id="submit">Submit</button>
+                            <div class="clearfix"></div>
+                        </form>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="notice_desc"
-                                class="materialize-textarea"
-                                name="notice_desc" required></textarea>
-                            <label class="active" for="notice_desc">Notice
-                                Description</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" class="datepicker" id="validity"
-                                name="validity">
-                            <label for="validity">Notice Validity</label>
-                        </div>
-                    </div>
-
-                    <div class="file-field input-field">
-                        <div class="btn blue darken-3">
-                            <span>Attach File</span>
-                            <input type="file" name="uploadfile"
-                                id="uploadfile">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text"
-                                placeholder="No file chosen!">
-                        </div>
-                    </div>
-
-                    <button type="submit" name="submit" class="btn btn-large
-                        green right" id="submit">Submit</button>
-                    <div class="clearfix"></div>
-                </form>
+                </div>
             </div>
         </main>
 
@@ -119,10 +115,9 @@
 
 
         <!--JavaScript at end of body for optimized loading-->
-        <script type="text/javascript"
-            src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="../assets/js/admin-notice-add.js"></script>
         <script>
                 $(".button-collapse").sideNav();
             </script>
