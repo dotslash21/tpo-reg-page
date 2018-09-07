@@ -79,16 +79,8 @@ if (!isset($_SESSION['admin_id'])) {
                     </a>
                 </div>
                 <div class="col l4 s12">
-                    <a href="notice_remove.php">
-                        <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
-                            <i class="material-icons medium">remove</i>
-                            <p>REMOVE NOTICE</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col l4 s12">
-                    <a href="notice_view.php">
-                        <div class="card-panel valign-wrapper center-align waves-effect waves-green waves-block green lighten-3">
+                    <a href="notice_view.html">
+                    <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
                             <i class="material-icons medium">format_list_numbered</i>
                             <p>VIEW NOTICES</p>
                         </div>
@@ -102,7 +94,7 @@ if (!isset($_SESSION['admin_id'])) {
         <div class="footer-copyright blue darken-4">
             <div class="container">
                 Copyright © 2018. CPC, West Bengal
-                <a class="grey-text text-lighten-4 right" href="http://gcettb.ac.in/home">Designed at GCETTB</a>
+                <a class="grey-text text-lighten-4 right" href="../dev.html">Designed at GCETTB</a>
             </div>
         </div>
     </footer>

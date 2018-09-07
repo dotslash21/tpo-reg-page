@@ -111,7 +111,7 @@
         <div class="footer-copyright blue darken-4">
             <div class="container">
                 Copyright © 2018. CPC, West Bengal
-                <a class="grey-text text-lighten-4 right" href="http://gcettb.ac.in/home">Designed at GCETTB</a>
+                <a class="grey-text text-lighten-4 right" href="../dev.html">Designed at GCETTB</a>
             </div>
         </div>
     </footer>

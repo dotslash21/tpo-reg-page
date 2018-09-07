@@ -67,7 +67,7 @@
     <!-- MAIN FORM BODY-->
     <main>
         <div class="container z-depth-3" id="form-container">
-            <h3 class="center-align z-depth-3">COLLEGE DETAILS</h3>
+            <h3 class="center-align">COLLEGE DETAILS</h3>
             <hr>
             <br>
 
@@ -207,7 +207,7 @@
         <div class="footer-copyright blue darken-4">
             <div class="container">
                 Copyright © 2018. CPC, West Bengal
-                <a class="grey-text text-lighten-4 right" href="http://gcettb.ac.in/home">Designed at GCETTB</a>
+                <a class="grey-text text-lighten-4 right" href="../dev.html">Designed at GCETTB</a>
             </div>
         </div>
     </footer>

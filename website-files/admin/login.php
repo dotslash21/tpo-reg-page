@@ -5,8 +5,6 @@
             if($_SESSION["RED"] != $_GET["q"]){
                 header('Location: ../404.php');
             }
-            session_destroy();
-            setcookie(session_name(),'',0,'/');
         }
     }
     if(isset($_SESSION['admin_id'])){
@@ -55,13 +53,13 @@
         
         @media (min-width: 768px) {
             #form-container {
-                width: 50vw;
+                width: 40vw;
             }
         }
 
         @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
             #form-container {
-                width: 50vw;
+                width: 40vw;
             }
         }
 
@@ -106,28 +104,32 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container z-depth-3" id="form-container">
-            <br>
-            <div id="msg_box" class="center-align">
-                <span class="red-text text-lighten-1" id="logfail"><?php echo $logfail; ?></span>
-            </div>
-            <br>
-            <form id="admin-login">
-                <div class="input-field">
-                    <input type="text" id="admin_id" name="admin_id" required>
-                    <label class="active" for="admin_id">User ID</label>
-                </div>
-                <div class="input-field">
-                    <input type="password" id="admin_passwd" name="admin_password" required>
-                    <label class="active" for="admin_passwd">Password</label>
+        <div class="container" id="form-container">
+            <div class="card">
+                <div class="card-content">
+                <br>
+                <div id="msg_box" class="center-align">
+                    <span class="red-text text-lighten-1" id="logfail"><?php echo $logfail; ?></span>
                 </div>
                 <br>
-                <div class="left">
-                    <a href="">Forgot Password</a>
+                    <form id="admin-login">
+                        <div class="input-field">
+                            <input type="text" id="admin_id" name="admin_id" required>
+                            <label class="active" for="admin_id">User ID</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="password" id="admin_passwd" name="admin_password" required>
+                            <label class="active" for="admin_passwd">Password</label>
+                        </div>
+                        <br>
+                        <div class="left">
+                            <a href="">Forgot Password</a>
+                        </div>
+                        <button class="btn green right" type="submit" name="submit" id="submit">LOGIN</button>
+                        <div class="clearfix"></div>
+                    </form>
                 </div>
-                <button class="btn green right" type="submit" name="submit" id="submit">LOGIN</button>
-                <div class="clearfix"></div>
-            </form>
+            </div>
         </div>
     </main>
 
@@ -135,7 +137,7 @@
         <div class="footer-copyright blue darken-4">
             <div class="container">
                 Copyright &copy; 2018. CPC, West Bengal
-                <a class="grey-text text-lighten-4 right" href="http://gcettb.ac.in/home">Designed at GCETTB</a>
+                <a class="grey-text text-lighten-4 right" href="../dev.html">Designed at GCETTB</a>
             </div>
         </div>
     </footer>

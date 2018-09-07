@@ -49,6 +49,15 @@ if (!isset($_SESSION['admin_id'])) {
             padding-top: 2.5vh;
             padding-bottom: 2.5vh;
         }
+
+        .notice_active {
+            border-left: 1vh solid #00c853;
+        }
+
+        .notice_inactive {
+            border-left: 1vh solid #e53935;
+        }
+
     </style>
 </head>
 
@@ -62,7 +71,7 @@ if (!isset($_SESSION['admin_id'])) {
             </a>
             <ul class="right hide-on-med-and-down">
                 <li>
-                    <a href="./dashboard.php">Dashboard</a>
+                    <a href="./notice_panel.php">Back</a>
                 </li>
                 <li>
                     <a href="#">Profile</a>
@@ -73,7 +82,7 @@ if (!isset($_SESSION['admin_id'])) {
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li>
-                    <a href="./dashboard.php">Dashboard</a>
+                    <a href="./notice_panel.php">Back</a>
                 </li>
                 <li>
                     <a href="#">Profile</a>
@@ -107,7 +116,7 @@ if (!isset($_SESSION['admin_id'])) {
             </div>
             <!-- HEADING END -->
 
-            <div class="row z-depth-1-half notice-panel valign-wrapper">
+            <div class="row z-depth-1-half notice-panel notice_active valign-wrapper">
                 <div class="col s1 center-align">1</div>
                 <div class="col s4">Snatoque penatibus et magnis dis.</div>
                 <div class="col s2">07-09-2018</div>
@@ -118,7 +127,7 @@ if (!isset($_SESSION['admin_id'])) {
                 </div>
             </div>
 
-            <div class="row z-depth-1-half notice-panel valign-wrapper">
+            <div class="row z-depth-1-half notice-panel notice_active valign-wrapper">
                 <div class="col s1 center-align">2</div>
                 <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
                 <div class="col s2">01-08-2018</div>
@@ -129,7 +138,7 @@ if (!isset($_SESSION['admin_id'])) {
                 </div>
             </div>
 
-            <div class="row z-depth-1-half notice-panel valign-wrapper">
+            <div class="row z-depth-1-half notice-panel notice_active valign-wrapper">
                 <div class="col s1 center-align">2</div>
                 <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
                 <div class="col s2">01-08-2018</div>
@@ -140,7 +149,7 @@ if (!isset($_SESSION['admin_id'])) {
                 </div>
             </div>
 
-            <div class="row z-depth-1-half notice-panel valign-wrapper">
+            <div class="row z-depth-1-half notice-panel notice_active valign-wrapper">
                 <div class="col s1 center-align">2</div>
                 <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
                 <div class="col s2">01-08-2018</div>
@@ -151,7 +160,7 @@ if (!isset($_SESSION['admin_id'])) {
                 </div>
             </div>
 
-            <div class="row z-depth-1-half notice-panel valign-wrapper">
+            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
                 <div class="col s1 center-align">2</div>
                 <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
                 <div class="col s2">01-08-2018</div>
@@ -162,7 +171,7 @@ if (!isset($_SESSION['admin_id'])) {
                 </div>
             </div>
 
-            <div class="row z-depth-1-half notice-panel valign-wrapper">
+            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
                 <div class="col s1 center-align">2</div>
                 <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
                 <div class="col s2">01-08-2018</div>
@@ -173,7 +182,7 @@ if (!isset($_SESSION['admin_id'])) {
                 </div>
             </div>
 
-            <div class="row z-depth-1-half notice-panel valign-wrapper">
+            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
                 <div class="col s1 center-align">2</div>
                 <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
                 <div class="col s2">01-08-2018</div>
@@ -184,7 +193,7 @@ if (!isset($_SESSION['admin_id'])) {
                 </div>
             </div>
 
-            <div class="row z-depth-1-half notice-panel valign-wrapper">
+            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
                 <div class="col s1 center-align">2</div>
                 <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
                 <div class="col s2">01-08-2018</div>
@@ -195,7 +204,7 @@ if (!isset($_SESSION['admin_id'])) {
                 </div>
             </div>
 
-            <div class="row z-depth-1-half notice-panel valign-wrapper">
+            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
                 <div class="col s1 center-align">2</div>
                 <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
                 <div class="col s2">01-08-2018</div>
@@ -212,7 +221,7 @@ if (!isset($_SESSION['admin_id'])) {
         <div class="footer-copyright blue darken-4">
             <div class="container">
                 Copyright © 2018. CPC, West Bengal
-                <a class="grey-text text-lighten-4 right" href="http://gcettb.ac.in/home">Designed at GCETTB</a>
+                <a class="grey-text text-lighten-4 right" href="../dev.html">Designed at GCETTB</a>
             </div>
         </div>
     </footer>
