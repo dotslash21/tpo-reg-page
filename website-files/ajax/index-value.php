@@ -16,7 +16,7 @@
                 $sql_domain     = "SELECT DISTINCT course_optd FROM college_crs";
                 $sql_degree     = "SELECT DISTINCT deg_optd FROM college_crs";
                 $sql_student    = "SELECT intake FROM college_crs";
-                $sql_notice     = "SELECT title FROM notices ORDER BY expiry_date ASC LIMIT 10";
+                $sql_notice     = "SELECT title FROM notices ORDER BY expiry_date DESC LIMIT 10";
                             
                 $result_clg     = mysqli_query($con,$sql_college);
                 $result_dmn     = mysqli_query($con,$sql_domain);
