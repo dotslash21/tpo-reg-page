@@ -10,6 +10,7 @@
   <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel='stylesheet' id='camera-css' href='assets/css/camera.css' type='text/css' media='all'>
@@ -276,27 +277,16 @@
         <div class="title-box clearfix ">
           <h2 class="title-box_primary">Notice</h2>
         </div>
-        <div class="list styled custom-list notice-block">
-          <ul class="marquee">
-            <li>
-              <a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">Snatoque penatibus et magnis dis</a>
-            </li>
-            <li>
-              <a title="Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus." href="#">Fusce feugiat malesuada odio</a>
-            </li>
-            <li>
-              <a title="Penatibus et magnis dis parturient montes ascetur ridiculus mus." href="#">Lorem ipsum dolor sit amet</a>
-            </li>
-            <li>
-              <a title="Morbi nunc odio gravida at cursus nec luctus a lorem. Maecenas tristique orci." href="#">Morbi nunc odio gravida at cursus nec luctus a lorem</a>
-            </li>
-            <li>
-              <a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">Praesent tempus eleifend risus ut congue</a>
-            </li>
-            <li>
-              <a title="Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus." href="#">Consectetur adipiscing elit</a>
-            </li>
-          </ul>
+        <div id="notice_section">
+          <!-- Notice Section -->
+          <h5 style="text-align: center;">Loading Notice</h5>
+          <!-- Preloader -->
+          <div class="progress">
+            <div class="indeterminate"></div>
+          </div>
+        </div>
+  </div>
+
         </div>
       </div>
     </div>
@@ -532,7 +522,9 @@
   <script type='text/javascript' src='assets/js/jquery.easing.1.3.js'></script>
   <script type='text/javascript' src='assets/js/camera.min.js'></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="./assets/js/index-value.js"></script>
   <script>
     jQuery(function () {
 
@@ -551,53 +543,6 @@
       });
 
     });
-  </script>
-  <script>
-    $(document).ready(function () {
-
-      var college_num = $("#college_num");
-      var domain_num  = $("#domain_num");
-      var degree_num  = $("#degree_num");
-      var intake      = $("#intake");
-
-      college_num.empty();
-      domain_num.empty();
-      degree_num.empty();
-      intake.empty();
-
-      var sendData = {
-        id: 1
-      }
-      $.ajax({
-        type: 'POST',
-		    url: './ajax/index-value.php',
-		    data: sendData,
-		    dataType: 'json',
-        async: true,
-      })
-      .done(function (data) {
-        if(data.college_num !== undefined){
-          college_num.text(data.college_num);
-          console.log(data.college_num);
-        }
-        if(data.domain_num !== undefined){
-          domain_num.text(data.domain_num);
-          console.log(data.domain_num);
-        }
-        if(data.degree_num !== undefined){
-          degree_num.text(data.degree_num);
-          console.log(data.degree_num);
-        }
-        if(data.intake !== undefined){
-          intake.text(data.intake);
-          console.log(data.intake);
-        }
-      })
-      .always(function (d) {
-        console.log("Fetched");
-      })
-
-    })
   </script>
 </body>
 
