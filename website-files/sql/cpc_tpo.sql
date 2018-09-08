@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2018 at 02:24 PM
+-- Generation Time: Sep 08, 2018 at 04:46 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -40,7 +40,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `password`, `Last_login_time`, `Last_login_ip`) VALUES
-('admin', '$2y$10$0mR4A7jiP1efMDTDMmN.Ju5Wty0R6jJf0wrozVuhtE4', '2018/Sep/07 4:37:54 PM IST +05:30', '::1');
+('admin', '$2y$10$0mR4A7jiP1efMDTDMmN.Ju5Wty0R6jJf0wrozVuhtE4', '2018/Sep/08 7:57:25 PM IST +05:30', '::1');
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,8 @@ INSERT INTO `course_list` (`id`, `degree`, `course_name`) VALUES
 (7, 'M.Tech', 'Mechanical Engineering'),
 (8, 'M.Tech', 'Electrical Engineering'),
 (9, 'MCA', 'MASTER IN COMPUTER APPLICATION'),
-(10, 'BCA', 'BACHELOR IN COMPUTER APPLICATION');
+(10, 'BCA', 'BACHELOR IN COMPUTER APPLICATION'),
+(11, 'M.Tech', 'aetwshyersh');
 
 -- --------------------------------------------------------
 
@@ -155,8 +156,9 @@ CREATE TABLE `notices` (
   `sl_no` int(5) NOT NULL COMMENT 'serial no of notices',
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Title of notices',
   `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Content of notices',
-  `publish_date` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Publishing date',
-  `expiry_date` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'expiry date',
+  `publish_date` int(20) NOT NULL COMMENT 'Publishing date',
+  `expiry_date` int(20) NOT NULL COMMENT 'expiry date',
+  `active_status` int(2) NOT NULL COMMENT 'The active status of the notice',
   `file_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'file_name of notice',
   `added_by` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'added by admin name'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -165,11 +167,8 @@ CREATE TABLE `notices` (
 -- Dumping data for table `notices`
 --
 
-INSERT INTO `notices` (`sl_no`, `title`, `content`, `publish_date`, `expiry_date`, `file_name`, `added_by`) VALUES
-(1, '112325', 'qeqwrwtwer', '2018/Sep/07', '30 October, 2018', '.jpg', 'admin'),
-(2, '11232', 'egshshshd', '2018/Sep/07', '25 December, 2018', '', 'admin'),
-(3, '112325', 'gshdshshsrhwsrgt', '2018/Sep/07', '22 November, 2018', '.jpg', 'admin'),
-(4, '112142132', 'waerstdfghjkjlkhjghf', '2018/Sep/07', '29 November, 2018', '1536322467.jpg', 'admin');
+INSERT INTO `notices` (`sl_no`, `title`, `content`, `publish_date`, `expiry_date`, `active_status`, `file_name`, `added_by`) VALUES
+(11, 'It&#039;s not a important one', 'Hi, I&#039;m a notice', 20180908, 20181026, 0, '1536417910.jpg', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -204,7 +203,7 @@ ALTER TABLE `notices`
 -- AUTO_INCREMENT for table `course_list`
 --
 ALTER TABLE `course_list`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `cred`
@@ -216,7 +215,7 @@ ALTER TABLE `cred`
 -- AUTO_INCREMENT for table `notices`
 --
 ALTER TABLE `notices`
-  MODIFY `sl_no` int(5) NOT NULL AUTO_INCREMENT COMMENT 'serial no of notices', AUTO_INCREMENT=5;
+  MODIFY `sl_no` int(5) NOT NULL AUTO_INCREMENT COMMENT 'serial no of notices', AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
