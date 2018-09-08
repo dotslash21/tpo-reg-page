@@ -17,11 +17,11 @@
 
             $admin = $_SESSION['admin_id'];
             
-            $current_date   = date("Ymd");
+            $current_date   = (int)date("Ymd");
 
             $notice_title   = $_POST['notice_title'];
             $notice_desc    = $_POST['notice_desc'];
-            $validity       = $_POST['validity'];
+            $validity       = (int)$_POST['validity'];
             
             $notice_title_clean = clean($con, $notice_title);
             $notice_desc_clean  = clean($con, $notice_desc);
