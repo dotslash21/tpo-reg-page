@@ -17,7 +17,7 @@
 
             $admin = $_SESSION['admin_id'];
             
-            $current_date   = date("Y/M/d");
+            $current_date   = date("Ymd");
 
             $notice_title   = $_POST['notice_title'];
             $notice_desc    = $_POST['notice_desc'];
