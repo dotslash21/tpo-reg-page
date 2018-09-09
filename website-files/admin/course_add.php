@@ -88,12 +88,12 @@
                 </div>
 
                 <div class="input-field" id="new_degree">
-                    <input type="text" id="new_degree_input" name="degree_new" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE DEGREE NAME AS B.Tech, M.Tech, MCA, BCA, etc.">
+                    <input type="text" id="new_degree_input" name="degree_new" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE DEGREE NAME AS B.Tech, M.Tech, MCA, BCA, etc.">
                     <label class="active" for="new_degree_input">Enter new degree name</label>
                 </div>
 
                 <div class="input-field">
-                    <input type="text" id="course" name="course" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE FULL NAME OF THE COURSE IN UPPERCASE" pattern= "[A-Z]{50}">
+                    <input type="text" id="course" name="course" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE FULL NAME OF THE COURSE IN UPPERCASE" pattern="[A-Z\s]+">
                     <label class="active" for="course">Enter the corresponding course</label>
                 </div>
                 
