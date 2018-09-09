@@ -42,66 +42,111 @@
                         <input type="text" id="name" name="name" required disabled value="I am not editable">
                         <label for="name">Institute Name</label>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="inst_code" name="inst_code" required disabled value="1234">
-                        <label for="inst_code">Institute code</label>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="inst_code" name="inst_code" required disabled value="1234">
+                                <label for="inst_code">Institute code</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="uid" name="uid" required disabled value="I am not editable">
+                                <label for="uid">Institute User ID</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="text" id="uid" name="uid" required disabled value="I am not editable">
-                        <label for="uid">Institute User ID</label>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="password" id="password" name="password" required disabled value="I am not editable">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="estd" name="estd" required disabled value="1980">
+                                <label for="estd">Institute Establishment Year</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="password" id="password" name="password" required disabled value="I am not editable">
-                        <label for="password">Password</label>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="accrd" name="accrd" required disabled value="I am not editable">
+                                <label for="accrd">Institute Accriditated By</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="inst_type" name="inst_type" required disabled value="I am not editable">
+                                <label for="inst_type">Institute Type</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="estd" name="estd" required disabled value="1980">
-                        <label for="estd">Institute Establishment Year</label>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="affli" name="affli" required disabled value="I am not editable">
+                                <label for="affli">Institute Affiliated By</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="inst_appr" name="inst_appr" required disabled value="I am not editable">
+                                <label for="inst_appr">Institute Approved By</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="text" id="accrd" name="accrd" required disabled value="I am not editable">
-                        <label for="accrd">Institute Accriditated By</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="inst_type" name="inst_type" required disabled value="I am not editable">
-                        <label for="inst_type">Institute Type</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="affli" name="affli" required disabled value="I am not editable">
-                        <label for="affli">Institute Affiliated By</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="inst_appr" name="inst_appr" required disabled value="I am not editable">
-                        <label for="inst_appr">Institute Approved By</label>
-                    </div>
+
                     <div class="input-field">
                         <textarea id="address" class="materialize-textarea" name="address" required disabled>I am not editable</textarea>
                         <label for="address">Institute Address</label>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="pin" name="pin" required disabled value="123456">
-                        <label for="pin">Institute PIN</label>
+
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="pin" name="pin" required disabled value="123456">
+                                <label for="pin">Institute PIN</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="inst_state" name="inst_state" required disabled value="I am not editable">
+                                <label for="inst_state">Institute State</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="text" id="inst_state" name="inst_state" required disabled value="I am not editable">
-                        <label for="inst_state">Institute State</label>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="ins_dst" name="ins_dst" required disabled value="I am not editable">
+                                <label for="ins_dst">Institute District</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="number" name="number" required disabled value="1234567890">
+                                <label for="number">Institute Contact Number</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="text" id="ins_dst" name="ins_dst" required disabled value="I am not editable">
-                        <label for="ins_dst">Institute District</label>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="email" id="email" name="email" required disabled value="I am not editable">
+                                <label for="email">Institute E-mail</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="url" id="website" name="website" required disabled value="I am not editable">
+                                <label for="website">Institute Website</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="number" name="number" required disabled value="1234567890">
-                        <label for="number">Institute Contact Number</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="email" id="email" name="email" required disabled value="I am not editable">
-                        <label for="email">Institute E-mail</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="url" id="website" name="website" required disabled value="I am not editable">
-                        <label for="website">Institute Website</label>
-                    </div>
+                    
                 </div>
             </div>
             <br>
@@ -117,9 +162,19 @@
                         <input type="text" id="head_desg" name="head_desg" required disabled value="I am not editable">
                         <label for="head_desg">Institute Head Designation</label>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="head_mob" name="head_mob" required disabled value="1234567890">
-                        <label for="head_mob">Institute Head Contact(Mobile)</label>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="url" id="website" name="website" required disabled value="I am not editable">
+                                <label for="website">Institute Website</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="head_mob" name="head_mob" required disabled value="1234567890">
+                                <label for="head_mob">Institute Head Contact(Mobile)</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="input-field">
                         <input type="number" id="head_ph" name="head_ph" required disabled value="1234567890">
@@ -140,13 +195,19 @@
                         <input type="text" id="tpo_name" name="tpo_name" required disabled value="I am not editable">
                         <label for="tpo_name">Institute TPO Name</label>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="tpo_contact1" name="tpo_contact1" required disabled value="1234567890">
-                        <label for="tpo_contact1">Institute TPO Contact Number-1</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="number" id="tpo_contact2" name="tpo_contact2" disabled value="1234567890">
-                        <label for="tpo_contact2">Institute TPO Contact Number-2</label>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="tpo_contact1" name="tpo_contact1" required disabled value="1234567890">
+                                <label for="tpo_contact1">Institute TPO Contact Number-1</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="tpo_contact2" name="tpo_contact2" disabled value="1234567890">
+                                <label for="tpo_contact2">Institute TPO Contact Number-2</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="input-field">
                         <input type="email" id="tpo_email" name="tpo_email" required disabled value="I am not editable">
