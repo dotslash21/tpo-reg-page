@@ -220,34 +220,55 @@
             <h5>Institute Features</h5>
             <div class="card">
                 <div class="card-content">
-                    <div class="input-field">
-                        <input type="number" id="num_cmp" name="num_cmp" required disabled value="123">
-                        <label for="num_cmp">Institute Total Number of Computers</label>
+                <div class="row">
+                    <div class="col s6">
+                        <div class="input-field">
+                            <input type="number" id="num_cmp" name="num_cmp" required disabled value="123">
+                            <label for="num_cmp">Institute Total Number of Computers</label>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="num_cmplab" name="num_cmplab" required disabled value="123">
-                        <label for="num_cmplab">Institute Total Number of Computer Lab</label>
+                    <div class="col s6">
+                        <div class="input-field">
+                            <input type="number" id="num_cmplab" name="num_cmplab" required disabled value="123">
+                            <label for="num_cmplab">Institute Total Number of Computer Lab</label>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="min_num_cmp" name="min_num_cmp" required disabled value="123">
-                        <label for="min_num_cmp">Minimum Number of Computers in a Lab</label>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <div class="input-field">
+                            <input type="number" id="min_num_cmp" name="min_num_cmp" required disabled value="123">
+                            <label for="min_num_cmp">Minimum Number of Computers in a Lab</label>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="ispeed" name="ispeed" required disabled value="123">
-                        <label for="ispeed">Institute Internet Speed (calculated only in Kbps)</label>
+                    <div class="col s6">
+                        <div class="input-field">
+                            <input type="number" id="ispeed" name="ispeed" required disabled value="123">
+                            <label for="ispeed">Institute Internet Speed (calculated only in Kbps)</label>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="hall_cap" name="hall_cap" required disabled value="123">
-                        <label for="hall_cap">Institute Total Hall Capacity</label>
+                </div>
+                <div class="row">
+                    <div class="col s4">
+                        <div class="input-field">
+                            <input type="number" id="hall_cap" name="hall_cap" required disabled value="123">
+                            <label for="hall_cap">Institute Total Hall Capacity</label>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="number" id="num_cctv" name="num_cctv" required disabled value="123">
-                        <label for="num_cctv">Institute Total CCTV Camera in LAB</label>
+                    <div class="col s4">
+                        <div class="input-field">
+                            <input type="number" id="num_cctv" name="num_cctv" required disabled value="123">
+                            <label for="num_cctv">Institute Total CCTV Camera in LAB</label>
+                        </div>
                     </div>
-                    <div class="input-field">
-                        <input type="text" id="has_fiber" name="has_fiber" required disabled value="123">
-                        <label for="has_fiber">Institute Has Optical Fiber LAN</label>
+                    <div class="col s4">
+                        <div class="input-field">
+                            <input type="text" id="has_fiber" name="has_fiber" required disabled value="123">
+                            <label for="has_fiber">Institute Has Optical Fiber LAN</label>
+                        </div>
                     </div>
+                </div>
                 </div>
             </div>
             <br>
