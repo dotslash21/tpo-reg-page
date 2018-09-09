@@ -17,11 +17,11 @@
 
             $admin = $_SESSION['admin_id'];
             
-            $current_date   = (int)date("Ymd");
+            $current_date   = (int)time();      //Current timestamp
 
             $notice_title   = $_POST['notice_title'];
             $notice_desc    = $_POST['notice_desc'];
-            $validity       = (int)$_POST['validity'];
+            $validity       = strtotime($_POST['validity']);    //Convert validity date to timestamp
             
             $notice_title_clean = clean($con, $notice_title);
             $notice_desc_clean  = clean($con, $notice_desc);
