@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2018 at 04:46 PM
+-- Generation Time: Sep 09, 2018 at 11:57 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -33,14 +33,14 @@ CREATE TABLE `admins` (
   `password` varchar(50) NOT NULL,
   `Last_login_time` varchar(40) NOT NULL,
   `Last_login_ip` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`id`, `password`, `Last_login_time`, `Last_login_ip`) VALUES
-('admin', '$2y$10$0mR4A7jiP1efMDTDMmN.Ju5Wty0R6jJf0wrozVuhtE4', '2018/Sep/08 7:57:25 PM IST +05:30', '::1');
+('admin', '$2y$10$0mR4A7jiP1efMDTDMmN.Ju5Wty0R6jJf0wrozVuhtE4', '2018/Sep/09 2:49:15 PM IST +05:30', '::1');
 
 -- --------------------------------------------------------
 
@@ -53,14 +53,8 @@ CREATE TABLE `college_crs` (
   `deg_optd` varchar(50) NOT NULL,
   `course_optd` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `intake` int(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `college_crs`
---
-
-INSERT INTO `college_crs` (`college_id`, `deg_optd`, `course_optd`, `intake`) VALUES
-(1211, 'B.Tech', 'Computer Science and Engineering', 60);
 
 -- --------------------------------------------------------
 
@@ -72,7 +66,7 @@ CREATE TABLE `course_list` (
   `id` int(3) NOT NULL,
   `degree` varchar(20) NOT NULL,
   `course_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `course_list`
@@ -134,17 +128,8 @@ CREATE TABLE `cred` (
   `upload` varchar(40) NOT NULL COMMENT 'institute Uploadfile name',
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Registration Time',
   `browser` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute registered browser',
-  `inst_ip` varchar(64) NOT NULL COMMENT 'Institute registered Ip',
-  `inst_approve` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Approval',
-  `inst_delete` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Delete'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cred`
---
-
-INSERT INTO `cred` (`id`, `inst_name`, `inst_code`, `uid`, `pwd`, `estd`, `inst_accrd`, `inst_type`, `inst_affl`, `inst_aprv`, `state`, `district`, `pin`, `address`, `phone`, `email`, `website`, `head_name`, `inst_headdesg`, `head_contact`, `head_mob`, `head_email`, `tpo_name`, `tpo_ph`, `tpo_ph2`, `tpo_email`, `no_of_comp`, `num_cmplab`, `min_num_cmp`, `int_speed`, `hall_cap`, `fibop_lan`, `cctv_no`, `upload`, `reg_time`, `browser`, `inst_ip`, `inst_approve`, `inst_delete`) VALUES
-(1, 'XYZ Institute of Technology', 1211, 'xyz1211', '$2y$10$B1COeW8RUi4iujYj6IuTJOtiwdtdrWxnbyxctrPVEfY', 1957, 'NAAC-A', 'Government', 'Maulana Kalam Azad University of Technology', 'UGC', 'West Bengal (WB)', 'Kolkata', 700001, '123, Example Street', 1234567890, 'k2803552@nwytg.com', 'https://tnp.iitd.ac.in/', 'Mr. Arunangshu Biswas', 'Director', 1234567, 1234567890, 'absws@xyzit.ac.in', 'Arkadip Bhattacharya', 1234567890, 0, 'abhatt@xyzit.ac.in', 759, 10, 10, 1000000000, 250, 'yes', 20, '1211.jpg', '2018-08-17 13:50:52', '192.100.100.101', '192.100.100.101', '', '');
+  `inst_ip` varchar(64) NOT NULL COMMENT 'Institute registered Ip'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -168,7 +153,8 @@ CREATE TABLE `notices` (
 --
 
 INSERT INTO `notices` (`sl_no`, `title`, `content`, `publish_date`, `expiry_date`, `active_status`, `file_name`, `added_by`) VALUES
-(11, 'It&#039;s not a important one', 'Hi, I&#039;m a notice', 20180908, 20181026, 0, '1536417910.jpg', 'admin');
+(13, 'A dummy notice with timestamp', 'Hi, I&#039;m a dummy notice, with timestamp', 1536470353, 1540940400, 0, '1536470353.jpg', 'admin'),
+(14, 'Again a notice with timestamp', 'qwerty', 1536470501, 1543532400, 0, '1536470501.jpg', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -209,13 +195,13 @@ ALTER TABLE `course_list`
 -- AUTO_INCREMENT for table `cred`
 --
 ALTER TABLE `cred`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id', AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `notices`
 --
 ALTER TABLE `notices`
-  MODIFY `sl_no` int(5) NOT NULL AUTO_INCREMENT COMMENT 'serial no of notices', AUTO_INCREMENT=12;
+  MODIFY `sl_no` int(5) NOT NULL AUTO_INCREMENT COMMENT 'serial no of notices', AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
