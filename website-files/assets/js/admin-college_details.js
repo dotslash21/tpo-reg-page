@@ -1,9 +1,19 @@
 $(document).ready(function () {
-    $('#degree_sel').append(  `<option value="" disabled selected>ALL</option>
-                                    <option value="B.Tech">B.Tech</option>
-                                    <option value="M.Tech">M. Tech</option>
-                                    <option value="BCA">BCA</option>
-                                    <option value="MCA">MCA</option>`)
+    // initialize the course select
+    $(".clscrs").material_select();
+
+    // setup listener for custom event to re-initialize on change
+    $('.clscrs').on('contentChanged', function() {
+        $(this).material_select();
+    });
+
+    $("#crslst").append(`<option value="" disabled selected>ALL</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="M.Tech">M. Tech</option>
+                        <option value="BCA">BCA</option>
+                        <option value="MCA">MCA</option>`);
+    $("#crslst").trigger('contentChanged');
+
     //$('select#degree_sel').empty();
 })
 
@@ -12,6 +22,7 @@ $('#degree_sel').change(function(){
     console.log(value + value.length);
 });
 
+//Function for print all button
 $("button#printall").click(function (event) {
     event.preventDefault();
     var dataObj = {

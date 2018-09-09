@@ -88,7 +88,7 @@
                         </div>
                         <div class="col s5">
                             <div class="input-field">
-                                <select multiple>
+                                <select multiple id="crslst" class="clscrs">
                                     <option value="" disabled selected>ALL</option>
                                     <option value="CSE">CSE</option>
                                     <option value="ME">ME</option>

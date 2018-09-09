@@ -41,7 +41,7 @@
 
     <!-- MAIN FORM BODY-->
     <div class="container z-depth-3" id="form-container">
-        <form class="frm">
+        <form class="frm" id="frm">
             <div id="msg_box" class="center-align">
                 <span class="red-text text-lighten-1"><?php echo $fallback; ?></span>
             </div>
