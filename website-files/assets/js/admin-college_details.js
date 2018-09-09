@@ -1,18 +1,19 @@
 $(document).ready(function () {
     // initialize the course select
-    $(".clscrs").material_select();
+    $(".degree_sel").material_select();
+    $(".course_sel").material_select();
 
     // setup listener for custom event to re-initialize on change
-    $('.clscrs').on('contentChanged', function() {
+    $('.course_sel').on('contentChanged', function() {
         $(this).material_select();
     });
 
-    $("#crslst").append(`<option value="" disabled selected>ALL</option>
+    $("#course_sel").append(`
                         <option value="B.Tech">B.Tech</option>
                         <option value="M.Tech">M. Tech</option>
                         <option value="BCA">BCA</option>
-                        <option value="MCA">MCA</option>`);
-    $("#crslst").trigger('contentChanged');
+                        `);
+    $("#course_sel").trigger('contentChanged');
 
     //$('select#degree_sel').empty();
 })

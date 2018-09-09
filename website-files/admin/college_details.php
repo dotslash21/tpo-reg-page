@@ -82,7 +82,7 @@
                         </div>
                         <div class="col s5">
                             <div class="input-field">
-                                <select multiple id="degree_sel">
+                                <select multiple id="degree_sel" class="degree_sel">
                                     
                                 </select>
                                 <label>Degree</label>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="col s5">
                             <div class="input-field">
-                                <select multiple id="crslst" class="clscrs">
+                                <select multiple id="course_sel" class="course_sel">
                                     <option value="" disabled selected>ALL</option>
                                     <option value="CSE">CSE</option>
                                     <option value="ME">ME</option>
@@ -249,12 +249,6 @@
     <script src="../assets/js/admin_clg.js"></script>
     <script>
         $(".button-collapse").sideNav();
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('select').material_select();
-        });
-        $('select').material_select('destroy');
     </script>
     <script>
         $(document).ready(function () {
