@@ -179,7 +179,20 @@
                             async: true,
                         })
                         .done(function (data) {
-                            
+                            if(data.error !== undefined){
+                                alert(data.error);
+                            }
+                            if(data.success !== undefined){
+                                if(data.success){
+                                    if (window.confirm('Succesfully deleted. Need Refrash. Want to Refrash?')){
+                                        // They clicked Yes
+                                        location.reload();
+                                    }
+                                    else{
+                                        // They clicked no
+                                    }
+                                }
+                            }
                         })
                     })
 
