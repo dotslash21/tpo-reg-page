@@ -21,7 +21,7 @@
     </style>
 </head>
 
-<body>
+<body class="grey lighten-5">
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
