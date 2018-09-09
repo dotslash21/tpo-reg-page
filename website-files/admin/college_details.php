@@ -6,6 +6,8 @@
     }
     define("_CON_",true);
     require("../inc/db-con.php");
+    $rnd = md5(rand());        //a random variable
+    $_SESSION['chk'] = $rnd;
 ?>
 
 <!DOCTYPE html>
@@ -163,8 +165,22 @@
 
                     //Delete FN
                     $("#delete-<?php echo $res_arr['inst_code']; ?>").click(function (event) {
-                        console.log("Delete <?php echo $res_arr['inst_code']; ?>");
                         event.preventDefault();
+                        console.log("Delete <?php echo $res_arr['inst_code']; ?>");
+                        var dataObj = {
+                            clgId: <?php echo $res_arr['inst_code']; ?>,
+                            id: '<?php echo $rnd; ?>'
+                        }
+                        $.ajax({
+                            type: 'POST',
+                            data: dataObj,
+                            url: '../ajax/admin_record_delete.php',
+                            dataType: 'json',
+                            async: true,
+                        })
+                        .done(function (data) {
+                            
+                        })
                     })
 
                     //Print FN
