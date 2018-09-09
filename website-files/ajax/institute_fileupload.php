@@ -20,7 +20,7 @@
                 if($_FILES['uploadfile']['size'] < (1024*1024*1024*2) ){
                     $temp = explode(".", $_FILES["uploadfile"]["name"]);
                     $newfilename = $_SESSION['inst_code'].".". end($temp);
-                    if(move_uploaded_file($_FILES['uploadfile']['tmp_name'],"../upload/".$newfilename)){
+                    if(move_uploaded_file($_FILES['uploadfile']['tmp_name'],"../upload/institute/".$newfilename)){
                         $sql = "UPDATE `cred` SET `upload` = '".$newfilename."' WHERE `inst_code` = '".$_SESSION['inst_code']."'";
                         $return['sql'] = $sql;
                         if(mysqli_query($con,$sql)){
