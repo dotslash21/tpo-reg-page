@@ -184,12 +184,13 @@
                             }
                             if(data.success !== undefined){
                                 if(data.success){
-                                    if (window.confirm('Succesfully deleted. Need Refrash. Want to Refrash?')){
+                                    if (window.confirm('Succesfully deleted. Need Refresh. Want to Refresh?')){
                                         // They clicked Yes
                                         location.reload();
                                     }
                                     else{
                                         // They clicked no
+                                        alert("Need a refresh");
                                     }
                                 }
                             }
