@@ -79,7 +79,7 @@ if (!isset($_SESSION['admin_id'])) {
                     </a>
                 </div>
                 <div class="col l4 s12">
-                    <a href="notice_view.html">
+                    <a href="notice_view.php">
                     <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
                             <i class="material-icons medium">format_list_numbered</i>
                             <p>VIEW NOTICES</p>
