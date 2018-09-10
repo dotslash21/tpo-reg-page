@@ -37,19 +37,19 @@
 
                 //Notice value change                
                 $current_time = time();
-                $sql_update = "UPDATE `notices` SET active_status = 0 WHERE expiry_date < ".$college_time."";
+                $sql_update = "UPDATE `notices` SET active_status = 0 WHERE expiry_date < ".$current_time."";
                 if(mysqli_query($con, $sql_update)){
                     //Notice
                     $notice_page_link = "./notices.html";        //Link to notice page
                     $notice      = "<div class=\"list styled custom-list notice-block\">";
                     $notice     .= "<ul class=\"marquee\">";
-                    
+
                     while($notice_out = mysqli_fetch_array($result_notice)){
                         $notice .= "<li>";
                         $notice .= "<a title=\"".$notice_out['title']."\" href=\"".$notice_page_link."\" > ".$notice_out['title']."</a> ";
                         $notice .= "</li>";
                     }
-                
+
                     $notice     .= "</ul>";
                     $notice     .= "</div>";
                 }
