@@ -116,104 +116,11 @@ if (!isset($_SESSION['admin_id'])) {
             </div>
             <!-- HEADING END -->
 
-            <div class="row z-depth-1-half notice-panel notice_active valign-wrapper">
-                <div class="col s1 center-align">1</div>
-                <div class="col s4">Snatoque penatibus et magnis dis.</div>
-                <div class="col s2">07-09-2018</div>
-                <div class="col s2">17-09-2018</div>
-                <div class="col s3">
-                    <button class="waves-effect waves-yellow btn yellow darken-3" id="">EDIT</button>
-                    <button class="waves-effect waves-red btn red lighten-2" id="">DELETE</button>
-                </div>
+            <div id="notices">
+                <!--Notices will show here-->
+                
             </div>
 
-            <div class="row z-depth-1-half notice-panel notice_active valign-wrapper">
-                <div class="col s1 center-align">2</div>
-                <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
-                <div class="col s2">01-08-2018</div>
-                <div class="col s2">09-09-2018</div>
-                <div class="col s3">
-                    <button class="waves-effect waves-yellow btn yellow darken-3" id="">EDIT</button>
-                    <button class="waves-effect waves-red btn red lighten-2" id="">DELETE</button>
-                </div>
-            </div>
-
-            <div class="row z-depth-1-half notice-panel notice_active valign-wrapper">
-                <div class="col s1 center-align">2</div>
-                <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
-                <div class="col s2">01-08-2018</div>
-                <div class="col s2">09-09-2018</div>
-                <div class="col s3">
-                    <button class="waves-effect waves-yellow btn yellow darken-3" id="">EDIT</button>
-                    <button class="waves-effect waves-red btn red lighten-2" id="">DELETE</button>
-                </div>
-            </div>
-
-            <div class="row z-depth-1-half notice-panel notice_active valign-wrapper">
-                <div class="col s1 center-align">2</div>
-                <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
-                <div class="col s2">01-08-2018</div>
-                <div class="col s2">09-09-2018</div>
-                <div class="col s3">
-                    <button class="waves-effect waves-yellow btn yellow darken-3" id="">EDIT</button>
-                    <button class="waves-effect waves-red btn red lighten-2" id="">DELETE</button>
-                </div>
-            </div>
-
-            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
-                <div class="col s1 center-align">2</div>
-                <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
-                <div class="col s2">01-08-2018</div>
-                <div class="col s2">09-09-2018</div>
-                <div class="col s3">
-                    <button class="waves-effect waves-yellow btn yellow darken-3" id="">EDIT</button>
-                    <button class="waves-effect waves-red btn red lighten-2" id="">DELETE</button>
-                </div>
-            </div>
-
-            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
-                <div class="col s1 center-align">2</div>
-                <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
-                <div class="col s2">01-08-2018</div>
-                <div class="col s2">09-09-2018</div>
-                <div class="col s3">
-                    <button class="waves-effect waves-yellow btn yellow darken-3" id="">EDIT</button>
-                    <button class="waves-effect waves-red btn red lighten-2" id="">DELETE</button>
-                </div>
-            </div>
-
-            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
-                <div class="col s1 center-align">2</div>
-                <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
-                <div class="col s2">01-08-2018</div>
-                <div class="col s2">09-09-2018</div>
-                <div class="col s3">
-                    <button class="waves-effect waves-yellow btn yellow darken-3" id="">EDIT</button>
-                    <button class="waves-effect waves-red btn red lighten-2" id="">DELETE</button>
-                </div>
-            </div>
-
-            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
-                <div class="col s1 center-align">2</div>
-                <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
-                <div class="col s2">01-08-2018</div>
-                <div class="col s2">09-09-2018</div>
-                <div class="col s3">
-                    <button class="waves-effect waves-yellow btn yellow darken-3" id="">EDIT</button>
-                    <button class="waves-effect waves-red btn red lighten-2" id="">DELETE</button>
-                </div>
-            </div>
-
-            <div class="row z-depth-1-half notice-panel notice_inactive valign-wrapper">
-                <div class="col s1 center-align">2</div>
-                <div class="col s4">Morbi nunc odio gravida at cursus nec luctus a lorem.</div>
-                <div class="col s2">01-08-2018</div>
-                <div class="col s2">09-09-2018</div>
-                <div class="col s3">
-                    <button class="waves-effect waves-yellow btn yellow darken-3" id="">EDIT</button>
-                    <button class="waves-effect waves-red btn red lighten-2" id="">DELETE</button>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -231,6 +138,7 @@ if (!isset($_SESSION['admin_id'])) {
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="../assets/js/admin-notice-view.js"></script>
     <script>
         $(".button-collapse").sideNav();
     </script>
