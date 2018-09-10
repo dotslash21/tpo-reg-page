@@ -5,7 +5,7 @@ $(document).ready(function () {
     }
     $.ajax({
         type: 'POST',
-        url: '../ajax/notices.php',
+        url: './ajax/notices.php',
         data: dataObj,
         dataType: 'json',
         async: true,

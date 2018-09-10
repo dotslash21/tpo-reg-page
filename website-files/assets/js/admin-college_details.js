@@ -14,7 +14,7 @@ $(document).ready(function () {
                         <option value="BCA">BCA</option>
                         `);
     $("#course_sel").trigger('contentChanged');
-
+    
     //$('select#degree_sel').empty();
 })
 

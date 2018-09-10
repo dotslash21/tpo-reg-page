@@ -27,7 +27,7 @@
                     $value .=   "<td>".$exp_date."</td>";
                     $value .=   "<td>".$result_arr['content']."</td>";
                     $value .=   "<td>";
-                    $value .=       "<a href=\"../upload/notice/".$result_arr['file_name']."\" class=\"btn btn-info btn-xs\">";
+                    $value .=       "<a href=\"./upload/notice/".$result_arr['file_name']."\" class=\"btn btn-info btn-xs\">";
                     $value .=       "<span class=\"glyphicon glyphicon-download-alt\"></span>Download</a>";
                     $value .=   "</td>";
                     $value .=   "</tr>";
