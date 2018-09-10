@@ -17,10 +17,7 @@
             $logfail= "You need to Log In first";
         }
     }
-    else{
-        $logfail = '';
-    }
-    if(isset($_GET['fallback'])){
+    else if(isset($_GET['fallback'])){
         if($_GET['fallback'] == 'yes'){
             $logfail= "You have logged off successfully!";
         }
