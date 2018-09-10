@@ -37,7 +37,7 @@
 
                 
                 //NOtice Getting Portion
-                $notice_page_link = "#";        //Link to notice page
+                $notice_page_link = "./notices.html";        //Link to notice page
                 $notice      = "<div class=\"list styled custom-list notice-block\">";
                 $notice     .= "<ul class=\"marquee\">";
 
