@@ -166,35 +166,42 @@
                     //Delete FN
                     $("#delete-<?php echo $res_arr['inst_code']; ?>").click(function (event) {
                         event.preventDefault();
-                        console.log("Delete <?php echo $res_arr['inst_code']; ?>");
-                        var dataObj = {
-                            clgId: <?php echo $res_arr['inst_code']; ?>,
-                            id: '<?php echo $rnd; ?>'
-                        }
-                        $.ajax({
-                            type: 'POST',
-                            data: dataObj,
-                            url: '../ajax/admin_record_delete.php',
-                            dataType: 'json',
-                            async: true,
-                        })
-                        .done(function (data) {
-                            if(data.error !== undefined){
-                                alert(data.error);
+                        if (window.confirm('Will you want to delete data of <?php echo $res_arr['inst_name']; ?> ?')){
+                            // They clicked Yes
+                            console.log("Delete <?php echo $res_arr['inst_code']; ?>");
+                            var dataObj = {
+                                clgId: <?php echo $res_arr['inst_code']; ?>,
+                                id: '<?php echo $rnd; ?>'
                             }
-                            if(data.success !== undefined){
-                                if(data.success){
-                                    if (window.confirm('Succesfully deleted. Need Refresh. Want to Refresh?')){
-                                        // They clicked Yes
-                                        location.reload();
-                                    }
-                                    else{
-                                        // They clicked no
-                                        alert("Need a refresh");
+                            $.ajax({
+                                type: 'POST',
+                                data: dataObj,
+                                url: '../ajax/admin_record_delete.php',
+                                dataType: 'json',
+                                async: true,
+                            })
+                            .done(function (data) {
+                                if(data.error !== undefined){
+                                    alert(data.error);
+                                }
+                                if(data.success !== undefined){
+                                    if(data.success){
+                                        if (window.confirm('Succesfully deleted. Need Refresh. Want to Refresh?')){
+                                            // They clicked Yes
+                                            location.reload();
+                                        }
+                                        else{
+                                            // They clicked no
+                                            alert("Need a refresh");
+                                        }
                                     }
                                 }
-                            }
-                        })
+                            })
+                        }
+    
+                        else{
+                            // They clicked no
+                        }
                     })
 
                     //Print FN
