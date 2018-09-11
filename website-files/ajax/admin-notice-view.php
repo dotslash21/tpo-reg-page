@@ -20,7 +20,7 @@
                 $value = '';
                 $sl_no = 1;
                 
-                $sql_notice = "SELECT title, content, publish_date, expiry_date, active_status FROM `notices` ORDER BY active_status DESC, expiry_date DESC";
+                $sql_notice = "SELECT sl_no, title, content, publish_date, expiry_date, active_status FROM `notices` ORDER BY active_status DESC, expiry_date DESC";
                 $result= mysqli_query($con, $sql_notice);
                 
                 while ($result_notice = mysqli_fetch_array($result)) {
@@ -37,8 +37,8 @@
                     $value .=       "<div class=\"col s2\">".date("d-M-Y", $result_notice['publish_date'])."</div>";
                     $value .=       "<div class=\"col s2\">".date("d-M-Y", $result_notice['expiry_date'])."</div>";
                     $value .=       "<div class=\"col s3\">";
-                    $value .=           "<button class=\"waves-effect waves-yellow btn yellow darken-3\" id=\"\">EDIT</button>";
-                    $value .=           "<button class=\"waves-effect waves-red btn red lighten-2\" id=\"\">DELETE</button>";
+                    $value .=           "<button class=\"waves-effect waves-yellow btn yellow darken-3 edit_btn\" id=\"".$result_notice['sl_no']."\">EDIT</button>";
+                    $value .=           "<button class=\"waves-effect waves-red btn red lighten-2 delete-btn\" id=\"".$result_notice['sl_no']."\">DELETE</button>";
                     $value .=       "</div>";
                     $value .=   "</div>";
                     $sl_no += 1;
