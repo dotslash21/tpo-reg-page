@@ -4,6 +4,9 @@ if (!isset($_SESSION['admin_id'])) {
     header('Location: ./login.php?lf=yes');
     exit;
 }
+
+$r = md5(rand());        //a random variable
+$_SESSION['token'] = $r;
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +22,7 @@ if (!isset($_SESSION['admin_id'])) {
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="token" content="<?php echo $r; ?>">
     <style>
         #form-container {
             padding: 2em 0.5em 2em 0.5em;
