@@ -61,7 +61,16 @@ $(document).ready(function () {
                         async: true,
                     })
                     .done(function(data){
-
+                        if(data.action !== undefined && data.action == 'delete'){
+                            if(data.success !== undefined && data.success == true){
+                                if(data.result !== undefined){
+                                    if(window.confirm(data.result + ". Reload the Page")){
+                                        //Reload the page
+                                        location.reload();
+                                    }
+                                }
+                            }
+                        }
                     })
                 }
                 else{
