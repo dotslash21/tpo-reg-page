@@ -60,19 +60,36 @@
 
                         //Editing action
                         $return['action'] = 'edit';
+
+                        if(isset($_POST['id'])){
+                            $id = $_POST['id'];
+                            $return['id'] = $id;
+
+                            //Successfully called editting request
+                        }
                     }
                     else if($_POST['action'] == 'delete'){
 
                         //deleting action
                         $return['action'] = 'delete';
+
+                        if(isset($_POST['id'])){
+                            $id = $_POST['id'];
+                            $return['id'] = $id;
+
+                            //Successfully called deleting request
+                        }
                     }
                     else{
 
                         //No action mentioned
                         $return['action'] = 'none';
                     } //action execute
+                
                 } //action check
+            
             } //admin login
+        
         } //token
 
         echo json_encode($return, JSON_PRETTY_PRINT);
