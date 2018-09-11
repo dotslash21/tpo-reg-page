@@ -71,7 +71,7 @@ if (!isset($_SESSION['admin_id'])) {
         <div class="container z-depth-3" id="form-container">
             <div class="row">
                 <div class="col l4 s12">
-                    <a href="notice_add.html">
+                    <a href="notice_add.php">
                         <div class="card-panel valign-wrapper center-align waves-effect waves-red waves-block red lighten-3">
                             <i class="material-icons medium">add</i>
                             <p>ADD NOTICE</p>
