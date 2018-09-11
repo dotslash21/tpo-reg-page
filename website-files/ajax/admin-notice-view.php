@@ -56,9 +56,9 @@
                             $return['notices'] = $value;
                         }
                     }
+                    //Editing action
                     else if($_POST['action'] == 'edit'){
 
-                        //Editing action
                         $return['action'] = 'edit';
 
                         if(isset($_POST['id'])){
@@ -68,9 +68,9 @@
                             //Successfully called editting request
                         }
                     }
+                    //deleting action
                     else if($_POST['action'] == 'delete'){
 
-                        //deleting action
                         $return['action'] = 'delete';
 
                         if(isset($_POST['id'])){
@@ -78,6 +78,19 @@
                             $return['id'] = $id;
 
                             //Successfully called deleting request
+                            $sql_del = "DELETE FROM `notices` WHERE sl_no = ".$id."";
+                            $result_del = mysqli_query($con, $sql_del);
+                            if (mysqli_affected_rows($con)){
+                                //Deleted the notice
+                                $success = true;
+                                $return['result'] = "Successfully Deleted Notice";
+                            }
+                            else{
+                                //Failed to delete courses
+                                $success = false;
+                                $return['error'] = "Failed to Delete Notice";
+                            }
+                            $return['success'] = $success;
                         }
                     }
                     else{

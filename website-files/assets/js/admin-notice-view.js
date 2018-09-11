@@ -29,6 +29,7 @@ $(document).ready(function () {
                     token: token,
                     id: _id
                 }
+                //start ajax request
                 $.ajax({
                     type: 'POST',
                     url: '../ajax/admin-notice-view.php',
@@ -51,6 +52,7 @@ $(document).ready(function () {
                 }
                 //Prompt the user
                 if (window.confirm('Will you want to delete the Notice?')){
+                    //start ajax request
                     $.ajax({
                         type: 'POST',
                         url: '../ajax/admin-notice-view.php',
