@@ -31,7 +31,7 @@
     </style>
 </head>
 
-<body>
+<body class="grey lighten-4">
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
@@ -40,143 +40,181 @@
     </nav>
 
     <!-- MAIN FORM BODY-->
-    <div class="container z-depth-3" id="form-container">
-        <form class="frm" id="frm">
-            <div id="msg_box" class="center-align">
-                <span class="red-text text-lighten-1"><?php echo $fallback; ?></span>
-            </div>
-            <h4>Institute Details</h4>
-            <hr><br>
+    <div class="container" id="form-container">
+        <h4>Institute Details</h4>
+        <hr>
+        <br>
+        <div class="card">
+            <div class="card-content">
+                <form class="frm" id="frm">
+                    <div id="msg_box" class="center-align">
+                        <span class="red-text text-lighten-1"><?php echo $fallback; ?></span>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="name" name="name" required>
+                        <label class="active" for="name">Institute Name</label>
+                    </div>
+                    <div class="row">
+                        <div class="col s8">
+                            <div class="input-field">
+                                <input type="number" id="inst_code" name="inst_code" required min="0">
+                                <label class="active" for="inst_code">Institute code</label>
+                            </div>
+                        </div>
+                        <div class="col s4">
+                            <span class="err-inst_code"></span>
+                        </div>
+                    </div>
+		    	    <div class="row">
+                        <div class="col s8">
+                            <div class="input-field">
+                                <input type="text" id="uid" name="uid" required>
+                                <label class="active" for="uid">Institute User ID</label>
+                            </div>
+                        </div>
+                        <div class="col s4">
+                            <span class="err-uid"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="password" id="password" name="password" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Must be of atleast 8 characters long">
+                                <label class="active" for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="estd" name="estd" min="1800" class="validate" required>
+                                <label class="active" for="estd">Institute Establishment Year</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <select name="accrd" id="accrd" required>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="NAAC-A+">NAAC-A+</option>
+                                    <option value="NAAC-A">NAAC-A</option>
+                                    <option value="NAAC-B">NAAC-B</option>
+                                    <option value="NAAC-C">NAAC-C</option>
+                                    <option value="NAAC-D">NAAC-D</option>
+                                </select>
+                                <label>Institute Accriditated By</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <select name="inst_type" id="inst_type" required>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="Government">Government</option>
+                                    <option value="Government-Aided">Government-Aided</option>
+                                    <option value="Self-Financed">Self-Financed</option>
+                                </select>
+                                <label>Institute Type</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <select name="affli" id="affli" required>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="Maulana Kalam Azad University of Technology">Maulana Kalam Azad University of Technology</option>
+                                    <option value="Calcutta University">Calcutta University</option>
+                                    <option value="Jadavpur University">Jadavpur University</option>
+                                    <option value="University of Kalyani">University of Kalyani</option>
+                                </select>
+                                <label>Institute Affiliated By</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <select name="inst_appr" id="inst_appr" required>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="UGC">UGC</option>
+                                    <option value="AICTE">AICTE</option>
+                                </select>
+                                <label>Institute Approved By</label>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="input-field">
-                <input type="text" id="name" name="name" required>
-                <label class="active" for="name">Institute Name</label>
-            </div>
-			<div class="input-field">
-                <input type="number" id="inst_code" name="inst_code" required min="0">
-                <label class="active" for="inst_code">Institute code</label>
-            </div>
-            <div>
-                <span class="err-inst_code"></span>
-            </div>
-            <div class="input-field">
-                <input type="text" id="uid" name="uid" required>
-                <label class="active" for="uid">Institute User ID</label>
-            </div>
-            <div>
-                <span class="err-uid"></span>
-            </div>
-            <div class="input-field">
-                <input type="password" id="password" name="password" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Must be of atleast 8 characters long">
-                <label class="active" for="password">Password</label>
-            </div>
-            <div class="input-field">
-                <input type="number" id="estd" name="estd" min="1800" class="validate" required>
-                <label class="active" for="estd">Institute Establishment Year</label>
-            </div>
+                    <div class="input-field">
+                        <textarea id="address" class="materialize-textarea" name="address" required></textarea>
+                        <label class="active" for="address">Institute Address</label>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="pin" name="pin" pattern="\d{6}" min="0" required>
+                                <label for="pin" class="active">Institute PIN</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <select name="inst_state" id="inst_state" required>
+                                <?php 
+                                $a=['Andaman and Nicobar Islands(AN)', 'Andhra Pradesh (AP)', 'Arunachal Pradesh (AR)', 
+                                    'Assam (AS)', 'Bihar (BR)', 'Chandigarh (CH)', 'Chhattisgarh (CG)', 
+                                    'Dadra and Nagar Haveli (DN)', 'Daman and Diu (DD)', 'Goa (GA)', 'Gujarat (GJ)', 
+                                    'Haryana (HR)', 'Himachal Pradesh (HP)', 'Jammu and Kashmir (JK)', 'Jharkhand (JH)', 
+                                    'Karnataka (KA)', 'Kerala (KL)', 'Lakshadweep (LD)', 'Madhya Pradesh (MP)', 
+                                    'Maharashtra (MH)', 'Manipur (MN)', 'Meghalaya (ML)', 'Mizoram (MZ)', 'Nagaland (NL)', 
+                                    'National Capital Territory of Delhi (DL)', 'Odisha(OR)', 'Pondicherry (PY)', 
+                                    'Punjab (PB)', 'Rajasthan (RJ)', 'Sikkim (SK)', 'Tamil Nadu (TN)', 'Telangana (TS)', 
+                                    'Tripura (TR)', 'Uttar Pradesh (UP)', 'Uttarakhand (UK)', 'West Bengal (WB)'];
+                                for( $i = 0; $i<count($a);$i++ ){
+                                    echo "<option value='$a[$i]'>$a[$i]</option>";};?>
+                                </select>
+                                <label>Institute State</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field" id="district_txt">
+                                <input type="text" id="ins_dst_txt" name="ins_dst" class="">
+                                <label class="active" for="ins_dst_txt">Institute District</label>
+                            </div>
 
-            <div class="input-field">
-                <select name="accrd" id="accrd" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="NAAC-A+">NAAC-A+</option>
-                    <option value="NAAC-A">NAAC-A</option>
-                    <option value="NAAC-B">NAAC-B</option>
-                    <option value="NAAC-C">NAAC-C</option>
-                    <option value="NAAC-D">NAAC-D</option>
-                </select>
-                <label>Institute Accriditated By</label>
-            </div>
+                            <div class="input-field" id="district_sel">
+                                <select id="ins_dst_sel" name="" class="">
+                                    <?php include('./inst_dst.php');?>
+                                </select>
+                                <label for="ins_dst_sel">Institute District</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="number" name="number" class="validate" min="0" required>
+                                <label for="number" class="active">Institute Contact Number</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="email" id="email" name="email" class="validate" required>
+                                <label class="active" for="email">Institute E-mail</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="text" id="website" name="website" class="validate" required>
+                                <label class="active" for="website">Institute Website</label>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <button class="btn red left" type="reset">Reset</button>
+                    <button class="btn green right" type="submit" name="submit" id="submit">Next</button>
 
-            <div class="input-field">
-                <select name="inst_type" id="inst_type" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="Government">Government</option>
-                    <option value="Government-Aided">Government-Aided</option>
-                    <option value="Self-Financed">Self-Financed</option>
-                </select>
-                <label>Institute Type</label>
+                    <div class="clearfix"></div>
+                </form>
             </div>
-
-            <div class="input-field">
-                <select name="affli" id="affli" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="Maulana Kalam Azad University of Technology">Maulana Kalam Azad University of Technology</option>
-                    <option value="Calcutta University">Calcutta University</option>
-                    <option value="Jadavpur University">Jadavpur University</option>
-                    <option value="University of Kalyani">University of Kalyani</option>
-                </select>
-                <label>Institute Affiliated By</label>
-            </div>
-
-            <div class="input-field">
-                <select name="inst_appr" id="inst_appr" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="UGC">UGC</option>
-                    <option value="AICTE">AICTE</option>
-                </select>
-                <label>Institute Approved By</label>
-            </div>
-
-            <div class="input-field">
-                <textarea id="address" class="materialize-textarea" name="address" required></textarea>
-                <label class="active" for="address">Institute Address</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="pin" name="pin" pattern="\d{6}" min="0" required>
-                <label for="pin" class="active">Institute PIN</label>
-            </div>
-
-            <div class="input-field">
-                <select name="inst_state" id="inst_state" required>
-                <?php 
-                $a=['Andaman and Nicobar Islands(AN)', 'Andhra Pradesh (AP)', 'Arunachal Pradesh (AR)', 
-                    'Assam (AS)', 'Bihar (BR)', 'Chandigarh (CH)', 'Chhattisgarh (CG)', 
-                    'Dadra and Nagar Haveli (DN)', 'Daman and Diu (DD)', 'Goa (GA)', 'Gujarat (GJ)', 
-                    'Haryana (HR)', 'Himachal Pradesh (HP)', 'Jammu and Kashmir (JK)', 'Jharkhand (JH)', 
-                    'Karnataka (KA)', 'Kerala (KL)', 'Lakshadweep (LD)', 'Madhya Pradesh (MP)', 
-                    'Maharashtra (MH)', 'Manipur (MN)', 'Meghalaya (ML)', 'Mizoram (MZ)', 'Nagaland (NL)', 
-                    'National Capital Territory of Delhi (DL)', 'Odisha(OR)', 'Pondicherry (PY)', 
-                    'Punjab (PB)', 'Rajasthan (RJ)', 'Sikkim (SK)', 'Tamil Nadu (TN)', 'Telangana (TS)', 
-                    'Tripura (TR)', 'Uttar Pradesh (UP)', 'Uttarakhand (UK)', 'West Bengal (WB)'];
-                for( $i = 0; $i<count($a);$i++ ){
-                    echo "<option value='$a[$i]'>$a[$i]</option>";};?>
-                </select>
-                <label>Institute State</label>
-            </div>
-
-            <div class="input-field" id="district_txt">
-                <input type="text" id="ins_dst_txt" name="ins_dst" class="">
-                <label class="active" for="ins_dst_txt">Institute District</label>
-            </div>
-
-            <div class="input-field" id="district_sel">
-                <select id="ins_dst_sel" name="" class="">
-                    <?php include('./inst_dst.php');?>
-                </select>
-                <label for="ins_dst_sel">Institute District</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="number" name="number" class="validate" min="0" required>
-                <label for="number" class="active">Institute Contact Number</label>
-            </div>
-
-            <div class="input-field">
-                <input type="email" id="email" name="email" class="validate" required>
-                <label class="active" for="email">Institute E-mail</label>
-            </div>
-
-            <div class="input-field">
-                <input type="text" id="website" name="website" class="validate" required>
-                <label class="active" for="website">Institute Website</label>
-            </div>
-            
-            <button class="btn btn-large red left" type="reset">Reset</button>
-            <button class="btn btn-large green right" type="submit" name="submit" id="submit">Submit &amp; Continue</button>
-
-            <div class="clearfix"></div>
-        </form>
+        </div>
     </div>
 
     <footer class="page-footer blue darken-3">

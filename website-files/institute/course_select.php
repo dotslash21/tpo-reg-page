@@ -36,7 +36,7 @@
     </style>
 </head>
 
-<body>
+<body class="grey lighten-4">
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
@@ -46,49 +46,54 @@
 
     <main>
         <!-- MAIN FORM BODY-->
-    <div class="container z-depth-3" id="form-container">
-        <h3>Course Addition</h3>
+    <div class="container" id="form-container">
+        <h4>Course Addition</h4>
         <hr><br>
-        <form> 
-        <div class="input-field" id="course_sel">
-            <select multiple name="courses" id="courses_select">
-                <option value="" disabled selected>Choose your option</option>
-                <?php
-                    $sql_degree = "SELECT DISTINCT degree FROM course_list";
-                    $result_degree = mysqli_query($con, $sql_degree);
-                    while ($array_degree = mysqli_fetch_array($result_degree)) {
-                ?>
-                <optgroup label="<?php echo $array_degree['degree']; ?>">
-                    <?php
-                        $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degree['degree'] . "\"";
-                        $result_course = mysqli_query($con, $sql_opt);
-                        while ($array_course = mysqli_fetch_array($result_course)) {
-                    ?>
-                        <option value="<?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?>"><?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?></option> -->
+        <div class="card">
+            <div class="card-content">
+                <form> 
+                    <div class="input-field" id="course_sel">
+                    <select multiple name="courses" id="courses_select">
+                        <option value="" disabled selected>Choose your option</option>
+                        <?php
+                            $sql_degree = "SELECT DISTINCT degree FROM course_list";
+                            $result_degree = mysqli_query($con, $sql_degree);
+                            while ($array_degree = mysqli_fetch_array($result_degree)) {
+                        ?>
+                        <optgroup label="<?php echo $array_degree['degree']; ?>">
+                            <?php
+                                $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degree['degree'] . "\"";
+                                $result_course = mysqli_query($con, $sql_opt);
+                                while ($array_course = mysqli_fetch_array($result_course)) {
+                            ?>
+                                <option value="<?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?>"><?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?></option> -->
+                                
+                        <?php
+                                }
+                            }
+                        ?>
 
-                <?php
-                        }
-                    }
-                ?>
+                    </select>
+                    <label>Select Institute Courses</label>
+                    </div>
 
-            </select>
-            <label>Select Institute Courses</label>
-        </div>
-            
-            <div id="button-panel">
-                <div class="btn btn-large blue lighten-2 left" id="back">Back</div>
-                <div class="btn btn-large yellow darken-4 right" id="lock">Lock Choices</div>
-                <div class="clearfix"></div>
+                        <div id="button-panel">
+                            <div class="btn btn-large blue lighten-2 left" id="back">Back</div>
+                            <div class="btn btn-large yellow darken-4 right" id="lock">Lock Choices</div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                <br><br>
+                <form id="course_form">
+                    <!-- jQuery GENERATED -->
+                </form>
             </div>
-        </form>
-        <br><br>
-        <form id="course_form">
-            <!-- jQuery GENERATED -->
-        </form>
+        </div>
+        
     </div>
     </main>
 
-    <footer class="page-footer blue darken-3">
+    <footer class="page-footer blue darken-4">
         <div class="footer-copyright blue darken-4">
             <div class="container">
                 Copyright © 2018. CPC, West Bengal

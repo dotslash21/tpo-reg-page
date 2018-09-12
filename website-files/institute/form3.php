@@ -20,7 +20,7 @@
     </style>
 </head>
 
-<body>
+<body class="grey lighten-4">
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
@@ -29,54 +29,72 @@
     </nav>
 
     <!-- MAIN FORM BODY-->
-    <div class="container z-depth-3" id="form-container">
+    <div class="container" id="form-container">
         <form class="frm">
             <h4>Institute Features</h4>
             <hr><br>
+            <div class="card">
+                <div class="card-content">
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="num_cmp" name="num_cmp" min="0" required> 
+                                <label class="active" for="num_cmp">Institute Total Number of Computers</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="num_cmplab" name="num_cmplab" min="0"  required>
+                                <label class="active" for="num_cmplab">Institute Total Number of Computer Lab</label>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="input-field">
-                <input type="number" id="num_cmp" name="num_cmp" min="0" required> 
-                <label class="active" for="num_cmp">Institute Total Number of Computers</label>
-            </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="min_num_cmp" name="min_num_cmp" min="0"  required>
+                                <label class="active" for="min_num_cmp">Minimum Number of Computers in a Lab</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="ispeed" name="ispeed" required min="0">
+                                <label class="active" for="ispeed">Institute Internet Speed (calculated only in Kbps)</label>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="input-field">
-                <input type="number" id="num_cmplab" name="num_cmplab" min="0"  required>
-                <label class="active" for="num_cmplab">Institute Total Number of Computer Lab</label>
-            </div>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="hall_cap" name="hall_cap" required min="0" >
+                                <label class="active" for="hall_cap">Institute Total Hall Capacity</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="num_cctv" name="num_cctv" required min="0" >
+                                <label class="active" for="num_cctv">Institute Total CCTV Camera in LAB</label>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="input-field">
-                <input type="number" id="min_num_cmp" name="min_num_cmp" min="0"  required>
-                <label class="active" for="min_num_cmp">Minimum Number of Computers in a Lab</label>
-            </div>
+                    <div class="row">
+                        <div class="col s3" style="color: #9E9E9E;">Institute Has Optical Fiber LAN: </div>
 
-            <div class="input-field">
-                <input type="number" id="ispeed" name="ispeed" required min="0">
-                <label class="active" for="ispeed">Institute Internet Speed (calculated only in Kbps)</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="hall_cap" name="hall_cap" required min="0" >
-                <label class="active" for="hall_cap">Institute Total Hall Capacity</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="num_cctv" name="num_cctv" required min="0" >
-                <label class="active" for="num_cctv">Institute Total CCTV Camera in LAB</label>
-            </div>
-
-            <div class="row">
-                <div class="col s3" style="color: #9E9E9E;">Institute Has Optical Fiber LAN: </div>
-
-                <div class="col s9">
-                    <input class="with-gap" name="has_fiber" type="radio" id="has_fiber1" value="yes" required>
-                    <label for="has_fiber1">Yes</label>
-                    <input class="with-gap" name="has_fiber" type="radio" id="has_fiber2" value="no">
-                    <label for="has_fiber2">No</label>
+                        <div class="col s9">
+                            <input class="with-gap" name="has_fiber" type="radio" id="has_fiber1" value="yes" required>
+                            <label for="has_fiber1">Yes</label>
+                            <input class="with-gap" name="has_fiber" type="radio" id="has_fiber2" value="no">
+                            <label for="has_fiber2">No</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <button class="btn btn-large blue lighten-2 left" name="back" id="back">Back</button>
-            <button class="btn btn-large green right" type="submit" name="submit" id="submit">Submit &amp; Continue</button>
+            
+            <button class="btn blue lighten-2 left" name="back" id="back">Back</button>
+            <button class="btn green right" type="submit" name="submit" id="submit">Next</button>
 
             <div class="clearfix"></div>
         </form>

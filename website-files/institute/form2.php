@@ -20,7 +20,7 @@
     </style>
 </head>
 
-<body>
+<body class="grey lighten-4">
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
@@ -29,61 +29,75 @@
     </nav>
 
     <!-- MAIN FORM BODY-->
-    <div class="container z-depth-3" id="form-container">
+    <div class="container" id="form-container">
         <form class="frm">
             <h4>Institute Head Details</h4>
             <hr><br>
 
-            <div class="input-field">
-                <input type="text" id="head_name" name="head_name" required>
-                <label class="active" for="head_name">Institute Head Name</label>
-            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="input-field">
+                        <input type="text" id="head_name" name="head_name" required>
+                        <label class="active" for="head_name">Institute Head Name</label>
+                    </div>
 
-            <div class="input-field">
-                <input type="text" id="head_desg" name="head_desg" required>
-                <label class="active" for="head_desg">Institute Head Designation</label>
-            </div>
+                    <div class="input-field">
+                        <input type="text" id="head_desg" name="head_desg" required>
+                        <label class="active" for="head_desg">Institute Head Designation</label>
+                    </div>
 
-            <div class="input-field">
-                <input type="number" id="head_mob" name="head_mob" pattern="[6-9]{1}[0-9]{9}" required>
-                <label class="active" for="head_mob">Institute Head Contact(Mobile)</label>
-            </div>
+                    <div class="input-field">
+                        <input type="number" id="head_mob" name="head_mob" pattern="[6-9]{1}[0-9]{9}" required>
+                        <label class="active" for="head_mob">Institute Head Contact(Mobile)</label>
+                    </div>
 
-            <div class="input-field">
-                <input type="number" id="head_ph" name="head_ph" required>
-                <label class="active" for="head_ph">Institute Head Contact(Land Line)</label>
-            </div>
+                    <div class="input-field">
+                        <input type="number" id="head_ph" name="head_ph" required>
+                        <label class="active" for="head_ph">Institute Head Contact(Land Line)</label>
+                    </div>
 
-            <div class="input-field">
-                <input type="email" id="head_email" name="head_email" class="validate" required>
-                <label class="active" for="head_email">Institute Head Contact Email Id</label>
+                    <div class="input-field">
+                        <input type="email" id="head_email" name="head_email" class="validate" required>
+                        <label class="active" for="head_email">Institute Head Contact Email Id</label>
+                    </div>
+                </div>
             </div>
+            
             
             <h4>Institute TPO Details</h4>
             <hr><br>
 
-            <div class="input-field">
-                <input type="text" id="tpo_name" name="tpo_name" required>
-                <label class="active" for="tpo_name">Institute TPO Name</label>
+            <div class="card">
+                <div class="card-content">
+                    <div class="input-field">
+                        <input type="text" id="tpo_name" name="tpo_name" required>
+                        <label class="active" for="tpo_name">Institute TPO Name</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="tpo_contact1" name="tpo_contact1" pattern="[6-9]{1}[0-9]{9}" required>
+                                <label class="active" for="tpo_contact1">Institute TPO Contact Number-1</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field">
+                                <input type="number" id="tpo_contact2" name="tpo_contact2">
+                                <label class="active" for="tpo_contact2">Institute TPO Contact Number-2</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="email" id="tpo_email" name="tpo_email" class="validate" required>
+                        <label class="active" for="tpo_email">Institute TPO Email Id</label>
+                    </div>
+                </div>
             </div>
 
-            <div class="input-field">
-                <input type="number" id="tpo_contact1" name="tpo_contact1" pattern="[6-9]{1}[0-9]{9}" required>
-                <label class="active" for="tpo_contact1">Institute TPO Contact Number-1</label>
-            </div>
-
-            <div class="input-field">
-                <input type="number" id="tpo_contact2" name="tpo_contact2">
-                <label class="active" for="tpo_contact2">Institute TPO Contact Number-2</label>
-            </div>
-
-            <div class="input-field">
-                <input type="email" id="tpo_email" name="tpo_email" class="validate" required>
-                <label class="active" for="tpo_email">Institute TPO Email Id</label>
-            </div>
-
-            <button class="btn btn-large blue lighten-2 left" name="back" id="back">Back</button>
-            <button class="btn btn-large green right" type="submit" name="submit" id="submit">Submit &amp; Continue</button>
+            <button class="btn blue lighten-2 left" name="back" id="back">Back</button>
+            <button class="btn green right" type="submit" name="submit" id="submit">Next</button>
 
             <div class="clearfix"></div>
         </form>
