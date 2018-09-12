@@ -1,6 +1,7 @@
 <?php
-    define("_CON_",true);
-    require("../inc/db-con.php");
+    session_start();
+    $token = md5(rand());
+    $_SESSION['token'] = $token;
 ?>
 
 
@@ -10,6 +11,7 @@
 <head>
     <title>CPC TPO Registration</title>
     <meta charset="utf-8" />
+    <meta name="token" content = "<?php echo $token; ?>">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -53,26 +55,8 @@
             <div class="card-content">
                 <form> 
                     <div class="input-field" id="course_sel">
-                    <select multiple name="courses" id="courses_select">
-                        <option value="" disabled selected>Choose your option</option>
-                        <?php
-                            $sql_degree = "SELECT DISTINCT degree FROM course_list";
-                            $result_degree = mysqli_query($con, $sql_degree);
-                            while ($array_degree = mysqli_fetch_array($result_degree)) {
-                        ?>
-                        <optgroup label="<?php echo $array_degree['degree']; ?>">
-                            <?php
-                                $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degree['degree'] . "\"";
-                                $result_course = mysqli_query($con, $sql_opt);
-                                while ($array_course = mysqli_fetch_array($result_course)) {
-                            ?>
-                                <option value="<?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?>"><?php echo $array_degree['degree'] . " - " . $array_course['course_name']; ?></option> -->
-                                
-                        <?php
-                                }
-                            }
-                        ?>
-
+                    <select multiple name="courses" id="courses_select" class="courses_select">
+                    <!-- Select field will come dynamically-->
                     </select>
                     <label>Select Institute Courses</label>
                     </div>
@@ -109,12 +93,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
         $(".button-collapse").sideNav();
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('select').material_select();
-        });
-        $('select').material_select('destroy');
     </script>
 <script src="../assets/js/institute-course-select.js"></script>
 </body>

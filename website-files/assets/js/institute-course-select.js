@@ -1,5 +1,34 @@
 //When Lock button is pressed
 $(document).ready(function () {
+
+    // initialize the course select
+    $(".courses_select").material_select();
+
+    
+    // setup listener for custom event to re-initialize on change
+    $('.courses_select').on('contentChanged', function() {
+        $(this).material_select();
+    });
+    var dataSend = {
+        token: $("meta[name='token']").attr("content")
+    }
+    $.ajax({
+        type: 'POST',
+        url: '../ajax/institute_course_select.php',
+        data: dataSend,
+        dataType: 'json',
+        async: true,
+    })
+    .done(function (data) {
+        if(data.course !== undefined){
+            var show = `<option value="" disabled selected>Choose your option</option>` + data.course;
+            $("#courses_select").append(show);
+            $("#courses_select").trigger('contentChanged');
+        }
+    })
+
+        
+        //$('select#degree_sel').empty();
     if(sessionStorage.courseLength !== undefined){
         var crsLen = sessionStorage.courseLength;
 
