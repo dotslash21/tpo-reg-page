@@ -24,14 +24,23 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <meta name="X-CSRF" content="<?php echo $token; ?>"> 
 
+    <!-- reCAPTCHA includes -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         #form-container {
             padding: 2em 0.5em 2em 0.5em;
             margin-top: -1em;
             margin-bottom: 2em;
+        }
+
+        .text-xs-center {
+        text-align: center;
+        }
+
+        .g-recaptcha {
+            display: inline-block;
         }
     </style>
 </head>
@@ -294,6 +303,15 @@
                     <ul class="collection" id="course-intake">
                         <!-- COURSES Added dynamically -->
                     </ul>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col s12">
+                    <div class="text-xs-center">
+                        <!-- reCaptcha -->
+                        <div class="g-recaptcha" data-sitekey="6LeehWIUAAAAAE5afLzfG1lGgM7LpeFXQKlu_kMa"></div>
+                    </div>
                 </div>
             </div>
 
