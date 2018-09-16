@@ -1,9 +1,22 @@
+<?php
+    session_start();
+    if (empty($_SESSION['token'])) {
+        if (function_exists('mcrypt_create_iv')) {
+            $_SESSION['token'] = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
+        } else {
+            $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
+        }
+    }
+    $token = $_SESSION['token'];
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>CPC TPO Registration</title>
     <meta charset="utf-8" />
+    
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -11,6 +24,8 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="X-CSRF" content="<?php echo $token; ?>"> 
 
     <style>
         #form-container {
