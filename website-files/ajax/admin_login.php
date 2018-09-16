@@ -57,7 +57,8 @@
             $admin_details = mysqli_fetch_array($result_admin);
             $admin_id = $admin_details['id'];
             $hash = $admin_details['password'];
-            if($password_clean == 'admin'){
+
+            if(password_verify($password_clean,$hash)){
                 //User get signed in
                 $query_add_val= "UPDATE admins SET Last_login_time= '".$current_time."', Last_login_ip = '".$current_ip."' WHERE id = '".$admin_id."' ";
                 if(mysqli_query($con, $query_add_val)){
