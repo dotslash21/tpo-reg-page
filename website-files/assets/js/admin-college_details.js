@@ -8,13 +8,31 @@ $(document).ready(function () {
         $(this).material_select();
     });
 
-    $("#course_sel").append(`
-                        <option value="B.Tech">B.Tech</option>
-                        <option value="M.Tech">M. Tech</option>
-                        <option value="BCA">BCA</option>
-                        `);
-    $("#course_sel").trigger('contentChanged');
-    
+    var dData = {
+        token: $("meta[name='token']").attr('content'),
+        degree: 'all',
+        course: 'all'
+    }
+
+    $.ajax({
+		type: 'POST',
+		url: '../ajax/admin_college_details.php',
+		data: dData,
+		dataType: 'json',
+        async: true,
+    })
+    .done(function (data) {
+        if(data.degree !== undefined){
+            var deg = `<option value="" disabled selected>ALL</option>` + data.degree;
+            $("#degree_sel").append(deg);
+            $("#degree_sel").trigger('contentChanged');
+        }
+        if(data.course !== undefined){
+            var crs = `<option value="" disabled selected>ALL</option>` + data.course;
+            $("#course_sel").append(crs);
+            $("#course_sel").trigger('contentChanged');
+        }
+    })
     //$('select#degree_sel').empty();
 })
 

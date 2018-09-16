@@ -16,6 +16,7 @@
 <head>
     <title>Admin Panel | CPC TPO Registration</title>
     <meta charset="utf-8" />
+    <meta name="token" content="<?php echo $rnd; ?>">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -83,7 +84,7 @@
                         <div class="col s5">
                             <div class="input-field">
                                 <select multiple id="degree_sel" class="degree_sel">
-                                    
+                                    <!-- Degree Select Options -->
                                 </select>
                                 <label>Degree</label>
                             </div>
@@ -91,6 +92,7 @@
                         <div class="col s5">
                             <div class="input-field">
                                 <select multiple id="course_sel" class="course_sel">
+                                    <!-- Course Select Options -->
                                     <option value="" disabled selected>ALL</option>
                                     <option value="CSE">CSE</option>
                                     <option value="ME">ME</option>
