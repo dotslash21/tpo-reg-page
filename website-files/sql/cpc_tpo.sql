@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2018 at 11:57 AM
+-- Generation Time: Sep 16, 2018 at 05:44 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admins` (
-  `id` varchar(10) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `Last_login_time` varchar(40) NOT NULL,
-  `Last_login_ip` varchar(40) NOT NULL
+  `id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Last_login_time` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Last_login_ip` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -40,7 +40,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `password`, `Last_login_time`, `Last_login_ip`) VALUES
-('admin', '$2y$10$0mR4A7jiP1efMDTDMmN.Ju5Wty0R6jJf0wrozVuhtE4', '2018/Sep/09 2:49:15 PM IST +05:30', '::1');
+('admin', '$2y$10$Jfp3IxECTlLlDERWmXLhPusyZEEyCTzTyDk4Mmkr2g412F1JKgtje', '2018/Sep/16 9:12:13 PM IST +05:30', '::1'),
+('admin2', '$2y$10$.yoaJ8mCghOk76g7B5SCXu5.LQa1VCn6cjZvURXqPIEUULLLeHFL2', '2018/Sep/16 9:13:05 PM IST +05:30', '::1');
 
 -- --------------------------------------------------------
 
@@ -50,11 +51,10 @@ INSERT INTO `admins` (`id`, `password`, `Last_login_time`, `Last_login_ip`) VALU
 
 CREATE TABLE `college_crs` (
   `college_id` int(3) NOT NULL,
-  `deg_optd` varchar(50) NOT NULL,
-  `course_optd` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deg_optd` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `course_optd` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `intake` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 
 -- --------------------------------------------------------
 
@@ -64,8 +64,8 @@ CREATE TABLE `college_crs` (
 
 CREATE TABLE `course_list` (
   `id` int(3) NOT NULL,
-  `degree` varchar(20) NOT NULL,
-  `course_name` varchar(50) NOT NULL
+  `degree` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `course_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -93,42 +93,42 @@ INSERT INTO `course_list` (`id`, `degree`, `course_name`) VALUES
 
 CREATE TABLE `cred` (
   `id` int(11) NOT NULL COMMENT 'User resigtration id',
-  `inst_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Name',
+  `inst_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Name',
   `inst_code` int(11) NOT NULL COMMENT 'institute Code',
-  `uid` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute User Id',
-  `pwd` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Password',
+  `uid` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute User Id',
+  `pwd` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Password',
   `estd` int(8) NOT NULL COMMENT 'Institute ESTD',
-  `inst_accrd` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Accriditation',
-  `inst_type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Type',
-  `inst_affl` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Affliation',
-  `inst_aprv` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Approval',
-  `state` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute State',
-  `district` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute District',
+  `inst_accrd` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Accriditation',
+  `inst_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Type',
+  `inst_affl` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Affliation',
+  `inst_aprv` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Approval',
+  `state` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute State',
+  `district` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute District',
   `pin` int(8) NOT NULL COMMENT 'institute PIN',
-  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Address',
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Address',
   `phone` int(11) NOT NULL COMMENT 'institute Phone No',
-  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Email',
-  `website` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Website',
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Email',
+  `website` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Website',
   `head_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL COMMENT 'institute Head Name',
-  `inst_headdesg` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Head Designation',
+  `inst_headdesg` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Head Designation',
   `head_contact` int(11) NOT NULL COMMENT 'institute Head Phone',
   `head_mob` int(11) NOT NULL COMMENT 'Institute Head Mobile',
-  `head_email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Head Email',
-  `tpo_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute TPO name',
+  `head_email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Head Email',
+  `tpo_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute TPO name',
   `tpo_ph` int(11) NOT NULL COMMENT 'institute TPO Phone',
   `tpo_ph2` int(11) NOT NULL COMMENT 'institute TPO Phone 2',
-  `tpo_email` varchar(50) NOT NULL COMMENT 'institute TPO Email',
+  `tpo_email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute TPO Email',
   `no_of_comp` int(11) NOT NULL,
   `num_cmplab` int(10) NOT NULL,
   `min_num_cmp` int(10) NOT NULL,
   `int_speed` int(11) NOT NULL,
   `hall_cap` int(11) NOT NULL,
-  `fibop_lan` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Instititute fiberlab',
+  `fibop_lan` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Instititute fiberlab',
   `cctv_no` int(11) NOT NULL,
-  `upload` varchar(40) NOT NULL COMMENT 'institute Uploadfile name',
+  `upload` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Uploadfile name',
   `reg_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Registration Time',
-  `browser` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute registered browser',
-  `inst_ip` varchar(64) NOT NULL COMMENT 'Institute registered Ip'
+  `browser` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute registered browser',
+  `inst_ip` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute registered Ip'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -153,8 +153,7 @@ CREATE TABLE `notices` (
 --
 
 INSERT INTO `notices` (`sl_no`, `title`, `content`, `publish_date`, `expiry_date`, `active_status`, `file_name`, `added_by`) VALUES
-(13, 'A dummy notice with timestamp', 'Hi, I&#039;m a dummy notice, with timestamp', 1536470353, 1540940400, 0, '1536470353.jpg', 'admin'),
-(14, 'Again a notice with timestamp', 'qwerty', 1536470501, 1543532400, 0, '1536470501.jpg', 'admin');
+(15, 'A notice', 'description', 1536585739, 1793401200, 1, '1536585739.jpg', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -195,13 +194,13 @@ ALTER TABLE `course_list`
 -- AUTO_INCREMENT for table `cred`
 --
 ALTER TABLE `cred`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id', AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id';
 
 --
 -- AUTO_INCREMENT for table `notices`
 --
 ALTER TABLE `notices`
-  MODIFY `sl_no` int(5) NOT NULL AUTO_INCREMENT COMMENT 'serial no of notices', AUTO_INCREMENT=15;
+  MODIFY `sl_no` int(5) NOT NULL AUTO_INCREMENT COMMENT 'serial no of notices', AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
