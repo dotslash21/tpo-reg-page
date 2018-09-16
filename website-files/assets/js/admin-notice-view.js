@@ -38,7 +38,9 @@ $(document).ready(function () {
                     async: true,
                 })
                 .done(function(data){
-
+                    if(data.red !== undefined){
+                        window.location = data.red;
+                    }
                 })
             })
             //delete button

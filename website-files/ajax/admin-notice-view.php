@@ -66,6 +66,7 @@
                             $return['id'] = $id;
 
                             //Successfully called editting request
+                            $return['red'] = './notice_edit.php';
                         }
                     }
                     //deleting action
@@ -76,6 +77,10 @@
                         if(isset($_POST['id'])){
                             $id = $_POST['id'];
                             $return['id'] = $id;
+                            
+                            session_start();
+                            $_POST['n_id'] = $id;
+                            $_POST['n_token'] = $_POST['token'];
 
                             //Successfully called deleting request
                             $sql_del = "DELETE FROM `notices` WHERE sl_no = ".$id."";

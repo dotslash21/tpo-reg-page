@@ -1,3 +1,30 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['admin_id'])){
+        header('HTTP/1.0 403 Forbidden');
+        die('You are not allowed to access this file.');  
+    }
+    else{
+        if(isset($_POST['n_token']) && $_POST['n_token'] == $_SESSION['token']){
+            //allowd
+            if(isset($_POST['n_id'])){
+                //id is there
+                echo "I'm in".$_POST['n_id'];
+            }
+            else{
+                header('HTTP/1.0 403 Forbidden');
+                die('Make sure youhave proper request.');
+            }
+        }
+        else{
+            //not allowed
+            header('HTTP/1.0 403 Forbidden');
+            die('You are not allowed to access this file. 2');  
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
