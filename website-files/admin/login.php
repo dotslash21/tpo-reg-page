@@ -1,12 +1,4 @@
 <?php
-    session_start();
-    if(isset($_SESSION["RED"])){
-        if($_SERVER['REQUEST_METHOD'] == 'GET'){
-            if($_SESSION["RED"] != $_GET["q"]){
-                header('Location: ../404.php');
-            }
-        }
-    }
     if(isset($_SESSION['admin_id'])){
         header('Location: ./dashboard.php');
         exit;
@@ -25,6 +17,8 @@
     else{
         $logfail = '';
     }
+
+    require '../inc/func.php';
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +34,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="X-CSRF" content="<?php echo XCSRF::mkcsrf('adlgin')?>">
 
     <style>
         #form-container {
