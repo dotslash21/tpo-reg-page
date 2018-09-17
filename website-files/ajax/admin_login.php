@@ -25,7 +25,7 @@
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
+        
         session_start();
         require '../inc/func.php';
 
@@ -82,7 +82,7 @@
                             $query_add_val= "UPDATE admins SET Last_login_time= '".$current_time."', Last_login_ip = '".$current_ip."' WHERE id = '".$admin_id."' ";
                             if(mysqli_query($con, $query_add_val)){
                                 $return['redirect'] = './dashboard.php';
-                                $_SESSION['admin_id'] = $admin_id;
+                                $_SESSION['admin_id'] = hash('SHA256',$admin_id);
                             }
                         }
                         else{
