@@ -32,6 +32,9 @@
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
+    <!-- reCAPTCHA includes -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="X-CSRF" content="<?php echo XCSRF::mkcsrf('adlgin')?>">
@@ -76,6 +79,13 @@
         main {
             flex: 1 0 auto;
         }
+        .text-xs-center {
+        text-align: center;
+        }
+
+        .g-recaptcha {
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -115,6 +125,14 @@
                             <label class="active" for="admin_passwd">Password</label>
                         </div>
                         <br>
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="text-xs-center">
+                                    <!-- reCaptcha -->
+                                    <div class="g-recaptcha" data-sitekey="6LeehWIUAAAAAE5afLzfG1lGgM7LpeFXQKlu_kMa"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="left">
                             <a href="">Forgot Password</a>
                         </div>
