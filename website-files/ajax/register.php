@@ -38,7 +38,7 @@
         $course_name = $_POST['courseName'];
         $course_value= $_POST['courseValue'];
 
-        if(varifycsrf('1d',$dataObj['token'])){
+        if(XCSRF::varifycsrf('1d',$dataObj['token'])){
             //If token matched
 
             //Request for recaptcha

@@ -69,7 +69,7 @@
                             <input class="file-path validate" type="text" placeholder="No file chosen!">
                         </div>
                     </div>
-                    <input style="display: none;" type="text" name="X-CSRF" value="<?php echo mkcsrf('1f'); ?>">
+                    <input style="display: none;" type="text" name="X-CSRF" value="<?php echo XCSRF::mkcsrf('1f'); ?>">
                     <button type="submit" name="submit" class="btn btn-large green right" id="submit">Submit</button>
                     <div class="clearfix"></div>
                 </form>
