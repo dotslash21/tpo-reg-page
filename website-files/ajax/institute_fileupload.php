@@ -1,5 +1,12 @@
 <?php
-    session_start();
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        session_start();
+
+        require '../inc/func.php';
+        $token = $_POST['X_CSRF'];
+        if()
+    }
+    
 
     define("_CON_",true);
     //Connection

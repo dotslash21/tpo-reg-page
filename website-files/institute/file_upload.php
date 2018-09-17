@@ -20,7 +20,6 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="X-CSRF" content="<?php echo mkcsrf('1f'); ?>">
     <style>
         #form-container {
             padding: 2em 0.5em 2em 0.5em;
@@ -70,6 +69,7 @@
                             <input class="file-path validate" type="text" placeholder="No file chosen!">
                         </div>
                     </div>
+                    <input style="display: none;" type="text" name="X-CSRF" value="<?php echo mkcsrf('1f'); ?>">
                     <button type="submit" name="submit" class="btn btn-large green right" id="submit">Submit</button>
                     <div class="clearfix"></div>
                 </form>
