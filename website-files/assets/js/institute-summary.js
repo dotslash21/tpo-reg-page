@@ -270,7 +270,7 @@ $(document).submit(function(event) {
 
 	$.ajax({
 		type: 'POST',
-		url: '../ajax/register.php',
+		url: '../ajax/institute_register.php',
 		data: sendData,
 		dataType: 'json',
         async: true,
