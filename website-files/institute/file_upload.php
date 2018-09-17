@@ -4,6 +4,7 @@
         header('Location: ./form.php?fallback=yes');
         exit;
     }
+    require '../inc/func.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta name="X-CSRF" content="<?php echo mkcsrf('1f'); ?>">
     <style>
         #form-container {
             padding: 2em 0.5em 2em 0.5em;
