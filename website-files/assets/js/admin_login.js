@@ -6,10 +6,19 @@ $(document).on("submit","form#admin-login",function(event) {
     var submitbtn = $("button#submit");
 
     var dataObj = {
-        id: $("input[name='admin_id']", _form).val(),
-        password: $("input[name='admin_password']", _form).val()
+        id:                     $("input[name='admin_id']", _form).val(),
+        password:               $("input[name='admin_password']", _form).val(),
+        token:                  $("meta[name='X-CSRF']").attr("content"),
+        g_recaptcha_response:   grecaptcha.getResponse()
     };
-    console.log(dataObj);
+    if(dataObj.id.length < 1){
+        $("#logfail").text(`Provide a User ID`);
+        return false;
+    }
+    else if(dataObj.password.length < 1){
+        $("#logfail").text(`Provide a Password`);
+        return false;
+    }
     //Start of AJAX process
 
 	$.ajax({
@@ -59,7 +68,6 @@ $(document).on("submit","form#admin-login",function(event) {
 
         console.log("Always");
     })
-
 
     return false;
 })

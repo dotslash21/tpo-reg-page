@@ -15,9 +15,9 @@
         }
     }
     else{
-        $logfail = '';
+        $logfail = '&nbsp;';
     }
-
+    session_start();
     require '../inc/func.php';
 ?>
 
@@ -37,7 +37,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="X-CSRF" content="<?php echo XCSRF::mkcsrf('adlgin')?>">
+    <meta name="X-CSRF" content="<?php echo XCSRF::mkcsrf('ad')?>">
 
     <style>
         #form-container {
@@ -117,14 +117,13 @@
                 <br>
                     <form id="admin-login">
                         <div class="input-field">
-                            <input type="text" id="admin_id" name="admin_id" required>
+                            <input type="text" id="admin_id" name="admin_id">
                             <label class="active" for="admin_id">User ID</label>
                         </div>
                         <div class="input-field">
-                            <input type="password" id="admin_passwd" name="admin_password" required>
+                            <input type="password" id="admin_passwd" name="admin_password">
                             <label class="active" for="admin_passwd">Password</label>
                         </div>
-                        <br>
                         <div class="row">
                             <div class="col s12">
                                 <div class="text-xs-center">
@@ -133,6 +132,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="left">
                             <a href="">Forgot Password</a>
                         </div>
@@ -168,8 +168,6 @@
             $('select').material_select();
         });
         $('select').material_select('destroy');
-        console.log("<?php echo $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>");
-        console.log("<?php echo $_SERVER['HTTP_REFERER']; ?>");
     </script>
 </body>
 
