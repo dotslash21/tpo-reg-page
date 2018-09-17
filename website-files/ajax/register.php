@@ -27,13 +27,18 @@
 
         session_start();
 
+        require '../inc/func.php';
+
+        //return Variable
+        $return = [];
+
         //POST variables
         $dataObj = $_POST['dataObj'];
         $degree_name = $_POST['degreeName'];
         $course_name = $_POST['courseName'];
         $course_value= $_POST['courseValue'];
 
-        if(hash_equals($_SESSION['token'], $dataObj['token'])){
+        if(varifycsrf('1d',$dataObj['token'])){
             //If token matched
 
             //Request for recaptcha
@@ -145,9 +150,6 @@
                     $num_cctv_clean     = clean($con, $num_cctv);
                     $has_fiber_clean    = clean($con, $has_fiber);
 
-                    //return Variable
-                    $return = [];
-
                     //Check is already exist
                     $query_usr = "SELECT inst_code FROM cred WHERE inst_code ='".$inst_code_clean."' LIMIT 1";
                     $result_usr =  mysqli_query($con,$query_usr);
@@ -209,6 +211,9 @@
                 $return['error'] = "reCAPTCHA varification failed";
             }
         }//token(csrf)
+        else{
+            $return['error'] ="CSRF mismatched";
+        }
 
         echo json_encode($return, JSON_PRETTY_PRINT);
         exit;   

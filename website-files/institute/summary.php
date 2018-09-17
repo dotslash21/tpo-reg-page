@@ -1,13 +1,6 @@
 <?php
     session_start();
-    if (empty($_SESSION['token'])) {
-        if (function_exists('mcrypt_create_iv')) {
-            $_SESSION['token'] = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
-        } else {
-            $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
-        }
-    }
-    $token = $_SESSION['token'];
+    require '../inc/func.php';
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +17,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="X-CSRF" content="<?php echo $token; ?>"> 
+    <meta name="X-CSRF" content="<?php echo mkcsrf('1d'); ?>"> 
 
     <!-- reCAPTCHA includes -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
