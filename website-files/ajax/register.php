@@ -37,7 +37,7 @@
             //If token matched
 
             //Request for recaptcha
-            $re_response = $_POST['g-recaptcha-response'];
+            $re_response = $dataObj['g_recaptcha_response'];
             
             if(isset($re_response) && !empty($re_response)){
                 $secret = "6LeehWIUAAAAAE83_TmuUYp8VaOY2uc2SXd2aOw9";   //Private key
