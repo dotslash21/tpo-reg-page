@@ -4,10 +4,14 @@
         header('Location: ./login.php?lf=yes');
         exit;
     }
-    define("_CON_",true);
-    require("../inc/db-con.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
+
+        define("_CON_",true);
+        require("../inc/db-con.php");
+
+        require '../inc/func.php';
+
         $inst_code = $_GET['inst_code_edit'];
 
         $sql_data = "SELECT * FROM cred WHERE inst_code = '".$inst_code."' LIMIT 1";
@@ -32,6 +36,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="X-CSRF" content="<?php echo XCSRF::mkcsrf('ad-clg-edit'); ?>">
 
     <style>
         #form-container {
