@@ -13,7 +13,6 @@
         if(isset($_SESSION['admin_id'])){
             //If admin is logged in
 
-            require '../inc/func.php';
 
             $admin = $_SESSION['admin_id'];
             

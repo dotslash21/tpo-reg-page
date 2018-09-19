@@ -22,7 +22,6 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="token" content="<?php echo $r; ?>">
     <meta name="X-CSRF" content="<?php echo XCSRF::mkcsrf('ad-nt-vw')?>">
     <style>
         #form-container {

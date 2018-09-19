@@ -1,7 +1,7 @@
 //Fetch all notice data from ajax
 $(document).ready(function () {
     var _noticearea = $("#notices");
-    var token = $("meta[name='token']").attr("content");
+    var token = $("meta[name='X-CSRF']").attr("content");
     var dataObj = {
         action: 'none',
         token: token,

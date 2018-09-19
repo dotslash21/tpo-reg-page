@@ -13,9 +13,13 @@
         header('Content-Type: application/json');   //Reply json
 
         session_start();
-        if(isset($_POST['token']) && $_POST['token'] == $_SESSION['token']){
+        require '../inc/func.php';
 
-            $return = [];
+        $return = [];
+
+        if(XCSRF::varifycsrf('ad-nt-vw', $_POST['token'])){
+
+            
             if(isset($_SESSION['admin_id'])){   //Admin is logged in
 
                 if(isset($_POST['action'])){
@@ -78,7 +82,6 @@
                             $id = $_POST['id'];
                             $return['id'] = $id;
                             
-                            session_start();
                             $_POST['n_id'] = $id;
                             $_POST['n_token'] = $_POST['token'];
 
