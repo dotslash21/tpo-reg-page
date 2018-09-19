@@ -42,7 +42,8 @@ $(document).submit(function(event) {
         ispeed      : $("input[name='ispeed']").val(),
         hall_cap    : $("input[name='hall_cap']").val(),
         num_cctv    : $("input[name='num_cctv']").val(),
-        has_fiber   : $("input[name='has_fiber']").val()
+        has_fiber   : $("input[name='has_fiber']").val(),
+        token       : $("meta[name='X-CSRF']").attr('content')
     };
 
     console.log(dataObj);
