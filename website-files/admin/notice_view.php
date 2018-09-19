@@ -1,19 +1,19 @@
 <?php
-session_start();
-if (!isset($_SESSION['admin_id'])) {
-    header('Location: ./login.php?lf=yes');
-    exit;
-}
+    session_start();
+    if (!isset($_SESSION['admin_id'])) {
+        header('Location: ./login.php?lf=yes');
+        exit;
+    }
 
-$r = md5(rand());        //a random variable
-$_SESSION['token'] = $r;
+    require '../inc/func.php';
+
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Admin Panel | CPC TPO Registration</title>
+    <title>Notices | Admin Panel</title>
     <meta charset="utf-8" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,6 +23,7 @@ $_SESSION['token'] = $r;
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="token" content="<?php echo $r; ?>">
+    <meta name="X-CSRF" content="<?php echo XCSRF::mkcsrf('ad-nt-vw')?>">
     <style>
         #form-container {
             padding: 2em 0.5em 2em 0.5em;

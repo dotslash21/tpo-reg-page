@@ -1,16 +1,16 @@
 <?php
-session_start();
-if (!isset($_SESSION['admin_id'])) {
-    header('Location: ./login.php?lf=yes');
-    exit;
-}
+    session_start();
+    if (!isset($_SESSION['admin_id'])) {
+        header('Location: ./login.php?lf=yes');
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Admin Panel | CPC TPO Registration</title>
+    <title>Notice Panal | Admin Panel</title>
     <meta charset="utf-8" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
