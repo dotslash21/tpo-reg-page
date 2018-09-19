@@ -23,7 +23,7 @@
 <html>
 
 <head>
-    <title>ADMIN RECORD EDIT</title>
+    <title>Record Edit | Admin</title>
     <meta charset="utf-8" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -399,12 +399,7 @@
     </script>
     <script>
         $(document).ready(function () {
-            $('select').material_select();
-        });
-        $('select').material_select('destroy');
-    </script>
-    <script>
-        $(document).ready(function () {
+
             $('#district_txt').show();
             $('#district_sel').hide();
 
@@ -424,11 +419,7 @@
                     $('#ins_dst_sel').attr("name", "");
                 }
             });
-        });
-    </script>
 
-    <script>
-        $(document).ready(function () {
             var addr =`<?php echo $result_array['address']?>`;
             //Basic Info
             $("input[name='name']").val('<?php echo $result_array['inst_name']?>');
@@ -479,7 +470,10 @@
                     $("#courses-area").append(data.value);
                 }, "json")
             }
+
+            $('select').material_select();
         })
+        $('select').material_select('destroy');
     </script>
 </body>
 
