@@ -1,11 +1,13 @@
 <?php
     session_start();
     if(!isset($_SESSION['admin_id'])){
-        header('Location: ./login.php?lf=yes');
+        header('Location: ./login.php?lf=yes');     //If admin is not logged in, then back to login page
         exit;
     }
     define("_CON_",true);
     include("../inc/db-con.php");
+
+    require '../inc/func.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +23,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="X-CSRF" content="<?php echo XCSRF::mkcsrf('ad-cs-add')?>">
 
     <style>
         #form-container {

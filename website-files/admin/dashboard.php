@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['admin_id'])) {
-        header('Location: ./login.php?lf=yes');
+        header('Location: ./login.php?lf=yes');     //If admin is not logged in, then back to login page
         exit;
     }
 ?>
