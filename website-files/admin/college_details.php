@@ -6,8 +6,8 @@
     }
     define("_CON_",true);
     require("../inc/db-con.php");
-    $rnd = md5(rand());        //a random variable
-    $_SESSION['chk'] = $rnd;
+    require '../inc/func.php';
+    
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@
 <head>
     <title>Admin Panel | CPC TPO Registration</title>
     <meta charset="utf-8" />
-    <meta name="token" content="<?php echo $rnd; ?>">
+    <meta name="token" content="<?php echo XCSRF::mkcsrf('ad-clg-det'); ?>">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -172,8 +172,8 @@
                             // They clicked Yes
                             console.log("Delete <?php echo $res_arr['inst_code']; ?>");
                             var dataObj = {
-                                clgId: <?php echo $res_arr['inst_code']; ?>,
-                                id: '<?php echo $rnd; ?>'
+                                clgId:  <?php echo $res_arr['inst_code']; ?>,
+                                id:     $("meta[name='token']").attr("content")
                             }
                             $.ajax({
                                 type: 'POST',
