@@ -24,7 +24,8 @@ $(document).on("submit", "form.add-frm", function(){
 
     var dataObj ={
         degree:     $("[name='degree']", _form).val(),
-        course:     $("input[name='course']", _form).val()
+        course:     $("input[name='course']", _form).val(),
+        token:      $("meta[name='X-CSRF']").attr('content')
     }
 
     if(dataObj.degree === undefined || dataObj.degree === null){
@@ -42,8 +43,6 @@ $(document).on("submit", "form.add-frm", function(){
         _res.html("<span class=\"red-text text-lighten-1\">Fill the Course Field</span>").show();
         return false;
     }
-
-    console.log(dataObj);
     
     _res.hide();
     
