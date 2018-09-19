@@ -1,16 +1,18 @@
 <?php
-session_start();
-if (!isset($_SESSION['admin_id'])) {
-    header('Location: ./login.php?lf=yes');
-    exit;
-}
+    session_start();
+    if (!isset($_SESSION['admin_id'])) {
+        header('Location: ./login.php?lf=yes');
+        exit;
+    }
+
+    require '../inc/func.php';
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Admin Panel | CPC TPO Registration</title>
+    <title>Notice Add | Admin Panel</title>
     <meta charset="utf-8" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -18,6 +20,8 @@ if (!isset($_SESSION['admin_id'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="X-CSRF" content="<?php echo XCSRF::mkcsrf('ad-nt-add')?>">
+
     <style>
         #form-container {
             padding: 2em 0.5em 2em 0.5em;
