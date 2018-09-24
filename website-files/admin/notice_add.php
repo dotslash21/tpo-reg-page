@@ -164,8 +164,8 @@
     <script>
         // Get current date
         var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1; //January is 0!
+        var dd = today.getDate() + 1;
+        var mm = today.getMonth(); //January is 0!
         var yyyy = today.getFullYear();
 
 
