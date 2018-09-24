@@ -25,13 +25,20 @@
                         $pub_date = date("M. d, Y", $result_arr['publish_date']);
                         $exp_date = date("M. d, Y", $result_arr['expiry_date']);
 
+                        if(strlen($result_arr['file_name']) < 1 ){
+                            $des = "disabled";
+                        }
+                        else {
+                            $des = '';
+                        }
+
                         $value .= "<tr>";
                         $value .=   "<td>".$result_arr['title']."</td>";
                         $value .=   "<td>".$pub_date."</td>";
                         $value .=   "<td>".$exp_date."</td>";
                         $value .=   "<td>".$result_arr['content']."</td>";
                         $value .=   "<td>";
-                        $value .=       "<a href=\"./upload/notice/".$result_arr['file_name']."\" class=\"btn btn-info btn-xs\" target=\"_blank\">";
+                        $value .=       "<a href=\"./upload/notice/".$result_arr['file_name']."\" class=\"btn btn-info btn-xs\" target=\"_blank\" ".$des.">";
                         $value .=       "<span class=\"glyphicon glyphicon-download-alt\"></span>Download</a>";
                         $value .=   "</td>";
                         $value .=   "</tr>";
