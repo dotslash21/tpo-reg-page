@@ -93,11 +93,6 @@
                             <div class="input-field">
                                 <select multiple id="course_sel" class="course_sel">
                                     <!-- Course Select Options -->
-                                    <option value="" disabled selected>ALL</option>
-                                    <option value="CSE">CSE</option>
-                                    <option value="ME">ME</option>
-                                    <option value="EE">EE</option>
-                                    <option value="TT">TT</option>
                                 </select>
                                 <label>Courses</label>
                             </div>

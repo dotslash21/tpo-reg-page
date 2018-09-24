@@ -4,7 +4,10 @@ $(document).ready(function () {
     $(".course_sel").material_select();
 
     // setup listener for custom event to re-initialize on change
-    $('.course_sel').on('contentChanged', function() {
+    $('.degree_sel').on('contentChangedDeg', function() {
+        $(this).material_select();
+    });
+    $('.course_sel').on('contentChangedCrs', function() {
         $(this).material_select();
     });
 
@@ -25,15 +28,14 @@ $(document).ready(function () {
         if(data.degree !== undefined){
             var deg = `<option value="" disabled selected>ALL</option>` + data.degree;
             $("#degree_sel").append(deg);
-            $("#degree_sel").trigger('contentChanged');
+            $("#degree_sel").trigger('contentChangedDeg');
         }
         if(data.course !== undefined){
             var crs = `<option value="" disabled selected>ALL</option>` + data.course;
             $("#course_sel").append(crs);
-            $("#course_sel").trigger('contentChanged');
+            $("#course_sel").trigger('contentChangedCrs');
         }
     })
-    //$('select#degree_sel').empty();
 })
 
 $('#degree_sel').change(function(){ 
