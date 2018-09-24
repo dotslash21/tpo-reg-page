@@ -4,6 +4,9 @@
     require("../inc/db-con.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+        require_once '../inc/func.php';
+
         $return = [];
         session_start();
 
@@ -11,8 +14,9 @@
         header('Content-Type: application/json');
 
         if(isset($_SESSION['admin_id'])){
-            if(isset($_POST['id'])){
-                if($_POST['id'] == $_SESSION['chk']){
+            $token = $_POST['id'];
+            if(isset($token)){
+                if(XCSRF::varifycsrf('ad-clg-det',$token)){
                     $clgId = $_POST['clgId'];
 
                     $sql_cred = "DELETE FROM `cred` WHERE inst_code = ".$clgId."";
