@@ -10,7 +10,7 @@
         require '../inc/func.php';
 
         $token = $_POST['X-CSRF'];
-        if(XCSRF::varifycsrf('1f',$token)){
+        if(XCSRF::varifycsrf('inst-fl-up',$token)){
             //CSRF varified
 
             define("_CON_",true);
