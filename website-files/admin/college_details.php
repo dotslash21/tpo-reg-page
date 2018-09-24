@@ -127,8 +127,6 @@
                     <i class="material-icons">account_balance</i> <span><?php echo $res_arr['inst_name']; ?></span><span>(<?php echo $res_arr['inst_code']; ?>)</span>
                 </div>
                 <div class="right panel_options">
-                    <input type="checkbox" id="approve-<?php echo $res_arr['inst_code']; ?>" class="">
-                    <label for="approve-<?php echo $res_arr['inst_code']; ?>">Approve</label>  
                     <button class="waves-effect waves-yellow btn yellow darken-3" id="edit-<?php echo $res_arr['inst_code']; ?>">EDIT</button>
                     <button class="waves-effect waves-red btn red lighten-2" id="delete-<?php echo $res_arr['inst_code']; ?>">DELETE</button>
                     <button class="waves-effect waves-blue btn blue lighten-2" id="print-<?php echo $res_arr['inst_code']; ?>">PRINT</button>
@@ -221,16 +219,6 @@
                         else {
                             printDiv("modalcon-<?php echo $res_arr['inst_code']; ?>");
                             console.log("ELSE");
-                        }
-                    })
-
-                    var _apprv = $("#approve-<?php echo $res_arr['inst_code']; ?>");
-                    _apprv.change(function () {
-                        if (_apprv.is(':checked')){
-                            console.log("yes-<?php echo $res_arr['inst_code']; ?>");
-                        }
-                        if (_apprv.not(':checked')){
-                            console.log("no-<?php echo $res_arr['inst_code']; ?>");
                         }
                     })
                 })
