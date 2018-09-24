@@ -1,9 +1,13 @@
 <?php
-    define("_CON_",true);
-    require("../../inc/db-con.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
-        if($_GET['q'] = '$2y$10$s.UL6bwn1vDvi4wvSRi6d.rF67PxSenzi0Y..JfAkR0w4ztn06KW.'){
+
+        require '../inc/func.php';
+        $token = $_GET['q'];
+        if(XCSRF::varifycsrf('ad-print-all',$token)){
+
+            define("_CON_",true);
+            require("../../inc/db-con.php");
             
             header("Content-Type: application/vnd.ms-excel");
             header("Content-disposition: attachment; filename=spreadsheet.xls");

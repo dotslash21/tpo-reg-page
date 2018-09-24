@@ -45,7 +45,8 @@ $('#degree_sel').change(function(){
 $("button#printall").click(function (event) {
     event.preventDefault();
     var dataObj = {
-        chk: 1
+        chk: 1,
+        token: $("meta[name='token']").attr("content")
     }
     $.ajax({
 		type: 'POST',
