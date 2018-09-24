@@ -12,8 +12,10 @@
         session_start();
         if(isset($_SESSION['admin_id'])){
             //If admin is logged in
+            require '../inc/func.php';
 
-
+            $return = [];
+            
             $admin = $_SESSION['admin_id'];
             
             $current_date   = (int)time();      //Current timestamp
@@ -22,8 +24,8 @@
             $notice_desc    = $_POST['notice_desc'];
             $token          = $_POST['X-CSRF'];
             
-            if(XCSRF::varifycsrf('ad-cs-add',$token)){
-                //If XCSRF is varified
+            if(XCSRF::varifycsrf('ad-nt-add',$token)){
+                //If XCSRF is varified 
                 
                 define("_CON_",true);
                 //Connection
@@ -55,7 +57,6 @@
                                         $newfilename = time().".". end($temp);
                                         if(move_uploaded_file($_FILES['uploadfile']['tmp_name'],"../upload/notice/".$newfilename)){
                                             $sql = "UPDATE `notices` SET `file_name` = '".$newfilename."' WHERE `title` = '".$notice_title_clean."'";
-                                            $return['sql'] = $sql;
                                             if(mysqli_query($con,$sql)){
                                                 $return['success'] = "File uploaded Succesfully" ."<br/>";
                                                 $return['fileName'] = "Uploaded file  " . $_FILES['uploadfile']['name'];

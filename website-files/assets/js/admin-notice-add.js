@@ -65,6 +65,7 @@ $("form#notice-form").submit(function (event) {
     })
     .always(function ajaxAlwaysDoThis(data){
         // Always do
+        submitbtn.html(`Submit`);
         submitbtn.removeAttr('disabled');
         $("form#notice-form")[0].reset();
         console.log("Always");

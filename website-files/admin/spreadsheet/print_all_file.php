@@ -2,7 +2,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
-        require '../inc/func.php';
+        require '../../inc/func.php';
         $token = $_GET['q'];
         if(XCSRF::varifycsrf('ad-print-all',$token)){
 
@@ -61,6 +61,11 @@
 
                 echo "\n";
             }
+        }
+        else {
+            http_response_code(403);
+            header('HTTP/1.0 403 Forbidden');
+            exit;
         }
     }
     
