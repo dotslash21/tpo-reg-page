@@ -103,10 +103,32 @@
         while ($array_crs = mysqli_fetch_array($result_crs)) { 
             $value .=   '<hr>';
             $value .=   '<div class="row">';
-            $value .=       '<div class="col s6 center">'.$array_crs['deg_optd'].'</div>';
+            $value .=       '<div class="col s6 center">'.$array_crs['deg_optd'].' - '.$array_crs['course_optd'].'</div>';
             $value .=       '<div class="col s6 center">'.$array_crs['intake'].'</div>';
             $value .=   '</div>';
         }
+        $value .=   '<hr>';
+        $value .=   '<h5 id="cd">Uploaded File</h5>';
+        $value .=   '<hr>';
+
+        if(strlen($result_arr['upload']) < 1 ){
+            //No file is their
+            $say = "No file is Found";
+            $say_1 = 0;
+        }
+        else{
+            $say = "One File uploaded";
+            $say_1 = 1;
+        }
+
+        $value .=   '<div class="row">';
+        $value .=       '<div class="col s6 center">'.$say.'</div>';
+        $value .=       '<div class="col s6 center">';
+        if($say_1):
+            $value .=       '<a href="../upload/institute/"'.$result_arr['upload'].' target="_blank">Click to View the File</a>';
+        endif;
+        $value .=       '</div>';
+        $value .=   '</div>';
         
 
         $return['value'] = $value;
