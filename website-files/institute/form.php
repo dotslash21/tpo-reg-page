@@ -61,8 +61,10 @@
                                 <label class="active" for="inst_code">Institute code</label>
                             </div>
                         </div>
-                        <div class="col s4">
-                            <span class="err-inst_code"></span>
+                        <div class="col s4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
+                            <div class="grey lighten-4" style="border-radius: 8px; text-align: center;">
+                                <span class="err-inst_code" style="">&nbsp;</span>
+                            </div>
                         </div>
                     </div>
 		    	    <div class="row">
@@ -72,8 +74,10 @@
                                 <label class="active" for="uid">Institute User ID</label>
                             </div>
                         </div>
-                        <div class="col s4">
-                            <span class="err-uid"></span>
+                        <div class="col s4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
+                            <div class="grey lighten-4" style="border-radius: 8px; text-align: center;">
+                                <span class="err-uid" style="">&nbsp;</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row">

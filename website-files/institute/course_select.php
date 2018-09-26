@@ -50,9 +50,10 @@
         <!-- MAIN FORM BODY-->
     <div class="container" id="form-container">
         <h4>Course Addition</h4>
-        <hr><br>
+        <hr>
         <div class="card">
             <div class="card-content">
+            <span class="grey lighten-4" style="padding: 4px; border-radius: 6px;">Please Select All The Courses Affiliated To Your College</span><br><br>
                 <form> 
                     <div class="input-field" id="course_sel">
                     <select multiple name="courses" id="courses_select" class="courses_select">
@@ -62,8 +63,8 @@
                     </div>
 
                         <div id="button-panel">
-                            <div class="btn btn-large blue lighten-2 left" id="back">Back</div>
-                            <div class="btn btn-large yellow darken-4 right" id="lock">Lock Choices</div>
+                            <div class="btn blue lighten-2 left" id="back">Back</div>
+                            <div class="btn yellow darken-4 right" id="lock">Lock Choices</div>
                             <div class="clearfix"></div>
                         </div>
                     </form>
