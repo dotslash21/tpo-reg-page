@@ -57,6 +57,7 @@ $(document).ready( function(){
             type: 'POST',
 	        url: '../ajax/institute_institute_check.php',
 	        data: {
+                token: $("meta[name='token']").attr("content"),
                 check: 1,
                 inst_code:inst_cd
             },
@@ -85,6 +86,7 @@ $(document).ready( function(){
             type: 'POST',
 	        url: '../ajax/institute_institute_check.php',
 	        data: {
+                token: $("meta[name='token']").attr("content"),
                 check: 2,
                 uid:uid
             },

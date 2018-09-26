@@ -7,6 +7,8 @@
     else{
         $fallback = '';
     }
+
+    require '../inc/func.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +23,8 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="token" content="<?php echo XCSRF::mkcsrf('inst-frm1');?>">
 
     <style>
         #form-container {
