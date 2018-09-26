@@ -1,9 +1,9 @@
 <?php
     session_start();
-    if(!isset($_SESSION['inst_code'])){
-        header('Location: ./form.php?fallback=yes');
-        exit;
-    }
+    // if(!isset($_SESSION['inst_code'])){
+    //     header('Location: ./form.php?fallback=yes');
+    //     exit;
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +47,7 @@
     </style>
 </head>
 
-<body>
+<body class="grey lighten-3">
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
@@ -65,12 +65,19 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container z-depth-3 center-align" id="form-container">
+        <div class="container center-align" id="form-container">
             <br><br><br>
-            <i class="material-icons green-text" style="font-size: 12rem">check</i>
-            <h3><b>ALL DONE!</b></h3>
-            <p>Your data has been succesfully recorded! Thank you for your time..</p>
-            <br><br><br>
+            <div class="card">
+                <div class="card-content">
+                    <i class="material-icons green-text" style="font-size: 12rem">check</i>
+                    <h3><b>ALL DONE!</b></h3>
+                    <p>Your data has been succesfully recorded! Thank you for your time..</p>
+                    <br><br><br>
+                    <div class="centre">
+                        <a class="waves-effect waves-light blue btn" href="./logout.php">LOGOUT</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
