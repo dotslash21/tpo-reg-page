@@ -26,7 +26,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Notice Panel | CPC TPO Registration</title>

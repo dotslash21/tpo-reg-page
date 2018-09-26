@@ -7,7 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Notice Panal | Admin Panel</title>

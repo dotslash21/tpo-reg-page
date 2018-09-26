@@ -7,7 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Confirmation | CPC TPO Registration</title>
