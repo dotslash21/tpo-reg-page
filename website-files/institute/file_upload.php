@@ -1,9 +1,9 @@
 <?php
     session_start();
-    // if(!isset($_SESSION['inst_code'])){
-    //     header('Location: ./form.php?fallback=yes');
-    //     exit;
-    // }
+    if(!isset($_SESSION['inst_code'])){
+        header('Location: ./form.php?fallback=yes');
+        exit;
+    }
     require '../inc/func.php';
 ?>
 
