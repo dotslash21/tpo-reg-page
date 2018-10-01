@@ -110,6 +110,7 @@
             <div class="card">
                 <div class="card-content">
                     <form id="notice-form">
+                    <input type="text" value="<?php echo XCSRF::mkcsrf('ad-nt-edit-pg');?>" style="display: none;">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="notice_title" type="text" class="validate" name="notice_title" required>
@@ -144,7 +145,10 @@
                             
                             <?php if(strlen($result_arr['file_name']) > 0):?>
                                 <p>A file Found</p>
-                                <a href="../upload/notice/<?php echo $result_arr['file_name']?>" class="message" style="color: rgb(66, 173, 244);"><strong>Click To See</strong></a>
+                                <a href="../upload/notice/<?php echo $result_arr['file_name']?>" class="message" style="color: rgb(66, 173, 244);" target="_blank"><strong>Click To See</strong></a>
+
+                            <?php else:?>
+                                <p>No File Found</p>
                             <?php endif;?>
                             
                             </div>
