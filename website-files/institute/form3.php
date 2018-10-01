@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>CPC TPO Registration</title>
     <meta charset="utf-8" />

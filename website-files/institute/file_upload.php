@@ -8,7 +8,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>CPC TPO Registration</title>
@@ -43,7 +43,7 @@
     </style>
 </head>
 
-<body>
+<body class="grey lighten-3">
     <!-- NAVIGATION -->
     <nav>
         <div class="nav-wrapper blue darken-3 z-depth-1-half">
@@ -52,33 +52,37 @@
     </nav>
 
     <main>
-        <div class="container z-depth-3" id="form-container">
+        <div class="container" id="form-container">
             <h3>File Input</h3>
             <hr>
-            <p>PDF and JPG, Less than 2MB</p><br>
-            <!-- File Input Section -->
-            <div class="row">
-                <div class="col s6" id="form-div">
-                <form id="file_upload">
-                    <div class="file-field input-field">
-                        <div class="btn blue darken-3">
-                            <span>Choose File</span>
-                            <input type="file" name="uploadfile" id="uploadfile">
+            <div class="card">
+                <div class="card-content">
+                    <p>PDF and JPG, Less than 2MB</p><br>
+                    <!-- File Input Section -->
+                    <div class="row">
+                        <div class="col s6" id="form-div">
+                        <form id="file_upload">
+                            <div class="file-field input-field">
+                                <div class="btn waves-effect waves-light btn-small blue darken-3">
+                                <span>Choose File</span>
+                                <input type="file" name="uploadfile" id="uploadfile">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="No file chosen!">
+                            </div>
                         </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="No file chosen!">
-                        </div>
-                    </div>
-                    <input style="display: none;" type="text" name="X-CSRF" value="<?php echo XCSRF::mkcsrf('inst-fl-up'); ?>">
-                    <button type="submit" name="submit" class="btn btn-large green right" id="submit">Submit</button>
-                    <div class="clearfix"></div>
-                </form>
+                        <input style="display: none;" type="text" name="X-CSRF" value="<?php echo XCSRF::mkcsrf('inst-fl-up'); ?>">
+                        <button type="submit" name="submit" class="btn waves-effect waves-light green right" id="submit">Upload File</button>
+                        <div class="clearfix"></div>
+                    </form>
                 </div>
                 <div class="col s6">
                     <div class="error" style="color: red;"></div>
                     <div class="message"></div>
                     <div class="message2"></div>
-                    <button class="btn btn-large green right" name="complete" id="complete">Final Submit</button>
+                    <button class="btn waves-effect waves-light green right" name="complete" id="complete">Final Submit 
+                        <i class="material-icons right">send</i>
+                    </button>
                 </div>
             </div>
         </div>

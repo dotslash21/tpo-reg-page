@@ -24,7 +24,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Record Edit | Admin</title>

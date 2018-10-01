@@ -7,10 +7,12 @@
     else{
         $fallback = '';
     }
+
+    require '../inc/func.php';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>CPC TPO Registration</title>
     <meta charset="utf-8" />
@@ -21,6 +23,8 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="token" content="<?php session_start(); echo XCSRF::mkcsrf('inst-frm1');?>">
 
     <style>
         #form-container {
@@ -61,8 +65,10 @@
                                 <label class="active" for="inst_code">Institute code</label>
                             </div>
                         </div>
-                        <div class="col s4">
-                            <span class="err-inst_code"></span>
+                        <div class="col s4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
+                            <div class="grey lighten-4" style="border-radius: 8px; text-align: center;">
+                                <span class="err-inst_code" style="">&nbsp;</span>
+                            </div>
                         </div>
                     </div>
 		    	    <div class="row">
@@ -72,8 +78,10 @@
                                 <label class="active" for="uid">Institute User ID</label>
                             </div>
                         </div>
-                        <div class="col s4">
-                            <span class="err-uid"></span>
+                        <div class="col s4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
+                            <div class="grey lighten-4" style="border-radius: 8px; text-align: center;">
+                                <span class="err-uid" style="">&nbsp;</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row">

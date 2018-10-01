@@ -43,7 +43,7 @@ $(document).ready(function () {
                 </div>`
             );
         }
-        $("#course_form").append('<button class="btn btn-large blue lighten-2 left" id="back2" onclick.href="./form3.php">Back</button><button type="submit" class="btn btn-large green darken-2 right" id="submit" name="submit">Submit & Continue</button><div class="clearfix"></div>');
+        $("#course_form").append('<button class="btn blue lighten-2 left" id="back2" onclick.href="./form3.php">Back</button><button type="submit" class="btn green darken-2 right" id="submit" name="submit">Submit <i class="material-icons right">send</i></button><div class="clearfix"></div>');
 
     }
 })
@@ -76,7 +76,7 @@ $('#lock').click(function() {
         $("#course_form").append('<div class="input-field"><input type="number" id="'+item+'" name="'+course_array[item]+'" min="0" required><label for="'+item+'">'+course_array[item]+'</label>');
     }
     if (course_array.length > 0) {
-        $("#course_form").append('<button type="submit" class="btn btn-large green darken-2 right" id="submit" name="submit">Submit & Continue</button><div class="clearfix"></div>');
+        $("#course_form").append('<button type="submit" class="btn green darken-2 right" id="submit" name="submit">Submit <i class="material-icons right">send</i></button><div class="clearfix"></div>');
     }
 
 });

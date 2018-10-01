@@ -50,17 +50,14 @@ $(document).ready( function(){
         $("input[name='website']").val(sessionStorage.website);
     }
 
-    $("input#inst_code").blur(function () {
+    $("input#inst_code").change(function () {
         var inst_cd = $("input[name='inst_code']").val();
         var inst_cd_err =  $(".err-inst_code")
-        if(inst_cd == ''){
-            inst_cd_err.hide();
-            return;
-        }
         $.ajax({
             type: 'POST',
 	        url: '../ajax/institute_institute_check.php',
 	        data: {
+                token: $("meta[name='token']").attr("content"),
                 check: 1,
                 inst_code:inst_cd
             },
@@ -72,27 +69,24 @@ $(document).ready( function(){
             if(data.inst_chk !== undefined){
                 if(data.inst_chk == 'yes'){
                     //Inst_code is exist
-                    inst_cd_err.text("Institute Code is already Exist. Try another One").show();
+                    inst_cd_err.html("<span class=\"red-text text-accent-3\">Institute Code is already Exist. Try another One</span>").show();
                 }
                 if(data.inst_chk === 'no'){
                     //Inst_code is not exist
-                    inst_cd_err.text("Institute Code is Available").show();
+                    inst_cd_err.html("<span class=\"green-text text-accent-4\">Institute Code is Available</span>").show();
                 }
             }
         
         })
     })
-    $("input#uid").blur(function () {
+    $("input#uid").change(function () {
         var uid = $("input[name='uid']").val();
         var uid_err = $(".err-uid");
-        if(uid == ''){
-            uid_err.hide();
-            return;
-        }
         $.ajax({
             type: 'POST',
 	        url: '../ajax/institute_institute_check.php',
 	        data: {
+                token: $("meta[name='token']").attr("content"),
                 check: 2,
                 uid:uid
             },
@@ -104,11 +98,11 @@ $(document).ready( function(){
             if(data.inst_uid_chk !== undefined){
                 if(data.inst_uid_chk == 'yes'){
                     //Inst_code is exist
-                    uid_err.text("Institute User ID is already Exist. Try another One").show();
+                    uid_err.html("<span class=\"red-text text-accent-3\">Institute User ID is already Exist. Try another One</span>").show();
                 }
                 if(data.inst_uid_chk === 'no'){
                     //Inst_code is not exist
-                    uid_err.text("Institute User ID is Available").show();
+                    uid_err.html("<span class=\"green-text text-accent-4\">Institute User ID is Available</span>").show();
                 }
             }
         
