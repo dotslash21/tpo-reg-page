@@ -1,6 +1,21 @@
+var dData = {
+    token: $("meta[name='token']").attr('content'),
+    degree: 'all',
+    course: 'all',
+    degreeCount: undefined,
+    courseCount: undefined,
+    sendDegree:  1,
+    sendCourse:  1
+}
+
+var value_degree = 0;
+var value_course = 0;
+
 $(document).ready(function () {
 
+    //Ajaxing function for degree and course select field manipulation
     function ajaxxx(dx) {
+        console.log(dx);
         $.ajax({
             type: 'POST',
             url: '../ajax/admin_college_details.php',
@@ -35,20 +50,12 @@ $(document).ready(function () {
         $(this).material_select();
     });
 
-    var dData = {
-        token: $("meta[name='token']").attr('content'),
-        degree: 'all',
-        course: 'all',
-        degreeCount: undefined,
-        courseCount: undefined,
-        sendDegree:  1,
-        sendCourse:  1
-    }
-
+    //Call the ajax on ready of the docoment
     ajaxxx(dData);
 
+    //Degree Select field change lissener
     $('#degree_sel').change(function(){ 
-        var value_degree = $(this).val();
+        value_degree = $(this).val();
         console.log(value_degree + value_degree.length);
         if(value_degree.length != 0){
             dData.degree = value_degree;
@@ -71,8 +78,9 @@ $(document).ready(function () {
         }
     });
 
+    //Course Select field change lissener
     $('#course_sel').change(function(){ 
-        var value_course = $(this).val();
+        value_course = $(this).val();
         console.log(value_course + value_course.length);
         if(value_course.length != 0){
             console.log("Hi");
@@ -95,16 +103,18 @@ $(document).ready(function () {
             ajaxxx(dData);
         }
     });
-
-})
+});
 
 //Function for print all button
 $("button#printall").click(function (event) {
     event.preventDefault();
     var dataObj = {
         chk: 1,
+        degree: dData.degree,
+        course: dData.course,
         token: $("meta[name='token']").attr("content")
     }
+    console.log(dataObj);
     $.ajax({
 		type: 'POST',
         url: '../ajax/print_all.php',
@@ -115,7 +125,7 @@ $("button#printall").click(function (event) {
     .done(function ajaxDone(data) {
         // Whatever data is
         if(data.done !== undefined){
-            window.open('./spreadsheet/print_all_file.php?q='+data.done, '_blank');
+            //window.open('./spreadsheet/print_all_file.php?q='+data.done, '_blank');
         }
 	})
     .fail(function ajaxFailed(e){
