@@ -53,7 +53,12 @@ $(document).ready(function () {
         if(value_degree.length != 0){
             dData.degree = value_degree;
             dData.degreeCount = value_degree.length;
-            dData.sendCourse = 1;
+            if(value_course.length > 0){
+                dData.sendCourse = 0;
+            }
+            else{
+                dData.sendCourse = 1;
+            }
             dData.sendDegree = undefined
             ajaxxx(dData);
         }
@@ -73,7 +78,12 @@ $(document).ready(function () {
             console.log("Hi");
             dData.course = value_course;
             dData.courseCount = value_course.length;
-            dData.sendDegree = 1;
+            if(value_degree.length > 0){
+                dData.sendDegree = 0;
+            }
+            else{
+                dData.sendDegree = 1;
+            }
             dData.sendCourse = undefined;
             ajaxxx(dData);
         }

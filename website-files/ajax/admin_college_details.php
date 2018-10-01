@@ -43,7 +43,6 @@
 
                     $sql_degree .= ")";
                 }
-                $return['sql_degree'] = $sql_degree;
 
                 //Course SQL generator when degree value changes
                 if($post_degree == 'all'){
@@ -63,7 +62,6 @@
                     
                     $sql_course .= ")";
                 }
-                $return['sql_course'] = $sql_course;
                 //Degree addition
 
                 if(isset($_POST['sendDegree']) && $_POST['sendDegree'] == 1){
