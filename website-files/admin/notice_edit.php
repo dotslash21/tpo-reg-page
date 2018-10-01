@@ -110,7 +110,8 @@
             <div class="card">
                 <div class="card-content">
                     <form id="notice-form">
-                    <input type="text" value="<?php echo XCSRF::mkcsrf('ad-nt-edit-pg');?>" style="display: none;">
+                    <input type="text" name="sl_no" value="<?php echo $result_arr['sl_no']?>" style="display: none;">
+                    <input type="text" name="token" value="<?php echo XCSRF::mkcsrf('ad-nt-edit-pg');?>" style="display: none;">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="notice_title" type="text" class="validate" name="notice_title" required>
