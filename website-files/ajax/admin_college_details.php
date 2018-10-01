@@ -65,22 +65,28 @@
                 }
                 $return['sql_course'] = $sql_course;
                 //Degree addition
-                $degree = '';
-                $result_degree = mysqli_query($con, $sql_degree);
-                while($array_degree = mysqli_fetch_array($result_degree)){
-                    $degree .= "<option value=\"".$array_degree['degree']."\">".$array_degree['degree']."</option>";
+
+                if(isset($_POST['sendDegree']) && $_POST['sendDegree'] == 1){
+                    $degree = '';
+                    $result_degree = mysqli_query($con, $sql_degree);
+                    while($array_degree = mysqli_fetch_array($result_degree)){
+                        $degree .= "<option value=\"".$array_degree['degree']."\">".$array_degree['degree']."</option>";
+                    }
+
+                    $return['degree'] = $degree;
                 }
 
                 //Course addition
-                $course = '';
-                $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`";
-                $result_course = mysqli_query($con, $sql_course);
-                while($array_course = mysqli_fetch_array($result_course)){
-                    $course .= "<option value=\"".$array_course['course_name']."\">".$array_course['course_name']."</option>";
-                }
 
-                $return['degree'] = $degree;
-                $return['course'] = $course;
+                if(isset($_POST['sendCourse']) && $_POST['sendCourse'] == 1){
+                    $course = '';
+                    $result_course = mysqli_query($con, $sql_course);
+                    while($array_course = mysqli_fetch_array($result_course)){
+                        $course .= "<option value=\"".$array_course['course_name']."\">".$array_course['course_name']."</option>";
+                    }
+
+                    $return['course'] = $course;
+                }
             }
             else {
                 $return['error'] = "CSRF-token mismatched";

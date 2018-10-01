@@ -11,11 +11,13 @@ $(document).ready(function () {
         .done(function (data) {
             if(data.degree !== undefined){
                 var deg = `<option value="" disabled selected>ALL</option>` + data.degree;
+                $("#degree_sel").empty();
                 $("#degree_sel").append(deg);
                 $("#degree_sel").trigger('contentChangedDeg');
             }
             if(data.course !== undefined){
                 var crs = `<option value="" disabled selected>ALL</option>` + data.course;
+                $("#course_sel").empty();
                 $("#course_sel").append(crs);
                 $("#course_sel").trigger('contentChangedCrs');
             }
@@ -38,7 +40,9 @@ $(document).ready(function () {
         degree: 'all',
         course: 'all',
         degreeCount: undefined,
-        courseCount: undefined
+        courseCount: undefined,
+        sendDegree:  1,
+        sendCourse:  1
     }
 
     ajaxxx(dData);
@@ -46,9 +50,18 @@ $(document).ready(function () {
     $('#degree_sel').change(function(){ 
         var value_degree = $(this).val();
         console.log(value_degree + value_degree.length);
-        if(!value_degree.length != 0){
+        if(value_degree.length != 0){
             dData.degree = value_degree;
-            dData.degreeCount = value_degree.length
+            dData.degreeCount = value_degree.length;
+            dData.sendCourse = 1;
+            dData.sendDegree = undefined
+            ajaxxx(dData);
+        }
+        else if(value_degree.length == 0){
+            dData.degree = 'all';
+            dData.degreeCount = undefined;
+            dData.sendCourse = 1;
+            dData.sendDegree = undefined
             ajaxxx(dData);
         }
     });
@@ -60,6 +73,15 @@ $(document).ready(function () {
             console.log("Hi");
             dData.course = value_course;
             dData.courseCount = value_course.length;
+            dData.sendDegree = 1;
+            dData.sendCourse = undefined;
+            ajaxxx(dData);
+        }
+        else if(value_course.length == 0){
+            dData.course = 'all';
+            dData.courseCount = undefined;
+            dData.sendDegree = 1;
+            dData.sendCourse = undefined;
             ajaxxx(dData);
         }
     });

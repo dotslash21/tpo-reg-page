@@ -4,6 +4,8 @@
 
         require '../../inc/func.php';
         $token = $_GET['q'];
+
+        session_start();
         if(XCSRF::varifycsrf('ad-print-all',$token)){
 
             define("_CON_",true);
