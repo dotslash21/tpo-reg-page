@@ -67,10 +67,9 @@
 
                         if(isset($_POST['id'])){
                             $id = $_POST['id'];
-                            $return['id'] = $id;
 
                             //Successfully called editting request
-                            $return['red'] = './notice_edit.php';
+                            $return['red'] = './notice_edit.php?n_id='.$id."&q=".XCSRF::mkcsrf('ad-nt-edt');
                         }
                     }
                     //deleting action

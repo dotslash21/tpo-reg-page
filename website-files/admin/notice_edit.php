@@ -6,11 +6,18 @@
         die('You are not allowed to access this file.');  
     }
     else{
-        if(isset($_POST['n_token']) && $_POST['n_token'] == $_SESSION['token']){
+        require '../inc/func.php';
+
+        if(isset($_GET['q']) && XCSRF::varifycsrf('ad-nt-edt',$_GET['q'])){
             //allowd
-            if(isset($_POST['n_id'])){
+            if(isset($_GET['n_id'])){
                 //id is there
-                echo "I'm in".$_POST['n_id'];
+                $id = $_GET['n_id'];
+
+                define('_CON_',true);
+                require '../inc/db-con.php';
+                $result = mysqli_query($con,"SELECT * FROM `notices` WHERE `sl_no` = '".$id."' ");
+                $result_arr = mysqli_fetch_array($result);
             }
             else{
                 header('HTTP/1.0 403 Forbidden');
@@ -117,7 +124,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="text" class="datepicker" id="validity" name="validity">
+                                <input type="text" class="datepicker" id="validity" name="validity" data-value="<?php echo date("j-m-Y", $result_arr['expiry_date'])?>">
                                 <label for="validity">Notice Validity</label>
                             </div>
                         </div>
@@ -133,7 +140,15 @@
                         </div>
 
                         <div class="row">
-                            <div class="col s10 center-align">
+                            <div class="col s4">
+                            
+                            <?php if(strlen($result_arr['file_name']) > 0):?>
+                                <p>A file Found</p>
+                                <a href="../upload/notice/<?php echo $result_arr['file_name']?>" class="message" style="color: rgb(66, 173, 244);"><strong>Click To See</strong></a>
+                            <?php endif;?>
+                            
+                            </div>
+                            <div class="col s6 center-align">
                                 <div class="error" style="color: #ff0000;"></div>
                                 <div class="message" style="color: rgb(97, 226, 21);"></div>
                                 <div class="message2" style="color: rgb(97, 226, 21);"></div>
@@ -162,7 +177,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="../assets/js/admin-notice-add.js"></script>
+    <script src="../assets/js/admin-notice-edit.js"></script>
     <script>
         $(".button-collapse").sideNav();
     </script>
@@ -195,8 +210,14 @@
             hiddenName: true,
             closeOnSelect: false, // Close upon selecting a date,
             container: undefined, // ex. 'body' will append picker to body
-            min: new Date(yyyy, mm, dd), // Date validation
+            //min: new Date(yyyy, mm, dd), // Date validation
         });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("input[name='notice_title']").val('<?php echo $result_arr['title']?>');
+            $("textarea[name='notice_desc']").val('<?php echo $result_arr['content'] ?>');
+        })
     </script>
 </body>
 
