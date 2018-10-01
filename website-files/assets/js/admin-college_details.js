@@ -1,4 +1,26 @@
 $(document).ready(function () {
+
+    function ajaxxx(dx) {
+        $.ajax({
+            type: 'POST',
+            url: '../ajax/admin_college_details.php',
+            data: dx,
+            dataType: 'json',
+            async: true,
+        })
+        .done(function (data) {
+            if(data.degree !== undefined){
+                var deg = `<option value="" disabled selected>ALL</option>` + data.degree;
+                $("#degree_sel").append(deg);
+                $("#degree_sel").trigger('contentChangedDeg');
+            }
+            if(data.course !== undefined){
+                var crs = `<option value="" disabled selected>ALL</option>` + data.course;
+                $("#course_sel").append(crs);
+                $("#course_sel").trigger('contentChangedCrs');
+            }
+        })
+    }
     // initialize the course select
     $(".degree_sel").material_select();
     $(".course_sel").material_select();
@@ -14,34 +36,35 @@ $(document).ready(function () {
     var dData = {
         token: $("meta[name='token']").attr('content'),
         degree: 'all',
-        course: 'all'
+        course: 'all',
+        degreeCount: undefined,
+        courseCount: undefined
     }
 
-    $.ajax({
-		type: 'POST',
-		url: '../ajax/admin_college_details.php',
-		data: dData,
-		dataType: 'json',
-        async: true,
-    })
-    .done(function (data) {
-        if(data.degree !== undefined){
-            var deg = `<option value="" disabled selected>ALL</option>` + data.degree;
-            $("#degree_sel").append(deg);
-            $("#degree_sel").trigger('contentChangedDeg');
-        }
-        if(data.course !== undefined){
-            var crs = `<option value="" disabled selected>ALL</option>` + data.course;
-            $("#course_sel").append(crs);
-            $("#course_sel").trigger('contentChangedCrs');
-        }
-    })
-})
+    ajaxxx(dData);
 
-$('#degree_sel').change(function(){ 
-    var value = $(this).val();
-    console.log(value + value.length);
-});
+    $('#degree_sel').change(function(){ 
+        var value_degree = $(this).val();
+        console.log(value_degree + value_degree.length);
+        if(!value_degree.length != 0){
+            dData.degree = value_degree;
+            dData.degreeCount = value_degree.length
+            ajaxxx(dData);
+        }
+    });
+
+    $('#course_sel').change(function(){ 
+        var value_course = $(this).val();
+        console.log(value_course + value_course.length);
+        if(value_course.length != 0){
+            console.log("Hi");
+            dData.course = value_course;
+            dData.courseCount = value_course.length;
+            ajaxxx(dData);
+        }
+    });
+
+})
 
 //Function for print all button
 $("button#printall").click(function (event) {

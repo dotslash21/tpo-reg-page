@@ -23,22 +23,60 @@
                 //Connection
                 require("../inc/db-con.php");
 
+                $post_degree = $_POST['degree'];
+                $post_course = $_POST['course'];
+
+                //Degree SQL generator when course value changes
+                if($post_course == 'all'){
+                    $sql_degree = "SELECT DISTINCT `degree` FROM `course_list`";
+                }
+                else {
+                    $crs_count  = $_POST['courseCount'];
+
+                    $i = 0;
+                    $sql_degree = "SELECT DISTINCT `degree` FROM `course_list` WHERE `course_name` IN ('".$post_course[$i]."'";
+                    $i++;
+                    while($i < $crs_count) {
+                        $sql_degree .= ",'".$post_course[$i]."'";
+                        $i++;
+                    }
+
+                    $sql_degree .= ")";
+                }
+                $return['sql_degree'] = $sql_degree;
+
+                //Course SQL generator when degree value changes
+                if($post_degree == 'all'){
+                    $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`";
+                }
+                else {
+                    $deg_count  = $_POST['degreeCount'];
+
+                    $j = 0;
+                    $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`WHERE `degree` IN ('".$post_degree[$j]."'";
+                    $j++;
+
+                    while($j < $deg_count) {
+                        $sql_degree .= ",'".$post_degree[$j]."'";
+                        $j++;
+                    }
+                    
+                    $sql_course .= ")";
+                }
+                $return['sql_course'] = $sql_course;
                 //Degree addition
                 $degree = '';
-
-                $sql_degree = "SELECT DISTINCT `degree` FROM `course_list`";
                 $result_degree = mysqli_query($con, $sql_degree);
                 while($array_degree = mysqli_fetch_array($result_degree)){
-                    $degree .= "<option value=".$array_degree['degree'].">".$array_degree['degree']."</option>";
+                    $degree .= "<option value=\"".$array_degree['degree']."\">".$array_degree['degree']."</option>";
                 }
 
                 //Course addition
                 $course = '';
-
                 $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`";
                 $result_course = mysqli_query($con, $sql_course);
                 while($array_course = mysqli_fetch_array($result_course)){
-                    $course .= "<option value=".$array_course['course_name'].">".$array_course['course_name']."</option>";
+                    $course .= "<option value=\"".$array_course['course_name']."\">".$array_course['course_name']."</option>";
                 }
 
                 $return['degree'] = $degree;
