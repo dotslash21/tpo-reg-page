@@ -58,7 +58,7 @@
                                 $return['redirect'] = './dashboard.php';
                                 $_SESSION['admin_name'] = $admin_id;
                                 $_SESSION['admin_id'] = hash('SHA256',' _!@wrwe12vdqsx 31 242 qaz'. $admin_id . 'za131 '.time());
-                                setcookie("_t", hash('sha512', $_SERVER['HTTP_USER_AGENT'] . ' asdqwgfgabhg efaoyaffrgerhehe' . $_SESSION['admin_id'] . 'kKJDNFO3J@qwwe135*&^12322'), time() + (30*24*60*60), "/", null, false, true);
+                                setcookie("_t", hash('sha512', $_SERVER['HTTP_USER_AGENT'] . ' asdqwgfgabhg efaoyaffrgerhehe' . $_SESSION['admin_id'] . 'kKJDNFO3J@qwwe135*&^12322'), 0, "/", null, false, true);
                             }
                         }
                         else{
