@@ -14,10 +14,6 @@
         if(XCSRF::varifycsrf('inst-fl-up',$token)){
             //CSRF varified
 
-            define("_CON_",true);
-            //Connection
-            require("../inc/db-con.php");
-
             if($_FILES['uploadfile']['name']){
         
                 $err= $_FILES['uploadfile']['error'];

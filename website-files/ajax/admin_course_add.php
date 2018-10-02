@@ -24,10 +24,6 @@
 
         if(XCSRF::varifycsrf('ad-cs-add',$token)){
             //If XCSRF is varified
-
-            define("_CON_",true);
-            //Connection
-            require("../inc/db-con.php");
             
             //Escaping variables
             $degree_clean   = clean($con,$degree);

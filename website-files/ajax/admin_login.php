@@ -58,10 +58,6 @@
                 if($respone->success){      //Checks the  success parameter
                     //If not a robot(varified by captcha)
 
-                    define("_CON_",true);
-                    //Connection
-                    require("../inc/db-con.php");
-
                     date_default_timezone_set("Asia/Calcutta");
                     $current_time = date("Y/M/d g:i:s A T P");
                     $current_ip = get_client_ip();

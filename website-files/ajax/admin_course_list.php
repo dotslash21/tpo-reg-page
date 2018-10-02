@@ -8,9 +8,9 @@
             exit;
         }
         else{
-
-            define("_CON_",true);
-            require("../inc/db-con.php");
+            
+            define('_incFuncwwrfbhdjrt',true);
+            require '../inc2357v3cn425073p4y53w79/func.php';
 
             //Always return Json format
             header('Content-Type: application/json');

@@ -55,10 +55,6 @@
                 if($respone->success){      //Checks the  success parameter
                     //If not a robot(varified by captcha)
 
-                    define("_CON_",true);
-                    //Connection
-                    require("../inc/db-con.php");
-
                     $browser = $_SERVER['REMOTE_ADDR'];
                     $inst_ip = get_client_ip();
 

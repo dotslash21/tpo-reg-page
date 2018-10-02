@@ -28,9 +28,6 @@
             if(XCSRF::varifycsrf('ad-nt-add',$token)){
                 //If XCSRF is varified 
                 
-                define("_CON_",true);
-                //Connection
-                require("../inc/db-con.php");
                 $validity       = strtotime($_POST['validity']);    //Convert validity date to timestamp
                 
                 $notice_title_clean = clean($con, $notice_title);

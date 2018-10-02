@@ -1,8 +1,4 @@
 <?php
-    define("_CON_",true);
-    //Connection
-    require("../inc/db-con.php");
-
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         define('_incFuncwwrfbhdjrt',true);

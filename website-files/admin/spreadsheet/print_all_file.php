@@ -9,8 +9,6 @@
         session_start();
         if(XCSRF::varifycsrf('ad-print-all',$token)){
 
-            define("_CON_",true);
-            require("../../inc/db-con.php");
             
             header("Content-Type: application/vnd.ms-excel");
             header("Content-disposition: attachment; filename=spreadsheet.xls");

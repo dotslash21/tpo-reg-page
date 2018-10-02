@@ -20,10 +20,6 @@
             $token = $_POST['token'];
             if(XCSRF::varifycsrf('ad-clg-det',$token)){
 
-                define("_CON_",true);
-                //Connection
-                require("../inc/db-con.php");
-
                 $post_degree = $_POST['degree'];
                 $post_course = $_POST['course'];
 

@@ -1,11 +1,11 @@
 <?php
-    define("_CON_",true);
-    //Connection
-    require("../inc2357v3cn425073p4y53w79/db-con.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['id'])){
             if($_POST['id'] == 1){
+
+                define('_incFuncwwrfbhdjrt',true);
+                require '../inc2357v3cn425073p4y53w79/func.php';
 
                 //Always return Json format
                 header('Content-Type: application/json');

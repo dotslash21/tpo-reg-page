@@ -18,9 +18,6 @@
         $token = $_POST['token'];
         if(XCSRF::varifycsrf('inst-frm1',$token)){
 
-            define("_CON_",true);
-            //Connection
-            require("../inc/db-con.php");
             
             if(isset($_POST['check'])){
                 $u_chk = $_POST['check'];

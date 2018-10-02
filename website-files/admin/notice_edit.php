@@ -15,8 +15,6 @@
                 //id is there
                 $id = $_GET['n_id'];
 
-                define('_CON_',true);
-                require '../inc/db-con.php';
                 $result = mysqli_query($con,"SELECT * FROM `notices` WHERE `sl_no` = '".$id."' ");
                 $result_arr = mysqli_fetch_array($result);
             }

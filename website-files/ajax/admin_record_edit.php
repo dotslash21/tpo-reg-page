@@ -63,10 +63,6 @@
 
         if(XCSRF::varifycsrf('ad-clg-edit',$token)){
 
-            define("_CON_",true);
-            //Connection
-            require("../inc/db-con.php");
-
             //escaping college crediential
             //Basic Details
             $name_clean         = clean($con, $name);

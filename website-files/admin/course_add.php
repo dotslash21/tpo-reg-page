@@ -4,8 +4,6 @@
         header('Location: ./login.php?lf=yes');     //If admin is not logged in, then back to login page
         exit;
     }
-    define("_CON_",true);
-    include("../inc/db-con.php");
 
     define('_incFuncwwrfbhdjrt',true);
     require '../inc2357v3cn425073p4y53w79/func.php';

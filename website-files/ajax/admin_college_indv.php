@@ -1,9 +1,10 @@
 <?php
-    define("_CON_",true);
-    require("../inc/db-con.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
         $inst_code = $_GET['inst_code'];
+
+        define('_incFuncwwrfbhdjrt',true);
+        require '../inc2357v3cn425073p4y53w79/func.php';
 
         //Credential
         $sql_inst = "SELECT * FROM cred WHERE inst_code ='".$inst_code."'";
