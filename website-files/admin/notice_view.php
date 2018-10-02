@@ -5,6 +5,7 @@
         exit;
     }
 
+    define('_incFuncwwrfbhdjrt',true);
     require '../inc/func.php';
 
 ?>

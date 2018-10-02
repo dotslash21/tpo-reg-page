@@ -7,6 +7,7 @@
     define("_CON_",true);
     include("../inc/db-con.php");
 
+    define('_incFuncwwrfbhdjrt',true);
     require '../inc/func.php';
 ?>
 

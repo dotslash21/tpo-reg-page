@@ -12,6 +12,7 @@
         session_start();
         if(isset($_SESSION['admin_id'])){
             //If admin is logged in
+            define('_incFuncwwrfbhdjrt',true);
             require '../inc/func.php';
 
             $return = [];

@@ -6,6 +6,7 @@
         die('You are not allowed to access this file.');  
     }
     else{
+        define('_incFuncwwrfbhdjrt',true);
         require '../inc/func.php';
 
         if(isset($_GET['q']) && XCSRF::varifycsrf('ad-nt-edt',$_GET['q'])){

@@ -8,6 +8,7 @@
             session_start();
             if(isset($_SESSION['admin_id'])){
 
+                define('_incFuncwwrfbhdjrt',true);
                 require '../inc/func.php';
 
                 $token = $_POST['token'];

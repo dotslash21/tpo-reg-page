@@ -8,6 +8,8 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         session_start();
+
+        define('_incFuncwwrfbhdjrt',true);
         require '../inc/func.php';
 
         //Always return Json format

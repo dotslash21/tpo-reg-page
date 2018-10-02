@@ -5,6 +5,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+        define('_incFuncwwrfbhdjrt',true);
         require_once '../inc/func.php';
 
         $return = [];

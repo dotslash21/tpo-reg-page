@@ -14,6 +14,8 @@
         $return = [];
         
         session_start();
+
+        define('_incFuncwwrfbhdjrt',true);
         require '../inc/func.php';
 
         $degree = $_POST['degree'];

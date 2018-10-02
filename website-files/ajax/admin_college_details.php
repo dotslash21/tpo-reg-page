@@ -14,6 +14,7 @@
         if(isset($_SESSION['admin_id'])){
             //Admin is logged in
 
+            define('_incFuncwwrfbhdjrt',true);
             require '../inc/func.php';
 
             $token = $_POST['token'];

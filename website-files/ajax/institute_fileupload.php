@@ -7,6 +7,7 @@
         $return = [];
         session_start();
 
+        define('_incFuncwwrfbhdjrt',true);
         require '../inc/func.php';
 
         $token = $_POST['X-CSRF'];

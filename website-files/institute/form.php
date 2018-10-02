@@ -7,7 +7,7 @@
     else{
         $fallback = '';
     }
-
+    define('_incFuncwwrfbhdjrt',true);
     require '../inc/func.php';
 ?>
 

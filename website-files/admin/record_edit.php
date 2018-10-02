@@ -10,6 +10,7 @@
         define("_CON_",true);
         require("../inc/db-con.php");
 
+        define('_incFuncwwrfbhdjrt',true);
         require '../inc/func.php';
 
         $inst_code = $_GET['inst_code_edit'];

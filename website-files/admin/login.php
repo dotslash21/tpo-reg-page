@@ -18,6 +18,8 @@
         $logfail = '&nbsp;';
     }
     session_start();
+
+    define('_incFuncwwrfbhdjrt',true);
     require '../inc/func.php';
 ?>
 
