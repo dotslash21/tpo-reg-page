@@ -15,7 +15,7 @@
         define('_CON1swys135em856uv346_',true);
 
         require_once dirname( __FILE__ ).'/classes124vq32524s/XCSRFgrwhgr.php';
-
+        require_once dirname(__FILE__).'/db-con2vpn2b569vn.php';
     }
 
     
