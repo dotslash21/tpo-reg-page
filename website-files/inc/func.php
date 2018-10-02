@@ -13,7 +13,7 @@
 
         define('_FUNCrqwetwegww', true);
 
-        require_once dirname( __FILE__ ).'/classes/XCSRFgrwhgr.php';
+        require_once dirname( __FILE__ ).'/classes124vq32524s/XCSRFgrwhgr.php';
 
     }
 
