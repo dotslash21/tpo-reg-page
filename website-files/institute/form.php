@@ -163,7 +163,7 @@
                         <div class="col s6">
                             <div class="input-field">
                                 <select name="inst_state" id="inst_state" required>
-                                    <?php include('../inc/inst_state.php'); ?>
+                                    <?php include('../inc2357v3cn425073p4y53w79/inst_state.php'); ?>
                                 </select>
                                 <label>Institute State</label>
                             </div>
@@ -178,7 +178,7 @@
 
                             <div class="input-field" id="district_sel">
                                 <select id="ins_dst_sel" name="" class="">
-                                    <?php include('../inc/inst_dst.php');?>
+                                    <?php include('../inc2357v3cn425073p4y53w79/inst_dst.php');?>
                                 </select>
                                 <label for="ins_dst_sel">Institute District</label>
                             </div>
