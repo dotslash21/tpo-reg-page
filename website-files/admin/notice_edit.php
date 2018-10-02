@@ -81,7 +81,7 @@
             </a>
             <ul class="right hide-on-med-and-down">
                 <li>
-                    <a href="./notice_panel.php">Back</a>
+                    <a href="./notice_view.php">Back</a>
                 </li>
                 <li>
                     <a href="#">Profile</a>
