@@ -1,5 +1,5 @@
 <?php
-    if(defined("_CON_")){
+    if(defined("_CON1swys135em856uv346_")){
         // Checks if the config file is exists
         // if(!file_exists(__DIR__.'../db-config.php')){
         //     die('db-config file not found. Recheck that all files are there');
