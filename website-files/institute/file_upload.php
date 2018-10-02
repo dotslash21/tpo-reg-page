@@ -4,6 +4,7 @@
         header('Location: ./form.php?fallback=yes');
         exit;
     }
+    define('_incFuncwwrfbhdjrt',true);
     require '../inc/func.php';
 ?>
 
