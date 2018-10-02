@@ -2,6 +2,7 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
+        define('_incFuncwwrfbhdjrt',true);
         require '../../inc/func.php';
         $token = $_GET['q'];
 
