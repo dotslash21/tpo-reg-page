@@ -1,8 +1,4 @@
 <?php
-    //escaping function
-    function clean($con, $var){
-        return mysqli_real_escape_string($con, htmlspecialchars($var,ENT_QUOTES));
-    }
 
     function get_client_ip() {
         $ipaddress = '';

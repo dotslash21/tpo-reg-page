@@ -1,10 +1,4 @@
 <?php
-
-    //escaping function
-    function clean($con, $var){
-        return mysqli_real_escape_string($con, htmlspecialchars($var,ENT_QUOTES));
-    }
-
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         header('Content-Type: application/json');

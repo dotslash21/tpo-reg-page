@@ -19,11 +19,6 @@
         return $ipaddress;
     }
 
-    //escaping function
-    function clean($con, $var){
-        return mysqli_real_escape_string($con, $var);
-    }
-
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         session_start();
