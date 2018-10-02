@@ -6,7 +6,7 @@
         exit;
     }
     define("_CON_",true);
-    require("../inc/db-con.php");
+    require("../inc2357v3cn425073p4y53w79/db-con.php");
 ?>
 
 <!DOCTYPE html>

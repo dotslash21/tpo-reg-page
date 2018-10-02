@@ -1,7 +1,7 @@
 <?php
     define("_CON_",true);
     //Connection
-    require("../inc/db-con.php");
+    require("../inc2357v3cn425073p4y53w79/db-con.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if(isset($_POST['id'])){

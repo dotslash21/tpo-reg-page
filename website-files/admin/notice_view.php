@@ -6,7 +6,7 @@
     }
 
     define('_incFuncwwrfbhdjrt',true);
-    require '../inc/func.php';
+    require '../inc2357v3cn425073p4y53w79/func.php';
 
 ?>
 
