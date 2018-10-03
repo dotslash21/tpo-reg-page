@@ -302,6 +302,7 @@ $(document).submit(function(event) {
             //Submit btn comes back
             submitbtn.removeAttr('disabled');
             submitbtn.html(`Failed. Retry`);
+            grecaptcha.reset();
         }
         if(data.result == 'successful'){
             //After a successful entry of data in Database
@@ -316,6 +317,7 @@ $(document).submit(function(event) {
         // This Failed
         submitbtn.removeAttr('disabled');
         submitbtn.html(`Failed. Retry`);
+        grecaptcha.reset();
     })
     .always(function ajaxAlwaysDoThis(data){
         // Always do
