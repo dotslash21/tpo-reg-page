@@ -3,6 +3,8 @@
     session_destroy();
     session_write_close();
     setcookie(session_name(),'',0,'/');
+    unset($_COOKIE['_t']);
+    setcookie('_t', null, -1, '/');
     session_regenerate_id(true);
 
     header('Location: ./login.php?fallback=yes');

@@ -38,6 +38,15 @@
                 }
             }
 
+            public static function loginPageCheck(){
+                if(self::isLoggedIn()){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+
             public static function ajaxCheck(){
                 if(self::isLoggedIn()){
                     return true;
