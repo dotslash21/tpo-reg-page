@@ -1,4 +1,5 @@
 <?php
+    error_reporting('E_ALL');
     session_start();
 
     define('_incFuncwwrfbhdjrt',true);
@@ -6,7 +7,7 @@
     
     admin::accessOfAdmin();
 
-    if(!admin::isLoggedIn()){
+    if(!admin::loginPageCheck()){
         header('HTTP/1.0 403 Forbidden');
         die('You are not allowed to access this file.');  
     }
