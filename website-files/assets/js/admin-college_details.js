@@ -125,7 +125,7 @@ $("button#printall").click(function (event) {
     .done(function ajaxDone(data) {
         // Whatever data is
         if(data.done !== undefined){
-            //window.open('./spreadsheet/print_all_file.php?q='+data.done, '_blank');
+            window.open('./spreadsheet/print_all_file.php?q='+data.done, '_blank');
         }
 	})
     .fail(function ajaxFailed(e){
