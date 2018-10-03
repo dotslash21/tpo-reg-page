@@ -1,6 +1,6 @@
 <?php
     //No one can access this file
-    if(defined('_CONFIG_')){
+    if(defined('_CONFIG46b3b2a6_')){
         
         // ** MySQL settings - You can get this info from your web host ** //
         /** The name of the database for WordPress */

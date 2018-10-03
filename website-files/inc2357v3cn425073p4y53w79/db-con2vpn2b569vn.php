@@ -6,7 +6,7 @@
         // }
 
         //Add the config file
-        define('_CONFIG_',true);
+        define('_CONFIG46b3b2a6_',true);
 
         // Adding the Config file for Database
         require(__DIR__.'/../db-config.php');
