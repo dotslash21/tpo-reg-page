@@ -1,16 +1,16 @@
 <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+        session_start();
         define('_incFuncwwrfbhdjrt',true);
         require_once '../inc2357v3cn425073p4y53w79/func.php';
 
         $return = [];
-        session_start();
 
         //Always return Json format
         header('Content-Type: application/json');
 
-        if(isset($_SESSION['admin_id'])){
+        if(admin::ajaxCheck()){
             $token = $_POST['id'];
             if(isset($token)){
                 if(XCSRF::varifycsrf('ad-clg-det',$token)){

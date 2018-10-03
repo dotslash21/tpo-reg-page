@@ -1,7 +1,11 @@
 <?php
-    if(isset($_SESSION['admin_id'])){
+    session_start();
+
+    define('_incFuncwwrfbhdjrt',true);
+    require '../inc2357v3cn425073p4y53w79/func.php';
+
+    if(admin::accessOfAdmin()){
         header('Location: ./dashboard.php');
-        exit;
     }
 
     if(isset($_GET['lf'])){
@@ -17,10 +21,7 @@
     else{
         $logfail = '&nbsp;';
     }
-    session_start();
 
-    define('_incFuncwwrfbhdjrt',true);
-    require '../inc2357v3cn425073p4y53w79/func.php';
 ?>
 
 <!DOCTYPE html>

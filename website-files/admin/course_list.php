@@ -1,12 +1,11 @@
 <?php
 
     session_start();
-    if(!isset($_SESSION['admin_id'])){
-        header('Location: ./login.php?lf=yes');
-        exit;
-    }
+
     define('_incFuncwwrfbhdjrt',true);
     require '../inc2357v3cn425073p4y53w79/func.php';
+
+    admin::accessOfAdmin();
 ?>
 
 <!DOCTYPE html>

@@ -12,7 +12,7 @@
     if(defined('_incFuncwwrfbhdjrt')){
 
         error_reporting(0);
-        
+
         define('_FUNCrqwetwegww', true);
         define('_CON1swys135em856uv346_',true);
         define('_functionsqn72v3[701v[c124[m1c',true);
@@ -21,7 +21,7 @@
         require_once dirname( __FILE__ ).'/classes124vq32524s/XCSRFgrwhgr.php';
         require_once dirname( __FILE__ ).'/classes124vq32524s/admin2v645n317vc05.php';
         require_once dirname( __FILE__ ).'/db-con2vpn2b569vn.php';
-        require_once dirname( __FILE__ ).'/functions2v3n51vn59mq07[5.php'; 
+        require_once dirname( __FILE__ ).'/functions2v3n51vn59mq07[5.php';
     }
 
     

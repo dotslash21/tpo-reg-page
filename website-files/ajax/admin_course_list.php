@@ -3,14 +3,16 @@
     if(1){
 
         session_start();
-        if(!isset($_SESSION['admin_id'])){
+
+        define('_incFuncwwrfbhdjrt',true);
+        require '../inc2357v3cn425073p4y53w79/func.php';
+
+        if(!admin::ajaxCheck()){
             header('Location: ../404.php');
             exit;
         }
         else{
             
-            define('_incFuncwwrfbhdjrt',true);
-            require '../inc2357v3cn425073p4y53w79/func.php';
 
             //Always return Json format
             header('Content-Type: application/json');

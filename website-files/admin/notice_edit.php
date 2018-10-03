@@ -1,13 +1,16 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION['admin_id'])){
+    define('_incFuncwwrfbhdjrt',true);
+    require '../inc2357v3cn425073p4y53w79/func.php';
+    
+    admin::accessOfAdmin();
+
+    if(!admin::isLoggedIn()){
         header('HTTP/1.0 403 Forbidden');
         die('You are not allowed to access this file.');  
     }
     else{
-        define('_incFuncwwrfbhdjrt',true);
-        require '../inc2357v3cn425073p4y53w79/func.php';
 
         if(isset($_GET['q']) && XCSRF::varifycsrf('ad-nt-edt',$_GET['q'])){
             //allowd

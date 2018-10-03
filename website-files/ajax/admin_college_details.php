@@ -6,11 +6,12 @@
         $return = [];
 
         session_start();
-        if(isset($_SESSION['admin_id'])){
-            //Admin is logged in
 
-            define('_incFuncwwrfbhdjrt',true);
-            require '../inc2357v3cn425073p4y53w79/func.php';
+        define('_incFuncwwrfbhdjrt',true);
+        require '../inc2357v3cn425073p4y53w79/func.php';
+
+        if(admin::ajaxCheck()){
+            //Admin is logged in
 
             $token = $_POST['token'];
             if(XCSRF::varifycsrf('ad-clg-det',$token)){

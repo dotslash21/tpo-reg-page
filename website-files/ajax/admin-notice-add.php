@@ -4,10 +4,12 @@
         header('Content-Type: application/json');
 
         session_start();
-        if(isset($_SESSION['admin_id'])){
+
+        define('_incFuncwwrfbhdjrt',true);
+        require '../inc2357v3cn425073p4y53w79/func.php';
+
+        if(admin::ajaxCheck()){
             //If admin is logged in
-            define('_incFuncwwrfbhdjrt',true);
-            require '../inc2357v3cn425073p4y53w79/func.php';
 
             $return = [];
             

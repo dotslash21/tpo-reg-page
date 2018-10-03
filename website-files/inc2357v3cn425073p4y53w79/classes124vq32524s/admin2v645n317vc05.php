@@ -16,7 +16,7 @@
         class admin{
 
             //Check for admin loggin
-            public static function isLoggedIn(){
+            private static function isLoggedIn(){
                 
                 if(isset($_SESSION['admin_name']) && isset($_SESSION['admin_id']) && isset($_COOKIE['_t'])){
                     //admin is logged in
@@ -24,6 +24,25 @@
                 }
                 else {
                     //admin is not logged in
+                    return false;
+                }
+            }
+
+            public static function accessOfAdmin(){
+                if(self::isLoggedIn()){
+                    return true;
+                }
+                else {
+                    header('Location: ./login.php?lf=yes');     
+                    return false;
+                }
+            }
+
+            public static function ajaxCheck(){
+                if(self::isLoggedIn()){
+                    return true;
+                }
+                else {  
                     return false;
                 }
             }

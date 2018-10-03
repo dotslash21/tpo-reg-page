@@ -13,7 +13,7 @@
         if(XCSRF::varifycsrf('ad-nt-vw', $_POST['token'])){
 
             
-            if(isset($_SESSION['admin_id'])){   //Admin is logged in
+            if(admin::ajaxCheck()){   //Admin is logged in
 
                 if(isset($_POST['action'])){
                     if($_POST['action'] == 'none'){

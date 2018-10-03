@@ -1,15 +1,12 @@
 <?php
     session_start();
-    if(!isset($_SESSION['admin_id'])){
-        header('Location: ./login.php?lf=yes');
-        exit;
-    }
 
+    define('_incFuncwwrfbhdjrt',true);
+    require '../inc2357v3cn425073p4y53w79/func.php';
+    
+    admin::accessOfAdmin();
+    
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
-
-
-        define('_incFuncwwrfbhdjrt',true);
-        require '../inc2357v3cn425073p4y53w79/func.php';
 
         $inst_code = $_GET['inst_code_edit'];
 
