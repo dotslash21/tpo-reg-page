@@ -55,6 +55,7 @@ $(document).on("submit","form#admin-login",function(event) {
             submitbtn.html(`Failed. Retry`);
             $("#logfail").text(data.error);
             submitbtn.removeAttr('disabled');
+            grecaptcha.reset();
         }
 	
 	})
@@ -62,6 +63,7 @@ $(document).on("submit","form#admin-login",function(event) {
         // This Failed
         submitbtn.html(`Failed. Retry`);
         submitbtn.removeAttr('disabled');
+        grecaptcha.reset();
     })
     .always(function ajaxAlwaysDoThis(data){
         // Always do
