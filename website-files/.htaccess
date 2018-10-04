@@ -3,6 +3,6 @@
 Deny from all
 </Files>
 
-<Files .htaccess>
+<Files db-config.php>
 Deny from all
 </Files>
