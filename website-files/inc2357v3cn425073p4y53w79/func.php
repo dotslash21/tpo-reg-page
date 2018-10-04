@@ -13,6 +13,8 @@
 
         error_reporting(0);
 
+        date_default_timezone_set("Asia/Calcutta");
+
         define('INC',dirname(__FILE__));
 
         define('_FUNCrqwetwegww', true);
