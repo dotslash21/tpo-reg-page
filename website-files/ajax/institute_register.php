@@ -196,7 +196,7 @@
         else{
             $return['error'] ="CSRF mismatched";
         }
-
+        
         echo json_encode($return, JSON_PRETTY_PRINT);
         exit;   
     }//Post req
