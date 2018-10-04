@@ -60,43 +60,43 @@
 
             //escaping college crediential
             //Basic Details
-            $name_clean         = clean($con, $name);
-            $inst_code_clean    = clean($con, $inst_code);
-            $uid_clean          = clean($con, $uid);
-            $estd_clean         = clean($con, $estd);
-            $accrd_clean        = clean($con, $accrd);
-            $inst_type_clean    = clean($con, $inst_type);
-            $affli_clean        = clean($con, $affli);
-            $inst_appr_clean    = clean($con, $inst_appr);
-            $address_clean      = clean($con, $address);
-            $pin_clean          = clean($con, $pin);
-            $inst_state_clean   = clean($con, $inst_state);
-            $ins_dst_clean      = clean($con, $ins_dst);
-            $number_clean       = clean($con, $number);
-            $email_clean        = clean($con, $email);
-            $website_clean      = clean($con, $website);
+            $name_clean         = clean($name);
+            $inst_code_clean    = clean($inst_code);
+            $uid_clean          = clean($uid);
+            $estd_clean         = clean($estd);
+            $accrd_clean        = clean($accrd);
+            $inst_type_clean    = clean($inst_type);
+            $affli_clean        = clean($affli);
+            $inst_appr_clean    = clean($inst_appr);
+            $address_clean      = clean($address);
+            $pin_clean          = clean($pin);
+            $inst_state_clean   = clean($inst_state);
+            $ins_dst_clean      = clean($ins_dst);
+            $number_clean       = clean($number);
+            $email_clean        = clean($email);
+            $website_clean      = clean($website);
 
             //Head Details
-            $head_name_clean    = clean($con, $head_name);
-            $head_desg_clean    = clean($con, $head_desg);
-            $head_mob_clean     = clean($con, $head_mob);
-            $head_ph_clean      = clean($con, $head_ph);
-            $head_email_clean   = clean($con, $head_email);
+            $head_name_clean    = clean($head_name);
+            $head_desg_clean    = clean($head_desg);
+            $head_mob_clean     = clean($head_mob);
+            $head_ph_clean      = clean($head_ph);
+            $head_email_clean   = clean($head_email);
 
             //Tpo Details
-            $tpo_name_clean     = clean($con, $tpo_name);
-            $tpo_contact1_clean = clean($con, $tpo_contact1);
-            $tpo_contact2_clean = clean($con, $tpo_contact2);
-            $tpo_email_clean    = clean($con, $tpo_email);
+            $tpo_name_clean     = clean($tpo_name);
+            $tpo_contact1_clean = clean($tpo_contact1);
+            $tpo_contact2_clean = clean($tpo_contact2);
+            $tpo_email_clean    = clean($tpo_email);
 
             //Additional info
-            $num_cmp_clean      = clean($con, $num_cmp);
-            $num_cmplab_clean   = clean($con, $num_cmplab);
-            $min_num_cmp_clean  = clean($con, $min_num_cmp);
-            $ispeed_clean       = clean($con, $ispeed);
-            $hall_cap_clean     = clean($con, $hall_cap);
-            $num_cctv_clean     = clean($con, $num_cctv);
-            $has_fiber_clean    = clean($con, $has_fiber);
+            $num_cmp_clean      = clean($num_cmp);
+            $num_cmplab_clean   = clean($num_cmplab);
+            $min_num_cmp_clean  = clean($min_num_cmp);
+            $ispeed_clean       = clean($ispeed);
+            $hall_cap_clean     = clean($hall_cap);
+            $num_cctv_clean     = clean($num_cctv);
+            $has_fiber_clean    = clean($has_fiber);
 
             $query_update = "UPDATE cred SET estd = '".$estd_clean."', inst_accrd = '".$accrd_clean."', inst_type = '".$inst_type_clean."', inst_affl= '".$affli_clean."', inst_aprv = '".$inst_appr_clean."', state = '".$inst_state_clean."', district = '".$ins_dst_clean."', pin = '".$pin_clean."', address= '".$address_clean."', phone = '".$number_clean."', email= '".$email_clean."', website= '".$website_clean."', head_name = '".$head_name_clean."', inst_headdesg = '".$head_desg_clean."', head_contact = '".$head_ph_clean."', head_mob = '".$head_mob_clean."', head_email = '".$head_email_clean."', tpo_name = '".$tpo_name_clean."', tpo_ph = '".$tpo_contact1_clean."', tpo_ph2 = '".$tpo_contact2_clean."', tpo_email = '".$tpo_email_clean."', no_of_comp = '".$num_cmp_clean."', num_cmplab = '".$num_cmplab_clean."', min_num_cmp = '".$min_num_cmp_clean."', int_speed = '".$ispeed_clean."', hall_cap = '".$hall_cap_clean."', fibop_lan = '".$has_fiber_clean."', cctv_no = '".$num_cctv_clean."' WHERE inst_code = '".$inst_code_clean."'";
             $return['sql'] = $query_update;
