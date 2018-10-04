@@ -108,9 +108,9 @@
             <?php
 
                 //Sql
-                $sql_clg = "SELECT inst_name,inst_code FROM cred ORDER BY inst_name ASC";
-                $res_clg = mysqli_query($con,$sql_clg);
-                while($res_arr = mysqli_fetch_array($res_clg)){
+                $smt_clg = $pdocon->prepare("SELECT inst_name,inst_code FROM cred ORDER BY inst_name ASC");
+                $smt_clg->execute();
+                while($res_arr = $smt_clg->fetch(PDO::FETCH_ASSOC)){
             ?>
 
             <!-- College Cards -->
