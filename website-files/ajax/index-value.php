@@ -30,14 +30,14 @@
                 //Number of students
                 $intake = 0;
                 $smt_student    = $pdocon->prepare("SELECT intake FROM college_crs");
-            
-                while ($intake_num = $smt_student->fetch(PDO::FETCH_ASSOC)['intake']) {
+                $smt_student->execute();
+                while ($intake_num = $smt_student->fetch(PDO::FETCH_ASSOC)) {
                     $intake = $intake + (int) $intake_num['intake'];
                 }
 
                 //Notice value change                
                 $current_time = time();
-                
+
                 $smt_update = $pdocon->prepare("UPDATE `notices` SET active_status = 0 WHERE expiry_date < :current_time");
                 if($smt_update->execute(array(':current_time'=>$current_time))){
                     //Notice
@@ -46,6 +46,7 @@
                     $notice     .= "<ul class=\"marquee\">";
 
                     $smt_notice = $pdocon->prepare("SELECT title FROM notices WHERE active_status = 1 ORDER BY expiry_date DESC LIMIT 10");
+                    $smt_notice->execute();
                     while($notice_out = $smt_notice->fetch(PDO::FETCH_ASSOC)){
                         $notice .= "<li>";
                         $notice .= "<a title=\"".$notice_out['title']."\" href=\"".$notice_page_link."\" > ".$notice_out['title']."</a> ";
