@@ -20,6 +20,7 @@
                 $post_course = Filter::String(clean($_POST['course']));
 
                 //Degree SQL generator when course value changes
+                $crs_arr = array();
                 if($post_course == 'all'){
                     $sql_degree = "SELECT DISTINCT `degree` FROM `course_list`";
                 }
@@ -27,17 +28,21 @@
                     $crs_count  = $_POST['courseCount'];
 
                     $i = 0;
-                    $sql_degree = "SELECT DISTINCT `degree` FROM `course_list` WHERE `course_name` IN ('".$post_course[$i]."'";
+                    $sql_degree = "SELECT DISTINCT `degree` FROM `course_list` WHERE `course_name` IN (".$i."";
                     $i++;
                     while($i < $crs_count) {
-                        $sql_degree .= ",'".$post_course[$i]."'";
+                        $sql_degree .= ",".$i."";
                         $i++;
+                    }
+                    for ($i=0; $i < $crs_count ; $i++) { 
+                        array_push($crs_arr,$post_course[$i]);
                     }
 
                     $sql_degree .= ")";
                 }
 
                 //Course SQL generator when degree value changes
+                $deg_arr = array();
                 if($post_degree == 'all'){
                     $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`";
                 }
@@ -45,13 +50,17 @@
                     $deg_count  = $_POST['degreeCount'];
 
                     $j = 0;
-                    $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`WHERE `degree` IN ('".$post_degree[$j]."'";
+                    $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`WHERE `degree` IN (".$j."";
                     $j++;
 
                     while($j < $deg_count) {
-                        $sql_degree .= ",'".$post_degree[$j]."'";
+                        $sql_degree .= ",".$j."";
                         $j++;
                     }
+                    for ($j=0; $j < $deg_count ; $j++) { 
+                        array_push($deg_arr,$post_degree[$j]);
+                    }
+
                     
                     $sql_course .= ")";
                 }
@@ -59,8 +68,9 @@
 
                 if(isset($_POST['sendDegree']) && $_POST['sendDegree'] == 1){
                     $degree = '';
-                    $result_degree = mysqli_query($con, $sql_degree);
-                    while($array_degree = mysqli_fetch_array($result_degree)){
+                    $smt_degree = $pdocon->prepare($sql_degree);
+                    $smt_degree->execute($crs_arr);
+                    while($array_degree = $smt_degree->fetch(PDO::FETCH_ASSOC)){
                         $degree .= "<option value=\"".$array_degree['degree']."\">".$array_degree['degree']."</option>";
                     }
 
@@ -71,8 +81,9 @@
 
                 if(isset($_POST['sendCourse']) && $_POST['sendCourse'] == 1){
                     $course = '';
-                    $result_course = mysqli_query($con, $sql_course);
-                    while($array_course = mysqli_fetch_array($result_course)){
+                    $smt_course = $pdocon->prepare($sql_course);
+                    $smt_course->execute($deg_arr);
+                    while($array_course =$smt_course->fetch(PDO::FETCH_ASSOC)){
                         $course .= "<option value=\"".$array_course['course_name']."\">".$array_course['course_name']."</option>";
                     }
 
