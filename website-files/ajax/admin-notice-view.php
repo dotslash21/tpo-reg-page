@@ -26,10 +26,10 @@
                             $value = '';
                             $sl_no = 1;
         
-                            $sql_notice = "SELECT sl_no, title, content, publish_date, expiry_date, active_status FROM `notices` ORDER BY active_status DESC, expiry_date DESC";
-                            $result= mysqli_query($con, $sql_notice);
+                            $smt_notice = $pdocon->prepare("SELECT sl_no, title, content, publish_date, expiry_date, active_status FROM `notices` ORDER BY active_status DESC, expiry_date DESC");
+                            $smt_notice->execute();
         
-                            while ($result_notice = mysqli_fetch_array($result)) {
+                            while ($result_notice = $smt_notice->fetch(PDO::FETCH_ASSOC)) {
         
                                 if($result_notice['active_status'] == 1){
                                     $status = "notice_active";
@@ -78,9 +78,9 @@
                             $_POST['n_token'] = $_POST['token'];
 
                             //Successfully called deleting request
-                            $sql_del = "DELETE FROM `notices` WHERE sl_no = ".$id."";
-                            $result_del = mysqli_query($con, $sql_del);
-                            if (mysqli_affected_rows($con)){
+                            $smt_del =$pdocon->prepare("DELETE FROM `notices` WHERE sl_no = :id ");
+                            $smt_del->execute(array(':id'=> $id));
+                            if ($smt_del->rowCount() > 0){
                                 //Deleted the notice
                                 $success = true;
                                 $return['result'] = "Successfully Deleted Notice";
