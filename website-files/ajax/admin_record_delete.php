@@ -14,19 +14,19 @@
             $token = $_POST['id'];
             if(isset($token)){
                 if(XCSRF::varifycsrf('ad-clg-det',$token)){
-                    $clgId = $_POST['clgId'];
+                    $clgId = Filter::String(clean($_POST['clgId']));
 
-                    $sql_cred = "DELETE FROM `cred` WHERE inst_code = ".$clgId."";
-                    $sql_ces = "DELETE FROM `college_crs` WHERE college_id = ".$clgId."";
+                    $smt_cred   = $pdocon->prepare("DELETE FROM `cred` WHERE inst_code = :clgId");
+                    $smt_ces    = $pdocon->prepare("DELETE FROM `college_crs` WHERE college_id = :clgId");
                     
-                    $result_cred= mysqli_query($con, $sql_cred);
-                    if (mysqli_affected_rows($con)){
+                    $smt_cred->execute(array(':clgid'=>$clgId));
+                    if ($smt_cred->rowCount() > 0){
                         //Deleted the Cradnnnnn
                         $success = true;
                         $return['credential'] = "Successfully Deleted Creadentials";
                         
-                        $result_crs = mysqli_query($con, $sql_ces);
-                        if(mysqli_affected_rows($con)){
+                        $smt_ces->execute(array(':clgid'=>$clgId));
+                        if($smt_ces->rowCount() > 0){
                             //Deleted the courses
                             $success = true;
                             $return['course'] = "Successfully Deleted Courses";
