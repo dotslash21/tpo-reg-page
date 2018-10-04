@@ -61,41 +61,41 @@
             //escaping college crediential
             //Basic Details
             $name_clean         = Filter::String(clean($name));
-            $inst_code_clean    = Filter::String(clean($inst_code));
+            $inst_code_clean    = Filter::Int(clean($inst_code));
             $uid_clean          = Filter::String(clean($uid));
-            $estd_clean         = Filter::String(clean($estd));
+            $estd_clean         = Filter::Int(clean($estd));
             $accrd_clean        = Filter::String(clean($accrd));
             $inst_type_clean    = Filter::String(clean($inst_type));
             $affli_clean        = Filter::String(clean($affli));
             $inst_appr_clean    = Filter::String(clean($inst_appr));
             $address_clean      = Filter::String(clean($address));
-            $pin_clean          = Filter::String(clean($pin));
+            $pin_clean          = Filter::Int(clean($pin));
             $inst_state_clean   = Filter::String(clean($inst_state));
             $ins_dst_clean      = Filter::String(clean($ins_dst));
-            $number_clean       = Filter::String(clean($number));
-            $email_clean        = Filter::String(clean($email));
-            $website_clean      = Filter::String(clean($website));
+            $number_clean       = Filter::Int(clean($number));
+            $email_clean        = Filter::Email(clean($email));
+            $website_clean      = Filter::URL(clean($website));
 
             //Head Details
             $head_name_clean    = Filter::String(clean($head_name));
             $head_desg_clean    = Filter::String(clean($head_desg));
-            $head_mob_clean     = Filter::String(clean($head_mob));
-            $head_ph_clean      = Filter::String(clean($head_ph));
-            $head_email_clean   = Filter::String(clean($head_email));
+            $head_mob_clean     = Filter::Int(clean($head_mob));
+            $head_ph_clean      = Filter::Int(clean($head_ph));
+            $head_email_clean   = Filter::Email(clean($head_email));
 
             //Tpo Details
             $tpo_name_clean     = Filter::String(clean($tpo_name));
-            $tpo_contact1_clean = Filter::String(clean($tpo_contact1));
-            $tpo_contact2_clean = Filter::String(clean($tpo_contact2));
-            $tpo_email_clean    = Filter::String(clean($tpo_email));
+            $tpo_contact1_clean = Filter::Int(clean($tpo_contact1));
+            $tpo_contact2_clean = Filter::Int(clean($tpo_contact2));
+            $tpo_email_clean    = Filter::Email(clean($tpo_email));
 
             //Additional info
-            $num_cmp_clean      = Filter::String(clean($num_cmp));
-            $num_cmplab_clean   = Filter::String(clean($num_cmplab));
-            $min_num_cmp_clean  = Filter::String(clean($min_num_cmp));
-            $ispeed_clean       = Filter::String(clean($ispeed));
-            $hall_cap_clean     = Filter::String(clean($hall_cap));
-            $num_cctv_clean     = Filter::String(clean($num_cctv));
+            $num_cmp_clean      = Filter::Int(clean($num_cmp));
+            $num_cmplab_clean   = Filter::Int(clean($num_cmplab));
+            $min_num_cmp_clean  = Filter::Int(clean($min_num_cmp));
+            $ispeed_clean       = Filter::Int(clean($ispeed));
+            $hall_cap_clean     = Filter::Int(clean($hall_cap));
+            $num_cctv_clean     = Filter::Int(clean($num_cctv));
             $has_fiber_clean    = Filter::String(clean($has_fiber));
 
             $smt_update = $pdocon->prepare("UPDATE cred SET estd = '".$estd_clean."', inst_accrd = '".$accrd_clean."', inst_type = '".$inst_type_clean."', inst_affl= '".$affli_clean."', inst_aprv = '".$inst_appr_clean."', state = '".$inst_state_clean."', district = '".$ins_dst_clean."', pin = '".$pin_clean."', address= '".$address_clean."', phone = '".$number_clean."', email= '".$email_clean."', website= '".$website_clean."', head_name = '".$head_name_clean."', inst_headdesg = '".$head_desg_clean."', head_contact = '".$head_ph_clean."', head_mob = '".$head_mob_clean."', head_email = '".$head_email_clean."', tpo_name = '".$tpo_name_clean."', tpo_ph = '".$tpo_contact1_clean."', tpo_ph2 = '".$tpo_contact2_clean."', tpo_email = '".$tpo_email_clean."', no_of_comp = '".$num_cmp_clean."', num_cmplab = '".$num_cmplab_clean."', min_num_cmp = '".$min_num_cmp_clean."', int_speed = '".$ispeed_clean."', hall_cap = '".$hall_cap_clean."', fibop_lan = '".$has_fiber_clean."', cctv_no = '".$num_cctv_clean."' WHERE inst_code = '".$inst_code_clean."'");
