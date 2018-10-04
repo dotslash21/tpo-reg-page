@@ -16,8 +16,8 @@
             $token = $_POST['token'];
             if(XCSRF::varifycsrf('ad-clg-det',$token)){
 
-                $post_degree = $_POST['degree'];
-                $post_course = $_POST['course'];
+                $post_degree = Filter::String(clean($_POST['degree']));
+                $post_course = Filter::String(clean($_POST['course']));
 
                 //Degree SQL generator when course value changes
                 if($post_course == 'all'){

@@ -4,17 +4,16 @@
     require '../inc2357v3cn425073p4y53w79/func.php';
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
-        $inst_code = $_GET['inst_code'];
+        $inst_code = Filter::String(clean($_GET['inst_code']));
 
         //Credential
-        $sql_inst = "SELECT * FROM cred WHERE inst_code ='".$inst_code."'";
-        $result = mysqli_query($con, $sql_inst);
-        $result_arr = mysqli_fetch_array($result);
+        $smt_inst =  $pdocon->prepare("SELECT * FROM cred WHERE inst_code = :inst_code");
+        $smt_inst->execute(array(':inst_code'=>$inst_code));
+        $result_arr = $smt_inst->fetch(PDo::FETCH_ASSOC);
 
         //Course
-        $sql_crs = "SELECT * FROM college_crs WHERE college_id ='".$inst_code."' ORDER BY deg_optd ASC";
-        $return['sql'] = $sql_crs;
-        $result_crs = mysqli_query($con, $sql_crs);
+        $smt_crs = $pdocon->prepare("SELECT * FROM college_crs WHERE college_id = :inst_code ORDER BY deg_optd ASC");
+        $smt_crs->execute(array(':inst_code'=>$inst_code));
 
         header('Content-Type: application/json');
 

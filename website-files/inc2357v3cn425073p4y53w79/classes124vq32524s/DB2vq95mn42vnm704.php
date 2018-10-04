@@ -1,5 +1,16 @@
 <?php
 
+    /**
+     * @class DB
+     * 
+     * PDO database Connection done here
+     * 
+     * Created by IntelliJ IDEA.
+     * User: Arkadip
+     * Date: 10/04/18
+     * Time: 11:35 PM 
+    */
+
     //IF there is no constant defined called _CONFIG_, do not load file
     if(defined('_CON1swys135em856uv346_')){
 

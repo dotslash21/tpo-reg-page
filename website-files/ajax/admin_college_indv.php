@@ -1,20 +1,21 @@
 <?php
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
-        $inst_code = $_GET['inst_code'];
+
+        $inst_code = Filter::String(clean($_GET['inst_code']));
 
         define('_incFuncwwrfbhdjrt',true);
         require '../inc2357v3cn425073p4y53w79/func.php';
 
         //Credential
-        $sql_inst = "SELECT * FROM cred WHERE inst_code ='".$inst_code."'";
-        $result = mysqli_query($con, $sql_inst);
-        $result_arr = mysqli_fetch_array($result);
+        $smt_inst = $pdocon->prepare("SELECT * FROM cred WHERE inst_code = :inst_code");
+        $smt_inst->execute(array(':inst_code' => $inst_code));
+        $result_arr = $smt_inst->fetch(PDO::FETCH_ASSOC);
 
         //Course
-        $sql_crs = "SELECT * FROM college_crs WHERE college_id ='".$inst_code."' ORDER BY deg_optd ASC";
-        $return['sql'] = $sql_crs;
-        $result_crs = mysqli_query($con, $sql_crs);
+        $smt_crs = $pdocon->prapare("SELECT * FROM college_crs WHERE college_id = :inst_code ORDER BY deg_optd ASC");
+        $smt_crs->execute(array(':inst_code'=>$inst_code));
+        //Fetch is below
 
         header('Content-Type: application/json');
 
@@ -101,7 +102,7 @@
         $value .=       '<div class="col s6 center"><b>Intake</b></div>';
         $value .=   '</div>';
         // Course Details
-        while ($array_crs = mysqli_fetch_array($result_crs)) { 
+        while ($array_crs = $smt_crs->fetch(PDO::FETCH_ASSOC)) { 
             $value .=   '<hr>';
             $value .=   '<div class="row">';
             $value .=       '<div class="col s6 center">'.$array_crs['deg_optd'].' - '.$array_crs['course_optd'].'</div>';
