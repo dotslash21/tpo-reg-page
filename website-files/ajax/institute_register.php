@@ -32,7 +32,7 @@
                 if($respone->success){      //Checks the  success parameter
                     //If not a robot(varified by captcha)
 
-                    $browser = $_SERVER['REMOTE_ADDR'];
+                    $browser = $_SERVER['HTTP_USER_AGENT'];
                     $inst_ip = get_client_ip();
 
                     //Always return Json format
