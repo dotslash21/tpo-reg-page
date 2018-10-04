@@ -8,11 +8,11 @@
     
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
-        $inst_code = $_GET['inst_code_edit'];
+        $inst_code = Filter::String(clean($_GET['inst_code_edit']));
 
-        $sql_data = "SELECT * FROM cred WHERE inst_code = '".$inst_code."' LIMIT 1";
-        $result_data = mysqli_query($con, $sql_data);
-        $result_array = mysqli_fetch_array($result_data);
+        $smt_data = $pdocon->prepare("SELECT * FROM cred WHERE inst_code = :inst_code LIMIT 1");
+        $smt_data->execute(array(':inst_code'=>$inst_code));
+        $result_array = $smt_data->fetch(PDO::FETCH_ASSOC);
     }
     else{
         header('Location: ./colege_details.php');
