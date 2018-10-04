@@ -12,39 +12,41 @@
 
                 $return = [];
 
-                $sql_college    = "SELECT inst_name FROM cred";
-                $sql_domain     = "SELECT DISTINCT course_optd FROM college_crs";
-                $sql_degree     = "SELECT DISTINCT deg_optd FROM college_crs";
-                $sql_student    = "SELECT intake FROM college_crs";
-                $sql_notice     = "SELECT title FROM notices WHERE active_status = 1 ORDER BY expiry_date DESC LIMIT 10";
-                            
-                $result_clg     = mysqli_query($con,$sql_college);
-                $result_dmn     = mysqli_query($con,$sql_domain);
-                $result_deg     = mysqli_query($con,$sql_degree);
-                $result_std     = mysqli_query($con,$sql_student);
-                $result_notice  = mysqli_query($con,$sql_notice);
-                            
-                $college_num    = mysqli_num_rows($result_clg);            //Number of college
-                $domain_num     = mysqli_num_rows($result_dmn);
-                $degree_num     = mysqli_num_rows($result_deg);
-                
-                //Intake Portion
+                //Number of College
+                $smt_college    = $pdocon->prepare("SELECT inst_name FROM cred");
+                $smt_college->execute();
+                $college_num    = $smt_college->rowCount();
+
+                //Number of Domain
+                $smt_domain     = $pdocon->prepare("SELECT DISTINCT course_optd FROM college_crs");
+                $smt_domain->execute();
+                $domain_num     = $smt_domain->rowCount();
+
+                //Number of Degree
+                $smt_degree     = $pdocon->prepare("SELECT DISTINCT deg_optd FROM college_crs");
+                $smt_degree->execute();
+                $degree_num     = $smt_degree->rowCount();
+
+                //Number of students
                 $intake = 0;
-                            
-                while ($intake_num = mysqli_fetch_array($result_std)) {
-                  $intake = $intake + (int) $intake_num['intake'];
+                $smt_student    = $pdocon->prepare("SELECT intake FROM college_crs");
+            
+                while ($intake_num = $smt_student->fetch(PDO::FETCH_ASSOC)['intake']) {
+                    $intake = $intake + (int) $intake_num['intake'];
                 }
 
                 //Notice value change                
                 $current_time = time();
-                $sql_update = "UPDATE `notices` SET active_status = 0 WHERE expiry_date < ".$current_time."";
-                if(mysqli_query($con, $sql_update)){
+                
+                $smt_update = $pdocon->prepare("UPDATE `notices` SET active_status = 0 WHERE expiry_date < :current_time");
+                if($smt_update->execute(array(':current_time'=>$current_time))){
                     //Notice
                     $notice_page_link = "./notices.html";        //Link to notice page
                     $notice      = "<div class=\"list styled custom-list notice-block\">";
                     $notice     .= "<ul class=\"marquee\">";
 
-                    while($notice_out = mysqli_fetch_array($result_notice)){
+                    $smt_notice = $pdocon->prepare("SELECT title FROM notices WHERE active_status = 1 ORDER BY expiry_date DESC LIMIT 10");
+                    while($notice_out = $smt_notice->fetch(PDO::FETCH_ASSOC)){
                         $notice .= "<li>";
                         $notice .= "<a title=\"".$notice_out['title']."\" href=\"".$notice_page_link."\" > ".$notice_out['title']."</a> ";
                         $notice .= "</li>";
