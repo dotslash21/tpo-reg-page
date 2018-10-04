@@ -14,21 +14,20 @@
 
             $value = '';
 
-            $sql_degree = "SELECT DISTINCT degree FROM course_list";
-            $result_degree = mysqli_query($con, $sql_degree);
-            while ($array_degree = mysqli_fetch_array($result_degree)) {
-                
+            $smt_degree = $pdocon->prepare("SELECT DISTINCT degree FROM course_list");
+            $smt_degree->execute();
+            
+            while ($array_degree = $smt_degree->fetch(PDO::FETCH_ASSOC)) {
+
                 $value .=   "<optgroup label=\"".$array_degree['degree']."\">";
                 
-                $sql_opt = "SELECT course_name FROM course_list WHERE degree =\"" . $array_degree['degree'] . "\"";
-                $result_course = mysqli_query($con, $sql_opt);
-                while ($array_course = mysqli_fetch_array($result_course)) {
+                $smt_opt = $pdocon->prepare("SELECT course_name FROM course_list WHERE degree = :degreeVal ");
+                $smt_opt->execute(array(':degreeVal'=>$array_degree['degree']));
 
-                    $value .= "<option value=\"".$array_degree['degree']. " - " .$array_course['course_name'] ."\">".$array_degree['degree'] ." - " .$array_course['course_name']."</option>";
-                                    
+                while ($array_course = $smt_opt->fetch(PDO::FETCH_ASSOC)) {
+                    $value .= "<option value=\"".$array_degree['degree']. " - " .$array_course['course_name'] ."\">".$array_degree['degree'] ." - " .$array_course['course_name']."</option>";             
                     }
                 }
-            
                 $return['course'] = $value;
             echo json_encode($return, JSON_PRETTY_PRINT);
             exit;
