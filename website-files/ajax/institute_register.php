@@ -123,7 +123,7 @@
                     $hall_cap_clean     =Filter::Int(clean($hall_cap));
                     $num_cctv_clean     =Filter::Int(clean($num_cctv));
                     $has_fiber_clean    =Filter::Int(clean($has_fiber));
-
+                    
                     $findInst = $pdocon->prepare("SELECT inst_code FROM cred WHERE inst_code =:inst_code LIMIT 1");
                     $findInst->execute(array(':inst_code'=>$inst_code_clean));
 
@@ -182,7 +182,7 @@
                         }
                         else{
                             $return['error'] = "Putting data is the Data Base is failed. Try Again later. Maybe you are registered";
-                        }//Course add
+                        }//Instittute creadential
                     }//Institue does not exist
                 } // recaptcha varified
                 else{
@@ -196,7 +196,7 @@
         else{
             $return['error'] ="CSRF mismatched";
         }
-        
+
         echo json_encode($return, JSON_PRETTY_PRINT);
         exit;   
     }//Post req
