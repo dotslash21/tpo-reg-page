@@ -127,59 +127,57 @@
                     $findInst = $pdocon->prepare("SELECT inst_code FROM cred WHERE inst_code =':inst_code' LIMIT 1");
                     $findInst->execute(array(':inst_code'=>$inst_code_clean));
 
-                    if( (boolean) $findInst->rowCount() > 0){
+                    if((int) $findInst->rowCount() > 0){
                         $return['error'] = 'Already Registered';
                     }
-                    //Check is already exist
-                    // $query_usr = "SELECT inst_code FROM cred WHERE inst_code ='".$inst_code_clean."' LIMIT 1";
-                    // $result_usr =  mysqli_query($con,$query_usr);
-                    // if(mysqli_num_rows($result_usr) > 0){
-                    //     //If exists
-                    //     $return['error'] = 'Already Registered';
-                    // }
                     else{
                         //If not exists
                         
+                        $password_new = password_hash($password_clean, PASSWORD_DEFAULT); 
+
                         $smtAdd = $pdocon->prepare("INSERT INTO cred(inst_name, inst_code, uid, pwd, estd, inst_accrd, inst_type, inst_affl, inst_aprv, state, district, pin, address, phone, email, website, head_name, inst_headdesg, head_contact, head_mob, head_email, tpo_name, tpo_ph, tpo_ph2, tpo_email, no_of_comp, num_cmplab, min_num_cmp, int_speed, hall_cap, fibop_lan, cctv_no, browser, inst_ip) VALUE(':name',':inst_code',':uid',':password',':estd',':accrd',':inst_type',':affli',':inst_appr',':inst_state',':ins_dst',':pin',':address',':number',':email',':website',':head_name',':head_desg',':head_ph',':head_mob',':head_email',':tpo_name',':tpo_contact1',':tpo_contact2',':tpo_email',':num_cmp',':num_cmplab',':min_num_cmp',':ispeed',':hall_cap',':has_fiber',':num_cctv',':browser',':inst_ip')");
-                        $smtAdd->execute(array(':name' =>,':inst_code' =>,':uid'=>,':password'=>,':estd'=>,':accrd'=>,':inst_type'=>,':affli'=>,':inst_appr'=>,':inst_state'=>,':ins_dst'=>,':pin'=>,':address'=>,':number'=>,':email'=>,':website'=>,':head_name'=>,':head_desg'=>,':head_ph'=>,':head_mob'=>,':head_email'=>,':tpo_name'=>,':tpo_contact1'=>,':tpo_contact2'=>,':tpo_email'=>,':num_cmp'=>,':num_cmplab'=>,':min_num_cmp'=>,':ispeed'=>,':hall_cap'=>,':has_fiber'=>,':num_cctv'=>,':browser'=>,':inst_ip'=>));
+                        if($smtAdd->execute(array(':name' =>$name_clean,':inst_code' =>$inst_code_clean,':uid'=>$uid_clean,':password'=>$password_new,':estd'=>$estd_clean,':accrd'=>$accrd_clean,':inst_type'=>$inst_type_clean,':affli'=>$affli_clean,':inst_appr'=>$inst_appr_clean,':inst_state'=>$inst_state_clean,':ins_dst'=>$ins_dst_clean,':pin'=>$pin_clean,':address'=>$address_clean,':number'=>$number_clean,':email'=>$email_clean,':website'=>$website_clean,':head_name'=>$head_name_clean,':head_desg'=>$head_desg_clean,':head_ph'=>$head_ph_clean,':head_mob'=>$head_mob_clean,':head_email'=>$head_email_clean,':tpo_name'=>$tpo_name_clean,':tpo_contact1'=>$tpo_contact1_clean,':tpo_contact2'=>$tpo_contact2_clean,':tpo_email'=>$tpo_email_clean,':num_cmp'=>$num_cmp_clean,':num_cmplab'=>$num_cmplab_clean,':min_num_cmp'=>$min_num_cmp_clean,':ispeed'=>$ispeed_clean,':hall_cap'=>$hall_cap_clean,':has_fiber'=>$has_fiber_clean,':num_cctv'=>$num_cctv_clean,':browser'=>$browser,':inst_ip'=>$inst_ip))){
 
+                            $crsEntry = 0;
 
-                        $query_reg = "INSERT INTO cred(inst_name, inst_code, uid, pwd, estd, inst_accrd, inst_type, inst_affl, inst_aprv, state, district, pin, address, phone, email, website, head_name, inst_headdesg, head_contact, head_mob, head_email, tpo_name, tpo_ph, tpo_ph2, tpo_email, no_of_comp, num_cmplab, min_num_cmp, int_speed, hall_cap, fibop_lan, cctv_no, browser, inst_ip) VALUE('".$name_clean."','".$inst_code_clean."','".$uid_clean."','".$password_clean."','".$estd_clean."','".$accrd_clean."','".$inst_type_clean."','".$affli_clean."','".$inst_appr_clean."','".$inst_state_clean."','".$ins_dst_clean."','".$pin_clean."','".$address_clean."','".$number_clean."','".$email_clean."','".$website_clean."','".$head_name_clean."','".$head_desg_clean."','".$head_ph_clean."','".$head_mob_clean."','".$head_email_clean."','".$tpo_name_clean."','".$tpo_contact1_clean."','".$tpo_contact2_clean."','".$tpo_email_clean."','".$num_cmp_clean."','".$num_cmplab_clean."','".$min_num_cmp_clean."','".$ispeed_clean."','".$hall_cap_clean."','".$has_fiber_clean."','".$num_cctv_clean."','".$browser."','".$inst_ip."') ";
-                        $return['sql'] = $query_reg;
-                        if(mysqli_query($con,$query_reg)){
-                            //first college data stored
-                            //Looping for Course data
-                            for($i = 0; $i < $course_length; $i ++){
+                            $smtCrs = $pdocon->prepare("INSERT INTO college_crs(college_id, deg_optd, course_optd, intake) VALUES(':inst_code_clean',':degree_name_clean', ':course_name_clean', ':course_value_clean')");
+                            
+                            if($smtCrs){
 
-                                //escaping
-                                $degree_name_clean = clean($con, $degree_name[$i]);
-                                $course_name_clean = clean($con, $course_name[$i]);
-                                $course_value_clean = clean($con, $course_value[$i]);
+                                for($i = 0; $i < $course_length; $i ++){
 
-                                //query - multiple at once
-                                if($course_name_clean != '' && $course_value_clean != ''){
+                                    //escaping
+                                    $degree_name_clean  = Filter::String(clean($degree_name[$i]));
+                                    $course_name_clean  = Filter::String(clean($course_name[$i]));
+                                    $course_value_clean = Filter::Int(clean($course_value[$i]));
 
-                                    $query_crs = '';
-                                    $query_crs .= 'INSERT INTO college_crs(college_id, deg_optd, course_optd, intake) VALUES("'.$inst_code_clean.'","'.$degree_name_clean.'", "'.$course_name_clean.'", "'.$course_value_clean.'") ';
-                                    if($query_crs != ''){
-                                        if(mysqli_multi_query($con, $query_crs)){
-
-                                            //return successful statements
-                                            $return['result'] = 'successful';
-                                            $return['redirect'] = './file_upload.php?inst_code='.$inst_code;
-
-                                            //add a session for file upload
-                                            
-                                            $_SESSION['inst_code'] =(int)$inst_code;
+                                    //query - multiple at once
+                                    if($course_name_clean != '' && $course_value_clean != ''){
+                                                    
+                                        if($smtCrs->execute(array(':inst_code_clean'=>$inst_code_clean,':degree_name_clean'=>$degree_name_clean, ':course_name_clean'=>$course_name_clean, ':course_value_clean'=>$course_value_clean))){
+                                            //Data put successfully
+                                            $crsEntry = 1;
                                         }
                                         else{
-                                            $return['error'] = 'Putting course data in the DataBase is Failed. Try again later';
+                                            $crsEntry = 0;
                                         }
                                     }
                                 }
-                                else{
-                                    $return['error'] = "couse details is missing try once again";
+                                if($crsEntry){
+                                    //return successful statements
+                                    $return['result'] = 'successful';
+                                    $return['redirect'] = './file_upload.php?inst_code='.$inst_code;
+
+                                    //add a session for file upload
+                                    
+                                    $_SESSION['inst_code'] =(int)$inst_code;
                                 }
+                                else{
+                                    $return['error'] = 'Putting course data in the DataBase is Failed. Try again later';
+                                }
+                            }
+                            else {
+                                $return['error'] = 'Pursing Error';
                             }
                         }
                         else{
