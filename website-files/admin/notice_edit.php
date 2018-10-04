@@ -17,10 +17,12 @@
             //allowd
             if(isset($_GET['n_id'])){
                 //id is there
-                $id = $_GET['n_id'];
+                $id = Filter::Int(clean($_GET['n_id']));
 
-                $result = mysqli_query($con,"SELECT * FROM `notices` WHERE `sl_no` = '".$id."' ");
-                $result_arr = mysqli_fetch_array($result);
+                $smt_result = $pdocon->prepare("SELECT * FROM `notices` WHERE `sl_no` = '".$id."' ");
+                $smt_result->bindParam(':id',$id,PDO::PARAM_STR);
+                $smt_result->execute();
+                $result_arr = $smt_result->fetch(PDO::FETCH_ASSOC);
             }
             else{
                 header('HTTP/1.0 403 Forbidden');
