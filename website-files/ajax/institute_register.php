@@ -124,13 +124,26 @@
                     $num_cctv_clean     = clean($con, $num_cctv);
                     $has_fiber_clean    = clean($con, $has_fiber);
 
-                    //Check is already exist
-                    $query_usr = "SELECT inst_code FROM cred WHERE inst_code ='".$inst_code_clean."' LIMIT 1";
-                    $result_usr =  mysqli_query($con,$query_usr);
-                    if(mysqli_num_rows($result_usr) > 0){
-                        //If exists
+                    $inst_code_check = (string) Filter::String($inst_code);
+
+                    $findInst = $pdocon->prepare("SELECT inst_code FROM cred WHERE inst_code =':inst_code' LIMIT 1");
+                    $findInst->bindparam(':inst_code',$inst_code_check,PDO::PARAM_STR);
+                    $findInst->execute();
+
+                    $findInst->fetch(PDO::FETCH_ASSOC);
+
+                    if( (boolean) $findUser->rowCount() > 0){
                         $return['error'] = 'Already Registered';
                     }
+
+
+                    //Check is already exist
+                    // $query_usr = "SELECT inst_code FROM cred WHERE inst_code ='".$inst_code_clean."' LIMIT 1";
+                    // $result_usr =  mysqli_query($con,$query_usr);
+                    // if(mysqli_num_rows($result_usr) > 0){
+                    //     //If exists
+                    //     $return['error'] = 'Already Registered';
+                    // }
                     else{
                         //If not exists
                         
