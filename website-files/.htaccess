@@ -1,8 +1,4 @@
 # Deny access to .htaccess
-<Files .htaccess>
-Deny from all
-</Files>
-
-<Files db-config.php>
+<Files .htaccess db-config.php>
 Deny from all
 </Files>
