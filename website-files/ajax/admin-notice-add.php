@@ -26,17 +26,17 @@
                 
                 $validity       = strtotime($_POST['validity']);    //Convert validity date to timestamp
                 
-                $notice_title_clean = clean($con, $notice_title);
-                $notice_desc_clean  = clean($con, $notice_desc);
-                $validity_clean     = clean($con, $validity);
+                $notice_title_clean = Filter::String(clean($notice_title));
+                $notice_desc_clean  = Filter::String(clean($notice_desc));
+                $validity_clean     = Filter::Int(clean($validity));
 
-                $sql_notice_add = "INSERT INTO notices(title, content, publish_date, expiry_date, added_by) VALUE('".$notice_title_clean."', '".$notice_desc_clean."', '".$current_date."', '".$validity_clean."', '".$admin."')";
-                if(mysqli_query($con,$sql_notice_add)){
+                $smt_notice_add = $pdocon->prepare("INSERT INTO notices(title, content, publish_date, expiry_date, added_by) VALUE(:notice_title, :notice_desc, :current_date, :validity_clean, :admin)");
+                if($smt_notice_add->execute(array(':notice_title'=>$notice_title_clean,':notice_desg'=>$notice_desc_clean,':current_date'=>$current_date,':validity'=>$validity_clean, ':admin'=> $admin))){
                     $return['succ'] = "Notice Uploaded Successfully<br/>";
                     
                     //Make the notice visible change active as 1
-                    $sql_active = "UPDATE notices SET active_status = 1 WHERE title = '".$notice_title_clean."'";
-                    if(mysqli_query($con, $sql_active)){
+                    $smt_active = $pdocon->prepare("UPDATE notices SET active_status = 1 WHERE title = :notice_title ");
+                    if($smt_active->execute(array(':notice_title'=>$notice_title_clean))){
                         
                         if($_FILES['uploadfile']['name']){
             
@@ -50,8 +50,9 @@
                                         $temp = explode(".", $_FILES["uploadfile"]["name"]);
                                         $newfilename = time().".". end($temp);
                                         if(move_uploaded_file($_FILES['uploadfile']['tmp_name'],"../upload/notice/".$newfilename)){
-                                            $sql = "UPDATE `notices` SET `file_name` = '".$newfilename."' WHERE `title` = '".$notice_title_clean."'";
-                                            if(mysqli_query($con,$sql)){
+
+                                            $smt_file = $pdocon->prepare("UPDATE `notices` SET `file_name` = :filename WHERE `title` = :notice_title");
+                                            if($smt_file->execute(array(':filename'=>$newfilename,':notice_title'=>$notice_title_clean))){
                                                 $return['success'] = "File uploaded Succesfully" ."<br/>";
                                                 $return['fileName'] = "Uploaded file  " . $_FILES['uploadfile']['name'];
                                             }
