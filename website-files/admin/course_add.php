@@ -73,9 +73,9 @@
                     <select name="degree" id="old_degree_input">
                         <option value="" disabled selected>Choose your option</option>
                         <?php 
-                            $sql_admin = "SELECT DISTINCT degree FROM `course_list`";
-                            $result_admin = mysqli_query($con,$sql_admin);
-                            while ($array_admin=mysqli_fetch_array($result_admin)) {
+                            $smt_admin = $pdocon->prepare("SELECT DISTINCT degree FROM `course_list`");
+                            $smt_admin->execute();
+                            while ($array_admin= $smt_admin->fetch(PDO::FETCH_ASSOC)) {
                         ?>
                         <option value="<?php echo $array_admin['degree']; ?>"><?php echo $array_admin['degree']; ?></option>
                         <?php
