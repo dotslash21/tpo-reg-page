@@ -26,8 +26,10 @@
                             $temp = explode(".", $_FILES["uploadfile"]["name"]);
                             $newfilename = $_SESSION['inst_code'].".". end($temp);
                             if(move_uploaded_file($_FILES['uploadfile']['tmp_name'],"../upload/institute/".$newfilename)){
-                                $sql = "UPDATE `cred` SET `upload` = '".$newfilename."' WHERE `inst_code` = '".$_SESSION['inst_code']."'";
-                                if(mysqli_query($con,$sql)){
+
+                                $smt_file = $pdocon->prepare("UPDATE `cred` SET `upload` = :newfile WHERE `inst_code` = :inst_code");
+                                
+                                if($smt_file->execute(array(':newfile'=>$newfilename,':inst_name'=>$_SESSION['inst_code']))){
                                     $return['success'] = "File uploaded Succesfully" ."<br/>";
                                     $return['fileName'] = "Uploaded file  " . $_FILES['uploadfile']['name'];
                                 }
