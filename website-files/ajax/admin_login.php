@@ -39,8 +39,8 @@
                     $current_ip = get_client_ip();
 
                     //Escaping variables
-                    $id_clean = clean($con,$id);
-                    $password_clean = clean($con,$password);
+                    $id_clean = clean($id);
+                    $password_clean = clean($password);
 
                     //Check if admin already exist or not
                     $query_admin = "SELECT id,password FROM admins WHERE id ='".$id_clean."' LIMIT 1";
