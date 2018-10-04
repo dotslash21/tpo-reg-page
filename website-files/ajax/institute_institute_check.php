@@ -13,22 +13,19 @@
 
         $token = $_POST['token'];
         if(XCSRF::varifycsrf('inst-frm1',$token)){
-
             
             if(isset($_POST['check'])){
-                $u_chk = $_POST['check'];
+                $u_chk = Filter::Int(clean($_POST['check']));
     
                 if($u_chk == 1){
-
-                    $inst_code = $_POST['inst_code'];
+                    $inst_code = Filter::String(clean($_POST['inst_code']));
 
                     if(strlen($inst_code) > 0){
-                        
-                        $inst_code_clean = clean($con, $inst_code) ;
 
-                        $sql_chk = "SELECT inst_code FROM cred WHERE inst_code = '".$inst_code."'";
-                        $res_qry = mysqli_query($con,$sql_chk);
-                        if(mysqli_num_rows($res_qry) > 0){
+                        $smt_chk = $pdocon->prepare("SELECT inst_code FROM cred WHERE inst_code = :inst_code");
+                        $smt_chk->execute(array(':inst_code'=>$inst_code));
+
+                        if((int) $smt_chk->rowCount() > 0){
                             $return['inst_chk'] = 'yes';
                         }
                         else{
@@ -41,16 +38,14 @@
                 }
 
                 else if($u_chk == 2){
-
-                    $inst_code =  $_POST['uid'];
+                    $inst_code =  Filter::String(clean($_POST['uid']));
 
                     if(strlen($inst_code) > 0){
 
-                        $inst_code_clean = clean($con, $inst_code);
+                        $smt_chk1 =$pdocon->prepare("SELECT uid FROM cred WHERE uid = :inst_code");
+                        $smt_chk1->execute(array(':inst_code'=>$inst_code));
 
-                        $sql_chk = "SELECT uid FROM cred WHERE uid = '".$inst_code."'";
-                        $res_qry = mysqli_query($con,$sql_chk);
-                        if(mysqli_num_rows($res_qry) > 0){
+                        if((int) $smt_chk1->rowCount() > 0){
                             $return['inst_uid_chk'] = 'yes';
                         }
                         else{
