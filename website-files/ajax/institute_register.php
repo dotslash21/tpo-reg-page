@@ -85,50 +85,47 @@
 
                     //escaping college crediential
                     //Basic Details
-                    $name_clean         = clean($con, $name);
-                    $inst_code_clean    = clean($con, $inst_code);
-                    $uid_clean          = clean($con, $uid);
-                    $password_clean     = password_hash($password, PASSWORD_DEFAULT);   //Hashing the Password
-                    $estd_clean         = clean($con, $estd);
-                    $accrd_clean        = clean($con, $accrd);
-                    $inst_type_clean    = clean($con, $inst_type);
-                    $affli_clean        = clean($con, $affli);
-                    $inst_appr_clean    = clean($con, $inst_appr);
-                    $address_clean      = clean($con, $address);
-                    $pin_clean          = clean($con, $pin);
-                    $inst_state_clean   = clean($con, $inst_state);
-                    $ins_dst_clean      = clean($con, $ins_dst);
-                    $number_clean       = clean($con, $number);
-                    $email_clean        = clean($con, $email);
-                    $website_clean      = clean($con, $website);
+                    $name_clean         =Filter::String(clean($name));
+                    $inst_code_clean    =Filter::Int(clean($inst_code));
+                    $uid_clean          =Filter::String(clean($uid));
+                    $password_clean     =Filter::String(clean($password));   //Hashing the Password
+                    $estd_clean         =Filter::Int(clean($estd));
+                    $accrd_clean        =Filter::String(clean($accrd));
+                    $inst_type_clean    =Filter::String(clean($inst_type));
+                    $affli_clean        =Filter::String(clean($affli));
+                    $inst_appr_clean    =Filter::String(clean($inst_appr));
+                    $address_clean      =Filter::String(clean($address));
+                    $pin_clean          =Filter::Int(clean($pin));
+                    $inst_state_clean   =Filter::String(clean($inst_state));
+                    $ins_dst_clean      =Filter::String(clean( $ins_dst));
+                    $number_clean       =Filter::Int(clean($number));
+                    $email_clean        =Filter::Email(clean($email));
+                    $website_clean      =Filter::URL(clean($website));
 
-                    //Head Details
-                    $head_name_clean    = clean($con, $head_name);
-                    $head_desg_clean    = clean($con, $head_desg);
-                    $head_mob_clean     = clean($con, $head_mob);
-                    $head_ph_clean      = clean($con, $head_ph);
-                    $head_email_clean   = clean($con, $head_email);
+                    //Head DetailsFilter
+                    $head_name_clean    =Filter::String(clean($head_name));
+                    $head_desg_clean    =Filter::String(clean($head_desg));
+                    $head_mob_clean     =Filter::Int(clean($head_mob));
+                    $head_ph_clean      =Filter::Int(clean($head_ph));
+                    $head_email_clean   =Filter::Email(clean($head_email));
 
-                    //Tpo Details
-                    $tpo_name_clean     = clean($con, $tpo_name);
-                    $tpo_contact1_clean = clean($con, $tpo_contact1);
-                    $tpo_contact2_clean = clean($con, $tpo_contact2);
-                    $tpo_email_clean    = clean($con, $tpo_email);
+                    //Tpo DetailsFilter
+                    $tpo_name_clean     =Filter::String(clean($tpo_name));
+                    $tpo_contact1_clean =Filter::Int(clean($tpo_contact1));
+                    $tpo_contact2_clean =Filter::Int(clean($tpo_contact2));
+                    $tpo_email_clean    =Filter::Email(clean($tpo_email));
 
-                    //Additional info
-                    $num_cmp_clean      = clean($con, $num_cmp);
-                    $num_cmplab_clean   = clean($con, $num_cmplab);
-                    $min_num_cmp_clean  = clean($con, $min_num_cmp);
-                    $ispeed_clean       = clean($con, $ispeed);
-                    $hall_cap_clean     = clean($con, $hall_cap);
-                    $num_cctv_clean     = clean($con, $num_cctv);
-                    $has_fiber_clean    = clean($con, $has_fiber);
-
-                    $inst_code_check = (string) Filter::String($inst_code);
+                    //Additional infoFilter
+                    $num_cmp_clean      =Filter::Int(clean($num_cmp));
+                    $num_cmplab_clean   =Filter::Int(clean($num_cmplab));
+                    $min_num_cmp_clean  =Filter::Int(clean($min_num_cmp));
+                    $ispeed_clean       =Filter::Int(clean($ispeed));
+                    $hall_cap_clean     =Filter::Int(clean($hall_cap));
+                    $num_cctv_clean     =Filter::Int(clean($num_cctv));
+                    $has_fiber_clean    =Filter::Int(clean($has_fiber));
 
                     $findInst = $pdocon->prepare("SELECT inst_code FROM cred WHERE inst_code =':inst_code' LIMIT 1");
-                    $findInst->bindparam(':inst_code',$inst_code_check,PDO::PARAM_STR);
-                    $findInst->execute();
+                    $findInst->execute(array(':inst_code'=>$inst_code_clean));
 
                     if( (boolean) $findInst->rowCount() > 0){
                         $return['error'] = 'Already Registered';
@@ -143,8 +140,9 @@
                     else{
                         //If not exists
                         
-                        
-                        $pdocon->prepare("INSERT INTO cred(inst_name, inst_code, uid, pwd, estd, inst_accrd, inst_type, inst_affl, inst_aprv, state, district, pin, address, phone, email, website, head_name, inst_headdesg, head_contact, head_mob, head_email, tpo_name, tpo_ph, tpo_ph2, tpo_email, no_of_comp, num_cmplab, min_num_cmp, int_speed, hall_cap, fibop_lan, cctv_no, browser, inst_ip) VALUE(':name',':inst_code',':uid',':password',':estd_clean',':accrd',':inst_type',':affli',':inst_appr',':inst_state',':ins_dst',':pin',':address',':number',':email',':website',':head_name',':head_desg',':head_ph',':head_mob',':head_email',':tpo_name',':tpo_contact1',':tpo_contact2',':tpo_email',':num_cmp',':num_cmplab',':min_num_cmp',':ispeed',':hall_cap',':has_fiber',':num_cctv',':browser',':inst_ip')");
+                        $smtAdd = $pdocon->prepare("INSERT INTO cred(inst_name, inst_code, uid, pwd, estd, inst_accrd, inst_type, inst_affl, inst_aprv, state, district, pin, address, phone, email, website, head_name, inst_headdesg, head_contact, head_mob, head_email, tpo_name, tpo_ph, tpo_ph2, tpo_email, no_of_comp, num_cmplab, min_num_cmp, int_speed, hall_cap, fibop_lan, cctv_no, browser, inst_ip) VALUE(':name',':inst_code',':uid',':password',':estd',':accrd',':inst_type',':affli',':inst_appr',':inst_state',':ins_dst',':pin',':address',':number',':email',':website',':head_name',':head_desg',':head_ph',':head_mob',':head_email',':tpo_name',':tpo_contact1',':tpo_contact2',':tpo_email',':num_cmp',':num_cmplab',':min_num_cmp',':ispeed',':hall_cap',':has_fiber',':num_cctv',':browser',':inst_ip')");
+                        $smtAdd->execute(array(':name' =>,':inst_code' =>,':uid'=>,':password'=>,':estd'=>,':accrd'=>,':inst_type'=>,':affli'=>,':inst_appr'=>,':inst_state'=>,':ins_dst'=>,':pin'=>,':address'=>,':number'=>,':email'=>,':website'=>,':head_name'=>,':head_desg'=>,':head_ph'=>,':head_mob'=>,':head_email'=>,':tpo_name'=>,':tpo_contact1'=>,':tpo_contact2'=>,':tpo_email'=>,':num_cmp'=>,':num_cmplab'=>,':min_num_cmp'=>,':ispeed'=>,':hall_cap'=>,':has_fiber'=>,':num_cctv'=>,':browser'=>,':inst_ip'=>));
+
 
                         $query_reg = "INSERT INTO cred(inst_name, inst_code, uid, pwd, estd, inst_accrd, inst_type, inst_affl, inst_aprv, state, district, pin, address, phone, email, website, head_name, inst_headdesg, head_contact, head_mob, head_email, tpo_name, tpo_ph, tpo_ph2, tpo_email, no_of_comp, num_cmplab, min_num_cmp, int_speed, hall_cap, fibop_lan, cctv_no, browser, inst_ip) VALUE('".$name_clean."','".$inst_code_clean."','".$uid_clean."','".$password_clean."','".$estd_clean."','".$accrd_clean."','".$inst_type_clean."','".$affli_clean."','".$inst_appr_clean."','".$inst_state_clean."','".$ins_dst_clean."','".$pin_clean."','".$address_clean."','".$number_clean."','".$email_clean."','".$website_clean."','".$head_name_clean."','".$head_desg_clean."','".$head_ph_clean."','".$head_mob_clean."','".$head_email_clean."','".$tpo_name_clean."','".$tpo_contact1_clean."','".$tpo_contact2_clean."','".$tpo_email_clean."','".$num_cmp_clean."','".$num_cmplab_clean."','".$min_num_cmp_clean."','".$ispeed_clean."','".$hall_cap_clean."','".$has_fiber_clean."','".$num_cctv_clean."','".$browser."','".$inst_ip."') ";
                         $return['sql'] = $query_reg;
