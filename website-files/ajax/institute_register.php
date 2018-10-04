@@ -130,13 +130,9 @@
                     $findInst->bindparam(':inst_code',$inst_code_check,PDO::PARAM_STR);
                     $findInst->execute();
 
-                    $findInst->fetch(PDO::FETCH_ASSOC);
-
-                    if( (boolean) $findUser->rowCount() > 0){
+                    if( (boolean) $findInst->rowCount() > 0){
                         $return['error'] = 'Already Registered';
                     }
-
-
                     //Check is already exist
                     // $query_usr = "SELECT inst_code FROM cred WHERE inst_code ='".$inst_code_clean."' LIMIT 1";
                     // $result_usr =  mysqli_query($con,$query_usr);
