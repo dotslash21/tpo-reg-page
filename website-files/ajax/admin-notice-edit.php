@@ -26,13 +26,13 @@
                 
                 $validity           = strtotime($_POST['validity']);    //Convert validity date to timestamp
                 
-                $notice_title_clean = clean($con, $notice_title);
-                $notice_desc_clean  = clean($con, $notice_desc);
-                $validity_clean     = clean($con, $validity);
-                $sl_no_clean        = clean($con, $sl_no);
+                $notice_title_clean = Filter::String(clean($notice_title));
+                $notice_desc_clean  = Filter::String(clean($notice_desc));
+                $validity_clean     = Filter::Int(clean($validity));
+                $sl_no_clean        = Filter::Int(clean($sl_no));
                 
-                $sql_notice_edit = "UPDATE `notices` SET `title` = '".$notice_title_clean."', `content` = '".$notice_desc_clean."', `expiry_date` = '".$validity_clean."' WHERE `sl_no`= '".$sl_no_clean."'"; 
-                if(mysqli_query($con,$sql_notice_edit)){
+                $smt_notice_edit = $pdocon->prepare("UPDATE `notices` SET `title` = :notice_title, `content` = :notice_desc, `expiry_date` = :validity_clean WHERE `sl_no`= :sl_no "); 
+                if($smt_notice_edit->execute(array(':notice_title'=>$notice_title_clean, ':notice_desc'=>$notice_desc_clean, ':validity'=>$validity_clean,':sl_no'=>$sl_no_clean))){
                     $return['succ'] = "Notice Changed Successfully<br/>";
                         
                     if($_FILES['uploadfile']['name']){
@@ -47,8 +47,10 @@
                                     $temp = explode(".", $_FILES["uploadfile"]["name"]);
                                     $newfilename = time().".". end($temp);
                                     if(move_uploaded_file($_FILES['uploadfile']['tmp_name'],"../upload/notice/".$newfilename)){
-                                        $sql = "UPDATE `notices` SET `file_name` = '".$newfilename."' WHERE `title` = '".$notice_title_clean."'";
-                                        if(mysqli_query($con,$sql)){
+
+                                        $smt_file = $pdocon->prepare("UPDATE `notices` SET `file_name` = :filename WHERE `title` = :notice_title");
+                                        if($smt_file->execute(array(':filename'=>$newfilename,':notice_title'=>$notice_title_clean))){
+                                            
                                             $return['success'] = "New File uploaded Succesfully" ."<br/>";
                                             $return['fileName'] = "Uploaded file  " . $_FILES['uploadfile']['name'];
                                         }
