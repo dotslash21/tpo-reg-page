@@ -1,7 +1,8 @@
 <?php
+
     session_start();
-    $token = md5(rand());
-    $_SESSION['token'] = $token;
+    define('_incFuncwwrfbhdjrt',true);
+    require '../inc2357v3cn425073p4y53w79/func.php';
 ?>
 
 
@@ -11,7 +12,7 @@
 <head>
     <title>CPC TPO Registration</title>
     <meta charset="utf-8" />
-    <meta name="token" content = "<?php echo $token; ?>">
+    <meta name="token" content = "<?php echo XCSRF::mkcsrf('crs-sel'); ?>">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->

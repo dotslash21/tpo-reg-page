@@ -6,7 +6,9 @@
         define('_incFuncwwrfbhdjrt',true);
         require '../inc2357v3cn425073p4y53w79/func.php';
         
-        if(isset($_POST['token']) && $_POST['token'] == $_SESSION['token'] ){
+        $token = $_POST['token'];
+
+        if(XCSRF::varifycsrf('crs-sel',$token)){
             //Always return Json format
             header('Content-Type: application/json');
 
