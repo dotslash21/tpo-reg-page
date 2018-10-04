@@ -20,21 +20,21 @@
             //return array
             $return = [];
 
-            $sql_show = "SELECT DISTINCT degree from course_list";
-            $degree_list = mysqli_query($con, $sql_show);
+            $smt_show = $pdocon->prepare("SELECT DISTINCT degree from course_list");
+            $smt_show->execute();
 
             $val = '';
-            while($deg_list = mysqli_fetch_array($degree_list)){
+            while($deg_list = $smt_show->fetch(PDO::FETCH_ASSOC)){
 
                 $val .= "<ul class=\"collection with-header\">";
                 $val .=     "<li class=\"collection-header\">";
                 $val .=         "<h5>". $deg_list['degree']. "</h5>";
                 $val .=     "</li>";
 
-                $sql_show = "SELECT course_name from course_list WHERE degree = '".$deg_list['degree']."'";
-                $course_list = mysqli_query($con, $sql_show);
+                $smt_show_indv = $pdocon->prepare("SELECT course_name from course_list WHERE degree = :deg");
+                $smt_show_indv->execute(array(':deg'=>$deg_list['degree']));
 
-                while($crse_list = mysqli_fetch_array($course_list)){
+                while($crse_list = $smt_show_indv->fetch(PDO::FETCH_ASSOC)){
 
                     $val .=  "<li class=\"collection-item\">";
                     $val .=     "<i class=\"material-icons tiny\">chevron_right</i>". $crse_list['course_name'];
