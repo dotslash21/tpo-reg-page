@@ -95,7 +95,7 @@ $(document).on("submit","form#course_form",function(event) {
     }
     sessionStorage.courseLength = courseLength;
 
-    if(sessionStorage.length == (32 + (courseLength*3) + 1)){
+    if(sessionStorage.length >= ((courseLength*3) + 1)){
         //Redirect Location
         window.location = './summary.php';
     }
