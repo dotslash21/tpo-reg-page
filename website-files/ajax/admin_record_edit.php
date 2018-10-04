@@ -16,91 +16,91 @@
         //POST variables
         //Credentials
         //Basic Details
-        $name       = $_POST['name'];
-        $inst_code  = $_POST['inst_code'];
-        $uid        = $_POST['uid'];
-        $password   = $_POST['password'];
-        $estd       = $_POST['estd'];
-        $accrd      = $_POST['accrd'];
-        $inst_type  = $_POST['inst_type'];
-        $affli      = $_POST['affli'];
-        $inst_appr  = $_POST['inst_appr'];
-        $address    = $_POST['address'];
-        $pin        = $_POST['pin'];
-        $inst_state = $_POST['inst_state'];
-        $ins_dst    = $_POST['ins_dst'];
-        $number     = $_POST['number'];
-        $email      = $_POST['email'];
-        $website    = $_POST['website'];
+        $name           = $_POST['name'];
+        $inst_code      = $_POST['inst_code'];
+        $uid            = $_POST['uid'];
+        $password       = $_POST['password'];
+        $estd           = $_POST['estd'];
+        $accrd          = $_POST['accrd'];
+        $inst_type      = $_POST['inst_type'];
+        $affli          = $_POST['affli'];
+        $inst_appr      = $_POST['inst_appr'];
+        $address        = $_POST['address'];
+        $pin            = $_POST['pin'];
+        $inst_state     = $_POST['inst_state'];
+        $ins_dst        = $_POST['ins_dst'];
+        $number         = $_POST['number'];
+        $email          = $_POST['email'];
+        $website        = $_POST['website'];
 
         //Head Details
-        $head_name  = $_POST['head_name'];
-        $head_desg  = $_POST['head_desg'];
-        $head_mob   = $_POST['head_mob'];
-        $head_ph    = $_POST['head_ph'];
-        $head_email = $_POST['head_email'];
+        $head_name      = $_POST['head_name'];
+        $head_desg      = $_POST['head_desg'];
+        $head_mob       = $_POST['head_mob'];
+        $head_ph        = $_POST['head_ph'];
+        $head_email     = $_POST['head_email'];
 
         //Tpo Details
-        $tpo_name   = $_POST['tpo_name'];
-        $tpo_contact1 = $_POST['tpo_contact1'];
-        $tpo_contact2 = $_POST['tpo_contact2'];
-        $tpo_email  = $_POST['tpo_email'];
+        $tpo_name       = $_POST['tpo_name'];
+        $tpo_contact1   = $_POST['tpo_contact1'];
+        $tpo_contact2   = $_POST['tpo_contact2'];
+        $tpo_email      = $_POST['tpo_email'];
 
         //Additional info
-        $num_cmp    = $_POST['num_cmp'];
-        $num_cmplab = $_POST['num_cmplab'];
-        $min_num_cmp = $_POST['min_num_cmp'];
-        $ispeed     = $_POST['ispeed'];
-        $hall_cap   = $_POST['hall_cap'];
-        $num_cctv   = $_POST['num_cctv'];
-        $has_fiber  = $_POST['has_fiber'];
-        $token      = $_POST['token'];
+        $num_cmp        = $_POST['num_cmp'];
+        $num_cmplab     = $_POST['num_cmplab'];
+        $min_num_cmp    = $_POST['min_num_cmp'];
+        $ispeed         = $_POST['ispeed'];
+        $hall_cap       = $_POST['hall_cap'];
+        $num_cctv       = $_POST['num_cctv'];
+        $has_fiber      = $_POST['has_fiber'];
+        $token          = $_POST['token'];
 
         if(XCSRF::varifycsrf('ad-clg-edit',$token)){
 
             //escaping college crediential
             //Basic Details
-            $name_clean         = clean($name);
-            $inst_code_clean    = clean($inst_code);
-            $uid_clean          = clean($uid);
-            $estd_clean         = clean($estd);
-            $accrd_clean        = clean($accrd);
-            $inst_type_clean    = clean($inst_type);
-            $affli_clean        = clean($affli);
-            $inst_appr_clean    = clean($inst_appr);
-            $address_clean      = clean($address);
-            $pin_clean          = clean($pin);
-            $inst_state_clean   = clean($inst_state);
-            $ins_dst_clean      = clean($ins_dst);
-            $number_clean       = clean($number);
-            $email_clean        = clean($email);
-            $website_clean      = clean($website);
+            $name_clean         = Filter::String(clean($name));
+            $inst_code_clean    = Filter::String(clean($inst_code));
+            $uid_clean          = Filter::String(clean($uid));
+            $estd_clean         = Filter::String(clean($estd));
+            $accrd_clean        = Filter::String(clean($accrd));
+            $inst_type_clean    = Filter::String(clean($inst_type));
+            $affli_clean        = Filter::String(clean($affli));
+            $inst_appr_clean    = Filter::String(clean($inst_appr));
+            $address_clean      = Filter::String(clean($address));
+            $pin_clean          = Filter::String(clean($pin));
+            $inst_state_clean   = Filter::String(clean($inst_state));
+            $ins_dst_clean      = Filter::String(clean($ins_dst));
+            $number_clean       = Filter::String(clean($number));
+            $email_clean        = Filter::String(clean($email));
+            $website_clean      = Filter::String(clean($website));
 
             //Head Details
-            $head_name_clean    = clean($head_name);
-            $head_desg_clean    = clean($head_desg);
-            $head_mob_clean     = clean($head_mob);
-            $head_ph_clean      = clean($head_ph);
-            $head_email_clean   = clean($head_email);
+            $head_name_clean    = Filter::String(clean($head_name));
+            $head_desg_clean    = Filter::String(clean($head_desg));
+            $head_mob_clean     = Filter::String(clean($head_mob));
+            $head_ph_clean      = Filter::String(clean($head_ph));
+            $head_email_clean   = Filter::String(clean($head_email));
 
             //Tpo Details
-            $tpo_name_clean     = clean($tpo_name);
-            $tpo_contact1_clean = clean($tpo_contact1);
-            $tpo_contact2_clean = clean($tpo_contact2);
-            $tpo_email_clean    = clean($tpo_email);
+            $tpo_name_clean     = Filter::String(clean($tpo_name));
+            $tpo_contact1_clean = Filter::String(clean($tpo_contact1));
+            $tpo_contact2_clean = Filter::String(clean($tpo_contact2));
+            $tpo_email_clean    = Filter::String(clean($tpo_email));
 
             //Additional info
-            $num_cmp_clean      = clean($num_cmp);
-            $num_cmplab_clean   = clean($num_cmplab);
-            $min_num_cmp_clean  = clean($min_num_cmp);
-            $ispeed_clean       = clean($ispeed);
-            $hall_cap_clean     = clean($hall_cap);
-            $num_cctv_clean     = clean($num_cctv);
-            $has_fiber_clean    = clean($has_fiber);
+            $num_cmp_clean      = Filter::String(clean($num_cmp));
+            $num_cmplab_clean   = Filter::String(clean($num_cmplab));
+            $min_num_cmp_clean  = Filter::String(clean($min_num_cmp));
+            $ispeed_clean       = Filter::String(clean($ispeed));
+            $hall_cap_clean     = Filter::String(clean($hall_cap));
+            $num_cctv_clean     = Filter::String(clean($num_cctv));
+            $has_fiber_clean    = Filter::String(clean($has_fiber));
 
-            $query_update = "UPDATE cred SET estd = '".$estd_clean."', inst_accrd = '".$accrd_clean."', inst_type = '".$inst_type_clean."', inst_affl= '".$affli_clean."', inst_aprv = '".$inst_appr_clean."', state = '".$inst_state_clean."', district = '".$ins_dst_clean."', pin = '".$pin_clean."', address= '".$address_clean."', phone = '".$number_clean."', email= '".$email_clean."', website= '".$website_clean."', head_name = '".$head_name_clean."', inst_headdesg = '".$head_desg_clean."', head_contact = '".$head_ph_clean."', head_mob = '".$head_mob_clean."', head_email = '".$head_email_clean."', tpo_name = '".$tpo_name_clean."', tpo_ph = '".$tpo_contact1_clean."', tpo_ph2 = '".$tpo_contact2_clean."', tpo_email = '".$tpo_email_clean."', no_of_comp = '".$num_cmp_clean."', num_cmplab = '".$num_cmplab_clean."', min_num_cmp = '".$min_num_cmp_clean."', int_speed = '".$ispeed_clean."', hall_cap = '".$hall_cap_clean."', fibop_lan = '".$has_fiber_clean."', cctv_no = '".$num_cctv_clean."' WHERE inst_code = '".$inst_code_clean."'";
-            $return['sql'] = $query_update;
-            if(mysqli_query($con,$query_update)){
+            $smt_update = $pdocon->prepare("UPDATE cred SET estd = '".$estd_clean."', inst_accrd = '".$accrd_clean."', inst_type = '".$inst_type_clean."', inst_affl= '".$affli_clean."', inst_aprv = '".$inst_appr_clean."', state = '".$inst_state_clean."', district = '".$ins_dst_clean."', pin = '".$pin_clean."', address= '".$address_clean."', phone = '".$number_clean."', email= '".$email_clean."', website= '".$website_clean."', head_name = '".$head_name_clean."', inst_headdesg = '".$head_desg_clean."', head_contact = '".$head_ph_clean."', head_mob = '".$head_mob_clean."', head_email = '".$head_email_clean."', tpo_name = '".$tpo_name_clean."', tpo_ph = '".$tpo_contact1_clean."', tpo_ph2 = '".$tpo_contact2_clean."', tpo_email = '".$tpo_email_clean."', no_of_comp = '".$num_cmp_clean."', num_cmplab = '".$num_cmplab_clean."', min_num_cmp = '".$min_num_cmp_clean."', int_speed = '".$ispeed_clean."', hall_cap = '".$hall_cap_clean."', fibop_lan = '".$has_fiber_clean."', cctv_no = '".$num_cctv_clean."' WHERE inst_code = '".$inst_code_clean."'");
+
+            if($smt_update->execute(array(':estd'=>$estd,':accrd'=>$accrd_clean,':inst_type'=>$inst_type_clean,':affli'=>$affli_clean,':inst_appr'=>$inst_appr_clean,':inst_state'=>$inst_state_clean,':ins_dst'=>$ins_dst_clean,':pin'=>$pin_clean,':address'=>$address_clean,':number'=>$number_clean,':email'=>$email_clean,':website'=>$website_clean,':head_name'=>$head_name_clean,':head_desg'=>$head_desg_clean,':head_ph'=>$head_ph_clean,':head_mob'=>$head_mob_clean,':head_email'=>$head_email_clean,':tpo_name'=>$tpo_name_clean,':tpo_contact1'=>$tpo_contact1_clean,':tpo_contact2'=>$tpo_contact2_clean,':tpo_email'=>$tpo_email_clean,':num_cmp'=>$num_cmp_clean,':num_cmplab'=>$num_cmplab_clean,':min_num_cmp'=>$min_num_cmp_clean,':ispeed'=>$ispeed_clean,':hall_cap'=>$hall_cap_clean,':has_fiber'=>$has_fiber_clean,':num_cctv'=>$num_cctv_clean,':inst_code'=>$inst_code_clean))){
                 // college data stored
                 $return['result'] = 'Successfully Changed';
                 $return['redirect'] = './college_details.php?change='.$inst_code;
