@@ -11,7 +11,7 @@
 
     if(defined('_incFuncwwrfbhdjrt')){
 
-        error_reporting(0);
+        //error_reporting(0);
 
         define('INC',dirname(__FILE__));
 
