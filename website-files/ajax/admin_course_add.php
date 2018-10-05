@@ -25,11 +25,11 @@
         require '../inc2357v3cn425073p4y53w79/func.php';
 
         $degree = $_POST['degree'];
-        $course = $_POST['course'];
+        $course = strtoupper($_POST['course']);
         $token  = $_POST['token'];
 
         if(XCSRF::varifycsrf('ad-cs-add',$token)){
-            //If XCSRF is varified
+            //If XCSRF is verified
             
             //Escaping variables
             $degree_clean   = Filter::String(clean($degree));

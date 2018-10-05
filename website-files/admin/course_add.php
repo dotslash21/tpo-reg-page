@@ -91,7 +91,7 @@
                         </div>
 
                         <div class="input-field">
-                            <input type="text" id="course" name="course" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE FULL NAME OF THE COURSE IN UPPERCASE" pattern="[A-Z\s]+">
+                            <input type="text" id="course" name="course" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE FULL NAME OF THE COURSE IN UPPERCASE">
                             <label class="active" for="course">Enter the corresponding course</label>
                         </div>
                         
