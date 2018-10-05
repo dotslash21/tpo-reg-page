@@ -45,11 +45,18 @@
 
     <!-- MAIN FORM BODY-->
     <div class="container" id="form-container">
-        <h4>Institute Details</h4>
+        <h4>Institute Registration</h4>
         <hr>
-        <br>
+        <ul class="pagination center">
+            <li class="active"><a href="javascript: void(0)">Form 1</a></li>
+            <li class="waves-effect"><a href="javascript: void(0)">Form 2</a></li>
+            <li class="waves-effect"><a href="javascript: void(0)">Form 3</a></li>
+            <li class="waves-effect"><a href="javascript: void(0)">Form 4</a></li>
+            <li class="waves-effect"><a href="javascript: void(0)">Summary</a></li>
+        </ul>
         <div class="card">
             <div class="card-content">
+            <span class="card-title"><h5>Institute Details</h5></span><hr><br>
                 <form class="frm" id="frm">
                     <div id="msg_box" class="center-align">
                         <span class="red-text text-lighten-1"><?php echo $fallback; ?></span>

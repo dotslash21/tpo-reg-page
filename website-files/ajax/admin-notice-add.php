@@ -42,7 +42,7 @@
                 $notice_desc_clean  = Filter::String(clean($notice_desc));
                 $validity_clean     = Filter::Int(clean($validity));
 
-                $smt_notice_add = $pdocon->prepare("INSERT INTO notices(title, content, publish_date, expiry_date, added_by) VALUE(:notice_title, :notice_desc, :current_date, :validity_clean, :admin)");
+                $smt_notice_add = $pdocon->prepare("INSERT INTO notices(title, content, publish_date, expiry_date, added_by) VALUE(:notice_title, :notice_desg, :current_date, :validity, :admin)");
                 if($smt_notice_add->execute(array(':notice_title'=>$notice_title_clean,':notice_desg'=>$notice_desc_clean,':current_date'=>$current_date,':validity'=>$validity_clean, ':admin'=> $admin))){
                     $return['succ'] = "Notice Uploaded Successfully<br/>";
                     

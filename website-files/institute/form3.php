@@ -31,10 +31,18 @@
     <!-- MAIN FORM BODY-->
     <div class="container" id="form-container">
         <form class="frm">
-            <h4>Institute Features</h4>
-            <hr><br>
+            <h4>Institute Registration</h4>
+            <hr>
+            <ul class="pagination center">
+                <li class="waves-effect"><a href="javascript: void(0)">Form 1</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Form 2</a></li>
+                <li class="active"><a href="javascript: void(0)">Form 3</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Form 4</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Summary</a></li>
+            </ul>
             <div class="card">
                 <div class="card-content">
+                <span class="card-title"><h5>Institute Features</h5></span><hr><br>
                     <div class="row">
                         <div class="col s6">
                             <div class="input-field">

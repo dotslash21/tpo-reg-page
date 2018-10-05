@@ -50,11 +50,19 @@
     <main>
         <!-- MAIN FORM BODY-->
     <div class="container" id="form-container">
-        <h4>Course Addition</h4>
+        <h4>Institute Registration</h4>
         <hr>
+        <ul class="pagination center">
+            <li class="waves-effect"><a href="javascript: void(0)">Form 1</a></li>
+            <li class="waves-effect"><a href="javascript: void(0)">Form 2</a></li>
+            <li class="waves-effect"><a href="javascript: void(0)">Form 3</a></li>
+            <li class="active"><a href="javascript: void(0)">Form 4</a></li>
+            <li class="waves-effect"><a href="javascript: void(0)">Summary</a></li>
+        </ul>
         <div class="card">
             <div class="card-content">
-            <span class="grey lighten-4" style="padding: 4px; border-radius: 6px;">Please Select All The Courses Affiliated To Your College</span><br><br>
+                <span class="card-title"><h5>Course Addition</h5></span><hr><br>
+                <span class="grey lighten-4" style="padding: 4px; border-radius: 6px;">Please Select All The Courses Affiliated To Your College</span><br><br>
                 <form> 
                     <div class="input-field" id="course_sel">
                     <select multiple name="courses" id="courses_select" class="courses_select">

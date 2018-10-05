@@ -31,11 +31,18 @@
     <!-- MAIN FORM BODY-->
     <div class="container" id="form-container">
         <form class="frm">
-            <h4>Institute Head Details</h4>
-            <hr><br>
-
+            <h4>Institute Registration</h4>
+            <hr>
+            <ul class="pagination center">
+                <li class="waves-effect"><a href="javascript: void(0)">Form 1</a></li>
+                <li class="active"><a href="javascript: void(0)">Form 2</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Form 3</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Form 4</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Summary</a></li>
+            </ul>
             <div class="card">
                 <div class="card-content">
+                <span class="card-title"><h5>Institute Head Details</h5></span><hr><br>
                     <div class="input-field">
                         <input type="text" id="head_name" name="head_name" required>
                         <label class="active" for="head_name">Institute Head Name</label>
@@ -62,13 +69,10 @@
                     </div>
                 </div>
             </div>
-            
-            
-            <h4>Institute TPO Details</h4>
-            <hr><br>
 
             <div class="card">
                 <div class="card-content">
+                <span class="card-title"><h5>Institute TPO Details</h5></span><hr><br>
                     <div class="input-field">
                         <input type="text" id="tpo_name" name="tpo_name" required>
                         <label class="active" for="tpo_name">Institute TPO Name</label>
