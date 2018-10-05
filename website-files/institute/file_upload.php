@@ -89,11 +89,11 @@
         </div>
     </main>
 
-    <footer class="page-footer blue darken-3">
-        <div class="footer-copyright blue darken-4">
+    <footer class="page-footer blue darken-2" style="padding-top: 10px;">
+        <div class="footer-copyright">
             <div class="container">
-                Copyright © 2018. CPC, West Bengal
-                <a class="grey-text text-lighten-4 right" href="./dev.html">Designed at GCETTB</a>
+                Copyright &copy; 2018. CPC, West Bengal
+                <a class="grey-text text-lighten-4 right" href="http://gcettb.ac.in/home" target="_blank">Developed at GCETTB</a>
             </div>
         </div>
     </footer>
