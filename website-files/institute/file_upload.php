@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['inst_code'])){
-        header('Location: ./form.php?fallback=yes');
+        header('Location: ./1?fallback=yes');
         exit;
     }
     define('_incFuncwwrfbhdjrt',true);
