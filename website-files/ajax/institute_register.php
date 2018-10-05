@@ -177,7 +177,7 @@
                                 if($crsEntry){
                                     //return successful statements
                                     $return['result'] = 'successful';
-                                    $return['redirect'] = './file_upload.php?inst_code='.$inst_code;
+                                    $return['redirect'] = './upload';
 
                                     //add a session for file upload
                                     

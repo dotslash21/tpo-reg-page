@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteRule "1" "form.php" [NC,L]
+# RewriteRule ^1/(.*)$ "form.php?fallback=$1" [NC,L,QSA]
 RewriteRule "2" "form2.php" [NC,L]
 RewriteRule "3" "form3.php" [NC,L]
 RewriteRule "4" "course_select.php" [NC,L]
 RewriteRule "5" "summary.php" [NC,L]
+RewriteRule "upload" "file_upload.php" [NC,L]
+RewriteRule "done" "done.php" [NC,L]
