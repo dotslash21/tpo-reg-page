@@ -34,11 +34,11 @@
             <h4>Institute Registration</h4>
             <hr>
             <ul class="pagination center">
-                <li class="waves-effect"><a href="./form1.php">Form 1</a></li>
-                <li class="waves-effect"><a href="./form2.php">Form 2</a></li>
-                <li class="active"><a href="javascript : void(0)">Form 3</a></li>
-                <li class="waves-effect"><a href="./course_select.php">Form 4</a></li>
-                <li class="waves-effect"><a href="./summary.php">Summary</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Form 1</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Form 2</a></li>
+                <li class="active"><a href="javascript: void(0)">Form 3</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Form 4</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Summary</a></li>
             </ul>
             <div class="card">
                 <div class="card-content">
