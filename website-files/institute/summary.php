@@ -49,13 +49,20 @@
 
     <main>
         <div class="container" id="form-container">
-            <h4>Summary</h4>
+            <h4>Institute Registration</h4>
             <hr>
-            <br>
-            <h5>Institute Details</h5>
+            <ul class="pagination center">
+                <li class="waves-effect"><a href="./form1.php">Form 1</a></li>
+                <li class="waves-effect"><a href="./form2.php">Form 2</a></li>
+                <li class="waves-effect"><a href="./form3.php">Form 3</a></li>
+                <li class="waves-effect"><a href="./course_select.php">Form 4</a></li>
+                <li class="active"><a href=".javascript : void(0)">Summary</a></li>
+            </ul>
+            <h5>Summary</h5>
             <form id="js-register">
             <div class="card">
                 <div class="card-content">
+                    <span class="card-title"><h5>Institute Details</h5></span><hr>
                     <div class="input-field">
                         <input type="text" id="name" name="name" required disabled value="I am not editable">
                         <label for="name">Institute Name</label>
@@ -169,9 +176,9 @@
             </div>
             <br>
 
-            <h5>Institute Head Details</h5>
             <div class="card">
                 <div class="card-content">
+                    <span class="card-title"><h5>Institute Head Details</h5></span><hr>
                     <div class="input-field">
                         <input type="text" id="head_name" name="head_name" required disabled value="I am not editable">
                         <label for="head_name">Institute Head Name</label>
@@ -206,9 +213,9 @@
             </div>
             <br>
             
-            <h5>Institute TPO Details</h5>
             <div class="card">
                 <div class="card-content">
+                    <span class="card-title"><h5>Institute TPO Details</h5></span><hr>
                     <div class="input-field">
                         <input type="text" id="tpo_name" name="tpo_name" required disabled value="I am not editable">
                         <label for="tpo_name">Institute TPO Name</label>
@@ -235,9 +242,9 @@
             </div>
             <br>
             
-            <h5>Institute Features</h5>
             <div class="card">
                 <div class="card-content">
+                    <span class="card-title"><h5>Institute Features</h5></span><hr>
                 <div class="row">
                     <div class="col s6">
                         <div class="input-field">
@@ -291,9 +298,9 @@
             </div>
             <br>
 
-            <h5>Courses Offered</h5>
             <div class="card">
                 <div class="card-content">
+                    <span class="card-title"><h5>Courses Offered</h5></span><hr>
                     <ul class="collection" id="course-intake">
                         <!-- COURSES Added dynamically -->
                     </ul>
