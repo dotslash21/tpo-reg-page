@@ -1,4 +1,15 @@
 <?php
+
+    /**
+     * AjaxPage
+     * 
+     * Response- Admin Course List
+     * 
+     * Created by IntelliJ IDEA.
+     * User: Arkadip
+     * Date: 10/05/18
+     * Time: 12:40 PM 
+    */
     
     if(1){
 

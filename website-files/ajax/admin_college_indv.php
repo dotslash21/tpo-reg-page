@@ -1,5 +1,16 @@
 <?php
 
+    /**
+     * AjaxPage
+     * 
+     * Response- Admin Individual College dertails
+     * 
+     * Created by IntelliJ IDEA.
+     * User: Arkadip
+     * Date: 10/05/18
+     * Time: 12:40 PM 
+    */
+
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
         define('_incFuncwwrfbhdjrt',true);
