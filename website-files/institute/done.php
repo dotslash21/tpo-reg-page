@@ -50,8 +50,8 @@
 <body class="grey lighten-3">
     <!-- NAVIGATION -->
     <nav>
-        <div class="nav-wrapper blue darken-3 z-depth-1-half">
-            <a href="" class="brand-logo center">TPO Registration Form</a>
+        <div class="nav-wrapper blue darken-2 z-depth-1-half">
+            <div class="brand-logo"><img src="../assets/images/bannerb6434bb3.png" alt="Logo"></div>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <a href="#">Profile</a>
