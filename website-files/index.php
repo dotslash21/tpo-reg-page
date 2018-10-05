@@ -168,6 +168,12 @@
           </div>
           <div data-thumb="assets/images/slides/thumbs/img3.jpg" data-src="assets/images/slides/img3.jpg">
           </div>
+          <div data-thumb="assets/images/slides/thumbs/img3.jpg" data-src="assets/images/slides/img4.jpg">
+          </div>
+          <div data-thumb="assets/images/slides/thumbs/img3.jpg" data-src="assets/images/slides/img5.jpg">
+          </div>
+          <div data-thumb="assets/images/slides/thumbs/img3.jpg" data-src="assets/images/slides/img6.jpg">
+          </div>
         </div>
         <!-- #camera_wrap_3 -->
       </div>
@@ -301,7 +307,7 @@
           <div class="newsBox">
             <div class="thumbnail">
               <figure>
-                <img src="assets/images/news2.jpg" alt="">
+                <img src="assets/images/gallery/title1.jpg" alt="">
               </figure>
               <div class="caption maxheight2">
                 <div class="box_inner">
@@ -320,7 +326,7 @@
           <div class="newsBox">
             <div class="thumbnail">
               <figure>
-                <img src="assets/images/news3.jpg" alt="">
+                <img src="assets/images/gallery/title2.jpg" alt="">
               </figure>
               <div class="caption maxheight2">
                 <div class="box_inner">
@@ -339,7 +345,7 @@
           <div class="newsBox">
             <div class="thumbnail">
               <figure>
-                <img src="assets/images/news4.jpg" alt="">
+                <img src="assets/images/gallery/title3.jpg" alt="">
               </figure>
               <div class="caption maxheight2">
                 <div class="box_inner">
