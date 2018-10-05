@@ -135,7 +135,7 @@
             </ul>
           </li>
           <li>
-            <a href="institute/form.php">College Registration</a>
+            <a href="institute/1">College Registration</a>
           </li>
         </ul>
       </div>

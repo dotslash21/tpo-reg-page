@@ -1,7 +1,8 @@
-$("form#notice-form").submit(function (event) {
+$("form#notice-form").submit(function(event){
 
     event.preventDefault();
-    var submitbtn = $("button#submit");
+
+    var submitbtn   = $("button#submit");
     var error       = $(".error");
     var message     = $(".message");
     var message2    = $(".message2");

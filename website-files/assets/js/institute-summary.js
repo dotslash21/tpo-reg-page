@@ -333,6 +333,6 @@ $(document).submit(function(event) {
 $('button#resetbtn').click( function(){
     event.preventDefault();
     
-    var red = './form.php';
+    var red = './1';
     window.location = red;
 })

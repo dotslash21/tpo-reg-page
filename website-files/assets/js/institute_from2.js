@@ -117,13 +117,13 @@ $(document).on("submit","form.frm",function(event) {
     }
     if(sessionStorage.head_name !== undefined  && sessionStorage.head_desg !== undefined  && sessionStorage.head_mob !== undefined  && sessionStorage.head_ph !== undefined  && sessionStorage.head_email !== undefined  && sessionStorage.tpo_name !== undefined  && sessionStorage.tpo_contact1 !== undefined  && sessionStorage.tpo_email !== undefined){
         //Redirect Location
-        window.location = './form3.php';
+        window.location = './3';
     }
 })
 
 $('button#back').click( function(){
     event.preventDefault();
     
-    var red = './form.php';
+    var red = './1';
     window.location = red;
 })

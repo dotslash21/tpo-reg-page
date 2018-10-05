@@ -97,7 +97,7 @@ $(document).on("submit","form#course_form",function(event) {
 
     if(sessionStorage.length >= ((courseLength*3) + 1)){
         //Redirect Location
-        window.location = './summary.php';
+        window.location = './5';
     }
     else{
         alert('Some Error occured');
@@ -109,6 +109,6 @@ $(document).on("submit","form#course_form",function(event) {
 $('#back').click( function(){
     event.preventDefault();
     
-    var red = './form3.php';
+    var red = './3';
     window.location = red;
 })

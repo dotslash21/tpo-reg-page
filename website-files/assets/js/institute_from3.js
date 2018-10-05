@@ -94,13 +94,13 @@ $(document).on("submit","form.frm",function(event) {
     }
     if(sessionStorage.num_cmp !== undefined  && sessionStorage.num_cmplab !== undefined  && sessionStorage.min_num_cmp !== undefined  && sessionStorage.ispeed !== undefined  && sessionStorage.hall_cap !== undefined  && sessionStorage.num_cctv !== undefined  && sessionStorage.has_fiber !== undefined){
         //Redirect Location
-        window.location = './course_select.php';
+        window.location = './4';
     }
 })
 
 $('button#back').click( function(){
     event.preventDefault();
     
-    var red = './form2.php';
+    var red = './2';
     window.location = red;
 })
