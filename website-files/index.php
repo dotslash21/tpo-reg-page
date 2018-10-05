@@ -149,7 +149,7 @@
     <div class="container">
       <div class="heading-text">
         <h1 class="animated flipInY delay1">Welcome To</h1>
-        <p>Centralized Placement Committee, West Bengal (CPC)</p>
+        <p>Central Placement Committee, West Bengal (CPC)</p>
         <!--
           <a href="institute/form.php">
           <button class="btn btn-lg btn-default">
