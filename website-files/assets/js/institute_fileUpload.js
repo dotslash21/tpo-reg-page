@@ -76,5 +76,5 @@ $(document).ready(function(e){
 });
 
 $("button#complete").click( function(){
-    window.location = './done.php';
+    window.location = './done';
 })
