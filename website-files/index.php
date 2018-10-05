@@ -219,7 +219,8 @@
           </div>
           <!--icon box top -->
           <h4><span id="degree_num">--</span> Degrees Registered</h4>
-          <p>Largest pool of participating students pursuing multiple degrees.</p>
+          <p>Largest pool of participating students pursuing multiple degrees.
+            <br><br></p>
           <p>
             <a href="#">
               <em>Read More</em>
