@@ -499,7 +499,7 @@
           <div class="col-md-6 panel">
             <div class="panel-body">
               <p class="text-right">
-                Developed at<a href="./dev.html" rel="develop" target="_blank">GCETTB.</a>
+                <a href="./dev.html" rel="develop" target="_blank">Meet the Developers</a>
               </p>
             </div>
           </div>
