@@ -7,5 +7,5 @@
     setcookie('_t', null, -1, '/');
     session_regenerate_id(true);
 
-    header('Location: ./login.php?fallback=yes');
+    header('Location: ./cpcbengal_login.php?fallback=yes');
 ?>

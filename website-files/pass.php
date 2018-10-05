@@ -2,5 +2,8 @@
     function mkpass($pass){
         return password_hash($pass, PASSWORD_DEFAULT);
     }
-    echo mkpass("admin");
+    echo mkpass("cpcbengaladmin@123#0");
+
+    #cpcbengaladmin
 ?>
+

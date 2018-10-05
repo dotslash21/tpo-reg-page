@@ -33,7 +33,7 @@
                     return true;
                 }
                 else {
-                    header('Location: ./login.php?lf=yes');     
+                    header('Location: ./cpcbengal_login.php?lf=yes');     
                     return false;
                 }
             }
