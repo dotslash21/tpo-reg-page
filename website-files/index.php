@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Centralized Placement Committee, West Bengal TPO registration portal.">
+  <meta name="description" content="Central Placement Committee, West Bengal TPO registration portal.">
   <title>Welcome to CPC,West Bengal</title>
   <link rel="favicon" href="assets/images/favicon.png">
   <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
@@ -256,7 +256,7 @@
           <h2 class="title-box_primary">About Us</h2>
         </div>
         <p>
-          <span>Centralized Placement Committee, West Bengal (CPC), is a team of highly motivated and dedicated individuals from
+          <span>Central Placement Committee, West Bengal (CPC), is a team of highly motivated and dedicated individuals from
             different Institutes of West Bengal, who selflessly and relentlessly work for providing placement supports and
             opportunities to the meritorious and enthusiastic students who are mainly located in rural belts along with other
             main region where the opportunities are limited.</span>
