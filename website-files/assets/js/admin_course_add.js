@@ -16,7 +16,7 @@ $(document).ready(function () {
     });
 });
 
-$(document).on("submit", "form.add-frm", function(){
+$(document).on("submit", "form.add-frm", function(event){
     event.preventDefault();
 
     var _form = $(this);
