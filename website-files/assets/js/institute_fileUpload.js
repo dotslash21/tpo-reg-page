@@ -4,6 +4,8 @@ $(document).ready(function(e){
     $("form#file_upload").on("submit",function(event) {
         event.preventDefault();
 
+        var submitbtn = $("button#submit");
+
         var err = $(".error");
         var message = $(".message");
         var message2 = $(".message2");
@@ -31,7 +33,7 @@ $(document).ready(function(e){
             }
             if(data.fileName !== undefined){
                 message2.html(data.fileName).show();
-                $("button#submit").attr("disabled","disabled");
+                submitbtn.attr("disabled","disabled");
                 $("button#complete").show();
             }
         

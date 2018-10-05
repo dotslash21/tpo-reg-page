@@ -41,7 +41,7 @@
 
                                 $smt_file = $pdocon->prepare("UPDATE `cred` SET `upload` = :newfile WHERE `inst_code` = :inst_code");
                                 
-                                if($smt_file->execute(array(':newfile'=>$newfilename,':inst_name'=>$_SESSION['inst_code']))){
+                                if($smt_file->execute(array(':newfile'=>$newfilename,':inst_code'=>$_SESSION['inst_code']))){
                                     $return['success'] = "File uploaded Succesfully" ."<br/>";
                                     $return['fileName'] = "Uploaded file  " . $_FILES['uploadfile']['name'];
                                 }
