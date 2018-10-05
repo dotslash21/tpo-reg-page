@@ -38,7 +38,7 @@
                 <li class="active"><a href="javascript: void(0)">Form 2</a></li>
                 <li class="waves-effect"><a href="javascript: void(0)">Form 3</a></li>
                 <li class="waves-effect"><a href="javascript: void(0)">Form 4</a></li>
-                <li class="waves-effect"><a href="javascript: void(0)">Summary</a></li>
+                <li class="waves-effect"><a href="javascript: void(0)">Confirmation</a></li>
             </ul>
             <div class="card">
                 <div class="card-content">
