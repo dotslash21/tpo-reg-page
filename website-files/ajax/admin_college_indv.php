@@ -2,10 +2,10 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
-        $inst_code = Filter::String(clean($_GET['inst_code']));
-
         define('_incFuncwwrfbhdjrt',true);
         require '../inc2357v3cn425073p4y53w79/func.php';
+
+        $inst_code = Filter::String(clean($_GET['inst_code']));
 
         //Credential
         $smt_inst = $pdocon->prepare("SELECT * FROM cred WHERE inst_code = :inst_code");
@@ -13,7 +13,7 @@
         $result_arr = $smt_inst->fetch(PDO::FETCH_ASSOC);
 
         //Course
-        $smt_crs = $pdocon->prapare("SELECT * FROM college_crs WHERE college_id = :inst_code ORDER BY deg_optd ASC");
+        $smt_crs = $pdocon->prepare("SELECT * FROM college_crs WHERE college_id = :inst_code ORDER BY deg_optd ASC");
         $smt_crs->execute(array(':inst_code'=>$inst_code));
         //Fetch is below
 

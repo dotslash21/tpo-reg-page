@@ -16,16 +16,17 @@
                 if(XCSRF::varifycsrf('ad-clg-det',$token)){
                     $clgId = Filter::String(clean($_POST['clgId']));
 
-                    $smt_cred   = $pdocon->prepare("DELETE FROM `cred` WHERE inst_code = :clgId");
-                    $smt_ces    = $pdocon->prepare("DELETE FROM `college_crs` WHERE college_id = :clgId");
+                    $smt_cred   = $pdocon->prepare("DELETE FROM `cred` WHERE `inst_code` = :clgId");
+                    $smt_ces    = $pdocon->prepare("DELETE FROM `college_crs` WHERE `college_id` = :clgId123");
                     
-                    $smt_cred->execute(array(':clgid'=>$clgId));
+                    $smt_cred->execute(array(':clgId'=>$clgId));
+
                     if ($smt_cred->rowCount() > 0){
                         //Deleted the Cradnnnnn
                         $success = true;
                         $return['credential'] = "Successfully Deleted Creadentials";
                         
-                        $smt_ces->execute(array(':clgid'=>$clgId));
+                        $smt_ces->execute(array(':clgId123'=>$clgId));
                         if($smt_ces->rowCount() > 0){
                             //Deleted the courses
                             $success = true;

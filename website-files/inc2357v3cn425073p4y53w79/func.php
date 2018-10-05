@@ -26,7 +26,7 @@
         require_once INC.'/classes124vq32524s/filter2vc63p5th.php';         //Filter class
         require_once INC.'/classes124vq32524s/XCSRFgrwhgr.php';             //XCSRF class
         require_once INC.'/classes124vq32524s/admin2v645n317vc05.php';      //admin
-        require_once INC.'/db-con2vpn2b569vn.php';                          //mysqli db
+        //require_once INC.'/db-con2vpn2b569vn.php';                          //mysqli db
         require_once INC.'/functions2v3n51vn59mq07[5.php';                  //functions file
 
         $pdocon = DB::getConnection();                                      //getting connection
