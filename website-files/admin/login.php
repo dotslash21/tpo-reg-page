@@ -95,8 +95,8 @@
 <body class="grey lighten-4">
     <!-- NAVIGATION -->
     <nav>
-    <div class="nav-wrapper blue darken-3 z-depth-1-half">
-      <a href="#!" class="brand-logo center">ADMIN LOGIN PANEL</a>
+    <div class="nav-wrapper blue darken-2 z-depth-1-half">
+    <div class="brand-logo"><img src="../assets/images/bannerb6434bb3.png" alt="Logo"></div>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="../index.php">Home</a></li>
@@ -110,7 +110,7 @@
     <!-- MAIN FORM BODY-->
     <main>
         <div class="container" id="form-container">
-            <h4 style="border-left: 4px solid #616161; padding-left: 8px;" class="grey-text text-darken-2">Login</h4>
+            <h4 style="border-left: 4px solid #616161; padding-left: 8px;" class="grey-text text-darken-2">Admin Login</h4>
             <div class="card">
                 <div class="card-content">
                 <br>

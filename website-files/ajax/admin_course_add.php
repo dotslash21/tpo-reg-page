@@ -35,7 +35,7 @@
             $degree_clean   = Filter::String(clean($degree));
             $course_clean   = Filter::String(clean($course));
 
-            $smt_crs_chk = $pdodon->prepare("SELECT course_name FROM course_list where degree = :degree AND course_name= :course");
+            $smt_crs_chk = $pdocon->prepare("SELECT course_name FROM course_list where degree = :degree AND course_name= :course");
             $smt_crs_chk->execute(array(':degree'=>$degree_clean,':course'=>$course_clean));
 
             if((int) $smt_crs_chk->rowCount() > 0){

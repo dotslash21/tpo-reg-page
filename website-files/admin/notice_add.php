@@ -50,8 +50,8 @@
 <body>
     <!-- NAVIGATION -->
     <nav>
-        <div class="nav-wrapper blue darken-3 z-depth-1-half">
-            <a href="#!" class="brand-logo center">NOTICE PANEL</a>
+        <div class="nav-wrapper blue darken-2 z-depth-1-half">
+            <div class="brand-logo"><img src="../assets/images/bannerb6434bb3.png" alt="Logo"></div>
             <a href="#" data-activates="mobile-demo" class="button-collapse">
                 <i class="material-icons">menu</i>
             </a>
@@ -85,6 +85,7 @@
         <div class="container" id="form-container">
             <div class="card">
                 <div class="card-content">
+                    <span class="card-title"><h5>Add Notice</h5></span><hr><br>
                     <form id="notice-form">
                         <div class="row">
                             <div class="input-field col s12">

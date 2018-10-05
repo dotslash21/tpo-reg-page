@@ -49,8 +49,8 @@
 <body>
     <!-- NAVIGATION -->
     <nav>
-        <div class="nav-wrapper blue darken-3 z-depth-1-half">
-            <a href="#!" class="brand-logo center">ADMIN LOGIN PANEL</a>
+        <div class="nav-wrapper blue darken-2 z-depth-1-half">
+            <div class="brand-logo"><img src="../assets/images/bannerb6434bb3.png" alt="Logo"></div>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="./dashboard.php">Dashboard</a></li>
@@ -67,10 +67,10 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container z-depth-3" id="form-container">
-            <h3 class="center-align">COLLEGE DETAILS</h3>
-            <hr>
-            <br>
+        <div class="container" id="form-container">
+            <div class="card">
+                <div class="card-content">
+                <span class="card-title"><h5>College Details</h5></span><hr><br>
 
             <!-- Print Button -->
             <div class="row">
@@ -220,6 +220,10 @@
             <?php
                 }
             ?>
+                </div>
+            </div>
+
+            
         </div>
     </main>
 

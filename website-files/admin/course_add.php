@@ -44,8 +44,8 @@
 <body>
     <!-- NAVIGATION -->
     <nav>
-        <div class="nav-wrapper blue darken-3 z-depth-1-half">
-            <a href="#!" class="brand-logo center">ADMIN LOGIN PANEL</a>
+        <div class="nav-wrapper blue darken-2 z-depth-1-half">
+        <div class="brand-logo"><img src="../assets/images/bannerb6434bb3.png" alt="Logo"></div>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="./dashboard.php">Dashboard</a></li>
@@ -62,48 +62,48 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container z-depth-3" id="form-container">
-            <div>
-                <h3 class="center-align">Course Addition</h3>
-                <hr>
-                <br>
-            </div>
-            <form class="add-frm">
-                <div class="input-field" id="old_degree">
-                    <select name="degree" id="old_degree_input">
-                        <option value="" disabled selected>Choose your option</option>
-                        <?php 
-                            $smt_admin = $pdocon->prepare("SELECT DISTINCT degree FROM `course_list`");
-                            $smt_admin->execute();
-                            while ($array_admin= $smt_admin->fetch(PDO::FETCH_ASSOC)) {
-                        ?>
-                        <option value="<?php echo $array_admin['degree']; ?>"><?php echo $array_admin['degree']; ?></option>
-                        <?php
-                            }
-                        ?>
-                        <option value="Other">Other</option>
+        <div class="container" id="form-container">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title"><h5>Course Addition</h5></span><hr><br>
+                    <form class="add-frm">
+                        <div class="input-field" id="old_degree">
+                            <select name="degree" id="old_degree_input">
+                                <option value="" disabled selected>Choose your option</option>
+                                <?php 
+                                    $smt_admin = $pdocon->prepare("SELECT DISTINCT degree FROM `course_list`");
+                                    $smt_admin->execute();
+                                    while ($array_admin= $smt_admin->fetch(PDO::FETCH_ASSOC)) {
+                                ?>
+                                <option value="<?php echo $array_admin['degree']; ?>"><?php echo $array_admin['degree']; ?></option>
+                                <?php
+                                    }
+                                ?>
+                                <option value="Other">Other</option>
 
-                    </select>
-                    <label>Choose the degree</label>
-                </div>
+                            </select>
+                            <label>Choose the degree</label>
+                        </div>
 
-                <div class="input-field" id="new_degree">
-                    <input type="text" id="new_degree_input" name="degree_new" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE DEGREE NAME AS B.Tech, M.Tech, MCA, BCA, etc.">
-                    <label class="active" for="new_degree_input">Enter new degree name</label>
-                </div>
+                        <div class="input-field" id="new_degree">
+                            <input type="text" id="new_degree_input" name="degree_new" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE DEGREE NAME AS B.Tech, M.Tech, MCA, BCA, etc.">
+                            <label class="active" for="new_degree_input">Enter new degree name</label>
+                        </div>
 
-                <div class="input-field">
-                    <input type="text" id="course" name="course" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE FULL NAME OF THE COURSE IN UPPERCASE" pattern="[A-Z\s]+">
-                    <label class="active" for="course">Enter the corresponding course</label>
+                        <div class="input-field">
+                            <input type="text" id="course" name="course" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GIVE FULL NAME OF THE COURSE IN UPPERCASE" pattern="[A-Z\s]+">
+                            <label class="active" for="course">Enter the corresponding course</label>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col s10 center-align" >
+                                <div id="result"></div>
+                            </div>
+                            <div class="col s2"><button type="submit" class="btn green">Submit</button></div>
+                        </div>
+                    </form>
                 </div>
-                
-                <div class="row">
-                    <div class="col s10 center-align" >
-                        <div id="result"></div>
-                    </div>
-                    <div class="col s2"><button type="submit" class="btn green">Submit</button></div>
-                </div>
-            </form>
+            </div>    
         </div>
     </main>
 

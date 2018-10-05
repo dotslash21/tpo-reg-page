@@ -51,8 +51,8 @@
 <body>
     <!-- NAVIGATION -->
     <nav>
-        <div class="nav-wrapper blue darken-3 z-depth-1-half">
-            <a href="#!" class="brand-logo center">ADMIN LOGIN PANEL</a>
+    <div class="nav-wrapper blue darken-2 z-depth-1-half">
+        <div class="brand-logo"><img src="../assets/images/bannerb6434bb3.png" alt="Logo"></div>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#">Profile</a></li>
@@ -67,41 +67,46 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container z-depth-3" id="form-container">
-            <div class="row">
-                <div class="col l4 s12">
-                    <a href="course_add.php">
-                        <div class="card-panel valign-wrapper center-align waves-effect waves-red waves-block red lighten-3">
-                            <i class="material-icons medium">add</i>
-                            <p>ADD COURSES</p>
+        <div class="container" id="form-container">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title"><h5>Admin Dashboard</h5></span><hr>
+                    <div class="row">
+                        <div class="col l4 s12">
+                            <a href="course_add.php">
+                                <div class="card-panel valign-wrapper center-align waves-effect waves-red waves-block red lighten-3">
+                                    <i class="material-icons medium">add</i>
+                                    <p>ADD COURSES</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col l4 s12">
-                    <a href="college_details.php">
-                        <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
-                            <i class="material-icons medium">pageview</i>
-                            <p>COLLEGE DETAILS</p>
+                        <div class="col l4 s12">
+                            <a href="college_details.php">
+                                <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
+                                    <i class="material-icons medium">pageview</i>
+                                    <p>COLLEGE DETAILS</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col l4 s12">
-                    <a href="course_list.php">
-                        <div class="card-panel valign-wrapper center-align waves-effect waves-green waves-block green lighten-3">
-                            <i class="material-icons medium">format_list_numbered</i>
-                            <p>COURSE LIST</p>
+                        <div class="col l4 s12">
+                            <a href="course_list.php">
+                                <div class="card-panel valign-wrapper center-align waves-effect waves-green waves-block green lighten-3">
+                                    <i class="material-icons medium">format_list_numbered</i>
+                                    <p>COURSE LIST</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col l4 s12">
-                    <a href="notice_panel.php">
-                        <div class="card-panel valign-wrapper center-align waves-effect waves-blue waves-block blue lighten-3">
-                            <i class="material-icons medium">note_add</i>
-                            <p>NOTICE</p>
+                    </div>
+                    <div class="row">
+                        <div class="col l4 s12">
+                            <a href="notice_panel.php">
+                                <div class="card-panel valign-wrapper center-align waves-effect waves-blue waves-block blue lighten-3">
+                                    <i class="material-icons medium">note_add</i>
+                                    <p>NOTICE</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>   
                 </div>
             </div>
         </div>

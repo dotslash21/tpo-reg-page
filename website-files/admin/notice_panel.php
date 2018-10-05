@@ -51,8 +51,8 @@
 <body>
     <!-- NAVIGATION -->
     <nav>
-        <div class="nav-wrapper blue darken-3 z-depth-1-half">
-            <a href="#!" class="brand-logo center">NOTICE PANEL</a>
+        <div class="nav-wrapper blue darken-2 z-depth-1-half">
+            <div class="brand-logo"><img src="../assets/images/bannerb6434bb3.png" alt="Logo"></div>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="./dashboard.php">Dashboard</a></li>
@@ -69,23 +69,28 @@
 
     <!-- MAIN FORM BODY-->
     <main>
-        <div class="container z-depth-3" id="form-container">
-            <div class="row">
-                <div class="col l4 s12">
-                    <a href="notice_add.php">
-                        <div class="card-panel valign-wrapper center-align waves-effect waves-red waves-block red lighten-3">
-                            <i class="material-icons medium">add</i>
-                            <p>ADD NOTICE</p>
+        <div class="container" id="form-container">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title"><h5>Notice Panel</h5></span><hr><br>
+                        <div class="row">
+                        <div class="col l4 s12">
+                            <a href="notice_add.php">
+                                <div class="card-panel valign-wrapper center-align waves-effect waves-red waves-block red lighten-3">
+                                    <i class="material-icons medium">add</i>
+                                    <p>ADD NOTICE</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <div class="col l4 s12">
-                    <a href="notice_view.php">
-                    <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
-                            <i class="material-icons medium">format_list_numbered</i>
-                            <p>VIEW NOTICES</p>
+                        <div class="col l4 s12">
+                            <a href="notice_view.php">
+                            <div class="card-panel valign-wrapper center-align waves-effect waves-orange waves-block orange lighten-3">
+                                    <i class="material-icons medium">format_list_numbered</i>
+                                    <p>VIEW NOTICES</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
