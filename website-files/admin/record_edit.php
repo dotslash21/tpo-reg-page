@@ -467,9 +467,12 @@
             }
 
             if($("#uid-<?php echo $result_array['inst_code']; ?>").length == 0){
-                $.get("../ajax/admin_college_indv_crs.php?inst_code=<?php echo $result_array['inst_code']; ?>", function(data){
-                    $("#courses-area").append(data.value);
-                }, "json")
+                $.get("../ajax/admin_college_indv_crs.php?inst_code=<?php echo $result_array['inst_code']; ?>",
+                    function(data){
+                        $("#courses-area").append(data.value);
+                    },
+                    "json"
+                )
             }
 
             $('select').material_select();
