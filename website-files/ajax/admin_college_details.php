@@ -26,57 +26,65 @@
             $token = $_POST['token'];
             if(XCSRF::varifycsrf('ad-clg-det',$token)){
 
-                $post_degree = Filter::String(clean($_POST['degree']));
-                $post_course = Filter::String(clean($_POST['course']));
+                $post_degree = $_POST['degree'];
+                $post_course = $_POST['course'];
 
-                //Degree SQL generator when course value changes
+                //Degree SQL generator and query array creater when course value changes
                 $crs_arr = array();
                 if($post_course == 'all'){
                     $sql_degree = "SELECT DISTINCT `degree` FROM `course_list`";
                 }
                 else {
-                    $crs_count  = $_POST['courseCount'];
+                    $crs_count  = Filter::Int(clean($_POST['courseCount']));
 
                     $i = 0;
-                    $sql_degree = "SELECT DISTINCT `degree` FROM `course_list` WHERE `course_name` IN (".$i."";
+                    $sql_degree = "SELECT DISTINCT `degree` FROM `course_list` WHERE `course_name` IN ( ?";
                     $i++;
                     while($i < $crs_count) {
-                        $sql_degree .= ",".$i."";
+                        $sql_degree .= ", ?";
                         $i++;
                     }
-                    for ($i=0; $i < $crs_count ; $i++) { 
-                        array_push($crs_arr,$post_course[$i]);
+                    $sql_degree .= ")";
+
+                    //Taking Course input for degree manipualtion
+                    for ($i=0; $i < $crs_count ; $i++) {
+                        $post_course = Filter::String(clean($post_course[$i]));
+                        array_push($crs_arr,$post_course);
                     }
 
-                    $sql_degree .= ")";
                 }
 
-                //Course SQL generator when degree value changes
+                //Course SQL generator and query array creater when degree value changes 
                 $deg_arr = array();
                 if($post_degree == 'all'){
                     $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`";
                 }
                 else {
-                    $deg_count  = $_POST['degreeCount'];
+                    $deg_count  = Filter::Int(clean($_POST['degreeCount']));
 
                     $j = 0;
-                    $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`WHERE `degree` IN (".$j."";
+                    $sql_course = "SELECT DISTINCT `course_name` FROM `course_list`WHERE `degree` IN ( ?";
                     $j++;
 
                     while($j < $deg_count) {
-                        $sql_degree .= ",".$j."";
+                        $sql_degree .= ", ?";
                         $j++;
                     }
-                    for ($j=0; $j < $deg_count ; $j++) { 
-                        array_push($deg_arr,$post_degree[$j]);
+                    $sql_course .= ")";
+
+                    for ($j=0; $j < $deg_count ; $j++) {
+                        $post_degree = Filter::String(clean($post_degree[$j])); 
+                        array_push($deg_arr,$post_degree);
                     }
 
-                    
-                    $sql_course .= ")";
                 }
-                //Degree addition
-
-                if(isset($_POST['sendDegree']) && $_POST['sendDegree'] == 1){
+                /**
+                 * Degree addition
+                 * Getting SQL as $sql_degree
+                 * Getting Courses as array $crs_arr
+                 * return degree if SendDegree is on
+                */
+                if(isset($_POST['sendDegree']) && Filter::Int($_POST['sendDegree']) == 1){
                     $degree = '';
                     $smt_degree = $pdocon->prepare($sql_degree);
                     $smt_degree->execute($crs_arr);
@@ -87,9 +95,13 @@
                     $return['degree'] = $degree;
                 }
 
-                //Course addition
-
-                if(isset($_POST['sendCourse']) && $_POST['sendCourse'] == 1){
+                /**
+                 * Course addition
+                 * Getting SQL as $sql_course
+                 * Getting Degrees as array $deg_arr
+                 * return degree if SendCourse is on
+                */
+                if(isset($_POST['sendCourse']) && Filter::Int($_POST['sendCourse']) == 1){
                     $course = '';
                     $smt_course = $pdocon->prepare($sql_course);
                     $smt_course->execute($deg_arr);
