@@ -95,7 +95,15 @@ $(document).on("submit","form#course_form",function(event) {
     }
     sessionStorage.courseLength = courseLength;
 
-    if(sessionStorage.length >= ((courseLength*3) + 1)){
+    if($.cookie("_crsSel") !== undefined){
+        sessionStorage.token4 = $.cookie("_crsSel");
+    }
+    else {
+        alert('Enable your cookies and Refreash the page');
+        return false;
+    }
+
+    if(sessionStorage.length >= ((courseLength*3) + 2)){
         //Redirect Location
         window.location = './5';
     }
