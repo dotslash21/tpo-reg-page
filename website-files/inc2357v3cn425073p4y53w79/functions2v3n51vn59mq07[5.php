@@ -17,7 +17,10 @@ if(defined('_functionsqn72v3[701v[c124[m1c')){
         return htmlspecialchars($var,ENT_QUOTES);
     }
 
-    //Function for getting users ip
+    /**
+     * This function gets the current client's ip address
+     * 
+     */
     function get_client_ip() {
         $ipaddress = '';
         if (isset($_SERVER['HTTP_CLIENT_IP']))
@@ -35,7 +38,7 @@ if(defined('_functionsqn72v3[701v[c124[m1c')){
         else
             $ipaddress = 'UNKNOWN';
         return $ipaddress;
-    } 
+    }
 }
 
 ?>
