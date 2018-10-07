@@ -54,7 +54,7 @@
                         // echo "\t".$sql_intake."\t";
                         $smt_intake->execute(array(':inst_code'=>$result_arr['inst_code'],':course_list'=>$course_list_keys[$i],':course_name'=>$cours));
                         if($smt_intake->rowCount() > 0){
-                            echo mysqli_fetch_array($result_crs)['intake'] . "\t";
+                            echo $smt_intake->fetch(PDO::FETCH_ASSOC)['intake'] . "\t";
                         }
                         else echo "\t";
                     }
