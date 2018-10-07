@@ -45,6 +45,7 @@ $(document).on("submit","form.frm",function(event) {
         hall_cap:       $("input[name='hall_cap']", _form).val(),
         num_cctv:       $("input[name='num_cctv']", _form).val(),
         has_fiber:      $("input[name='has_fiber']", _form).val(),
+        token3:         $.cookie("_form3")
     };
 
     //Instute INFO
@@ -72,19 +73,24 @@ $(document).on("submit","form.frm",function(event) {
         alert("Please enter Total mun of CCTV");
         return false;
     }
+    else if(dataObj.token3 === undefined){
+        alert('Enable your cookies and Refreash the page');
+        return false;
+    }
 
     //Storing in sessionStorage
     if(typeof(Storage) !== undefined){
         //When SessionStorage is avaliable
 
         //Instute INFO
-        sessionStorage.num_cmp = dataObj.num_cmp;
-        sessionStorage.num_cmplab = dataObj.num_cmplab;
-        sessionStorage.min_num_cmp = dataObj.min_num_cmp;
-        sessionStorage.ispeed = dataObj.ispeed;
-        sessionStorage.hall_cap = dataObj.hall_cap;
-        sessionStorage.num_cctv = dataObj.num_cctv;
-        sessionStorage.has_fiber = dataObj.has_fiber;
+        sessionStorage.num_cmp      = dataObj.num_cmp;
+        sessionStorage.num_cmplab   = dataObj.num_cmplab;
+        sessionStorage.min_num_cmp  = dataObj.min_num_cmp;
+        sessionStorage.ispeed       = dataObj.ispeed;
+        sessionStorage.hall_cap     = dataObj.hall_cap;
+        sessionStorage.num_cctv     = dataObj.num_cctv;
+        sessionStorage.has_fiber    = dataObj.has_fiber;
+        sessionStorage.token3       = dataObj.token3; 
 
     }
     else{
