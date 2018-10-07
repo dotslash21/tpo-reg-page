@@ -135,6 +135,7 @@ $(document).on("submit","form.frm",function(event) {
         number:         $("input[name='number']", _form).val(),
         email:          $("input[name='email']", _form).val(),
         website:        $("input[name='website']", _form).val(),
+        token1:         $.cookie('_form1')
     };
 
     //All varification and helper massage done
@@ -202,28 +203,32 @@ $(document).on("submit","form.frm",function(event) {
         alert("Please enter a Website");
         return false;
     }
+    else if(dataObj.token1 === undefined){
+        alert('Enable your cookies and Refreash the page');
+    }
 
     //Storing in sessionStorage
     if(typeof(Storage) !== undefined){
         //When SessionStorage is avaliable
 
         //Basic Institute Details
-        sessionStorage.name = dataObj.name;
-        sessionStorage.inst_code = dataObj.inst_code;
-        sessionStorage.uid = dataObj.uid;
-        sessionStorage.password = dataObj.password;
-        sessionStorage.estd = dataObj.estd;
-        sessionStorage.accrd = dataObj.accrd;
-        sessionStorage.inst_type = dataObj.inst_type;
-        sessionStorage.affli = dataObj.affli;
-        sessionStorage.inst_appr = dataObj.inst_appr;
-        sessionStorage.address = dataObj.address;
-        sessionStorage.pin = dataObj.pin;
-        sessionStorage.inst_state = dataObj.inst_state;
-        sessionStorage.ins_dst = dataObj.ins_dst;
-        sessionStorage.number = dataObj.number;
-        sessionStorage.email = dataObj.email;
-        sessionStorage.website = dataObj.website;
+        sessionStorage.name         = dataObj.name;
+        sessionStorage.inst_code    = dataObj.inst_code;
+        sessionStorage.uid          = dataObj.uid;
+        sessionStorage.password     = dataObj.password;
+        sessionStorage.estd         = dataObj.estd;
+        sessionStorage.accrd        = dataObj.accrd;
+        sessionStorage.inst_type    = dataObj.inst_type;
+        sessionStorage.affli        = dataObj.affli;
+        sessionStorage.inst_appr    = dataObj.inst_appr;
+        sessionStorage.address      = dataObj.address;
+        sessionStorage.pin          = dataObj.pin;
+        sessionStorage.inst_state   = dataObj.inst_state;
+        sessionStorage.ins_dst      = dataObj.ins_dst;
+        sessionStorage.number       = dataObj.number;
+        sessionStorage.email        = dataObj.email;
+        sessionStorage.website      = dataObj.website;
+        sessionStorage.token1       = dataObj.token1;
 
     }
     else{
