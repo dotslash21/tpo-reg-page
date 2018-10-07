@@ -237,7 +237,23 @@ $(document).on("submit","form.frm",function(event) {
         alert("Turn on Cookies");
         return false;
     }
-    if(sessionStorage.name !== undefined  && sessionStorage.inst_code !== undefined  && sessionStorage.uid !== undefined  && sessionStorage.password !== undefined  && sessionStorage.estd !== undefined  && sessionStorage.accrd !== undefined  && sessionStorage.inst_type !== undefined  && sessionStorage.affli !== undefined  && sessionStorage.inst_appr !== undefined  && sessionStorage.address !== undefined  && sessionStorage.pin !== undefined  && sessionStorage.inst_state !== undefined  && sessionStorage.ins_dst !== undefined  && sessionStorage.number !== undefined  && sessionStorage.email !== undefined  && sessionStorage.website !== undefined){
+    if(sessionStorage.name !== undefined  && 
+        sessionStorage.inst_code !== undefined  && 
+        sessionStorage.uid !== undefined  && 
+        sessionStorage.password !== undefined  && 
+        sessionStorage.estd !== undefined  && 
+        sessionStorage.accrd !== undefined  && 
+        sessionStorage.inst_type !== undefined  && 
+        sessionStorage.affli !== undefined  && 
+        sessionStorage.inst_appr !== undefined  && 
+        sessionStorage.address !== undefined  && 
+        sessionStorage.pin !== undefined  && 
+        sessionStorage.inst_state !== undefined  && 
+        sessionStorage.ins_dst !== undefined  && 
+        sessionStorage.number !== undefined  && 
+        sessionStorage.email !== undefined  && 
+        sessionStorage.website !== undefined &&
+        sessionStorage.token1 !== undefined){
         //Redirect Location
         window.location = './2';
     }

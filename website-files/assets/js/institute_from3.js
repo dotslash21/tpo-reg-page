@@ -98,7 +98,15 @@ $(document).on("submit","form.frm",function(event) {
         alert("Turn on Cookies");
         return false;
     }
-    if(sessionStorage.num_cmp !== undefined  && sessionStorage.num_cmplab !== undefined  && sessionStorage.min_num_cmp !== undefined  && sessionStorage.ispeed !== undefined  && sessionStorage.hall_cap !== undefined  && sessionStorage.num_cctv !== undefined  && sessionStorage.has_fiber !== undefined){
+    if(sessionStorage.num_cmp !== undefined  &&
+        sessionStorage.num_cmplab !== undefined  &&
+        sessionStorage.min_num_cmp !== undefined  && 
+        sessionStorage.ispeed !== undefined  && 
+        sessionStorage.hall_cap !== undefined  && 
+        sessionStorage.num_cctv !== undefined  && 
+        sessionStorage.has_fiber !== undefined &&
+        sessionStorage.token3 !== undefined){
+            
         //Redirect Location
         window.location = './4';
     }

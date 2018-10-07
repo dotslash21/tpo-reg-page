@@ -122,7 +122,16 @@ $(document).on("submit","form.frm",function(event) {
         alert("Turn on Cookies");
         return false;
     }
-    if(sessionStorage.head_name !== undefined  && sessionStorage.head_desg !== undefined  && sessionStorage.head_mob !== undefined  && sessionStorage.head_ph !== undefined  && sessionStorage.head_email !== undefined  && sessionStorage.tpo_name !== undefined  && sessionStorage.tpo_contact1 !== undefined  && sessionStorage.tpo_email !== undefined){
+    if(sessionStorage.head_name !== undefined  &&
+        sessionStorage.head_desg !== undefined  &&
+        sessionStorage.head_mob !== undefined  && 
+        sessionStorage.head_ph !== undefined  && 
+        sessionStorage.head_email !== undefined  && 
+        sessionStorage.tpo_name !== undefined  && 
+        sessionStorage.tpo_contact1 !== undefined  && 
+        sessionStorage.tpo_email !== undefined &&
+        sessionStorage.token2 !== undefined){
+            
         //Redirect Location
         window.location = './3';
     }
