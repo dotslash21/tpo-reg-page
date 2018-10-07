@@ -54,6 +54,7 @@ $(document).on("submit","form.frm",function(event) {
         tpo_contact1:   $("input[name='tpo_contact1']", _form).val(),
         tpo_contact2:   $("input[name='tpo_contact2']", _form).val(),
         tpo_email:      $("input[name='tpo_email']", _form).val(),
+        token2:         $.cookie("_form2")
     };
 
     // Institute head details
@@ -91,23 +92,29 @@ $(document).on("submit","form.frm",function(event) {
         alert("Please enter a Institute TPO Email ID");
         return false;
     }
+    else if(dataObj.token2 === undefined){
+        alert('Enable your cookies and Refreash the page');
+        return false;
+    }
 
     //Storing in sessionStorage
     if(typeof(Storage) !== undefined){
         //When SessionStorage is avaliable
 
         // Institute head details
-        sessionStorage.head_name = dataObj.head_name;
-        sessionStorage.head_desg = dataObj.head_desg;
-        sessionStorage.head_mob = dataObj.head_mob;
-        sessionStorage.head_ph = dataObj.head_ph;
-        sessionStorage.head_email = dataObj.head_email;
+        sessionStorage.head_name    = dataObj.head_name;
+        sessionStorage.head_desg    = dataObj.head_desg;
+        sessionStorage.head_mob     = dataObj.head_mob;
+        sessionStorage.head_ph      = dataObj.head_ph;
+        sessionStorage.head_email   = dataObj.head_email;
 
         // Institute TPO details
-        sessionStorage.tpo_name = dataObj.tpo_name;
+        sessionStorage.tpo_name     = dataObj.tpo_name;
         sessionStorage.tpo_contact1 = dataObj.tpo_contact1;
         sessionStorage.tpo_contact2 = dataObj.tpo_contact2;
-        sessionStorage.tpo_email = dataObj.tpo_email;
+        sessionStorage.tpo_email    = dataObj.tpo_email;
+
+        sessionStorage.token2       = dataObj.token2;
 
     }
     else{

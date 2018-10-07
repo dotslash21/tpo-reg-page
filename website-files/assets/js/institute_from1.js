@@ -205,6 +205,7 @@ $(document).on("submit","form.frm",function(event) {
     }
     else if(dataObj.token1 === undefined){
         alert('Enable your cookies and Refreash the page');
+        return false;
     }
 
     //Storing in sessionStorage
