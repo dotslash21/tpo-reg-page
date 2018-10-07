@@ -39,6 +39,10 @@ if(defined('_functionsqn72v3[701v[c124[m1c')){
             $ipaddress = 'UNKNOWN';
         return $ipaddress;
     }
+
+    function setFormCookie($cookie_name){
+        setcookie($cookie_name,XCSRF::mkcsrf($cookie_name),0,'/',null,false,false);
+    }
 }
 
 ?>
