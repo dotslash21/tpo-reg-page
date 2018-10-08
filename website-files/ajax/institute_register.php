@@ -99,7 +99,7 @@
                     $name_clean         =Filter::String(clean($name));
                     $inst_code_clean    =Filter::Int(clean($inst_code));
                     $uid_clean          =Filter::String(clean($uid));
-                    $password_clean     =Filter::String(clean($password));   //Hashing the Password
+                    $password_clean     =Filter::String(clean($password));
                     $estd_clean         =Filter::Int(clean($estd));
                     $accrd_clean        =Filter::String(clean($accrd));
                     $inst_type_clean    =Filter::String(clean($inst_type));
@@ -211,4 +211,3 @@
         echo json_encode($return, JSON_PRETTY_PRINT);
         exit;   
     }//Post req
-?>

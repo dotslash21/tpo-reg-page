@@ -16,7 +16,7 @@
 
 
 
-        class DB{
+        class PDODB{
             
             protected static $con;
 

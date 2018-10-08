@@ -29,8 +29,7 @@
         //require_once INC.'/db-con2vpn2b569vn.php';                          //mysqli db
         require_once INC.'/functions2v3n51vn59mq07[5.php';                  //functions file
 
-        $pdocon = DB::getConnection();                                      //getting connection
+        $pdocon = PDODB::getConnection();                                      //getting connection
     }
 
     
-?>
