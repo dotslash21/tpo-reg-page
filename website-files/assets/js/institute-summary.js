@@ -116,7 +116,11 @@ $(document).submit(function(event) {
         has_fiber   : $("input[name='has_fiber']").val(),
         courseLength: sessionStorage.courseLength,
         token       : $("meta[name='X-CSRF']").attr("content"),
-        g_recaptcha_response: grecaptcha.getResponse()
+        g_recaptcha_response: grecaptcha.getResponse(),
+        token1      : sessionStorage.token1,
+        token2      : sessionStorage.token2,
+        token3      : sessionStorage.token3,
+        token4      : sessionStorage.token4
     };
 
     //All varification and helper massage done
@@ -247,6 +251,14 @@ $(document).submit(function(event) {
     }
     else if(dataObj.courseLength ===  undefined){
         alert("Course Details are not added Correctly");
+        return false;
+    }
+    else if(sessionStorage.token1 === undefined ||
+        sessionStorage.token2 === undefined ||
+        sessionStorage.token3 === undefined ||
+        sessionStorage.token4 === undefined){
+
+        alert("Enable your cookies and Refreash the page");
         return false;
     }
     //Hide the reset btn ehen submitting, if it passes the above text

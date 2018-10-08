@@ -254,6 +254,7 @@ $(document).on("submit","form.frm",function(event) {
         sessionStorage.email !== undefined  && 
         sessionStorage.website !== undefined &&
         sessionStorage.token1 !== undefined){
+            
         //Redirect Location
         window.location = './2';
     }

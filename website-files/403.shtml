@@ -7,7 +7,7 @@
         <title>403 Error!</title>
 
         <link href='https://fonts.googleapis.com/css?family=Anton|Passion+One|PT+Sans+Caption' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="./assets/css/404.css" async>
+        <link rel="stylesheet" href="./assets/css/404.css">
 
     </head>
     <body>

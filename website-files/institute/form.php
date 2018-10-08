@@ -68,39 +68,39 @@
                         <label class="active" for="name">Institute Name</label>
                     </div>
                     <div class="row">
-                        <div class="col s8">
+                        <div class="col s12 m8 l8">
                             <div class="input-field">
                                 <input type="number" id="inst_code" name="inst_code" required min="0">
                                 <label class="active" for="inst_code">Institute code</label>
                             </div>
                         </div>
-                        <div class="col s4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
+                        <div class="col s12 m8 l4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
                             <div class="grey lighten-4" style="border-radius: 8px; text-align: center;">
                                 <span class="err-inst_code" style="">&nbsp;</span>
                             </div>
                         </div>
                     </div>
 		    	    <div class="row">
-                        <div class="col s8">
+                        <div class="col s12 m8 l8">
                             <div class="input-field">
                                 <input type="text" id="uid" name="uid" required>
                                 <label class="active" for="uid">Institute User ID</label>
                             </div>
                         </div>
-                        <div class="col s4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
+                        <div class="col s12 m4 l4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
                             <div class="grey lighten-4" style="border-radius: 8px; text-align: center;">
                                 <span class="err-uid" style="">&nbsp;</span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <input type="password" id="password" name="password" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Must be of atleast 8 characters long">
                                 <label class="active" for="password">Password</label>
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <input type="number" id="estd" name="estd" min="1800" class="validate" required>
                                 <label class="active" for="estd">Institute Establishment Year</label>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <select name="accrd" id="accrd" required>
                                     <option value="" disabled selected>Choose your option</option>
@@ -121,7 +121,7 @@
                                 <label>Institute Accriditated By</label>
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <select name="inst_type" id="inst_type" required>
                                     <option value="" disabled selected>Choose your option</option>
@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <select name="affli" id="affli" required>
                                     <option value="" disabled selected>Choose your option</option>
@@ -146,7 +146,7 @@
                                 <label>Institute Affiliated By</label>
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <select name="inst_appr" id="inst_appr" required>
                                     <option value="" disabled selected>Choose your option</option>
@@ -163,13 +163,13 @@
                         <label class="active" for="address">Institute Address</label>
                     </div>
                     <div class="row">
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <input type="number" id="pin" name="pin" pattern="\d{6}" min="0" required>
                                 <label for="pin" class="active">Institute PIN</label>
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <select name="inst_state" id="inst_state" required>
                                     <?php include('../inc2357v3cn425073p4y53w79/inst_state.php'); ?>
@@ -179,7 +179,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field" id="district_txt">
                                 <input type="text" id="ins_dst_txt" name="ins_dst" class="">
                                 <label class="active" for="ins_dst_txt">Institute District</label>
@@ -192,7 +192,7 @@
                                 <label for="ins_dst_sel">Institute District</label>
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <input type="number" id="number" name="number" class="validate" min="0" required>
                                 <label for="number" class="active">Institute Contact Number</label>
@@ -200,13 +200,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <input type="email" id="email" name="email" class="validate" required>
                                 <label class="active" for="email">Institute E-mail</label>
                             </div>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6 l6">
                             <div class="input-field">
                                 <input type="text" id="website" name="website" class="validate" required>
                                 <label class="active" for="website">Institute Website</label>
