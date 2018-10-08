@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * @class DB
+     * @class PDODB
      * 
      * PDO database Connection done here
      * 
@@ -13,8 +13,6 @@
 
     //IF there is no constant defined called _CONFIG_, do not load file
     if(defined('_CON1swys135em856uv346_')){
-
-
 
         class PDODB{
             
@@ -66,4 +64,3 @@
     else {
         header('Location: .../404.php'); 
     }
-?>

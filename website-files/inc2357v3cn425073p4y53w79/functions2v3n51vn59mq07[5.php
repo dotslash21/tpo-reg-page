@@ -40,6 +40,9 @@ if(defined('_functionsqn72v3[701v[c124[m1c')){
         return $ipaddress;
     }
 
+    /**
+     * @param $cookie_name
+     */
     function setFormCookie($cookie_name){
 
         if(isset($_COOKIE[$cookie_name])){
@@ -47,6 +50,46 @@ if(defined('_functionsqn72v3[701v[c124[m1c')){
         }
         else{
             setcookie($cookie_name,XCSRF::mkcsrf($cookie_name),0,'/',null,false,false);
+        }
+    }
+
+    function instTokenMatch(Int $formindex,String $tokenValue){
+        switch ($formindex){
+            case 1:
+                $formName = '_form1';
+                break;
+
+            case 2:
+                $formName = '_form2';
+                break;
+
+            case 3:
+                $formName = '_form3';
+                break;
+
+            case 4:
+                $formName = '_crsSel';
+                break;
+
+            default:
+                return false;
+        }
+
+        if(isset($tokenValue)){
+            if(hash_equals($_SESSION[$formName],$tokenValue)){
+                if(hash_equals($_COOKIE[$formName], $tokenValue)){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
         }
     }
 }
