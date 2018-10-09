@@ -85,17 +85,20 @@
                     }
                     //File Upload
                 }
-            
+                else {
+                    $return['error'] = "<span style=\"color: #EA4335;\">Failed to save the Notice</span>";
+                }
             }
-
-            echo json_encode($return, JSON_PRETTY_PRINT);
-            exit;
+            else {
+                $return['error'] = "<span style=\"color: #EA4335;\">CSRF token missing or mismatched</span>";
+            }
         }
         else{
-            header('Location: ../404.php');
+            $return['error'] = "<span style=\"color: #EA4335;\">Admin is not logged in</span>";
         }
+        echo json_encode($return, JSON_PRETTY_PRINT);
+        exit;
     }
     else{
         header('Location: ../404.php');
     }
-?>
