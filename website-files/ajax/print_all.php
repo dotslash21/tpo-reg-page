@@ -27,26 +27,41 @@
                 $degree = $_POST['degree'];
                 $course = $_POST['course'];
                 if(XCSRF::varifycsrf('ad-clg-det',$token)){
-    
+
                     //Always return Json format
                     header('Content-Type: application/json');
 
                     $return['done'] = XCSRF::mkcsrf('ad-print-all');
 
+                    $re_deg = array();
+                    $return['course'] = array();
+
+
                     if($degree == 'all'){
-                        $de_return = "degree[]=". $degree;
+                        $return['degree']['1'] = "degree[]=". $degree;
+                        $return['degree']['count'] = 1;
                     }
                     else {
                         $de_count = count($degree);
                         $de_return = '';
+                        $return['degree']['count'] = $de_count;
                         for ($i=0; $i < $de_count; $i++) { 
-                            $de_return .= "degree[]=". $degree[$i];
+                            $return['degree'][$i] = "degree[]=". Filter::String(clean($degree[$i]));
                         }
                     }
 
-                    $return['degree'] = '';
-                    $return['course'] = '';
-
+                    if($course == 'all'){
+                        $return['course']['1'] = "course[]=". $course;
+                        $return['course']['count'] = 1;
+                    }
+                    else {
+                        $crs_count = count($course);
+                        $crs_return = '';
+                        $return['course']['count'] = $crs_count;
+                        for ($i=0; $i < $crs_count; $i++) {
+                            $return['course'][$i] = "course[]=". Filter::String(clean($course[$i]));
+                        }
+                    }
                 }
                 else{
                     $return['error'] = "Not varfied";
@@ -57,7 +72,7 @@
             }
         }
         else {
-            $return['error'] = "Check is not varified";
+            $return['error'] = "Check is not verified";
         }
 
         echo json_encode($return, JSON_PRETTY_PRINT);
