@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
                 if ($degree == 'all') {
-                    $return['degree']['1'] = "degree[]=" . $degree;
+                    $return['degree']['0'] = "degree[]=" . $degree;
                     $return['degree']['count'] = 1;
                 } else {
                     $de_count = count($degree);
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
 
                 if ($course == 'all') {
-                    $return['course']['1'] = "course[]=" . $course;
+                    $return['course']['0'] = "course[]=" . $course;
                     $return['course']['count'] = 1;
                 } else {
                     $crs_count = count($course);
