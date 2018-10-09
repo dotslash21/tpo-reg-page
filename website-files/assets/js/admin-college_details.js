@@ -1,4 +1,4 @@
-var dData = {
+let dData = {
     token: $("meta[name='token']").attr('content'),
     degree: 'all',
     course: 'all',
@@ -8,14 +8,13 @@ var dData = {
     sendCourse: 1
 }
 
-var value_degree = 0;
-var value_course = 0;
+let value_degree = 0;
+let value_course = 0;
 
 $(document).ready(function () {
 
     //Ajaxing function for degree and course select field manipulation
     function ajaxxx(dx) {
-        console.log(dx);
         $.ajax({
             type: 'POST',
             url: '../ajax/admin_college_details.php',
@@ -25,13 +24,13 @@ $(document).ready(function () {
         })
             .done(function (data) {
                 if (data.degree !== undefined) {
-                    var deg = `<option value="" disabled selected>ALL</option>` + data.degree;
+                    let deg = `<option value="" disabled selected>ALL</option>` + data.degree;
                     $("#degree_sel").empty();
                     $("#degree_sel").append(deg);
                     $("#degree_sel").trigger('contentChangedDeg');
                 }
                 if (data.course !== undefined) {
-                    var crs = `<option value="" disabled selected>ALL</option>` + data.course;
+                    let crs = `<option value="" disabled selected>ALL</option>` + data.course;
                     $("#course_sel").empty();
                     $("#course_sel").append(crs);
                     $("#course_sel").trigger('contentChangedCrs');
@@ -57,8 +56,8 @@ $(document).ready(function () {
     //Degree Select field change lissener
     $('#degree_sel').change(function () {
         value_degree = $(this).val();
-        console.log(value_degree + value_degree.length);
-        if (value_degree.length != 0) {
+
+        if (value_degree.length !== 0) {
             dData.degree = value_degree;
             dData.degreeCount = value_degree.length;
             if (value_course.length > 0) {
@@ -70,7 +69,7 @@ $(document).ready(function () {
             dData.sendDegree = undefined;
             ajaxxx(dData);
         }
-        else if (value_degree.length == 0) {
+        else if (value_degree.length === 0) {
             dData.degree = 'all';
             dData.degreeCount = undefined;
             dData.sendCourse = 1;
@@ -82,9 +81,7 @@ $(document).ready(function () {
     //Course Select field change lissener
     $('#course_sel').change(function () {
         value_course = $(this).val();
-        console.log(value_course + value_course.length);
-        if (value_course.length != 0) {
-            console.log("Hi");
+        if (value_course.length !== 0) {
             dData.course = value_course;
             dData.courseCount = value_course.length;
             if (value_degree.length > 0) {
@@ -96,7 +93,7 @@ $(document).ready(function () {
             dData.sendCourse = undefined;
             ajaxxx(dData);
         }
-        else if (value_course.length == 0) {
+        else if (value_course.length === 0) {
             dData.course = 'all';
             dData.courseCount = undefined;
             dData.sendDegree = 1;
@@ -109,13 +106,12 @@ $(document).ready(function () {
 //Function for print all button
 $("button#printall").click(function (event) {
     event.preventDefault();
-    var dataObj = {
+    let dataObj = {
         chk: 1,
         degree: dData.degree,
         course: dData.course,
         token: $("meta[name='token']").attr("content")
     }
-    console.log(dataObj);
     $.ajax({
         type: 'POST',
         url: '../ajax/print_all.php',
@@ -133,18 +129,15 @@ $("button#printall").click(function (event) {
                     crs = encodeURI(data.course[0]);
                 }
                 else {
-                    console.log("Startx");
                     let crs_count = 0;
 
                     crs = encodeURI(data.course[0]);
                     crs_count++;
                     while (crs_count < data.course.count) {
-                        console.log('11');
                         crs += "&" + encodeURI(data.course[crs_count]);
                         crs_count++;
                     }
                 }
-                console.log(crs);
                 if (data.degree.count !== undefined && data.degree.count > 0) {
                     if (data.degree.count < 2) {
                         deg = encodeURI(data.degree[0]);
@@ -159,7 +152,6 @@ $("button#printall").click(function (event) {
                             deg_count++;
                         }
                     }
-                    console.log(deg);
                     if (data.done !== undefined) {
                         window.open('./spreadsheet/print_all_file.php?q=' + data.done + "&" + deg + "&" + crs, '_blank');
                     }
