@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Central Placement Committee, West Bengal TPO registration portal.">
+  <meta name="description" content="Welcome to Central Placement Committee(CPC), West Bengal">
   <title>Welcome to CPC,West Bengal</title>
   <link rel="favicon" href="assets/images/favicon.png">
   <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" />
   <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
   <link rel="stylesheet" href="assets/css/style.css">
