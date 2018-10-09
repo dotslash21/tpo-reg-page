@@ -53,7 +53,7 @@
                     $user = DB_USER;
                     $pass = DB_PASSWORD;
 
-                    new DB($dsn, $user, $pass);
+                    new PDODB($dsn, $user, $pass);
                 }
 
                 //Return the writteable db connection

@@ -6,4 +6,7 @@
   <component name="ProjectPlainTextFileTypeManager">
     <file url="file://$PROJECT_DIR$/inc2357v3cn425073p4y53w79/classes124vq32524s/admin2v645n317vc05.php" />
   </component>
+  <component name="ProjectResources">
+    <resource url="http://www.sitemaps.org/schemas/sitemap/0.9" location="$PROJECT_DIR$/sitemap.xml" />
+  </component>
 </project>
