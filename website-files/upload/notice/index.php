@@ -1,3 +1,2 @@
 <?php
-    header('Location: .../404.php'); 
-?>
+    header('Location: ./../404.shtml');
