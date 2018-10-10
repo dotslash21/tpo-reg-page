@@ -27,7 +27,7 @@
     <div class="container">
       <div class="navbar-header">
         <!-- Button for smallest screens -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <button type="button" class="navbar-toggle menu_closed" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -547,6 +547,7 @@
 
     });
   </script>
+  <script src="./assets/js/responsive_patch.js"></script>
 </body>
 
 </html>
