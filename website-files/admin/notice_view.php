@@ -60,6 +60,36 @@
             border-left: 1vh solid #e53935;
         }
 
+        nav .nav-wrapper .brand-logo img {
+            height: 2em;
+        }
+
+        @media (min-width: 768px) {
+            nav .nav-wrapper .brand-logo img {
+                padding-left: 2em;
+                height: 2em;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+                nav .nav-wrapper .brand-logo img {
+                padding-left: 2em;
+                height: 2em;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 767px) {
+                nav .nav-wrapper .brand-logo img {
+                height: 2em;
+            }
+        }
+
+        @media (min-width: 320px) and (max-width: 480px) {
+                nav .nav-wrapper .brand-logo img {
+                height: 2em;
+            }
+        }
+
     </style>
 </head>
 
