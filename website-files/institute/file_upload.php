@@ -118,7 +118,6 @@
                     <div class="error" style="color: red;"></div>
                     <div class="message"></div>
                     <div class="message2"></div>
-                    <button class="btn waves-effect waves-light green right" name="complete" id="complete">Final Submit 
                     <button class="btn waves-effect waves-light green right" name="complete" id="complete" style="display:none">Final Submit 
                         <i class="material-icons right">send</i>
                     </button>
