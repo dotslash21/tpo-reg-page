@@ -27,7 +27,7 @@
     <div class="container">
       <div class="navbar-header">
         <!-- Button for smallest screens -->
-        <button type="button" class="navbar-toggle menu_closed" data-toggle="collapse" data-target=".navbar-collapse">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -41,101 +41,31 @@
           <li class="active">
             <a href="#">Home</a>
           </li>
-          <!--
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Why Recruit?
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="#">Why Recruit?</a>
-              </li>
-              <li>
-                <a href="./about.html">About Us</a>
-              </li>
-              <li>
-                <a href="#">College List</a>
-              </li>
-              <li>
-                <a href="#">Academics</a>
-              </li>
-              <li>
-                <a href="#">Research</a>
-              </li>
-              <li>
-                <a href="#">Extra Carricular</a>
-              </li>
-              <li>
-                <a href="#">Alumni</a>
-              </li>
-            </ul>
-          </li> 
-          -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">For Companies
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <!--<li>
-                <a href="#">Company Registration</a>
-              </li>-->
-              <li>
-                <a href="#">Procedure and Policy</a>
-              </li>
-              <li>
-                <a href="#">Facilities</a>
-              </li>
-              <li>
-                <a href="#">FAQs</a>
-              </li>
-            </ul>
+
+          <li>
+            <a href="#">Current Opportunities</a>
           </li>
+
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">For Students
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="#">Placement Policy</a>
-              </li>
-              <!--<li>
-                <a href="#">Internship Policy</a>
-              </li>-->
-              <!--<li>
-                <a href="#">Preparation Portal</a>
-              </li>-->
-              <!--<li>
-                <a href="#">Project Verification Form</a>
-              </li>-->
-              <li>
-                <a href="#">List of companiees</a>
+                <a href="./students.html">Important Articles</a>
               </li>
               <li>
                 <a href="#">FAQs</a>
               </li>
             </ul>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact Us
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="about.html">About Us</a>
-              </li>
-              <li>
-                <a href="#">Reach CPC, West Bengal</a>
-              </li>
-              <li>
-                <a href="#">Contacts</a>
-              </li>
-              <li>
-                <a href="#">Online Contact Form</a>
-              </li>
-            </ul>
-          </li>
+
           <li>
-            <a href="institute/1">College Registration</a>
+            <a href="institute/form.php">College Registration</a>
+          </li>
+
+          <li>
+            <a href="#">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -493,7 +423,7 @@
                 Copyright &copy; 2018. CPC, West Bengal
               </p>
               <!--<p class="simplenav">
-                <a href="index.php">Home</a> | 
+                <a href="index.php">Home</a> |
                 <a href="./about.html">About</a> |
                 <a href="courses.html">Courses</a> |
                 <a href="price.html">Price</a> |
