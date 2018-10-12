@@ -1,5 +1,5 @@
 $(document).ready(function(e){
-    $("button#complete").hide();
+    $("button#complete").attr('style', 'display:none');
 
     $("form#file_upload").on("submit",function(event) {
         event.preventDefault();
@@ -56,7 +56,7 @@ $(document).ready(function(e){
                 message2.html(data.fileName).show();
                 submitbtn.attr("disabled","disabled");
                 submitbtn.html(`Uploaded`);
-                $("button#complete").show();
+                $("button#complete").attr('style', '');
             }
         
     	})
