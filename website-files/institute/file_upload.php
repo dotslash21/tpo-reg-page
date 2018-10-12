@@ -84,11 +84,18 @@
 
     <main>
         <div class="container" id="form-container">
-            <h3>File Input</h3>
+            <h3>Authorization Letter Upload</h3>
             <hr>
             <div class="card">
                 <div class="card-content">
-                    <p>PDF and JPG, Less than 2MB</p><br>
+                    <p><strong>Please upload the Authorization Letter  in the University / Institute Letterhead, signed by the Head of the Institute
+                         as a token of your consent to permit us to forward your Institute/university name and students database to potential
+                         campus recruiters and also your consent to participate in campus drives organised by us on pure non monetary terms
+                         and conditions, apart from other campus related activities.</strong></p>
+
+                    <br> 
+                     
+                    <p class="red-text"><em>Note: File type must be PDF or JPG, And the size should be less than 2MB</em></p><br>
                     <!-- File Input Section -->
                     <div class="row">
                         <div class="col s6" id="form-div">
