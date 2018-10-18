@@ -150,7 +150,7 @@
                                     <option value="" disabled selected>Choose your option</option>
                                     <option value="Government">Government</option>
                                     <option value="Government-Aided">Government-Aided</option>
-                                    <option value="Self-Financed">Self-Financed</option>
+                                    <option value="Private">Private</option>
                                 </select>
                                 <label>Institute Type</label>
                             </div>
