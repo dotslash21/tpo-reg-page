@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/loader.css">
     <link rel='stylesheet' id='camera-css' href='assets/css/camera.css' type='text/css' media='all'>
+    <link rel="stylesheet" href="assets/css/vticker.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -124,18 +125,16 @@
               <img src="assets/images/1.png" alt="" />
             </div>
             <!--icon box top -->
-            <h4>
-              <span id="college_num">--
-              </span> Affiliated Institutions
-            </h4>
-            <p>The largest pool campusing portal with highest number of participating institutes.
-            </p>
-            <p>
-              <a href="#">
-                <em>Read More
-                </em>
-              </a>
-            </p>
+            <h4><strong>Registered Institutes</strong></h4>
+            <div class="ticker-container">
+              <ul>
+                <li>Institute 1</li>
+                <li>Institute 2</li>
+                <li>Institute 3</li>
+                <li>Institute 4</li>
+                <li>Institute 5</li>
+              </ul>
+            </div>
           </div>
           <!--grey box -->
         </div>
@@ -146,18 +145,16 @@
               <img src="assets/images/2.png" alt="" />
             </div>
             <!--icon box top -->
-            <h4>
-              <span id="domain_num">--
-              </span> Domain Specalization
-            </h4>
-            <p>Largest number of students participating from multiple domains and trades.
-            </p>
-            <p>
-              <a href="#">
-                <em>Read More
-                </em>
-              </a>
-            </p>
+            <h4><strong>Courses Available</strong></h4>
+            <div class="ticker-container">
+              <ul>
+                <li>B.Tech</li>
+                <li>M.Tech</li>
+                <li>BCA</li>
+                <li>MCA</li>
+                <li>B.Sc</li>
+              </ul>
+            </div>
           </div>
           <!--grey box -->
         </div>
@@ -168,20 +165,16 @@
               <img src="assets/images/3.png" alt="" />
             </div>
             <!--icon box top -->
-            <h4>
-              <span id="degree_num">--
-              </span> Degrees Registered
-            </h4>
-            <p>Largest pool of participating students pursuing multiple degrees.
-              <br>
-              <br>
-            </p>
-            <p>
-              <a href="#">
-                <em>Read More
-                </em>
-              </a>
-            </p>
+            <h4><strong>Diciplines Available</strong></h4>
+            <div class="ticker-container">
+              <ul>
+                <li>Computer Science and Engineering</li>
+                <li>Electronics and Communication Engineering</li>
+                <li>Electrical Engineering</li>
+                <li>Mechanical Engineering</li>
+                <li>Civil Engineering</li>
+              </ul>
+            </div>
           </div>
           <!--grey box -->
         </div>
@@ -192,18 +185,8 @@
               <img src="assets/images/4.png" alt="" />
             </div>
             <!--icon box top -->
-            <h4>
-              <span id="intake">--
-              </span> Student Capacity
-            </h4>
-            <p>Largest pool of combined students capacity from various participating institutes.
-            </p>
-            <p>
-              <a href="#">
-                <em>Read More →
-                </em>
-              </a>
-            </p>
+            <h4><strong>Student Capacity</strong></h4>
+            <span id="intake" style="font-size: 3em">--</span>
           </div>
           <!--grey box -->
         </div>
@@ -622,6 +605,18 @@
         interval: 5000
     })
   });
+</script>
+<script type="text/javascript" src="./assets/js/vticker.js"></script>
+<script type="text/javascript">
+		$(function () {
+			$('.ticker-container').vTicker({
+				speed: 500,
+				pause: 1000,
+				animation: 'fade',
+				mousePause: true,
+				showItems: 3
+			});
+		});
 </script>
 </body>
 </html>
