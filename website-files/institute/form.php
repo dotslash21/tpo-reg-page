@@ -140,15 +140,8 @@
                     <div class="row">
                         <div class="col s12 m6 l6">
                             <div class="input-field">
-                                <select name="accrd" id="accrd" required>
-                                    <option value="" disabled selected>Choose your option</option>
-                                    <option value="NAAC-A+">NAAC-A+</option>
-                                    <option value="NAAC-A">NAAC-A</option>
-                                    <option value="NAAC-B">NAAC-B</option>
-                                    <option value="NAAC-C">NAAC-C</option>
-                                    <option value="NAAC-D">NAAC-D</option>
-                                </select>
-                                <label>Institute Accriditated By</label>
+                                <input type="text" name="accrd" id="accrd" required>
+                                <label>Institute Accredition (Optional)</label>
                             </div>
                         </div>
                         <div class="col s12 m6 l6">
@@ -166,14 +159,8 @@
                     <div class="row">
                         <div class="col s12 m6 l6">
                             <div class="input-field">
-                                <select name="affli" id="affli" required>
-                                    <option value="" disabled selected>Choose your option</option>
-                                    <option value="Maulana Kalam Azad University of Technology">Maulana Kalam Azad University of Technology</option>
-                                    <option value="Calcutta University">Calcutta University</option>
-                                    <option value="Jadavpur University">Jadavpur University</option>
-                                    <option value="University of Kalyani">University of Kalyani</option>
-                                </select>
-                                <label>Institute Affiliated By</label>
+                                <input type="text" name="affli" id="affli" required>
+                                <label>Institute Affiliation</label>
                             </div>
                         </div>
                         <div class="col s12 m6 l6">
