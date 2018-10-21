@@ -144,10 +144,6 @@ $(document).submit(function(event) {
         alert("Plese enter a valid ESTD Ex-2018");
         return false;
     }
-    else if(dataObj.accrd === undefined){
-        alert("Please choose Institue Accriditation ");
-        return false;
-    }
     else if(dataObj.inst_type === undefined){
         alert("Please choose Institue Type");
         return false;
