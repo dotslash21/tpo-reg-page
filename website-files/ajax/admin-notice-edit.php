@@ -1,16 +1,4 @@
 <?php
-
-    /**
-     * AjaxPage
-     * 
-     * Response- Admin Notice edit
-     * 
-     * Created by IntelliJ IDEA.
-     * User: Arkadip
-     * Date: 10/05/18
-     * Time: 12:40 PM 
-    */
-
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         header('Content-Type: application/json');
@@ -21,7 +9,7 @@
         require '../inc2357v3cn425073p4y53w79/func.php';
 
         if(admin::ajaxCheck()){
-            //If admin is logged in
+            //Admin Login check
 
             $return = [];
             
@@ -33,7 +21,7 @@
             $sl_no          = $_POST['sl_no'];
             
             if(XCSRF::varifycsrf('ad-nt-edit-pg',$token)){
-                //If XCSRF is varified 
+                //XCSRF verification
                 
                 $validity           = strtotime($_POST['validity']);    //Convert validity date to timestamp
                 
