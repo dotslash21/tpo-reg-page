@@ -43,7 +43,15 @@ $(document).ready(function () {
         notice_section.html(data.notice).show()
       }
 
-      
+      $(function () {
+        $('.ticker-container').vTicker({
+          speed: 500,
+          pause: 1000,
+          animation: 'fade',
+          mousePause: true,
+          showItems: 3
+        });
+      });
 
     })
     .always(function (d) {
