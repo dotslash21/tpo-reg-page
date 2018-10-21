@@ -127,12 +127,12 @@
             <!--icon box top -->
             <h4><strong>Registered Institutes</strong></h4>
             <div class="ticker-container">
-              <ul>
-                <li>Institute 1</li>
+              <ul id="college_name">
+                <!-- <li>Institute 1</li>
                 <li>Institute 2</li>
                 <li>Institute 3</li>
                 <li>Institute 4</li>
-                <li>Institute 5</li>
+                <li>Institute 5</li> -->
               </ul>
             </div>
           </div>
@@ -147,12 +147,12 @@
             <!--icon box top -->
             <h4><strong>Courses Available</strong></h4>
             <div class="ticker-container">
-              <ul>
-                <li>B.Tech</li>
+              <ul id="degree">
+                <!-- <li>B.Tech</li>
                 <li>M.Tech</li>
                 <li>BCA</li>
                 <li>MCA</li>
-                <li>B.Sc</li>
+                <li>B.Sc</li> -->
               </ul>
             </div>
           </div>
@@ -167,12 +167,12 @@
             <!--icon box top -->
             <h4><strong>Diciplines Available</strong></h4>
             <div class="ticker-container">
-              <ul>
-                <li>Computer Science and Engineering</li>
+              <ul id="course">
+                <!-- <li>Computer Science and Engineering</li>
                 <li>Electronics and Communication Engineering</li>
                 <li>Electrical Engineering</li>
                 <li>Mechanical Engineering</li>
-                <li>Civil Engineering</li>
+                <li>Civil Engineering</li> -->
               </ul>
             </div>
           </div>
