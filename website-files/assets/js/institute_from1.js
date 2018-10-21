@@ -17,13 +17,13 @@ $(document).ready( function(){
         $("input[name='estd']").val(sessionStorage.estd);
     }
     if(sessionStorage.accrd !== undefined){
-        $("select[name='accrd']").val(sessionStorage.accrd);
+        $("input[name='accrd']").val(sessionStorage.accrd);
     }
     if(sessionStorage.inst_type !== undefined){
         $("select[name='inst_type']").val(sessionStorage.inst_type);
     }
     if(sessionStorage.affli !== undefined){
-        $("select[name='affli']").val(sessionStorage.affli);
+        $("input[name='affli']").val(sessionStorage.affli);
     }
     if(sessionStorage.inst_appr !== undefined){
         $("select[name='inst_appr']").val(sessionStorage.inst_appr);
@@ -124,9 +124,9 @@ $(document).on("submit","form.frm",function(event) {
         uid:            $("input[name='uid']", _form).val(),
         password:       $("input[name='password']", _form).val(),
         estd:           $("input[name='estd']", _form).val(),
-        accrd:          $("select[name='accrd']", _form).val(),
+        accrd:          $("input[name='accrd']", _form).val(),
         inst_type:      $("select[name='inst_type']", _form).val(),
-        affli:          $("select[name='affli']", _form).val(),
+        affli:          $("input[name='affli']", _form).val(),
         inst_appr:      $("select[name='inst_appr']", _form).val(),
         address:        $("textarea[name='address']", _form).val(),
         pin:            $("input[name='pin']", _form).val(),
