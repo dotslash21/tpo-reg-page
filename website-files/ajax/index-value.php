@@ -23,20 +23,29 @@
 
                 $return = [];
 
-                //Number of College
-                $smt_college    = $pdocon->prepare("SELECT inst_name FROM cred");
+                //Names of College
+                $smt_college    = $pdocon->prepare("SELECT inst_name FROM cred ORDER BY inst_name ASC");
                 $smt_college->execute();
-                $college_num    = $smt_college->rowCount();
+                $college_name = '';
+                while ($name_collge = $smt_college->fetch(PDO::FETCH_ASSOC)) {
+                    $college_name .= '<li>' . $name_collge['inst_name'] . '</li>';
+                }
 
                 //Number of Domain
                 $smt_domain     = $pdocon->prepare("SELECT DISTINCT course_optd FROM college_crs");
                 $smt_domain->execute();
-                $domain_num     = $smt_domain->rowCount();
+                $course = '';
+                while ($course_name = $smt_domain->fetch(PDO::FETCH_ASSOC)) {
+                    $course .= '<li>' . $course_name['course_optd'] . '</li>';
+                }
 
                 //Number of Degree
                 $smt_degree     = $pdocon->prepare("SELECT DISTINCT deg_optd FROM college_crs");
                 $smt_degree->execute();
-                $degree_num     = $smt_degree->rowCount();
+                $degree = '';
+                while ($degree_name = $smt_degree->fetch(PDO::FETCH_ASSOC)) {
+                    $degree .= '<li>' . $degree_name['deg_optd'] . '</li>';
+                }
 
                 //Number of students
                 $intake = 0;
@@ -69,9 +78,9 @@
                 }
 
                 //Returning Objects
-                $return['college_num']  = $college_num;
-                $return['domain_num']   = $domain_num;
-                $return['degree_num']   = $degree_num;
+                $return['college_name'] = $college_name;
+                $return['course']       = $course;
+                $return['degree']       = $degree;
                 $return['intake']       = $intake;
                 $return['notice']       = $notice;
 
