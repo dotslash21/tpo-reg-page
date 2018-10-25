@@ -140,7 +140,7 @@
                     <div class="row">
                         <div class="col s12 m6 l6">
                             <div class="input-field">
-                                <input type="text" name="accrd" id="accrd" required>
+                                <input type="text" name="accrd" id="accrd">
                                 <label>Institute Accredition (Optional)</label>
                             </div>
                         </div>
