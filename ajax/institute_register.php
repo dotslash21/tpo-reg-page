@@ -193,7 +193,7 @@
 
                                             //add a session for file upload
 
-                                            $_SESSION['inst_code'] =(int)$inst_code;
+                                            $_SESSION['inst_code'] = (int)$inst_code;
                                         }
                                         else{
                                             $return['error'] = 'Putting course data in the DataBase is Failed. Try again later';
