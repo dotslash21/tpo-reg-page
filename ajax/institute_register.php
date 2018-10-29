@@ -13,7 +13,6 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        session_start();
 
         define('_incFuncwwrfbhdjrt',true);
         require '../inc2357v3cn425073p4y53w79/func.php';
@@ -53,7 +52,7 @@
                     if (isset($token1) && isset($token2) && isset($token3) && isset($token4)){
                         // If all forms tokens are received
 
-                        if(instTokenMatch(1,$token1) && instTokenMatch(2, $token2) && instTokenMatch(3, $token3) && instTokenMatch(4, $token4)) {
+                        if(instTokenMatch(1, $token1) && instTokenMatch(2, $token2) && instTokenMatch(3, $token3) && instTokenMatch(4, $token4)) {
                             //If all received tokens are perfectly matched
 
                             $browser = $_SERVER['HTTP_USER_AGENT'];

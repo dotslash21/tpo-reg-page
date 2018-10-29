@@ -13,6 +13,9 @@
 
         //error_reporting(0);
 
+        session_name('cpc');
+        session_start();
+        
         date_default_timezone_set("Asia/Calcutta");
 
         define('INC',dirname(__FILE__));

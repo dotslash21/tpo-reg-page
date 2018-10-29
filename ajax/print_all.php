@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($_POST['chk'] == 1) {
 
-        session_start();
         if (isset($_SESSION['admin_id'])) {
 
             define('_incFuncwwrfbhdjrt', true);

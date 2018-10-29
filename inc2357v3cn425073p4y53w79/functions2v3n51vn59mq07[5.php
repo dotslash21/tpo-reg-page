@@ -52,8 +52,8 @@ if(defined('_functionsqn72v3[701v[c124[m1c')){
             setcookie($cookie_name,XCSRF::mkcsrf($cookie_name),0,'/',null,false,false);
         }
     }
-
-    function instTokenMatch(Int $formindex,String $tokenValue){
+    
+    function instTokenMatch($formindex, $tokenValue){
         switch ($formindex){
             case 1:
                 $formName = '_form1';
@@ -76,7 +76,7 @@ if(defined('_functionsqn72v3[701v[c124[m1c')){
         }
 
         if(isset($tokenValue)){
-            if(hash_equals($_SESSION[$formName],$tokenValue)){
+            if(XCSRF::varifycsrf($formName, $tokenValue)){
                 if(hash_equals($_COOKIE[$formName], $tokenValue)){
                     return true;
                 }
