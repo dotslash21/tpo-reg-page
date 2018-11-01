@@ -98,36 +98,9 @@
                         <label class="active" for="name">Institute Name</label>
                     </div>
                     <div class="row">
-                        <div class="col s12 m8 l8">
-                            <div class="input-field">
-                                <input type="number" id="inst_code" name="inst_code" required min="0">
-                                <label class="active" for="inst_code">Institute code</label>
-                            </div>
-                        </div>
                         <div class="col s12 m8 l4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
                             <div class="grey lighten-4" style="border-radius: 8px; text-align: center;">
                                 <span class="err-inst_code" style="">&nbsp;</span>
-                            </div>
-                        </div>
-                    </div>
-		    	    <div class="row">
-                        <div class="col s12 m8 l8">
-                            <div class="input-field">
-                                <input type="text" id="uid" name="uid" required>
-                                <label class="active" for="uid">Institute User ID</label>
-                            </div>
-                        </div>
-                        <div class="col s12 m4 l4" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
-                            <div class="grey lighten-4" style="border-radius: 8px; text-align: center;">
-                                <span class="err-uid" style="">&nbsp;</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m6 l6">
-                            <div class="input-field">
-                                <input type="password" id="password" name="password" required class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Must be of atleast 8 characters long">
-                                <label class="active" for="password">Password</label>
                             </div>
                         </div>
                         <div class="col s12 m6 l6">
