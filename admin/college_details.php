@@ -146,7 +146,7 @@
             <div class="card-panel z-depth-2 modal-trigger" href="#modal-<?php echo $res_arr['inst_code']; ?>" id="trig-<?php echo $res_arr['inst_code']; ?>">
 
                 <div class="valign-wrapper left">
-                    <i class="material-icons">account_balance</i> <span><?php echo $res_arr['inst_name']; ?></span><span>(<?php echo $res_arr['inst_code']; ?>)</span>
+                    <i class="material-icons">account_balance</i> <span><?php echo $res_arr['inst_name']; ?></span>
                 </div>
                 <div class="right panel_options">
                     <button class="waves-effect waves-yellow btn yellow darken-3" id="edit-<?php echo $res_arr['inst_code']; ?>">EDIT</button>
