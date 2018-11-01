@@ -112,8 +112,8 @@ $(document).on("submit","form.frm",function(event) {
     }
 })
 
-$('button#back').click( function(){
-    event.preventDefault();
+$('button#back').click( function(e){
+    e.preventDefault();
     
     var red = './2';
     window.location = red;
