@@ -101,20 +101,6 @@
                     <div class="row">
                         <div class="col s6">
                             <div class="input-field">
-                                <input type="number" id="inst_code" name="inst_code" required disabled value="1234">
-                                <label for="inst_code">Institute code</label>
-                            </div>
-                        </div>
-                        <div class="col s6">
-                            <div class="input-field">
-                                <input type="text" id="uid" name="uid" required disabled value="I am not editable">
-                                <label for="uid">Institute User ID</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s6">
-                            <div class="input-field">
                                 <input type="password" id="password" name="password" required disabled value="I am not editable">
                                 <label for="password">Password</label>
                             </div>
