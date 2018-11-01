@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2018 at 05:44 PM
+-- Generation Time: Nov 01, 2018 at 02:27 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admins` (
-  `id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Last_login_time` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Last_login_ip` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -40,8 +40,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `password`, `Last_login_time`, `Last_login_ip`) VALUES
-('admin', '$2y$10$Jfp3IxECTlLlDERWmXLhPusyZEEyCTzTyDk4Mmkr2g412F1JKgtje', '2018/Sep/16 9:12:13 PM IST +05:30', '::1'),
-('admin2', '$2y$10$.yoaJ8mCghOk76g7B5SCXu5.LQa1VCn6cjZvURXqPIEUULLLeHFL2', '2018/Sep/16 9:13:05 PM IST +05:30', '::1');
+('cpcbengaladmin', '$2y$10$Y4GFLIn1PWs.seh0iKPK7e5/d3fzqX2yN/AJMaEv3Ej9zt7i/DQhK', '2018/Oct/09 4:41:25 PM IST +05:30', '::1');
 
 -- --------------------------------------------------------
 
@@ -83,7 +82,9 @@ INSERT INTO `course_list` (`id`, `degree`, `course_name`) VALUES
 (8, 'M.Tech', 'Electrical Engineering'),
 (9, 'MCA', 'MASTER IN COMPUTER APPLICATION'),
 (10, 'BCA', 'BACHELOR IN COMPUTER APPLICATION'),
-(11, 'M.Tech', 'aetwshyersh');
+(11, 'M.Tech', 'aetwshyersh'),
+(12, 'B.Tech', 'TT'),
+(13, 'B.Tech', 'CHEMICAL ENGINEERING');
 
 -- --------------------------------------------------------
 
@@ -92,11 +93,8 @@ INSERT INTO `course_list` (`id`, `degree`, `course_name`) VALUES
 --
 
 CREATE TABLE `cred` (
-  `id` int(11) NOT NULL COMMENT 'User resigtration id',
-  `inst_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Name',
   `inst_code` int(11) NOT NULL COMMENT 'institute Code',
-  `uid` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute User Id',
-  `pwd` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Password',
+  `inst_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Name',
   `estd` int(8) NOT NULL COMMENT 'Institute ESTD',
   `inst_accrd` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Accriditation',
   `inst_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Type',
@@ -153,7 +151,12 @@ CREATE TABLE `notices` (
 --
 
 INSERT INTO `notices` (`sl_no`, `title`, `content`, `publish_date`, `expiry_date`, `active_status`, `file_name`, `added_by`) VALUES
-(15, 'A notice', 'description', 1536585739, 1793401200, 1, '1536585739.jpg', 'admin');
+(2, '112326', 'qwerty', 1537809358, 1540940400, 0, '', '8c6976e5b5410415bde9'),
+(3, '112327', 'qwerty', 1537809376, 1540854000, 0, '', '8c6976e5b5410415bde9'),
+(5, 'sds', '77777777', 1537809526, 1540591200, 0, '', '8c6976e5b5410415bde9'),
+(6, '1123244', '7441231', 1537809562, 1540940400, 0, '1537809563.jpg', '8c6976e5b5410415bde9'),
+(7, '112325', 'qwerty', 0, 1540940400, 0, '', '8c6976e5b5410415bde9'),
+(8, '112325w7n9tver9n8', '1v74n2vq35n8c2547n8v', 1538732486, 1540924200, 0, '', '8ce8bcd713249e604653');
 
 --
 -- Indexes for dumped tables
@@ -169,9 +172,8 @@ ALTER TABLE `course_list`
 -- Indexes for table `cred`
 --
 ALTER TABLE `cred`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`inst_code`),
   ADD UNIQUE KEY `inst_code` (`inst_code`),
-  ADD UNIQUE KEY `uid` (`uid`),
   ADD UNIQUE KEY `inst_name` (`inst_name`);
 
 --
@@ -180,28 +182,7 @@ ALTER TABLE `cred`
 ALTER TABLE `notices`
   ADD PRIMARY KEY (`sl_no`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `course_list`
---
-ALTER TABLE `course_list`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `cred`
---
-ALTER TABLE `cred`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'User resigtration id';
-
---
--- AUTO_INCREMENT for table `notices`
---
-ALTER TABLE `notices`
-  MODIFY `sl_no` int(5) NOT NULL AUTO_INCREMENT COMMENT 'serial no of notices', AUTO_INCREMENT=16;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
