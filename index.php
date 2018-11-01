@@ -337,146 +337,112 @@
     </div>
   </div>
 </section>
-<footer id="footer">
+
+  <footer id="footer">
+
+<div class="container">
+  <div class="row">
+    <div class="footerbottom">
+
+      <div class="col-md-4 col-sm-6">
+        <div class="footerwidget">
+          <h4>
+            Quick Links
+          </h4>
+          <div class="menu-course">
+            <ul class="menu">
+              <li>
+                <a href="/institute/instruction.php">
+                  College Registration
+                </a>
+              </li>
+              <li>
+                <a href="/about.html">
+                  About Us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="footerwidget">
+          <h4>
+            Other Links
+          </h4>
+          <div class="menu-course">
+            <ul class="menu">
+              <li>
+                <a href="https://www.freshersworld.com/" target="_blank">
+                  FreshersWorld
+                </a>
+              </li>
+              <li>
+                <a href="http://www.theindiajobs.com/" target="_blank">
+                  Theindiajobs.com
+                </a>
+              </li>
+              <li>
+                <a href="http://www.naukri.com/" target="_blank">
+                  Naukri.com
+                </a>
+              </li>
+              <li>
+                <a href="https://internshala.com/" target="_blank">
+                  Internshala
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="footerwidget">
+          <h4>Contact Details</h4>
+          <div class="contact-info">
+            <i class="fa fa-map-marker"></i>123, Example Street
+            <br>
+            <i class="fa fa-phone"></i>+00 123 156 711
+            <br>
+            <i class="fa fa-envelope-o"></i> info@email.com
+          </div>
+        </div>
+        <!-- end widget -->
+      </div>
+
+    </div>
+  </div>
+  <div class="clear"></div>
+  <!--CLEAR FLOATS-->
+</div>
+<div class="footer2">
   <div class="container">
     <div class="row">
-      <div class="footerbottom">
-        <div class="col-md-3 col-sm-6">
-          <div class="footerwidget">
-            <h4>
-              Quick Links
-            </h4>
-            <div class="menu-course">
-              <ul class="menu">
-                <li>
-                  <a href="#">
-                    Download Forms
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Alumni
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Innovation Incubator
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Recruitment and Promotion Policy
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footerwidget">
-            <h4>
-              About CPC,West Bengal
-            </h4>
-            <div class="menu-course">
-              <ul class="menu">
-                <li>
-                  <a href="#">
-                    Student Activity Center 
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    IPR Cell
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    RTI Cell
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footerwidget">
-            <h4>
-              Other Links
-            </h4>
-            <div class="menu-course">
-              <ul class="menu">
-                <li>
-                  <a href="#">
-                    Internal Complaints Comitee
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Annual Report
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Notifications
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    Newsletter
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="footerwidget">
-            <h4>Contact Details
-            </h4>
-            <p>Lorem reksi this dummy text unde omnis iste natus error sit volupum
-            </p>
-            <div class="contact-info">
-              <i class="fa fa-map-marker">
-              </i>123, Example Street
-              <br>
-              <i class="fa fa-phone">
-              </i>+00 123 156 711
-              <br>
-              <i class="fa fa-envelope-o">
-              </i> info@email.com
-            </div>
-          </div>
-          <!-- end widget -->
+
+      <div class="col-md-6 panel">
+        <div class="panel-body">
+          <p class="text-left">
+            Copyright &copy; 2018. CPC, West Bengal
+          </p>
         </div>
       </div>
-    </div>
-    <div class="clear">
-    </div>
-    <!--CLEAR FLOATS-->
-  </div>
-  <div class="footer2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 panel">
-          <div class="panel-body">
-            <p class="text-left">
-              Copyright &copy; 2018. CPC, West Bengal
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 panel">
-          <div class="panel-body">
-            <p class="text-right">
-              <a href="./dev.html" rel="develop" target="_blank">Meet the Developers
-              </a>
-            </p>
-          </div>
+
+      <div class="col-md-6 panel">
+        <div class="panel-body">
+          <p class="text-right">
+            <a href="./dev.html" rel="develop" target="_blank">Meet the Developers</a>
+          </p>
         </div>
       </div>
-      <!-- /row of panels -->
+
     </div>
+    <!-- /row of panels -->
   </div>
+</div>
 </footer>
+
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 <script src="assets/js/modernizr-latest.js">
 </script>
