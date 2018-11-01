@@ -66,7 +66,7 @@
               </ul>
             </li>
             <li>
-              <a href="institute/form.php">College Registration
+              <a href="institute/instruction.php">College Registration
               </a>
             </li>
             <li>
