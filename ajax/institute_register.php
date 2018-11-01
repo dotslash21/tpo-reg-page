@@ -64,9 +64,6 @@
                             //Credentials
                             //Basic Details
                             $name       = $dataObj['name'];
-                            $inst_code  = $dataObj['inst_code'];
-                            $uid        = $dataObj['uid'];
-                            $password   = $dataObj['password'];
                             $estd       = $dataObj['estd'];
                             $accrd      = $dataObj['accrd'];
                             $inst_type  = $dataObj['inst_type'];
@@ -109,9 +106,6 @@
                             //escaping college crediential
                             //Basic Details
                             $name_clean         =Filter::String(clean($name));
-                            $inst_code_clean    =Filter::Int(clean($inst_code));
-                            $uid_clean          =Filter::String(clean($uid));
-                            $password_clean     =Filter::String(clean($password));
                             $estd_clean         =Filter::Int(clean($estd));
                             $accrd_clean        =Filter::String(clean($accrd));
                             $inst_type_clean    =Filter::String(clean($inst_type));
@@ -147,8 +141,10 @@
                             $num_cctv_clean     =Filter::Int(clean($num_cctv));
                             $has_fiber_clean    =Filter::Int(clean($has_fiber));
 
+                            $inst_code = mkcode($name_clean, $estd_clean);
+
                             $findInst = $pdocon->prepare("SELECT inst_code FROM cred WHERE inst_code =:inst_code LIMIT 1");
-                            $findInst->execute(array(':inst_code'=>$inst_code_clean));
+                            $findInst->execute(array(':inst_code'=>$inst_code));
 
                             if((int) $findInst->rowCount() > 0){
                                 $return['error'] = 'Already Registered';
@@ -159,11 +155,11 @@
                                 $password_new = password_hash($password_clean, PASSWORD_DEFAULT);
 
                                 $smtAdd = $pdocon->prepare("INSERT INTO cred(inst_name, inst_code, uid, pwd, estd, inst_accrd, inst_type, inst_affl, inst_aprv, state, district, pin, address, phone, email, website, head_name, inst_headdesg, head_contact, head_mob, head_email, tpo_name, tpo_ph, tpo_ph2, tpo_email, no_of_comp, num_cmplab, min_num_cmp, int_speed, hall_cap, fibop_lan, cctv_no, browser, inst_ip) VALUE(:name,:inst_code,:uid,:password,:estd,:accrd,:inst_type,:affli,:inst_appr,:inst_state,:ins_dst,:pin,:address,:number,:email,:website,:head_name,:head_desg,:head_ph,:head_mob,:head_email,:tpo_name,:tpo_contact1,:tpo_contact2,:tpo_email,:num_cmp,:num_cmplab,:min_num_cmp,:ispeed,:hall_cap,:has_fiber,:num_cctv,:browser,:inst_ip)");
-                                if($smtAdd->execute(array(':name' =>$name_clean,':inst_code' =>$inst_code_clean,':uid'=>$uid_clean,':password'=>$password_new,':estd'=>$estd_clean,':accrd'=>$accrd_clean,':inst_type'=>$inst_type_clean,':affli'=>$affli_clean,':inst_appr'=>$inst_appr_clean,':inst_state'=>$inst_state_clean,':ins_dst'=>$ins_dst_clean,':pin'=>$pin_clean,':address'=>$address_clean,':number'=>$number_clean,':email'=>$email_clean,':website'=>$website_clean,':head_name'=>$head_name_clean,':head_desg'=>$head_desg_clean,':head_ph'=>$head_ph_clean,':head_mob'=>$head_mob_clean,':head_email'=>$head_email_clean,':tpo_name'=>$tpo_name_clean,':tpo_contact1'=>$tpo_contact1_clean,':tpo_contact2'=>$tpo_contact2_clean,':tpo_email'=>$tpo_email_clean,':num_cmp'=>$num_cmp_clean,':num_cmplab'=>$num_cmplab_clean,':min_num_cmp'=>$min_num_cmp_clean,':ispeed'=>$ispeed_clean,':hall_cap'=>$hall_cap_clean,':has_fiber'=>$has_fiber_clean,':num_cctv'=>$num_cctv_clean,':browser'=>$browser,':inst_ip'=>$inst_ip))){
+                                if($smtAdd->execute(array(':name' =>$name_clean,':inst_code' =>$inst_code,':uid'=>$uid_clean,':password'=>$password_new,':estd'=>$estd_clean,':accrd'=>$accrd_clean,':inst_type'=>$inst_type_clean,':affli'=>$affli_clean,':inst_appr'=>$inst_appr_clean,':inst_state'=>$inst_state_clean,':ins_dst'=>$ins_dst_clean,':pin'=>$pin_clean,':address'=>$address_clean,':number'=>$number_clean,':email'=>$email_clean,':website'=>$website_clean,':head_name'=>$head_name_clean,':head_desg'=>$head_desg_clean,':head_ph'=>$head_ph_clean,':head_mob'=>$head_mob_clean,':head_email'=>$head_email_clean,':tpo_name'=>$tpo_name_clean,':tpo_contact1'=>$tpo_contact1_clean,':tpo_contact2'=>$tpo_contact2_clean,':tpo_email'=>$tpo_email_clean,':num_cmp'=>$num_cmp_clean,':num_cmplab'=>$num_cmplab_clean,':min_num_cmp'=>$min_num_cmp_clean,':ispeed'=>$ispeed_clean,':hall_cap'=>$hall_cap_clean,':has_fiber'=>$has_fiber_clean,':num_cctv'=>$num_cctv_clean,':browser'=>$browser,':inst_ip'=>$inst_ip))){
 
                                     $crsEntry = false;
 
-                                    $smtCrs = $pdocon->prepare("INSERT INTO college_crs(college_id, deg_optd, course_optd, intake) VALUES(:inst_code_clean,:degree_name_clean, :course_name_clean, :course_value_clean)");
+                                    $smtCrs = $pdocon->prepare("INSERT INTO college_crs(college_id, deg_optd, course_optd, intake) VALUES(:inst_code,:degree_name_clean, :course_name_clean, :course_value_clean)");
 
                                     if($smtCrs){
 
@@ -177,7 +173,7 @@
                                             //query - multiple at once
                                             if($course_name_clean != '' && $course_value_clean != ''){
 
-                                                if($smtCrs->execute(array(':inst_code_clean'=>$inst_code_clean,':degree_name_clean'=>$degree_name_clean, ':course_name_clean'=>$course_name_clean, ':course_value_clean'=>$course_value_clean))){
+                                                if($smtCrs->execute(array(':inst_code'=>$inst_code,':degree_name_clean'=>$degree_name_clean, ':course_name_clean'=>$course_name_clean, ':course_value_clean'=>$course_value_clean))){
                                                     //Data put successfully
                                                     $crsEntry = true;
                                                 }
