@@ -92,6 +92,24 @@ if(defined('_functionsqn72v3[701v[c124[m1c')){
             return false;
         }
     }
+
+    /**
+     * Make the Insitute Code
+     */
+    function mkcode($theString, $estd){
+        $result = '';
+        $namePices = explode(' ', $theString);
+        $nameSize = count($namePices);
+        
+        for ($i=0; $i < $nameSize; $i++) {
+            if(strlen($namePices[$i]) > 2){
+                $firstChar = substr(strtolower($namePices[$i]), 0, 1);
+                $result .= $firstChar;
+            }
+        }
+
+        return $result . (string)$estd;
+    }
 }
 
 ?>
