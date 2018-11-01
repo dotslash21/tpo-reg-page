@@ -71,20 +71,31 @@
 
     <main>
         <!-- MAIN BODY-->
-        <div class="container z-depth-3" id="form-container">
-            <p>Lorem ipsum dolor sit amet, ea ius aperiam prompta. In eam omnis graeco, et quo aeque tantas placerat, ne laudem
-                apeirian mediocritatem sed. Pro ei errem veniam habemus. Ei pro everti equidem inciderint, eu vel viderer
-                admodum, augue epicuri probatus ei eos. Feugiat sapientem at eum.</p>
-            <p>Ea iuvaret ullamcorper pro. Ei dictas patrioque intellegat eum. Ut semper ancillae vel, vix prompta recusabo
-                antiopam at. Id modo liber dicam vim. His an antiopam repudiandae, cum eius iriure appareat ne. Per quot
-                expetendis ei, vim ea dolore lobortis.</p>
-
-            <ul class="collection">
-                <li class="collection-item">Ei dictas patrioque intellegat eum.</li>
-                <li class="collection-item">Ei vim accusata maluisset, eos ne viris sadipscing.</li>
-                <li class="collection-item">Usu tale iudico appellantur ex. Fastidii tincidunt has at.</li>
-                <li class="collection-item">Ex eligendi deserunt eum, luptatum scriptorem disputando eu vel.</li>
-            </ul>
+        <div class="container" id="form-container">
+            <h4>Registration Instructions</h4>
+            <hr>
+            <br>
+            <div class="card">
+                <div class="card-content">
+                    <p>The institute registration form has been broken into multiple sections, Institute details, Head and TPO details
+                    and Institute facilities, These fields are divided into 3 forms, You have to fill up one by one or else the submit
+                    button at the end of the form will not work.</p>
+                    <br>
+                    <p>At last we will ask for an <strong>authorization letter</strong>  in the university / institute letterhead, signed 
+                    by the Head of the Institute as a token of your consent to permit us to forward your university / institute name and
+                    students database to potential campus recruiters and also your consent to participate in campus drives organised by
+                    us on pure non monetary terms and conditions, apart from other campus related activities. The letter must be in PDF 
+                    or JPEG/JPG format.</p>
+                    <br>
+                    <p>For any additional queries please contact us using the contact info as provided in the contact page of our website.</P>
+                    <br>
+                    <div class="center-align">
+                        <a class="btn waves-effect waves-light blue" href="/institute/form.php">Proceed
+                            <i class="material-icons right">arrow_forward</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
