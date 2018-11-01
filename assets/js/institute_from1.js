@@ -4,15 +4,6 @@ $(document).ready( function(){
     if(sessionStorage.name !== undefined){
         $("input[name='name']").val(sessionStorage.name);
     }
-    if(sessionStorage.inst_code !== undefined){
-        $("input[name='inst_code']").val(sessionStorage.inst_code);
-    }
-    if(sessionStorage.uid !== undefined){
-        $("input[name='uid']").val(sessionStorage.uid);
-    }
-    if(sessionStorage.password !== undefined){
-        $("input[name='password']").val(sessionStorage.password);
-    }
     if(sessionStorage.estd !== undefined){
         $("input[name='estd']").val(sessionStorage.estd);
     }
@@ -50,69 +41,40 @@ $(document).ready( function(){
         $("input[name='website']").val(sessionStorage.website);
     }
 
-    $("input#inst_code").change(function () {
-        var inst_cd = $("input[name='inst_code']").val();
-        var inst_cd_err =  $(".err-inst_code")
-        $.ajax({
-            type: 'POST',
-	        url: '../ajax/institute_institute_check.php',
-	        data: {
-                token: $("meta[name='token']").attr("content"),
-                check: 1,
-                inst_code:inst_cd
-            },
-	        dataType: 'json',
-	        async: true,
-        })
-        .done(function ajaxDone(data) {
-            // Whatever data is
-            if(data.inst_chk !== undefined){
-                if(data.inst_chk == 'yes'){
-                    //Inst_code is exist
-                    inst_cd_err.html("<span class=\"red-text text-accent-3\">Institute Code is already Exist. Try another One</span>").show();
-                }
-                if(data.inst_chk === 'no'){
-                    //Inst_code is not exist
-                    inst_cd_err.html("<span class=\"green-text text-accent-4\">Institute Code is Available</span>").show();
-                }
-            }
+    // $("input#inst_code").change(function () {
+    //     var inst_cd = $("input[name='inst_code']").val();
+    //     var inst_cd_err =  $(".err-inst_code")
+    //     $.ajax({
+    //         type: 'POST',
+	//         url: '../ajax/institute_institute_check.php',
+	//         data: {
+    //             token: $("meta[name='token']").attr("content"),
+    //             check: 1,
+    //             inst_code:inst_cd
+    //         },
+	//         dataType: 'json',
+	//         async: true,
+    //     })
+    //     .done(function ajaxDone(data) {
+    //         // Whatever data is
+    //         if(data.inst_chk !== undefined){
+    //             if(data.inst_chk == 'yes'){
+    //                 //Inst_code is exist
+    //                 inst_cd_err.html("<span class=\"red-text text-accent-3\">Institute Code is already Exist. Try another One</span>").show();
+    //             }
+    //             if(data.inst_chk === 'no'){
+    //                 //Inst_code is not exist
+    //                 inst_cd_err.html("<span class=\"green-text text-accent-4\">Institute Code is Available</span>").show();
+    //             }
+    //         }
         
-        })
-    })
-    $("input#uid").change(function () {
-        var uid = $("input[name='uid']").val();
-        var uid_err = $(".err-uid");
-        $.ajax({
-            type: 'POST',
-	        url: '../ajax/institute_institute_check.php',
-	        data: {
-                token: $("meta[name='token']").attr("content"),
-                check: 2,
-                uid:uid
-            },
-	        dataType: 'json',
-	        async: true,
-        })
-        .done(function ajaxDone(data) {
-            // Whatever data is
-            if(data.inst_uid_chk !== undefined){
-                if(data.inst_uid_chk == 'yes'){
-                    //Inst_code is exist
-                    uid_err.html("<span class=\"red-text text-accent-3\">Institute User ID is already Exist. Try another One</span>").show();
-                }
-                if(data.inst_uid_chk === 'no'){
-                    //Inst_code is not exist
-                    uid_err.html("<span class=\"green-text text-accent-4\">Institute User ID is Available</span>").show();
-                }
-            }
-        
-        })
-    })
+    //     })
+    // })
 })
 
 //On click on submit button
 //Starts the form submission process
-$(document).on("submit","form.frm",function(event) {
+$("form.frm").submit(function(event) {
     event.preventDefault();
 
     var _form = $(this);
@@ -120,9 +82,6 @@ $(document).on("submit","form.frm",function(event) {
     dataObj = {
         ////Basic Institute Details
         name:           $("input[name='name']", _form).val(),
-        inst_code:      $("input[name='inst_code']", _form).val(),
-        uid:            $("input[name='uid']", _form).val(),
-        password:       $("input[name='password']", _form).val(),
         estd:           $("input[name='estd']", _form).val(),
         accrd:          $("input[name='accrd']", _form).val(),
         inst_type:      $("select[name='inst_type']", _form).val(),
@@ -141,18 +100,6 @@ $(document).on("submit","form.frm",function(event) {
     //All varification and helper massage done
     if(dataObj.name.length < 5){
         alert("Please enter the full Institute name");
-        return false;
-    }
-    else if(dataObj.inst_code.length < 1){
-        alert("Plese enter a valid Institute Code");
-        return false;
-    }
-    else if(dataObj.uid.length < 1){
-        alert("Plese enter a valid Institute ID");
-        return false;
-    }
-    else if(dataObj.password.length < 8){
-        alert("Please enter a password that is atleast 8 charecters");
         return false;
     }
     else if(dataObj.estd.length < 4){
@@ -214,9 +161,6 @@ $(document).on("submit","form.frm",function(event) {
 
         //Basic Institute Details
         sessionStorage.name         = dataObj.name;
-        sessionStorage.inst_code    = dataObj.inst_code;
-        sessionStorage.uid          = dataObj.uid;
-        sessionStorage.password     = dataObj.password;
         sessionStorage.estd         = dataObj.estd;
         sessionStorage.accrd        = dataObj.accrd;
         sessionStorage.inst_type    = dataObj.inst_type;
@@ -238,9 +182,6 @@ $(document).on("submit","form.frm",function(event) {
         return false;
     }
     if(sessionStorage.name !== undefined  && 
-        sessionStorage.inst_code !== undefined  && 
-        sessionStorage.uid !== undefined  && 
-        sessionStorage.password !== undefined  && 
         sessionStorage.estd !== undefined  && 
         sessionStorage.accrd !== undefined  && 
         sessionStorage.inst_type !== undefined  && 
