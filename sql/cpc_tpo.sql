@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2018 at 03:22 PM
+-- Generation Time: Nov 03, 2018 at 03:27 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -49,7 +49,7 @@ INSERT INTO `admins` (`id`, `password`, `Last_login_time`, `Last_login_ip`) VALU
 --
 
 CREATE TABLE `college_crs` (
-  `college_id` int(3) NOT NULL,
+  `college_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deg_optd` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `course_optd` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `intake` int(6) NOT NULL
@@ -66,25 +66,6 @@ CREATE TABLE `course_list` (
   `degree` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `course_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `course_list`
---
-
-INSERT INTO `course_list` (`id`, `degree`, `course_name`) VALUES
-(1, 'B.Tech', 'Computer Science and Engineering'),
-(2, 'B.Tech', 'Mechanical Engineering'),
-(3, 'B.Tech', 'Electrical Engineering'),
-(4, 'B.Tech', 'Civil Engineering'),
-(5, 'M.Tech', 'Civil Engineering'),
-(6, 'M.Tech', 'Computer Science and Engineering'),
-(7, 'M.Tech', 'Mechanical Engineering'),
-(8, 'M.Tech', 'Electrical Engineering'),
-(9, 'MCA', 'MASTER IN COMPUTER APPLICATION'),
-(10, 'BCA', 'BACHELOR IN COMPUTER APPLICATION'),
-(11, 'M.Tech', 'aetwshyersh'),
-(12, 'B.Tech', 'TT'),
-(13, 'B.Tech', 'CHEMICAL ENGINEERING');
 
 -- --------------------------------------------------------
 
@@ -147,20 +128,16 @@ CREATE TABLE `notices` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `notices`
---
-
-INSERT INTO `notices` (`sl_no`, `title`, `content`, `publish_date`, `expiry_date`, `active_status`, `file_name`, `added_by`) VALUES
-(2, '112326', 'qwerty', 1537809358, 1540940400, 0, '', '8c6976e5b5410415bde9'),
-(3, '112327', 'qwerty', 1537809376, 1540854000, 0, '', '8c6976e5b5410415bde9'),
-(5, 'sds', '77777777', 1537809526, 1540591200, 0, '', '8c6976e5b5410415bde9'),
-(6, '1123244', '7441231', 1537809562, 1540940400, 0, '1537809563.jpg', '8c6976e5b5410415bde9'),
-(7, '112325', 'qwerty', 0, 1540940400, 0, '', '8c6976e5b5410415bde9'),
-(8, '112325w7n9tver9n8', '1v74n2vq35n8c2547n8v', 1538732486, 1540924200, 0, '', '8ce8bcd713249e604653');
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `college_crs`
+--
+ALTER TABLE `college_crs`
+  ADD PRIMARY KEY (`college_id`),
+  ADD KEY `college_id` (`college_id`),
+  ADD KEY `college_id_2` (`college_id`);
 
 --
 -- Indexes for table `course_list`
