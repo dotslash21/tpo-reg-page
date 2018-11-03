@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2018 at 02:27 PM
+-- Generation Time: Nov 03, 2018 at 03:22 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -93,7 +93,7 @@ INSERT INTO `course_list` (`id`, `degree`, `course_name`) VALUES
 --
 
 CREATE TABLE `cred` (
-  `inst_code` int(11) NOT NULL COMMENT 'institute Code',
+  `inst_code` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'institute Code',
   `inst_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Name',
   `estd` int(8) NOT NULL COMMENT 'Institute ESTD',
   `inst_accrd` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Institute Accriditation',
@@ -181,8 +181,7 @@ ALTER TABLE `cred`
 --
 ALTER TABLE `notices`
   ADD PRIMARY KEY (`sl_no`);
-
-
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
