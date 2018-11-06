@@ -98,12 +98,7 @@
                         <label class="active" for="name">Institute Name</label>
                     </div>
                     <div class="row">
-                        <div class="col s12 m6 l6" style="line-height:40px; margin-top: 10px; margin-button: 10px;">
-                            <div class="grey lighten-4" style="border-radius: 8px; text-align: center;">
-                                <span class="err-inst_code" style="">&nbsp;</span>
-                            </div>
-                        </div>
-                        <div class="col s12 m6 l6">
+                        <div class="col s12 m12 l6">
                             <div class="input-field">
                                 <input type="number" id="estd" name="estd" min="1800" class="validate" required>
                                 <label class="active" for="estd">Institute Establishment Year</label>
