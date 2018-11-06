@@ -99,13 +99,7 @@
                         <label for="name">Institute Name</label>
                     </div>
                     <div class="row">
-                        <div class="col s6">
-                            <div class="input-field">
-                                <input type="password" id="password" name="password" required disabled value="I am not editable">
-                                <label for="password">Password</label>
-                            </div>
-                        </div>
-                        <div class="col s6">
+                        <div class="col s12">
                             <div class="input-field">
                                 <input type="number" id="estd" name="estd" required disabled value="1980">
                                 <label for="estd">Institute Establishment Year</label>
