@@ -110,7 +110,7 @@
                         <div class="col s6">
                             <div class="input-field">
                                 <input type="text" id="accrd" name="accrd" required disabled value="I am not editable">
-                                <label for="accrd">Institute Accriditated By</label>
+                                <label for="accrd">Institute Accredited By</label>
                             </div>
                         </div>
                         <div class="col s6">
