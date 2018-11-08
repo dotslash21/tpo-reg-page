@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2018 at 03:27 PM
+-- Generation Time: Nov 08, 2018 at 02:10 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -40,7 +40,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `password`, `Last_login_time`, `Last_login_ip`) VALUES
-('cpcbengaladmin', '$2y$10$Y4GFLIn1PWs.seh0iKPK7e5/d3fzqX2yN/AJMaEv3Ej9zt7i/DQhK', '2018/Oct/09 4:41:25 PM IST +05:30', '::1');
+('cpcbengaladmin', '$2y$10$Y4GFLIn1PWs.seh0iKPK7e5/d3fzqX2yN/AJMaEv3Ej9zt7i/DQhK', '2018/Nov/08 6:33:55 PM IST +05:30', '::1');
 
 -- --------------------------------------------------------
 
@@ -158,6 +158,16 @@ ALTER TABLE `cred`
 --
 ALTER TABLE `notices`
   ADD PRIMARY KEY (`sl_no`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `course_list`
+--
+ALTER TABLE `course_list`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
