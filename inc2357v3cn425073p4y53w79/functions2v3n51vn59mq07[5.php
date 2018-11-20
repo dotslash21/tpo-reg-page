@@ -36,7 +36,7 @@ if(defined('_functionsqn72v3[701v[c124[m1c')){
         else if(isset($_SERVER['REMOTE_ADDR']))
             $ipaddress = $_SERVER['REMOTE_ADDR'];
         else
-            $ipaddress = 'UNKNOWN';
+            $ipaddress = 0;
         return $ipaddress;
     }
 
